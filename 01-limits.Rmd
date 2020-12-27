@@ -1,0 +1,1246 @@
+# Limits {#sec:limits}
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/WUvTyaaNkzM")
+```
+
+
+
+*Calculus* means "a method of calculation or reasoning." When one
+computes the sales tax on a purchase, one employs a simple calculus.
+When one finds the area of a polygonal shape by breaking it up into a
+set of triangles, one is using another calculus. Proving a theorem in
+geometry employs yet another calculus.
+
+Despite the wonderful advances in mathematics that had taken place into
+the first half of the $17^\text{th}$ century, mathematicians and
+scientists were keenly aware of what they *could not do.* (This is true
+even today.) In particular, two important concepts eluded mastery by the
+great thinkers of that time: area and rates of change.
+
+Area seems innocuous enough; areas of circles, rectangles,
+parallelograms, etc., are standard topics of study for students today
+just as they were then. However, the areas of *arbitrary* shapes could
+not be computed, even if the boundary of the shape could be described
+exactly.
+
+Rates of change were also important. When an object moves at a constant
+rate of change, then "distance = rate $\times$ time." But what if the
+rate is not constant – can distance still be computed? Or, if distance
+is known, can we discover the rate of change?
+
+It turns out that these two concepts were related. Two mathematicians,
+[Sir Isaac Newton](https://plato.stanford.edu/entries/newton/) and [Gottfried Leibniz](https://plato.stanford.edu/entries/leibniz/), are credited with independently
+formulating a system of computing that solved the above problems and
+showed how they were connected. Their system of reasoning was "a"
+calculus. However, as the power and importance of their discovery took
+hold, it became known to many as "the" calculus. Today, we generally
+shorten this to discuss "calculus."
+
+The foundation of "the calculus" is the *limit.* It is a tool to
+describe a particular behavior of a function. This chapter begins our
+study of the limit by approximating its value graphically and
+numerically. After a formal definition of the limit, properties are
+established that make "finding limits" tractable. Once the limit is
+understood, then the problems of area and rates of change can be
+approached.
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/37n0cZn6Lyc")
+```
+
+
+## An Introduction To Limits {#sec:limitintro}
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/rG3XVvFIZPY")
+```
+
+We begin our study of *limits* by considering examples that demonstrate
+key concepts that will be explained as we progress.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/__qzaSg4y1I")
+```
+
+Consider the function $y = \frac{\sin x}{x}$. When $x$ is near the value
+1, what value (if any) is $y$ near? While our question is not precisely
+formed (what constitutes "near the value 1"?), the answer does not seem
+difficult to find. One might think first to look at a graph of this
+function to approximate the appropriate $y$ values. Consider Figure
+\@ref(fig:sinxoverx), where $y = \frac{\sin x}{x}$ is graphed.
+For values of $x$ near 1, it seems that $y$ takes on values near $0.85$.
+In fact, when $x=1$, then $y=\frac{\sin 1}{1} \approx 0.84$, so it makes
+sense that when $x$ is "near" 1, $y$ will be "near" $0.84$.
+
+```{r sinxoverx, fig.cap="Graph of $f(x)=\\sin x / x$.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/pbwtkz3r?embed")
+```
+
+Consider this again at a different value for $x$. When $x$ is near 0,
+what value (if any) is $y$ near? By considering Figure
+\@ref(fig:sinxoverx), one can see that it seems that $y$ takes on
+values near $1$. But what happens when $x=0$? We have
+$$y \rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0} \rightarrow \text{undefined.}$$
+The expression "$0/0$" has no value; it is *indeterminate.* Such an
+expression gives no information about what is going on with the function
+nearby. We cannot find out how $y$ behaves near $x=0$ for this function
+simply by letting $x=0$.
+
+*Finding a limit* entails understanding how a function behaves near a
+particular value of $x$. Before continuing, it will be useful to
+establish some notation. Let $y=f(x)$; that is, let $y$ be a function of
+$x$ for some function $f$. The expression "the limit of $y$ as $x$
+approaches 1" describes a number, often referred to as $L$, that $y$
+nears as $x$ nears 1. We write all this as
+$$\lim_{x\to 1} y = \lim_{x\to 1} f(x) = L.$$ This is not a complete
+definition (that will come in the next section); this is a
+pseudo-definition that will allow us to explore the idea of a limit.
+
+Above, where $f(x) = \sin(x)/x$, we approximated
+$$\lim_{x\to 1} \frac{\sin x}{x} \approx 0.84 \quad \text{ and } \quad \lim_{x\to 0}\frac{\sin x}{x} \approx 1.$$
+(We *approximated* these limits, hence used the "$\approx$" symbol,
+since we are working with the pseudo-definition of a limit, not the
+actual definition.)
+
+Once we have the true definition of a limit, we will find limits
+*analytically*; that is, exactly using a variety of mathematical tools.
+For now, we will *approximate* limits both graphically and numerically.
+Graphing a function can provide a good approximation, though often not
+very precise. Numerical methods can provide a more accurate
+approximation. We have already approximated limits graphically, so we
+now turn our attention to numerical approximations.
+
+Consider again $\lim_{x\to 1}\sin (x)/x$. To approximate this limit
+numerically, we can create a table of $x$ and $f(x)$ values where $x$ is
+"near" 1. This is done in Table \@ref(tab:sinxnear1).
+
+```{r sinxnear1, class.output="centered"}
+tibble::tibble(x=c(0.9,0.99,0.999, 1, 1.001,1.01,1.1), "sin(x)/x"=sin(x)/x) %>% 
+  knitr::kable(caption="Values of $\\sin(x)/x$ with $x$ near 1.",
+               table.attr='class="centered"', format="html")
+```
+
+
+Notice that for values of $x$ near $1$, we have $\sin (x)/x$ near
+$0.841$. The $x=1$ row is in bold to highlight the fact that when
+considering limits, we are *not* concerned with the value of the
+function at that particular $x$ value; we are only concerned with the
+values of the function when $x$ is *near* 1.
+
+Now approximate $\lim_{x\to 0} \sin(x)/x$ numerically. We already
+approximated the value of this limit as 1 graphically in Figure
+\@ref(fig:sinxoverx). Table \@ref(tab:sinxnear0) shows the
+value of $\sin(x)/x$ for values of $x$ near 0. Ten places after the
+decimal point are shown to highlight how close to 1 the value of
+$\sin(x)/x$ gets as $x$ takes on values very near 0. We include the
+$x=0$ row in bold again to stress that we are not concerned with the
+value of our function at $x=0$, only on the behavior of the function
+*near* 0.
+
+```{r sinxnear0, class.output="centered"}
+tibble::tibble(x=c(-0.1, -0.01, -0.001, 0, 0.001, 0.01, 0.1), "sin(x)/x"=sin(x)/x) %>% 
+  knitr::kable(caption="Values of $\\sin(x)/x$ with $x$ near 0.",
+               table.attr='class="centered"', format="html")
+```
+
+
+This numerical method gives confidence to say that 1 is a good
+approximation of $\lim_{x\to 0} \sin(x)/x$; that is,
+$$\lim_{x\to 0} \sin(x)/x \approx 1.$$ Later we will be able to prove
+that the limit is *exactly* 1.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/eHx3LmrQZXM")
+```
+
+We now consider several examples that allow us explore different aspects
+of the limit concept.\
+
+### Example: Rational function {#sec:limit1}
+
+To graphically approximate the limit, graph
+$$y = \frac{x^2-x-6}{6x^2-19x+3}$$ on a small interval that contains 3. To
+numerically approximate the limit, create a table of values where the
+$x$ values are near 3. This is done in Figures \@ref(fig:limit1) and
+Table \@ref(tab:limit1table), respectively.
+
+```{r limit1, fig.cap="Graphically approximating the limit of a rational function.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/ahxgeetr?embed")
+```
+
+```{r limit1table, class.output="centered"}
+tibble::tibble(x=c(2.9,2.99,2.999, 3, 3.001,3.01,3.1), y=(x^2-x-6)/(6*x^2 - 19*x +3)) %>% 
+  knitr::kable(caption="Values of $y=\\frac{x^2-x-6}{6x^2-19x+3}$ with $x$ near 3.",
+               table.attr='class="centered"', format="html")
+```
+
+
+The graph shows that when $x$ is near 3, the value of $y$ is very near
+$0.3$. By considering values of $x$ near 3, we see that $y=0.294$ is a
+better approximation. The graph and the table imply that
+$$\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294.$$
+
+This example may bring up a few questions about approximating limits
+(and the nature of limits themselves).
+
+1.  If a graph does not produce as good an approximation as a table, why
+    bother with it?
+
+2.  How many values of $x$ in a table are "enough?" In the previous
+    example, could we have just used $x=3.001$ and found a fine
+    approximation?
+
+Graphs are useful since they give a visual understanding concerning the
+behavior of a function. Sometimes a function may act "erratically" near
+certain $x$ values which is hard to discern numerically but very plain
+graphically. Since graphing utilities are very accessible, it makes
+sense to make proper use of them.
+
+Since tables and graphs are used only to *approximate* the value of a
+limit, there is not a firm answer to how many data points are "enough."
+Include enough so that a trend is clear, and use values (when possible)
+both less than and greater than the value in question. In Example
+\@ref(sec:limit1), we used both values less than and greater than 3. Had we
+used just $x=3.001$, we might have been tempted to conclude that the
+limit had a value of $0.3$. While this is not far off, we could do
+better. Using values "on both sides of 3" helps us identify trends.\
+\
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/7RAiKoLCpgU")
+```
+
+### Identifying When Limits Do Not Exist {-}
+
+A function may not have a limit for all values of $x$. That is, we
+cannot say $\lim_{x\to c}f(x)=L$ for some numbers $L$ for all values of
+$c$, for there may not be a number that $f(x)$ is approaching. There are
+three common ways in which a limit may fail to exist.
+
+1.  The function $f(x)$ may approach different values on either side of
+    $c$.
+
+2.  The function may grow without upper or lower bound as $x$ approaches
+    $c$.
+
+3.  The function may oscillate as $x$ approaches $c$ without approaching
+    a specific value.
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/DSIaDa_ABxo")
+```
+
+
+We’ll explore each of these in turn.
+
+### Different values approached from left and right {#sec:nolimit1}
+
+Explore why $\displaystyle\lim_{x\to 1} f(x)$ does not exist, where 
+$$f(x) = \begin{cases}{cl} x^2-2x+3 & x\leq 1 \\ x & x>1 \end{cases}.$$
+
+```{r nolimit1, fig.cap="Graphically approximating the limit of a piecewise function.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/qmysttuf?embed")
+```
+
+```{r nolimit1table, class.output="centered"}
+tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=ifelse(x<=1, x*x-x-x+3, x)) %>% 
+  knitr::kable(caption="Values of $f(x)$ with $x$ near 1.",
+               table.attr='class="centered"', format="html")
+```
+
+
+
+A graph of $f(x)$ around $x=1$ and a table are given in Figures
+\@ref(fig:nolimit1) and \@ref(tab:nolimit1table), respectively. It is clear that
+as $x$ approaches 1, $f(x)$ does not seem to approach a single number.
+Instead, it seems as though $f(x)$ approaches two different numbers.
+When considering values of $x$ less than 1 (approaching 1 from the
+left), it seems that $f(x)$ is approaching 2; when considering values of
+$x$ greater than 1 (approaching 1 from the right), it seems that $f(x)$
+is approaching 1. Recognizing this behavior is important; we’ll study
+this in greater depth later. Right now, it suffices to say that the
+limit does not exist since $f(x)$ is not approaching one value as $x$
+approaches 1.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/NnV1A1KTbg0")
+```
+
+
+### Example: Growth Without Bound {#sec:ex_no_limit2}
+
+A graph and table of $f(x) = 1/(x-1)^2$ are given in Figures \@ref(fig:nolimit2) and \@ref(tab:nolimit2table), respectively. Both show that as
+$x$ approaches 1, $f(x)$ grows larger and larger.
+
+We can deduce this on our own, without the aid of the graph and table.
+If $x$ is near 1, then $(x-1)^2$ is very small, and:
+$$\frac{1}{\text{very small number}} = \text{very large number}.$$ Since
+$f(x)$ is not approaching a single number, we conclude that
+$$\lim_{x\to 1}\frac{1}{(x-1)^2}$$ does not exist.
+
+
+```{r nolimit2, fig.cap="A function that grows without bound.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/q9kc2gtt?embed")
+```
+
+```{r nolimit2table, class.output="centered"}
+tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>% 
+  knitr::kable(caption="Values of $f(x)$ with $x$ near 1.",
+               table.attr='class="centered"', format="html")
+```
+
+### Example: Oscillation
+
+Explore why $\displaystyle \lim_{x\to 0}\sin(1/x)$ does not exist.
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/gGvvFX5QyjE")
+```
+
+
+```{r nolimit3, fig.cap="A function that oscillates at the limit point.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/ewgs887d?embed")
+```
+
+A graphs of $f(x) = \sin(1/x)$ is given in Figure \@ref(fig:nolimit3).
+Finally, in Table \@ref(tab:nolimit3table), we see $\sin(1/x)$ evaluated
+for values of $x$ near 0. As $x$ approaches 0, $f(x)$ does not appear to
+approach any value.
+
+It can be shown that in reality, as $x$ approaches 0, $\sin(1/x)$ takes
+on all values between $-1$ and 1 infinitely many times! Because of this
+oscillation,
+
+$\displaystyle\lim_{x\to 0}\sin(1/x)$ does not exist.
+
+```{r nolimit3table, class.output="centered"}
+tibble::tibble(x=c(0.1,0.01,0.001, 0.0001,0.00001), "$\\sin(1/x)$"=sin(1/x)) %>% 
+  mutate(x=format(x, scientific = FALSE)) %>% 
+  knitr::kable(caption="Values of $f(x)$ with $x$ near 1.",
+               table.attr='class="centered"', format="html")
+```
+
+
+
+### Limits of Difference Quotients {-}
+
+We have approximated limits of functions as $x$ approached a particular
+number. We will consider another important kind of limit after
+explaining a few key ideas.
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/2NJmd0Jrt4U")
+```
+
+
+Let $f(x)$ represent the position function, in feet, of some particle
+that is moving in a straight line, where $x$ is measured in seconds.
+Let’s say that when $x=1$, the particle is at position 10 ft., and when
+$x=5$, the particle is at 20 ft. Another way of expressing this is to
+say $$f(1)=10 \quad \text{ and } \quad f(5) = 20.$$ Since the particle
+traveled 10 feet in 4 seconds, we can say the particle’s *average
+velocity* was 2.5 ft/s. We write this calculation using a "quotient of
+differences," or, a *difference quotient*:
+$$\frac{f(5) - f(1)}{5-1} = \frac{10}4 = 2.5 \text{ft/s}.$$
+
+This difference quotient can be thought of as the familiar "rise over
+run" used to compute the slopes of lines. In fact, that is essentially
+what we are doing: given two points on the graph of $f$, we are finding
+the slope of the *secant line* through those two points. See Figure
+\@ref(fig:diffquot1).
+
+Now consider finding the average speed on another time interval. We
+again start at $x=1$, but consider the position of the particle $h$
+seconds later. That is, consider the positions of the particle when
+$x=1$ and when $x=1+h$. The difference quotient is now
+$$\frac{f(1+h)-f(1)}{(1+h)-1} = \frac{f(1+h)-f(1)}h.$$
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/lNI90Y321b0")
+```
+
+Let $f(x) = -1.5x^2+11.5x$; note that $f(1)=10$ and $f(5) = 20$, as in
+our discussion. We can compute this difference quotient for all values
+of $h$ (even negative values!) except $h=0$, for then we get "0/0," the
+indeterminate form introduced earlier. For all values $h\neq 0$, the
+difference quotient computes the average velocity of the particle over
+an interval of time of length $h$ starting at $x=1$.
+
+For small values of $h$, i.e., values of $h$ close to 0, we get average
+velocities over very short time periods and compute secant lines over
+small intervals. See Figure \@ref(fig:diffquot). This leads us
+to wonder what the limit of the difference quotient is as $h$ approaches
+0. That is, $$\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }$$
+
+
+
+```{r diffquot, fig.cap="The secant lines of $f(x)$ at a point $a$. Move the slider for $h$ to investigate the limit of the difference quotient.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/cgazabpr?embed")
+```
+
+As we do not yet have a true definition of a limit nor an exact
+method for computing it, we settle for approximating the value. While we
+could graph the difference quotient (where the $x$-axis would represent
+$h$ values and the $y$-axis would represent values of the difference
+quotient) we settle for making a table. See Figure
+\@ref(tab:diffquottable). The table gives us reason to assume the
+value of the limit is about 8.5.\
+
+```{r diffquottable, class.output="centered"}
+f <- function(x) -1.5*x^2 + 11.5 * x
+tibble::tibble(h=c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), "$\\frac{f(1+h)-f(1)}{h}$"=(f(1+h)-f(1))/h) %>% 
+  mutate(h=format(h, scientific = FALSE)) %>% rename("$h$"=h) %>% 
+  knitr::kable(caption="The difference quotient evaluated with $h$ near 0.",
+               table.attr='class="centered"', format="html")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/uUyZHfTYlBQ")
+```
+
+
+Proper understanding of limits is key to understanding calculus. With
+limits, we can accomplish seemingly impossible mathematical things, like
+adding up an infinite number of numbers (and not get infinity) and
+finding the slope of a line between two points, where the "two points"
+are actually the same point. These are not just mathematical
+curiosities; they allow us to link position, velocity and acceleration
+together, connect cross-sectional areas to volume, find the work done by
+a variable force, and much more.
+
+In the next section we give the formal definition of the limit and begin
+our study of finding limits analytically. In the following exercises, we
+continue our introduction and approximate the value of limits.\
+
+
+
+
+
+
+## Epsilon-Delta Definition of a Limit {#sec:limit_def}
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/OGvDIXuWn0g")
+```
+
+
+This section introduces the formal definition of a limit. Many refer to
+this as "the epsilon-delta," definition, referring to the letters
+$\epsilon$ and $\delta$ of the Greek alphabet.\
+Before we give the actual definition, let’s consider a few informal ways
+of describing a limit. Given a function $y=f(x)$ and an $x$-value, $c$,
+we say that "the limit of the function $f$, as $x$ approaches $c$, is a
+value $L$":
+
+1. if "$y$ tends to $L$" as "$x$ tends to $c$."
+
+2. if "$y$ approaches $L$" as "$x$ approaches $c$."
+
+3. if "$y$ is near $L$" whenever "$x$ is near $c$."
+
+The problem with these definitions is that the words "tends,"
+"approach," and especially "near" are not exact. In what way does the
+variable $x$ tend to, or approach, $c$? How near do $x$ and $y$ have to
+be to $c$ and $L$, respectively?\
+The definition we describe in this section comes from formalizing
+**3**. A quick restatement gets us closer to what we want:
+
+> If $x$ is within a certain *tolerance level* of $c$, then the
+    corresponding value $y=f(x)$ is within a certain *tolerance level*
+    of $L$.
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/npoSY-AFvOY")
+```
+
+
+
+The traditional notation for the $x$-tolerance is the lowercase Greek
+letter delta, or $\delta$, and the $y$-tolerance is denoted by lowercase
+epsilon, or $\epsilon$. One more rephrasing
+nearly gets us to the actual definition:
+
+>   If $x$ is within $\delta$ units of $c$, then the corresponding value
+    of $y$ is within $\epsilon$ units of $L$.
+
+We can write "$x$ is within $\delta$ units of $c$" mathematically as
+$$|x-c| < \delta, \qquad \text{which is equivalent to }\qquad c-\delta < x < c+\delta.$$
+Letting the symbol "$\longrightarrow$" represent the word "implies," we
+can rewrite our statement as
+$$|x - c| < \delta \longrightarrow  |y - L| < \epsilon 
+\qquad \textrm{or} \qquad c - \delta < x < c + \delta \longrightarrow L - \epsilon < y < L + \epsilon.$$
+The point is that $\delta$ and $\epsilon$, being tolerances, can be any
+positive (but typically small) values. Finally, we have the formal
+definition of the limit with the notation seen in the previous section.
+
+
+> 
+```{definition, name="The Limit of a Function $f$ at a point $c$.", label="limit", echo=TRUE}
+Let $I$ be an open interval containing $c$, and let $f$ be a function defined on $I$, except possibly at $c$. The **limit of $f(x)$, as $x$ approaches $c$, is $L$**, denoted by  
+$$\displaystyle \lim_{x\rightarrow c} f(x) = L,$$
+means that given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $x$ in $I$, where $x\neq c$,  
+if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
+```
+
+
+Mathematicians often enjoy writing ideas without using any words. Here
+is the wordless definition of the limit:
+
+$\displaystyle \lim_{x\rightarrow c} f(x) = L \iff$
+$\forall \, \epsilon > 0, \exists \, \delta > 0 \; s.t. \;
+0<|x - c| < \delta \longrightarrow |f(x) - L| < \epsilon$.
+
+Note the order in which $\epsilon$ and $\delta$ are given. In the
+definition, the $y$-tolerance $\epsilon$ is given *first* and then the
+limit will exist **if**  we can find an $x$-tolerance $\delta$ that
+works.
+
+
+An example will help us understand this definition. Note that the
+explanation is long, but it will take one through all steps necessary to
+understand the ideas.\
+
+### Example: Square root function
+
+Show that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2$.
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/pdu3nRE8x1I")
+```
+
+
+
+Before we use the formal definition, let's try some numerical tolerances.  What if the $y$ tolerance is 0.5, or $\epsilon =0.5$?  How close to 4 does $x$ have to be so that $y$ is within 0.5 units of 2, i.e., $1.5 < y < 2.5$?  In this case, we can proceed as follows:
+\begin{alignedat}{3}
+1.5 &< y <& 2.5 \\
+1.5 &< \sqrt{x} <& 2.5\\
+1.5^2 &< x <& 2.5^2\\
+2.25 &< x <& 6.25.
+\end{alignedat}
+
+So, what is the desired $x$ tolerance?  Remember, we want to find a symmetric interval of $x$ values, namely
+$4 - \delta < x < 4 + \delta$.  The lower bound of $2.25$ is $1.75$ units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances; we must have $\delta < 1.75$. See Figure \@ref(fig:chooseed).
+
+
+		
+```{r chooseed, fig.cap="Epsilon delta visualization in Desmos. First set epsilon to determine the vertical tolerance, then find a corresponding delta for the horizontal tolerance which keeps the function within the horizontal band.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/nmihcrca3u")
+```
+
+
+Given the $y$ tolerance $\epsilon =0.5$, we have found an $x$ tolerance, $\delta < 1.75$, such that whenever $x$ is within $\delta$ units of 4, then $y$ is within $\epsilon$ units of 2.  That's what we were trying to find.
+  
+Let's try another value of $\epsilon$.
+
+What if the $y$ tolerance is 0.01, i.e.,  $\epsilon =0.01$?  How close to 4 does $x$ have to be in order for $y$ to be within 0.01 units of 2 (or $1.99 < y < 2.01$)?  Again, we just square these values to get
+$1.99^2 < x < 2.01^2$, or 
+$$3.9601 < x < 4.0401.$$  
+What is the desired $x$ tolerance?  In this case we must have $\delta < 0.0399$, which is the minimum distance from 4 of the two bounds given above.  
+
+Note that in some sense, it looks like there are two tolerances (below 4 of 0.0399 units and above 4 of 0.0401 units).  However, we couldn't use the larger value of $0.0401$ for $\delta$ since then the interval for $x$ would be  $3.9599 < x < 4.0401$ resulting in $y$ values of $1.98995 < y < 2.01$ (which contains values NOT within 0.01 units of 2).
+
+What we have so far: if $\epsilon =0.5$, then $\delta < 1.75$ and if $\epsilon = 0.01$, then $\delta < 0.0399$. A pattern is not easy to see, so we switch to general $\epsilon$ try to determine $\delta$ symbolically.  We start by assuming $y=\sqrt{x}$ is within $\epsilon$ units of 2:
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/zA_u1Hsd0Jg")
+```
+
+
+
+\begin{eqnarray*}
+|y - 2| < \epsilon &\\
+-\epsilon < y - 2 < \epsilon& \qquad \textrm{(Definition of absolute value)}\\
+-\epsilon < \sqrt{x} - 2 < \epsilon  &\qquad (y=\sqrt{x})\\
+2 - \epsilon < \sqrt{x} < 2+ \epsilon &\qquad \textrm{ (Add 2)}\\
+(2 - \epsilon)^2 < x < (2+ \epsilon) ^2 &\qquad \textrm{ (Square all)}\\
+4 - 4\epsilon + \epsilon^2 < x < 4 + 4\epsilon + \epsilon^2 &\qquad \textrm{ (Expand)}\\
+4 - (4\epsilon - \epsilon^2) < x < 4 + (4\epsilon + \epsilon^2). &\qquad \textrm{ (Rewrite in the desired form)}
+\end{eqnarray*}
+
+The _"desired form"_ in the last step is ``$4-\textit{something} < x < 4 +\textit{something}$.''
+Since we want this last interval to describe an $x$ tolerance around 4, we have that either $\delta < 4\epsilon - \epsilon^2$ or $\delta < 4\epsilon + \epsilon^2$, whichever is smaller: $$\delta < \min\{4\epsilon - \epsilon^2, 4\epsilon + \epsilon^2\}.$$  Since $\epsilon > 0$, the minimum is $\delta < 4\epsilon - \epsilon^2$.  That's the formula: given an $\epsilon$, set $\delta < 4\epsilon-\epsilon^2$. 
+
+We can check this for our previous values.  If $\epsilon=0.5$, the formula gives
+$\delta < 4(0.5) - (0.5)^2 = 1.75$ and when $\epsilon=0.01$, the formula gives $\delta < 4(0.01) - (0.01)^2 = 0.399$.
+
+
+So given any $\epsilon >0$, set $\delta < 4\epsilon - \epsilon^2$. Then if $|x-4|<\delta$ (and $x\neq 4$), then $|f(x) - 2| < \epsilon$,  satisfying the definition of the limit.  We have shown formally (and finally!) that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 $.
+
+
+The previous example was a little long in that we sampled a few specific
+cases of $\epsilon$ before handling the general case. Normally this is
+not done. The previous example is also a bit unsatisfying in that
+$\sqrt{4}=2$; why work so hard to prove something so obvious? Many
+$\epsilon$-$\delta$ proofs are long and difficult to do. In this
+section, we will focus on examples where the answer is, frankly,
+obvious, because the non–obvious examples are even harder. In the next
+section we will learn some theorems that allow us to evaluate limits
+*analytically*, that is, without using the $\epsilon$-$\delta$
+definition.\
+
+### Example: Square function
+
+Show that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4$.
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/QGqoq-xEXyk")
+```
+
+
+Let's do this example symbolically from the start.  Let $\epsilon > 0$ be given; we want $|y-4| < \epsilon$, i.e.,  $|x^2-4| < \epsilon$.  How do we find $\delta$ such that when $|x-2| < \delta$, we are guaranteed that $|x^2-4|<\epsilon$?
+
+
+This is a bit trickier than the previous example, but let's start by noticing that 
+$|x^2-4| = |x-2|\cdot|x+2|$.  Consider:
+\begin{equation} |x^2-4| < \epsilon \longrightarrow |x-2|\cdot|x+2| < \epsilon \longrightarrow |x-2| < \frac{\epsilon}{|x+2|}.\label{eq:limit1}\end{equation} 
+Could we not set $\displaystyle \delta = \frac{\epsilon}{|x+2|}$?  
+
+We are close to an answer, but the catch is that $\delta$ must be a \textit{constant} value (so it can't contain $x$).  There is a way to work around this, but we do have to make an assumption.  Remember that $\epsilon$ is supposed to be a small number, which implies that $\delta$ will also be a small value.  In particular, we can (probably) assume that $\delta < 1$.  If this is true, then $|x-2| < \delta$ would imply that $|x-2| < 1$, giving $1 < x < 3$.  
+
+Now, back to the fraction $\displaystyle \frac{\epsilon}{|x+2|}$.  If $1<x<3$, then $3<x+2<5$ (add 2 to all terms in the inequality).  Taking reciprocals, we have 
+\begin{align}
+\frac15 <& \frac1{|x+2|} < \frac 13 & \text{which implies}\notag\\
+\frac15 <& \frac1{|x+2|} & \text{which implies}\notag\\
+\frac\epsilon5<&\frac{\epsilon}{|x+2|}.\label{eq:limit2}
+\end{align}
+
+This suggests that we set 
+$\displaystyle \delta < \frac{\epsilon}{5}$. To see why, let consider what follows when we assume $|x-2|<\delta$:
+
+\small
+\begin{align*}
+|x - 2| &< \delta &\\
+|x - 2| &< \frac{\epsilon}{5}&  \text{(Our choice of $\delta$)}\\
+|x - 2|\cdot|x + 2| &< |x + 2|\cdot\frac{\epsilon}{5}&  \text{(Multiply by $|x+2|$)}\\
+|x^2 - 4|&< |x + 2|\cdot\frac{\epsilon}{5}&  \text{(Combine left side)}\\
+|x^2 - 4|&< |x + 2|\cdot\frac{\epsilon}{5}< |x + 2|\cdot\frac{\epsilon}{|x+2|}=\epsilon &  
+\text{(As long as $\delta <1$)}
+\end{align*}
+\normalsize
+
+We have arrived at $|x^2 - 4|<\epsilon$ as desired.  Note again, in order to make this happen we needed $\delta$ to first be less than 1.  That is a safe assumption; we want $\epsilon$ to be arbitrarily small, forcing $\delta$ to also be small. 
+
+We have also picked $\delta$ to be smaller than ``necessary.'' We could get by with a slightly larger $\delta$, as shown in Figure \@ref(fig:limit_eover5). The dashed outer lines show the boundaries defined by our choice of $\epsilon$. The dotted inner lines show the boundaries defined by setting $\delta = \epsilon/5$. Note how these dotted lines are within the dashed lines. That is perfectly fine; by choosing $x$ within the dotted lines we are guaranteed that $f(x)$ will be within $\epsilon$ of 4.
+
+
+		
+```{r squareed, fig.cap="Epsilon delta visualization in Desmos. First set epsilon to determine the vertical tolerance, then find a corresponding delta for the horizontal tolerance which keeps the function within the horizontal band.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/w7o708dap6")
+```
+
+
+In summary, given $\epsilon > 0$, set $\delta=\epsilon/5$.  Then $|x - 2| < \delta$ implies 
+$|x^2 - 4|< \epsilon$ (i.e. $|y - 4|< \epsilon$) as desired.  This shows that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4 $. Figure \@ref(fig:limit_eover5) gives a visualization of this; by restricting $x$ to values within $\delta = \epsilon/5$ of 2, we see that $f(x)$ is within $\epsilon$ of $4$.
+
+
+
+Make note of the general pattern exhibited in these last two examples.
+In some sense, each starts out "backwards." That is, while we want to
+
+1.  start with $|x-c|<\delta$ and conclude that
+
+2.  $|f(x)-L|<\epsilon$,
+
+we actually start by assuming
+
+1.  $|f(x)-L|<\epsilon$, then perform some algebraic manipulations to
+    give an inequality of the form
+
+2.  $|x-c|<$ *something*.
+
+When we have properly done this, the *something* on the "greater than"
+side of the inequality becomes our $\delta$. We can refer to this as the
+"scratch–work" phase of our proof. Once we have $\delta$, we can
+formally start with $|x-c|<\delta$ and use algebraic manipulations to
+conclude that $|f(x)-L|<\epsilon$, usually by using the same steps of
+our "scratch–work" in reverse order.
+
+We highlight this process in the following example.
+
+### Example: Polynomial
+
+We illustrate evaluating limits once more.
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/--_Rq2GX9IY")
+```
+
+Prove that $\displaystyle \lim_{x\rightarrow 1}(x^3-2x) = -1$.
+
+We start our scratch--work by considering $|f(x) - (-1)| < \epsilon$:
+\begin{align}
+|f(x)-(-1)| &< \epsilon \notag\\
+|x^3-2x + 1|&< \epsilon & \text{(Now factor)}\notag\\
+|(x-1)(x^2+x-1)|&< \epsilon \notag\\
+|x-1| &<\frac{\epsilon}{|x^2+x-1|}.\label{eq:lim4}
+\end{align}
+We are at the phase of saying that $|x-1|<$ \textit{something}, where \textit{something}$=\epsilon/|x^2+x-1|$. We want to turn that \textit{something} into $\delta$.
+
+Since $x$ is approaching 1, we are safe to assume that $x$ is between 0 and 2. So
+\begin{align*}
+0&< x<2  & \\
+0&< x^2<4.&\text{(squared each term)}
+\end{align*}
+Since $0<x<2$, we can add $0$, $x$ and $2$, respectively, to each part of the inequality and maintain the inequality.
+\begin{align*}
+0&< x^2+x<6 &\\
+-1&< x^2+x-1<5.&\text{(subtracted 1 from each part)}
+\end{align*}
+
+In Equation \eqref{eq:lim4}, we wanted $|x-1|<\epsilon/|x^2+x-1|$. The above shows that given any $x$ in $[0,2]$, we know that 
+\begin{align}
+x^2+x-1 &< 5 &\text{which implies that}\notag\\
+\frac15 &< \frac{1}{x^2+x-1} &\text{which implies that}\notag\\
+\frac{\epsilon}5 &< \frac{\epsilon}{x^2+x-1}.\label{eq:lim4b}
+\end{align}
+ So we set $\delta < \epsilon/5$. This ends our scratch--work, and we begin the formal proof (which also helps us understand why this was a good choice of $\delta$).
+
+Given $\epsilon$, let $\delta < \epsilon/5$. We want to show that when $|x-1|<\delta$, then $|(x^3-2x)-(-1)|<\epsilon$. We start with $|x-1|<\delta$:
+\begin{align*}
+|x-1| &< \delta \\
+|x-1| &< \frac{\epsilon}5\\
+|x-1| &< \frac\epsilon5 < \frac{\epsilon}{|x^2+x-1|} & \text{(for $x$ near 1, from Equation \eqref{eq:lim4b})}\\
+|x-1|\cdot |x^2+x-1| &< \epsilon\\
+|x^3-2x+1| &< \epsilon\\
+|(x^3-2x)-(-1)| &<\epsilon,
+\end{align*}
+which is what we wanted to show. Thus $\displaystyle \lim_{x\to 1}(x^3-2x) = -1$.
+
+
+### Example: Exponential
+
+Prove that $\displaystyle \lim_{x\rightarrow 0} e^x = 1$.
+
+Symbolically, we want to take the equation $|e^x - 1| < \epsilon$ and unravel it to the form $|x-0| < \delta$.  Here is our scratch--work:
+\begin{eqnarray*}
+|e^x - 1| < \epsilon&\\
+-\epsilon < e^x - 1 < \epsilon& \qquad \textrm{(Definition of absolute value)}\\
+1-\epsilon < e^x < 1+\epsilon & \qquad \textrm{(Add 1)}\\
+\ln(1-\epsilon) < x < \ln(1+\epsilon) & \qquad \textrm{(Take natural logs)}\\
+\end{eqnarray*}
+Making the safe assumption that $\epsilon<1$ ensures the last inequality is valid (i.e., so that $\ln (1-\epsilon)$ is defined). We can then set $\delta$ to be the minimum of $|\ln(1-\epsilon)|$ and $\ln(1+\epsilon)$; i.e., 
+$$\delta = \min\{|\ln(1-\epsilon)|, \ln(1+\epsilon)\} = \ln(1+\epsilon).$$  
+
+
+Now, we work through the actual the proof:
+
+\begin{align*}
+|x - 0|&<\delta\\
+-\delta &< x < \delta &  \textrm{(Definition of absolute value)}\\
+-\ln(1+\epsilon) &< x < \ln(1+\epsilon). &\\  
+\ln(1-\epsilon) &< x < \ln(1+\epsilon). & \text{(since $\ln(1-\epsilon) < -\ln(1+\epsilon)$)}\\ 
+\end{align*}
+The above line is true by our choice of $\delta$ and by the fact that since $|\ln(1-\epsilon)|>\ln(1+\epsilon)$ and $\ln(1-\epsilon)<0$, we know $\ln(1-\epsilon) < -\ln(1+\epsilon )$.
+\begin{align*}
+1-\epsilon &< e^x < 1+\epsilon &  \textrm{(Exponentiate)}\\
+-\epsilon &< e^x - 1 < \epsilon &  \textrm{(Subtract 1)}\\
+\end{align*}
+
+In summary, given $\epsilon > 0$, let $\delta = \ln(1+\epsilon)$. Then $|x - 0| < \delta$ implies $|e^x - 1|< \epsilon$ as desired.  We have shown that $\displaystyle \lim_{x\rightarrow 0} e^x = 1$.
+
+
+We note that we could actually show that
+$\lim_{x\rightarrow c} e^x = e^c$ for any constant $c$. We do this by
+factoring out $e^c$ from both sides, leaving us to show
+$\lim_{x\rightarrow c} e^{x-c} = 1$ instead. By using the substitution
+$u=x-c$, this reduces to showing $\lim_{u\rightarrow 0} e^u = 1$ which
+we just did in the last example. As an added benefit, this shows that in
+fact the function $f(x)=e^x$ is *continuous* at all values of $x$, an
+important concept we will define in Section \@ref(sec:continuity).
+
+
+### Conclusion {-}
+
+This formal definition of the limit is not an easy concept grasp. Our
+examples are actually "easy" examples, using "simple" functions like
+polynomials, square–roots and exponentials. It is very difficult to
+prove, using the techniques given above, that
+$\displaystyle \lim_{x\to 0}(\sin x)/x = 1$, as we approximated in the previous
+section.
+
+There is hope. The next section shows how one can evaluate complicated
+limits using certain basic limits as building blocks. While limits are
+an incredibly important part of calculus (and hence much of higher
+mathematics), rarely are limits evaluated using the definition. Rather,
+the techniques of the following section are employed.
+
+## Finding Limits Analytically {#sec:limit_analytically}
+
+
+In Section \@ref(sec:limitintro) we explored the concept of the limit
+without a strict definition, meaning we could only make approximations.
+In the previous section we gave the definition of the limit and
+demonstrated how to use it to verify our approximations were correct.
+Thus far, our method of finding a limit is 1) make a really good
+approximation either graphically or numerically, and 2) verify our
+approximation is correct using a $\epsilon$-$\delta$ proof.
+
+Recognizing that $\epsilon$-$\delta$ proofs are cumbersome, this section
+gives a series of theorems which allow us to find limits much more
+quickly and intuitively.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/idVyYI9XH-A")
+```
+
+
+Suppose that $\lim_{x\to 2} f(x)=2$ and $\lim_{x\to 2} g(x) = 3$. What
+is $\lim_{x\to 2}(f(x)+g(x))$? Intuition tells us that the limit should
+be 5, as we expect limits to behave in a nice way. The following theorem
+states that already established limits do behave nicely.
+
+>
+```{theorem, label="limitalgebra", name="Basic Limit Properties", echo=TRUE}
+Let $b$, $c$, $L$ and $K$ be real numbers, let $n$ be a positive integer, and let $f$ and $g$ be functions defined on an open interval $I$ containing $c$ with the following limits: \index{limit!properties}
+$$\lim_{x\to c}f(x) = L \text{\ and\ } \lim_{x\to c} g(x) = K.$$
+The following limits hold.
+>
+1. Constants: $\displaystyle \lim_{x\to c} b = b$
+1. Identity:						$\displaystyle \lim_{x\to c} x = c$
+1. Sums/Differences: $\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K$
+1. Scalar Multiples:	$\displaystyle \lim_{x\to c} b\cdot f(x) = bL$
+1. Products:	$\displaystyle \lim_{x\to c} f(x)\cdot g(x) = LK$
+1. Quotients: $\displaystyle \lim_{x\to c} f(x)/g(x) = L/K$, ($K\neq 0)$
+1. Powers: 	$\displaystyle \lim_{x\to c} f(x)^n = L^n$
+1. Roots:		$\displaystyle \lim_{x\to c} \sqrt[n]{f(x)} = \sqrt[n]{L}$ (If $n$ is even then require $f(x)\geq 0$ on $I$.)
+1. Compositions: Adjust our previously given limit situation to: $$\lim_{x\to c}f(x) = L,\ \lim_{x\to L} g(x) = K \text{ and } g(L)=K .$$ Then $\displaystyle \lim_{x\to c}g(f(x)) = K$.
+
+```
+
+
+We make a note about Property \#8: when $n$ is even, $L$ must be greater
+than 0. If $n$ is odd, then the statement is true for all $L$.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/5P2Zac-_Xhg")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/lNbLZ2BR1gQ")
+```
+
+
+### Example: Using basic limit properties.
+
+We apply the theorem to an example.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/8x42kGfu9ts")
+```
+
+
+Let $$\lim_{x\to 2} f(x)=2,\quad\lim_{x\to 2} g(x) = 3\quad \text{ and }\quad p(x) = 3x^2-5x+7.$$ Find the following limits:
+
+
+1.		$\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big)$
+1.		$\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big)$
+1.		$\displaystyle \lim_{x\to 2} p(x)$
+
+Solutions:
+
+1.		Using the Sum/Difference rule, we know that $\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5$.
+1.		Using the Scalar Multiple and Sum/Difference rules, we find that $\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.$
+1.		Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+				\begin{align*}
+				\lim_{x\to 2} p(x) &= \lim_{x\to 2} (3x^2-5x+7) \\
+				&= \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7 \\
+				 &= 3\cdot 2^2 - 5\cdot 2+7 \\
+				 &= 9
+				\end{align*}
+
+### Limits of polynomial and rational functions {-}
+
+Part 3 of the previous example demonstrates how the limit of a quadratic
+polynomial can be determined using the properties of Theorem
+\@ref(thm:limitalgebra). Not only that, recognize that
+$$\lim_{x\to 2} p(x) = 9 = p(2)$$ i.e., the limit at 2 was found just
+by plugging 2 into the function. This holds true for all polynomials,
+and also for rational functions (which are quotients of polynomials), as
+stated in the following theorem.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/NGoUHZESPso")
+```
+
+
+>
+```{theorem, label="polyrat", title="Limits of Polynomial and Rational Functions", echo=TRUE}
+Let $p(x)$ and $q(x)$ be polynomials and $c$ a real number. Then:
+>
+1.	$\displaystyle \lim_{x\to c} p(x) = p(c)$
+1. $\displaystyle \lim_{x\to c} \frac{p(x)}{q(x)} = \frac{p(c)}{q(c)}$, where $q(c) \neq 0$.
+
+```
+
+### Example: Limit of a rational function {#ex:limrat}
+
+Using Theorem \@ref(thm:polyrat), find $$\lim_{x\to -1} \frac{3x^2-5x+1}{x^4-x^2+3}.$$
+
+Using Theorem \@ref(thm:polyrat), we can quickly state that 
+	\begin{align*} 
+	\lim_{x\to -1}\frac{3x^2-5x+1}{x^4-x^2+3} &= \frac{3(-1)^2-5(-1)+1}{(-1)^4-(-1)^2+3} \\
+												&= \frac{9}{3} =3.
+	\end{align*}
+
+
+------
+
+It was likely frustrating in Section \@ref(sec:limitdef) to do a lot of
+work to prove that $$\lim_{x\to 2} x^2 = 4$$ as it seemed fairly
+obvious. The previous theorems state that many functions behave in such
+an "obvious" fashion, as demonstrated by the rational function in
+Example \@ref(ex:limrat).
+
+### Example: Evaluating limits using algebra {#ex:limitonept}
+Evaluate the following limit: $$\lim_{x\to 1}\frac{x^2-1}{x-1}.$$
+
+We begin by attempting to apply Theorem \@ref(thm:polyrat) and substituting 1 for $x$ in the quotient. This gives:
+		$$\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} \to \frac{0}{0},$$ an indeterminate form. We cannot apply the theorem.
+\mfigure{.6}{Graphing $f$ in Example \@ref(ex_limit_onept) to understand a limit.}{fig:limitxplus1}{figures/fig_LimitXplus1}
+		
+		By graphing the function, as in Figure \@ref(fig:limitxplus1), we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
+		$$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}.$$
+		The function is not defined when $x=1$, but for all other $x$, $$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1.$$
+		Clearly $\displaystyle \lim_{x\to 1}x+1 = 2$. Recall that when considering limits, we are not concerned with the value of the function at 1, only the value the function approaches as $x$ approaches 1. Since $(x^2-1)/(x-1)$ and $x+1$ are the same at all points except $x=1$, they both approach the same value as $x$ approaches 1. Therefore we can conclude that $$\lim_{x\to 1}\frac{x^2-1}{x-1}=2.$$
+
+
+
+### Functions equal everywhere except one point {-}
+
+The key to the above example is that the functions $y=(x^2-1)/(x-1)$ and
+$y=x+1$ are identical except at $x=1$. Since limits describe a value the
+function is approaching, not the value the function actually attains,
+the limits of the two functions are always equal.
+
+>
+```{theorem, label="limitallbut1", name="Limits of Functions Equal At All But One Point", echo=TRUE}
+Let $g(x) = f(x)$ for all $x$ in an open interval, except possibly at $c$, and let $\displaystyle \lim_{x\to c} g(x) = L$ for some real number $L$. Then $$\lim_{x\to c}f(x) = L.$$
+```
+
+The Fundamental Theorem of Algebra tells us that when dealing with a
+rational function of the form $g(x)/f(x)$ and directly evaluating the
+limit $\displaystyle \lim_{x\to c} \frac{g(x)}{f(x)}$ returns "0/0", then $(x-c)$
+is a factor of both $g(x)$ and $f(x)$. One can then use algebra to
+factor this term out, cancel, then apply Theorem \@ref(thm:limitallbut1).
+We demonstrate this once more.
+
+### Example: Evaluating a limit using Theorem \@ref(thm:limitallbut1) {#ex:limitallbut1}
+
+Evaluate $\displaystyle \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}$.
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/MSckoYqdKH4")
+```
+
+
+We attempt to apply Theorem \@ref(thm:polyrat) by substituting 3 for $x$. This returns the familiar indeterminate form of "0/0".
+
+Since the numerator and denominator are each polynomials, we know that $(x-3)$ is factor of each. Using whatever method is most comfortable to you, factor out $(x-3)$ from each (using polynomial division, synthetic division, a computer algebra system, etc.). We find that $$\frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} = \frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)}.$$ We can cancel the $(x-3)$ terms as long as $x\neq 3$. Using Theorem \@ref(thm:limitallbut1) we conclude:
+		\begin{align*}
+		\lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15} &= \lim_{x\to 3}\frac{(x-3)(x^2+x-2)}{(x-3)(2 x^2+9 x-5)} \\
+																															&=	\lim_{x\to 3} \frac{(x^2+x-2)}{(2 x^2+9 x-5)}\\
+																															&= \frac{10}{40} = \frac14.
+		\end{align*}
+
+----
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/vOW92eipOu4")
+```
+
+### Other limits by substitution {-}
+
+Polynomial and rational functions are not the only functions to behave
+in such a predictable way. The following theorem gives a list of
+functions whose behavior is particularly "nice" in terms of limits. In
+the next section, we will give a formal name to these functions that
+behave "nicely."
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/S0VmjueQn5k")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/L2ohy96L-F4")
+```
+
+
+>
+```{theorem, label="limcontinuous", name="Special Limits", echo=TRUE}
+Let $c$ be a real number in the domain of the given function and let $n$ be a positive integer. The following limits hold: 
+>
+1.		$\displaystyle \lim_{x\to c} \sin x = \sin c$
+1.		$\displaystyle \lim_{x\to c} \cos x = \cos c$
+1.		$\displaystyle \lim_{x\to c} \tan x = \tan c$
+1.		$\displaystyle \lim_{x\to c} \csc x = \csc c$
+1.		$\displaystyle \lim_{x\to c} \sec x = \sec c$
+1.		$\displaystyle \lim_{x\to c} \cot x = \cot c$
+1.		$\displaystyle \lim_{x\to c} a^x = a^c$ ($a>0$)
+1.		$\displaystyle \lim_{x\to c} \ln x = \ln c$
+1.		$\displaystyle \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}$
+>
+```
+
+
+### Example: Evaluating limits analytically {#ex:limit1}
+
+Evaluate the following limits. 
+
+1.		$\displaystyle \lim_{x\to \pi} \cos x$
+1.		$\displaystyle \lim_{x\to 3} (\sec^2x - \tan^2 x)$
+1.		$\displaystyle \lim_{x\to \pi/2} \cos x\sin x$
+1.		$\displaystyle \lim_{x\to 1} e^{\ln x}$
+1.		$\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
+
+Solutions:
+
+1.		This is a straightforward application of Theorem \@ref(thm:lim_continuous). $\displaystyle \lim_{x\to \pi} \cos x = \cos \pi = -1$.
+1.		We can approach this in at least two ways. First, by directly applying Theorem \@ref(thm:lim_continuous), we have:
+				$$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.$$ Using the Pythagorean Theorem, this last expression is 1; therefore $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.$$ We can also use the Pythagorean Theorem from the start. $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,$$ using the Constant limit rule. Either way, we find the limit is 1.
+1.		Applying the Product limit rule of Theorem \@ref(thm:limit_algebra) and Theorem \@ref(thm:lim_continuous) gives $$\displaystyle \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.$$
+1.		Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that $e^{\ln x} = x$ and evaluate $\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.$ 
+We can also use the limit Composition Rule of Theorem \@ref(thm:limit_algebra). Using Theorem \@ref(thm:lim_continuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
+
+1.		We encountered this limit in Section \@ref(sec:limit_intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+
+### Squeeze Theorem {-}
+
+The section could have been titled "Using Known Limits to Find Unknown
+Limits." By knowing certain limits of functions, we can find limits
+involving sums, products, powers, etc., of these functions. We further
+the development of such comparative tools with the Squeeze Theorem, a
+clever and intuitive way to find the value of some limits.
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/8Tv-GRQdAVA")
+```
+
+
+Before stating this theorem formally, suppose we have functions $f$, $g$
+and $h$ where $g$ always takes on values between $f$ and $h$; that is,
+for all $x$ in an interval, $$f(x) \leq g(x) \leq h(x).$$ If $f$ and $h$
+have the same limit at $c$, and $g$ is always "squeezed" between them,
+then $g$ must have the same limit as well. That is what the Squeeze
+Theorem states.
+
+>
+```{theorem, name="Squeeze Theorem", label="sqz", echo=TRUE}
+Let $f$, $g$ and $h$ be functions on an open interval $I$ containing $c$ such that for all $x$ in $I$, $f(x)\leq g(x) \leq h(x).$ 
+>
+If $$\lim_{x\to c} f(x) = L = \lim_{x\to c} h(x),$$ then $$\lim_{x\to c} g(x) = L.$$
+>
+```
+
+
+It can take some work to figure out appropriate functions by which to
+"squeeze" a given function. However, that is generally the only place
+where work is necessary; the theorem makes the "evaluating the limit
+part" very simple.
+
+We use the Squeeze Theorem in the following example to finally prove
+that $\displaystyle \lim_{x\to 0} \frac{\sin x}{x} = 1$.\
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/pgjv3ojtXh4")
+```
+
+		
+```{r sqzsinxoverx, fig.cap="Squeeze Theorem applied to $\\sin(x)/x$.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/291p7twtnd")
+```
+
+
+Two notes about the previous example are worth mentioning. First, one
+might be discouraged by this application, thinking "I would *never* have
+come up with that on my own. This is too hard!" Don’t be discouraged;
+within this text we will guide you in your use of the Squeeze Theorem.
+As one gains mathematical maturity, clever proofs like this are easier
+and easier to create.
+
+Second, this limit tells us more than just that as $x$ approaches 0,
+$\sin(x)/x$ approaches 1. Both $x$ and $\sin x$ are approaching 0, but
+the *ratio* of $x$ and $\sin x$ approaches 1, meaning that they are
+approaching 0 in essentially the same way. Another way of viewing this
+is: for small $x$, the functions $y=x$ and $y=\sin x$ are essentially
+indistinguishable.\
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Wd464IIls5Y")
+```
+
+
+We include this special limit, along with three others, in the following
+theorem.
+
+>
+```{theorem, label="speciallimits", name="Special Limits", echo=TRUE}
+These special limits are useful in finding limits of difference quotients.
+>
+1. $\displaystyle \lim_{x\to 0} \frac{\sin x}{x} = 1$
+1. $\displaystyle \lim_{x\to 0} \frac{\cos x-1}{x} = 0$
+1. $\displaystyle \lim_{x\to 0} (1+x)^\frac1x = e$
+1. $\displaystyle \lim_{x\to 0} \frac{e^x-1}{x} = 1$
+>
+```
+
+A short word on how to interpret the latter three limits. We know that
+as $x$ goes to 0, $\cos x$ goes to 1. So, in the second limit, both the
+numerator and denominator are approaching 0. However, since the limit is
+0, we can interpret this as saying that "$\cos x$ is approaching 1
+faster than $x$ is approaching 0."
+
+In the third limit, inside the parentheses we have an expression that is
+approaching 1 (though never equaling 1), and we know that 1 raised to
+any power is still 1. At the same time, the power is growing toward
+infinity. What happens to a number near 1 raised to a very large power?
+In this particular case, the result approaches Euler’s number, $e$,
+approximately $2.718.$
+
+In the fourth limit, we see that as $x\to 0$, $e^x$ approaches 1 "just
+as fast" as $x\to 0$, resulting in a limit of 1.\
+
+
+
+
+
+We end this section by revisiting a limit first seen in Section
+\@ref(sec:limitintro), a limit of a difference quotient. Let
+$f(x) = -1.5x^2+11.5x$; we approximated the limit
+$\displaystyle \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.$ We formally
+evaluate this limit in the following example.\
+
+### Example: Evaluating the limit of a difference quotient {#ex:limitdiffquot}
+
+Let $f(x) = -1.5x^2+11.5x$; find $\displaystyle \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.$
+
+Since $f$ is a polynomial, our first attempt should be to employ Theorem \@ref(thm:polyrat) and substitute 0 for $h$. However, we see that this gives us "$0/0$."
+ Knowing that we have a rational function hints that some algebra will help. Consider the following steps:
+		\begin{align*}
+		\lim_{h\to 0}\frac{f(1+h)-f(1)}{h} 	&= 	\lim_{h\to 0}\frac{-1.5(1+h)^2 + 11.5(1+h) - \left(-1.5(1)^2+11.5(1)\right)}{h} \\
+																				&=	\lim_{h\to 0}\frac{-1.5(1+2h+h^2) + 11.5+11.5h - 10}{h}\\
+																				&=	\lim_{h\to 0}\frac{-1.5h^2 +8.5h}{h}\\
+																				&= 	\lim_{h\to 0}\frac{h(-1.5h+8.5)}h\\
+																				&=	\lim_{h\to 0}(-1.5h+8.5)  \\
+																				&= 	8.5 
+		\end{align*}																		
+This matches our previous approximation.
+
+
+### Conclusion {-}
+
+This section contains several valuable tools for evaluating limits. One
+of the main results of this section is Theorem \@ref(thm:limcontinuous);
+it states that many functions that we use regularly behave in a very
+nice, predictable way. In Section \@ref(sec:continuity) we give a name to
+this nice behavior; we label such functions as *continuous.* Defining
+that term will require us to look again at what a limit is and what
+causes limits to not exist.
+
+
+
+## One Sided Limits {#sec:limit_continuity}
+
+We introduced the concept of a limit gently, approximating their values
+graphically and numerically. Next came the rigorous definition of the
+limit, along with an admittedly tedious method for evaluating them. The
+previous section gave us tools (which we call theorems) that allow us to
+compute limits with greater ease. Chief among the results were the facts
+that polynomials and rational, trigonometric, exponential and
+logarithmic functions (and their sums, products, etc.) all behave
+"nicely." In this section we rigorously define what we mean by "nicely."
+
+In Section \@ref(sec:limitintro) we saw three ways in which limits of
+functions failed to exist:
+
+1.  The function approached different values from the left and right,
+
+2.  The function grows without bound, and
+
+3.  The function oscillates.
+
+In this section we explore in depth the concepts behind \#1 by
+introducing the *one-sided limit*. We begin with formal definitions that
+are very similar to the definition of the limit given in Section
+\@ref(sec:limitdef), but the notation is slightly different and
+"$x\neq c$" is replaced with either "$x<c$" or "$x>c$."
+
+Practically speaking, when evaluating a left-hand limit, we consider
+only values of $x$ "to the left of $c$," i.e., where $x<c$. The
+admittedly imperfect notation $x\to c^-$ is used to imply that we look
+at values of $x$ to the left of $c$. The notation has nothing to do with
+positive or negative values of either $x$ or $c$. A similar statement
+holds for evaluating right-hand limits; there we consider only values of
+$x$ to the right of $c$, i.e., $x>c$. We can use the theorems from
+previous sections to help us evaluate these limits; we just restrict our
+view to one side of $c$.
+
+We practice evaluating left- and right-hand limits through a series of
+examples.\
+\
+Note how the left and right-hand limits were different at $x=1$. This,
+of course, causes *the* limit to not exist. The following theorem states
+what is fairly intuitive: *the* limit exists precisely when the left and
+right-hand limits are equal.
+
+The phrase "if, and only if" means the two statements are *equivalent*:
+they are either both true or both false. If the limit equals $L$, then
+the left and right hand limits both equal $L$. If the limit is not equal
+to $L$, then at least one of the left and right-hand limits is not equal
+to $L$ (it may not even exist).
+
+One thing to consider in Examples \[exonesidea\] – \[exonesided\] is
+that the value of the function may/may not be equal to the value(s) of
+its left/right-hand limits, even when these limits agree.\
+\
+\
+\
+In Examples \[exonesidea\] – \[exonesided\] we were asked to find
+both $\displaystyle \lim_{x\to 1}f(x)$ and $f(1)$. Consider the following table:
+
+                              $\displaystyle \lim_{x\to 1}f(x)$     $f(1)$
+  -------------------------- ------------------------- -------------
+   Example \@ref(exonesidea)       does not exist             1
+   Example \@ref(exonesideb)              1              not defined
+   Example \@ref(exonesidec)              0                   1
+   Example \@ref(exonesided)              1                   1
+
+Only in Example \@ref(exonesided) do both the function and the limit
+exist and agree. This seems "nice;" in fact, it seems "normal." This is
+in fact an important situation which we explore in the next section,
+entitled "Continuity." In short, a *continuous function* is one in which
+when a function approaches a value as $x\rightarrow c$ (i.e., when
+$\displaystyle \lim_{x\to c} f(x) = L$), it actually *attains* that value at $c$.
+Such functions behave nicely as they are very predictable.

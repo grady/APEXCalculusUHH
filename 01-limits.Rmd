@@ -1320,15 +1320,6 @@ examples.
 Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cases},$ as shown in Figure \@ref(fig:onesided1). Find each of the following: 
 
 
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
-```
-
-		
-```{r onesided1, fig.cap="The function for Example \\@ref(ex:onesidea)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/t9dpjyng")
-```
-
 
 1.	$\displaystyle \lim_{x\to 1^-} f(x)$
 1.	$\displaystyle \lim_{x\to 1^+} f(x)$
@@ -1338,6 +1329,17 @@ knitr::include_url("https://www.geogebra.org/calculator/t9dpjyng")
 1.	$f(0)$
 1.	$\displaystyle \lim_{x\to 2^-} f(x)$
 1.	$f(2)$
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
+```
+
+		
+```{r onesided1, fig.cap="The function for Example \\@ref(ex:onesidea)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/t9dpjyng")
+```
+
 
 For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
 

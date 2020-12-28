@@ -20,6 +20,13 @@ scientists were keenly aware of what they *could not do.* (This is true
 even today.) In particular, two important concepts eluded mastery by the
 great thinkers of that time: area and rates of change.
 
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/HQ6SqbaFLvo")
+```
+
+
+
 Area seems innocuous enough; areas of circles, rectangles,
 parallelograms, etc., are standard topics of study for students today
 just as they were then. However, the areas of *arbitrary* shapes could
@@ -30,6 +37,14 @@ Rates of change were also important. When an object moves at a constant
 rate of change, then "distance = rate $\times$ time." But what if the
 rate is not constant – can distance still be computed? Or, if distance
 is known, can we discover the rate of change?
+
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/I7guga5Ych8")
+```
+
 
 It turns out that these two concepts were related. Two mathematicians,
 [Sir Isaac Newton](https://plato.stanford.edu/entries/newton/) and [Gottfried Leibniz](https://plato.stanford.edu/entries/leibniz/), are credited with independently
@@ -52,7 +67,13 @@ knitr::include_url("https://www.youtube.com/embed/37n0cZn6Lyc")
 ```
 
 
+
 ## An Introduction To Limits {#sec:limitintro}
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/qwm3wAoMn6w")
+```
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -216,6 +237,11 @@ better. Using values "on both sides of 3" helps us identify trends.\
 knitr::include_url("https://www.youtube.com/embed/7RAiKoLCpgU")
 ```
 
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/BYWMYisNllY")
+```
+
 ### Identifying When Limits Do Not Exist {-}
 
 A function may not have a limit for all values of $x$. That is, we
@@ -242,7 +268,7 @@ We’ll explore each of these in turn.
 ### Different values approached from left and right {#sec:nolimit1}
 
 Explore why $\displaystyle\lim_{x\to 1} f(x)$ does not exist, where 
-$$f(x) = \begin{cases}{cl} x^2-2x+3 & x\leq 1 \\ x & x>1 \end{cases}.$$
+$$f(x) = \begin{cases} x^2-2x+3 & x\leq 1 \\ x & x>1 \end{cases}.$$
 
 ```{r nolimit1, fig.cap="Graphically approximating the limit of a piecewise function.", echo=FALSE, out.extra='allow="fullscreen"'}
 knitr::include_url("https://www.geogebra.org/calculator/qmysttuf?embed")
@@ -323,7 +349,7 @@ $\displaystyle\lim_{x\to 0}\sin(1/x)$ does not exist.
 ```{r nolimit3table, class.output="centered"}
 tibble::tibble(x=c(0.1,0.01,0.001, 0.0001,0.00001), "$\\sin(1/x)$"=sin(1/x)) %>% 
   mutate(x=format(x, scientific = FALSE)) %>% 
-  knitr::kable(caption="Values of $f(x)$ with $x$ near 1.",
+  knitr::kable(caption="Values of $f(x)$ with $x$ near 0.",
                table.attr='class="centered"', format="html")
 ```
 
@@ -354,7 +380,7 @@ This difference quotient can be thought of as the familiar "rise over
 run" used to compute the slopes of lines. In fact, that is essentially
 what we are doing: given two points on the graph of $f$, we are finding
 the slope of the *secant line* through those two points. See Figure
-\@ref(fig:diffquot1).
+\@ref(fig:diffquot).
 
 Now consider finding the average speed on another time interval. We
 again start at $x=1$, but consider the position of the particle $h$
@@ -425,7 +451,7 @@ continue our introduction and approximate the value of limits.\
 
 
 
-## Epsilon-Delta Definition of a Limit {#sec:limit_def}
+## Epsilon-Delta Definition of a Limit {#sec:limitdef}
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -494,6 +520,10 @@ if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
 ```
 
 
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Gw1k8A0chjg")
+```
+
 Mathematicians often enjoy writing ideas without using any words. Here
 is the wordless definition of the limit:
 
@@ -516,7 +546,6 @@ understand the ideas.\
 Show that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2$.
 
 
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/pdu3nRE8x1I")
 ```
@@ -535,7 +564,10 @@ So, what is the desired $x$ tolerance?  Remember, we want to find a symmetric in
 $4 - \delta < x < 4 + \delta$.  The lower bound of $2.25$ is $1.75$ units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances; we must have $\delta < 1.75$. See Figure \@ref(fig:chooseed).
 
 
-		
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/aJ33_ItUoLk")
+```
+
 ```{r chooseed, fig.cap="Epsilon delta visualization in Desmos. First set epsilon to determine the vertical tolerance, then find a corresponding delta for the horizontal tolerance which keeps the function within the horizontal band.", echo=FALSE, out.extra='allow="fullscreen"'}
 knitr::include_url("https://www.desmos.com/calculator/nmihcrca3u")
 ```
@@ -577,6 +609,12 @@ Since we want this last interval to describe an $x$ tolerance around 4, we have 
 
 We can check this for our previous values.  If $\epsilon=0.5$, the formula gives
 $\delta < 4(0.5) - (0.5)^2 = 1.75$ and when $\epsilon=0.01$, the formula gives $\delta < 4(0.01) - (0.01)^2 = 0.399$.
+
+
+		
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Yt9l19jrnBU")
+```
 
 
 So given any $\epsilon >0$, set $\delta < 4\epsilon - \epsilon^2$. Then if $|x-4|<\delta$ (and $x\neq 4$), then $|f(x) - 2| < \epsilon$,  satisfying the definition of the limit.  We have shown formally (and finally!) that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 $.
@@ -770,6 +808,13 @@ important concept we will define in Section \@ref(sec:continuity).
 
 ### Conclusion {-}
 
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/BapEm7_GQnM")
+```
+
+
+
 This formal definition of the limit is not an easy concept grasp. Our
 examples are actually "easy" examples, using "simple" functions like
 polynomials, square–roots and exponentials. It is very difficult to
@@ -840,6 +885,27 @@ knitr::include_url("https://www.youtube.com/embed/5P2Zac-_Xhg")
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/lNbLZ2BR1gQ")
 ```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/2BNMJMxxAsM")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/l0XDW-reRlI")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/06IBnq9hXY8")
+```
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/9wKX2JgVHXA")
+```
+
 
 
 ### Example: Using basic limit properties.
@@ -920,6 +986,13 @@ Evaluate the following limit: $$\lim_{x\to 1}\frac{x^2-1}{x-1}.$$
 
 We begin by attempting to apply Theorem \@ref(thm:polyrat) and substituting 1 for $x$ in the quotient. This gives:
 		$$\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} \to \frac{0}{0},$$ an indeterminate form. We cannot apply the theorem.
+
+
+```{r limitxplus1, fig.cap="The function for Example \\@ref(ex:limitonept)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/bbheqmd3")
+```
+
+		
 \mfigure{.6}{Graphing $f$ in Example \@ref(ex_limit_onept) to understand a limit.}{fig:limitxplus1}{figures/fig_LimitXplus1}
 		
 		By graphing the function, as in Figure \@ref(fig:limitxplus1), we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
@@ -1197,6 +1270,32 @@ are very similar to the definition of the limit given in Section
 \@ref(sec:limitdef), but the notation is slightly different and
 "$x\neq c$" is replaced with either "$x<c$" or "$x>c$."
 
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/VU8lUocFAfE")
+```
+
+>
+```{definition, label="onesidedlimit", name="One Sided Limits: Left- and Right-Hand Limits", echo=TRUE}
+
+>
+Left-Hand Limit
+>
+: Let $f$ be a function defined on $(a,c)$ for some $a<c$ and let $L$ be a real number. The _limit of $f(x)$, as $x$ approaches $c$ from the left, is $L$_, or, the left-hand limit of $f$ at $c$ is $L$, denoted by  
+$$\displaystyle \lim_{x\rightarrow c^-} f(x) = L,$$
+means  given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $a<x<c$,  
+if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
+>
+Right-Hand Limit
+>
+: Let $f$ be a function defined on $(c,b)$ for some $b>c$ and let $L$ be a real number. 
+>
+The limit of $f(x)$, as $x$ approaches $c$ from the right, is $L$_, or, the right-hand limit of $f$ at $c$ is $L$, denoted by $$\displaystyle \lim_{x\rightarrow c^+} f(x) = L,$$ means  given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $c<x<b$,  
+if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
+>
+```
+
+
 Practically speaking, when evaluating a left-hand limit, we consider
 only values of $x$ "to the left of $c$," i.e., where $x<c$. The
 admittedly imperfect notation $x\to c^-$ is used to imply that we look
@@ -1207,13 +1306,64 @@ $x$ to the right of $c$, i.e., $x>c$. We can use the theorems from
 previous sections to help us evaluate these limits; we just restrict our
 view to one side of $c$.
 
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/zQ5n78F49Bo")
+```
+
+
 We practice evaluating left- and right-hand limits through a series of
-examples.\
-\
+examples.
+
+### Example: Evaluating one sided limits {#ex:onesidea}
+
+Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cases},$ as shown in Figure \@ref(fig:onesided1). Find each of the following: 
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
+```
+
+		
+```{r onesided1, fig.cap="The function for Example \\@ref(ex:onesidea)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/t9dpjyng")
+```
+
+
+1.	$\displaystyle \lim_{x\to 1^-} f(x)$
+1.	$\displaystyle \lim_{x\to 1^+} f(x)$
+1.	$\displaystyle \lim_{x\to 1} f(x)$
+1.	$\displaystyle f(1)$
+1.	$\displaystyle \lim_{x\to 0^+} f(x)$
+1.	$f(0)$
+1.	$\displaystyle \lim_{x\to 2^-} f(x)$
+1.	$f(2)$
+
+For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
+
+1.	As $x$ goes to 1 \textit{from the left}, we see that $f(x)$ is approaching the value of 1. Therefore $\displaystyle \lim_{x\to 1^-} f(x) =1.$
+1.	As $x$ goes to 1 \textit{from the right}, we see that $f(x)$ is approaching the value of 2. Recall that it does not matter that there is an ``open circle'' there; we are evaluating a limit, not the value of the function. Therefore $\displaystyle \lim_{x\to 1^+} f(x)=2$.
+1.	\textit{The} limit of $f$ as $x$ approaches 1 does not exist, as discussed in the first section. The function does not approach one particular value, but two different values from the left and the right.
+1.	Using the definition and by looking at the graph we see that $f(1) = 1$.
+1.	As $x$ goes to 0 from the right, we see that $f(x)$ is also approaching 0. Therefore $\displaystyle \lim_{x\to 0^+} f(x)=0$. Note we cannot consider a left-hand limit at 0 as $f$ is not defined for values of $x<0$.
+1.	Using the definition and the graph, $f(0) = 0$.
+1.	As $x$ goes to 2 from the left, we see that $f(x)$ is approaching the value of 1. Therefore $\displaystyle \lim_{x\to 2^-} f(x)=1.$
+1.	The graph and the definition of the function show that $f(2)$ is not defined.
+			
+----
+
+
+
 Note how the left and right-hand limits were different at $x=1$. This,
 of course, causes *the* limit to not exist. The following theorem states
 what is fairly intuitive: *the* limit exists precisely when the left and
 right-hand limits are equal.
+
+>
+```{theorem, label="leftrightlimits", name="Limits and One Sided Limits", echo=TRUE}
+Let $f$ be a function defined on an open interval $I$ containing $c$. Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{ and } \quad \lim_{x\to c^+}f(x) = L.$$
+```  
+
 
 The phrase "if, and only if" means the two statements are *equivalent*:
 they are either both true or both false. If the limit equals $L$, then
@@ -1221,23 +1371,110 @@ the left and right hand limits both equal $L$. If the limit is not equal
 to $L$, then at least one of the left and right-hand limits is not equal
 to $L$ (it may not even exist).
 
-One thing to consider in Examples \[exonesidea\] – \[exonesided\] is
+One thing to consider in Examples \@ref(ex:onesidea) – \@ref(ex:onesided) is
 that the value of the function may/may not be equal to the value(s) of
-its left/right-hand limits, even when these limits agree.\
-\
-\
-\
-In Examples \[exonesidea\] – \[exonesided\] we were asked to find
+its left/right-hand limits, even when these limits agree.
+
+
+### Example: Evaluating limits of a piecewise--defined function {#ex:onesideb}
+Let $f(x) = \begin{cases} 2-x & 0<x<1 \\ (x-2)^2 & 1<x<2 \end{cases}.$  Evaluate the following. 
+
+
+1. $\displaystyle \lim_{x\to 1^-} f(x)$
+1. $\displaystyle \lim_{x\to 1^+} f(x)$
+1. $\displaystyle \lim_{x\to 1} f(x)$
+1. $\displaystyle f(1)$
+1. $\displaystyle \lim_{x\to 0^+} f(x)$
+1. $f(0)$
+1. $\displaystyle \lim_{x\to 2^-} f(x)$
+1. $f(2)$
+
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/vE_7FG2h_LU")
+```
+
+
+In this example, we evaluate each expression using just the definition of $f$, without using a graph as we did in the previous example.
+
+
+1. As $x$ approaches 1 from the left, we consider a limit where all $x$-values are less than 1. This means we use the $2-x$ piece of the piecewise function $f$ as the domain for that piece is $(0,1)$. As the $x$-values near 1, $2-x$ approaches 1; that is, $f(x)$ approaches 1. Therefore $\displaystyle \lim_{x\to 1^-} f(x)=1.$
+1. As $x$ approaches 1 from the right, we consider a limit where all $x$-values are greater than 1. This means we use the $(x-2)^2$ piece of $f$ as the domain for that piece is $(1,2)$. As the $x$-values near 1, $(x-2)^2$ approaches 1; that is, we see that again $f(x)$ approaches 1. Therefore $\displaystyle \lim_{x\to 1+} f(x)=1$.
+1. \textit{The} limit of $f$ as $x$ approaches 1 exists and is 1, as $f$ approaches 1 from both the right and left. Therefore $\displaystyle \lim_{x\to 1} f(x)=1$.
+1. Neither piece of $f$ is defined for the $x$-value of 1; in other words, 1 is not in the domain of $f$. Therefore $f(1)$ is not defined.  
+1. As $x$ approaches  0 from the right, we consider a limit where all $x$-values are greater than 0. This means we use the $2-x$ piece of $f$. As the $x$-values near 0, $2-x$ approaches 2; that is, $f(x)$ approaches 2. So $\displaystyle \lim_{x\to 0^+} f(x)=2$.
+1. $f(0)$  is not defined as $0$ is not in the domain of $f$.
+1. As $x$ approaches  2 from the left, we consider a limit where all $x$-values are less than 2. This means we use the $(x-2)^2$ piece of $f$. As the $x$-values near 2, $(x-2)^2$ nears 0; that is, $f(x)$ approaches 0. So $\displaystyle \lim_{x\to 2^-} f(x)=0$.
+1. $f(2)$  is not defined as 2 is not in the domain of $f$.
+
+We can confirm our analytic result by consulting the graph of $f$ shown in Figure \ref{fig:onesidedb}.	Note the open circles on the graph at $x=0$, $1$ and $2$, where $f$ is not defined.	
+
+		
+```{r onesidedb, fig.cap="The function for Example \\@ref(ex:onesideb)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/y3zaqrhv")
+```
+
+
+
+### Example: Evaluating limits of a piecewise--defined function {#ex:onesidec}
+
+Let $f(x) = \begin{cases} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{cases},$ as shown in Figure \@ref(fig:onesidedc). Evaluate the following.
+
+1.  $\displaystyle \lim_{x\to 1^-} f(x)$
+1.  $\displaystyle \lim_{x\to 1^+} f(x)$
+1.  $\displaystyle \lim_{x\to 1} f(x)$
+1.  $f(1)$
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Nn6JoJRK7nk")
+```
+
+
+```{r onesidedc, fig.cap="The function for Example \\@ref(ex:onesidec)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/rjr9ejfd")
+```
+
+It is clear by looking at the graph that both the left and right-hand limits of $f$, as $x$ approaches 1, are 0. Thus it is also clear that _the_ limit is 0; i.e., $\displaystyle \lim_{x\to 1} f(x) = 0$. It is also clearly stated that $f(1) = 1$.
+
+### Example: Evaluating limits of a piecewise--defined function {#ex:onesided}
+
+Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as shown in Figure \ref{fig:onesidedd}. Evaluate the following. 
+
+1.  $\displaystyle \lim_{x\to 1^-} f(x)$
+1.  $\displaystyle \lim_{x\to 1^+} f(x)$
+1.  $\displaystyle \lim_{x\to 1} f(x)$
+1.  $f(1)$
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/HVFazve-Qxc")
+```
+
+
+
+```{r onesidedd, fig.cap="The function for Example \\@ref(ex:onesided)", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/ryxpsrqc")
+```
+
+It is clear from the definition of the function and its graph that all of the following are equal:
+$$ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.$$
+
+-----
+
+
+In Examples \@ref(ex:onesidea) – \@ref(ex:onesided) we were asked to find
 both $\displaystyle \lim_{x\to 1}f(x)$ and $f(1)$. Consider the following table:
 
-                              $\displaystyle \lim_{x\to 1}f(x)$     $f(1)$
-  -------------------------- ------------------------- -------------
-   Example \@ref(exonesidea)       does not exist             1
-   Example \@ref(exonesideb)              1              not defined
-   Example \@ref(exonesidec)              0                   1
-   Example \@ref(exonesided)              1                   1
+  Example  | $\displaystyle \lim_{x\to 1}f(x)$ | $f(1)$
+  :-----------------:  | :------------------:  | :------------:
+  \@ref(ex:onesidea)   |    does not exist     |       1
+  \@ref(ex:onesideb)   |          1            |   not defined
+  \@ref(ex:onesidec)   |          0            |       1
+  \@ref(ex:onesided)   |          1            |       1
 
-Only in Example \@ref(exonesided) do both the function and the limit
+Only in Example \@ref(ex:onesided) do both the function and the limit
 exist and agree. This seems "nice;" in fact, it seems "normal." This is
 in fact an important situation which we explore in the next section,
 entitled "Continuity." In short, a *continuous function* is one in which

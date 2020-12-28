@@ -1,0 +1,595 @@
+# The Derivative
+
+The previous chapter introduced the most fundamental of calculus topics:
+the limit. This chapter introduces the second most fundamental of
+calculus topics: the derivative. Limits describe *where* a function is
+going; derivatives describe *how fast* the function is going.
+
+## Instantaneous Rates of Change: The Derivative {#sec:derivative}
+
+A common amusement park ride lifts riders to a height then allows them
+to freefall a certain distance before safely stopping them. Suppose such
+a ride drops riders from a height of 150 feet. Students of physics may
+recall that the height (in feet) of the riders, $t$ seconds after
+freefall (and ignoring air resistance, etc.) can be accurately modeled
+by $f(t) = -16t^2+150$.
+
+Using this formula, it is easy to verify that, without intervention, the
+riders will hit the ground at $t=2.5\sqrt{1.5} \approx 3.06$ seconds.
+Suppose the designers of the ride decide to begin slowing the riders’
+fall after 2 seconds (corresponding to a height of 86 ft.). How fast
+will the riders be traveling at that time?\
+We have been given a *position* function, but what we want to compute is
+a velocity at a specific point in time, i.e., we want an *instantaneous
+velocity*. We do not currently know how to calculate this.
+
+However, we do know from common experience how to calculate an *average
+velocity*. (If we travel 60 miles in 2 hours, we know we had an average
+velocity of 30 mph.) We looked at this concept in Section
+\@ref(sec:limitintro) when we introduced the difference quotient. We have
+$$\frac{\text{change in distance}}{\text{change in time}} = \frac{\text{``\ rise\ ''}}{\text{run}} = \text{average velocity}.$$
+
+We can approximate the instantaneous velocity at $t=2$ by considering
+the average velocity over some time period containing $t=2$. If we make
+the time interval small, we will get a good approximation. (This fact is
+commonly used. For instance, high speed cameras are used to track fast
+moving objects. Distances are measured over a fixed number of frames to
+generate an accurate approximation of the velocity.)
+
+Consider the interval from $t=2$ to $t=3$ (just before the riders hit
+the ground). On that interval, the average velocity is
+$$\frac{f(3)-f(2)}{3-2} = \frac{f(3)-f(2)}{1} =-80\ \text{ft/s},$$ where
+the minus sign indicates that the riders are moving *down*. By narrowing
+the interval we consider, we will likely get a better approximation of
+the instantaneous velocity. On $[2,2.5]$ we have
+$$\frac{f(2.5)-f(2)}{2.5-2} = \frac{f(2.5)-f(2)}{0.5} =-72\ \text{ft/s}.$$
+
+We can do this for smaller and smaller intervals of time. For instance,
+over a time span of 1/10$^\text{th}$ of a second, i.e., on $[2,2.1]$, we
+have
+$$\frac{f(2.1)-f(2)}{2.1-2} = \frac{f(2.1)-f(2)}{0.1} =-65.6\ \text{ft/s}.$$
+
+Over a time span of 1/100$^\text{th}$ of a second, on $[2,2.01]$, the
+average velocity is
+$$\frac{f(2.01)-f(2)}{2.01-2} = \frac{f(2.01)-f(2)}{0.01} =-64.16\ \text{ft/s}.$$
+
+What we are really computing is the average velocity on the interval
+$[2,2+h]$ for small values of $h$. That is, we are computing
+$$\frac{f(2+h) - f(2)}{h}$$ where $h$ is small.
+
+We really want to use $h=0$, but this, of course, returns the familiar
+“$0/0$” indeterminate form. So we employ a limit, as we did in Section
+\@ref(sec:limitintro).
+
+We can approximate the value of this limit numerically with small values
+of $h$ as seen in Figure \@ref(table:falling). It looks as though the
+velocity is approaching $-64$ ft/s. Computing the limit directly gives
+$$\begin{aligned}
+\lim_{h\to 0} \frac{f(2+h)-f(2)}{h} &= \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h} \\
+                                                                                                            &=  \lim_{h\to 0}\frac{-64h-16h^2}{h} \\
+                                                                                                            &= \lim_{h\to 0}(-64 -16h) \\
+                                                                                                            &=-64.
+        \end{aligned}$$
+
+Graphically, we can view the average velocities we computed numerically
+as the slopes of secant lines on the graph of $f$ going through the
+points $(2,f(2))$ and $(2+h,f(2+h))$. In Figure \@ref(fig:derivfalling),
+the secant line corresponding to $h=1$ is shown in three contexts.
+Figure \@ref(fig:derivfalling)(a) shows a “zoomed out” version of $f$ with
+its secant line. In (b), we zoom in around the points of intersection
+between $f$ and the secant line. Notice how well this secant line
+approximates $f$ between those two points – it is a common practice to
+approximate functions with straight lines.
+
+As $h\to 0$, these secant lines approach the *tangent line*, a line that
+goes through the point $(2,f(2))$ with the special slope of $-64$. In
+parts (c) and (d) of Figure \@ref(fig:derivfalling), we zoom in around the
+point $(2,86)$. In (c) we see the secant line, which approximates $f$
+well, but not as well the tangent line shown in (d).\
+
+[cc]{} &\
+(a) & (b)\
+
+------------------------------------------------------------------------
+
+&\
+&\
+(c) & (d)\
+
+2
+
+We have just introduced a number of important concepts that we will
+flesh out more within this section. First, we formally define two of
+them.
+
+### Derivative at a Point {#def:derivative_at_a_point}
+
+Let $f$ be a continuous function on an open interval $I$ and let $c$ be
+in $I$. The [derivative of $f$ at $c$]{}, denoted ${f'}(c)$, is
+$$\lim_{h\to 0}\frac{f(c+h)-f(c)}{h},$$ provided the limit exists. If
+the limit exists, we say that [$f$ is differentiable at $c$]{}; if the
+limit does not exist, then [$f$ is not differentiable at $c$]{}. If $f$
+is differentiable at every point in $I$, then [$f$ is differentiable on
+$I$]{}.
+
+### Tangent Line {#def:tangent_line}
+
+Let $f$ be continuous on an open interval $I$ and differentiable at $c$,
+for some $c$ in $I$. The line with equation
+$\ell(x) = {f'}(c)(x-c)+f(c)$ is the **tangent line** to the graph of
+$f$ at $c$; that is, it is the line through $(c,f(c))$ whose slope is
+the derivative of $f$ at $c$.
+
+Some examples will help us understand these definitions.\
+
+### Finding derivatives and tangent lines {#ex_derv_point1}
+
+Let $f(x) = 3x^2+5x-7$. Find:
+
+1.  ${f'}(1)$
+
+2.  The equation of the tangent line to the graph of $f$ at $x=1$.
+
+<!-- -->
+
+1.  ${f'}(3)$
+
+2.  The equation of the tangent line to the graph $f$ at $x=3$.
+
+<!-- -->
+
+1.  We compute this directly using Definition
+    \@ref(def:derivativeatapoint). $$\begin{aligned}
+                            {f'}(1) &=   \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
+                                            &=  \lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
+                        
+                        
+                                            &=  \lim_{h\to 0} \frac{3h^2+11h}{h}\\
+                                            &=  \lim_{h\to 0}   (3h+11)=11.
+                                            
+                        \end{aligned}$$
+
+2.  The tangent line at $x=1$ has slope ${f'}(1)$ and goes through the
+    point $(1,f(1)) = (1,1)$. Thus the tangent line has equation, in
+    point-slope form, $y = 11(x-1) + 1$. In slope-intercept form we have
+    $y = 11x-10$.
+
+3.  Again, using the definition, $$\begin{aligned}
+                        {f'}(3) &=   \lim_{h\to 0} \frac{f(3+h)-f(3)}{h} \\
+                                        &=  \lim_{h\to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h} \\
+                                        &=  \lim_{h\to 0} \frac{3h^2+23h}{h}\\
+                                        &= \lim_{h\to 0} (3h+23) \\
+                                        &= 23.
+                        \end{aligned}$$
+
+4.  The tangent line at $x=3$ has slope $23$ and goes through the point
+    $(3,f(3)) = (3,35)$. Thus the tangent line has equation
+    $y=23(x-3)+35 = 23x-34$.
+
+A graph of $f$ is given in Figure \@ref(fig:tangent1) along with the
+tangent lines at $x=1$ and $x=3$.
+
+\
+Another important line that can be created using information from the
+derivative is the [normal line.]{} It is perpendicular to the tangent
+line, hence its slope is the opposite–reciprocal of the tangent line’s
+slope.
+
+### Normal Line {#def:normal_line}
+
+Let $f$ be continuous on an open interval $I$ and differentiable at $c$,
+for some $c$ in $I$. The **normal line** to the graph of $f$ at $c$ is
+the line with equation $$n(x) =\frac{-1}{{f'}(c)}(x-c)+f(c),$$ where
+${f'}(c)\neq 0$. When ${f'}(c)=0$, the normal line is the vertical line
+through $\big(c,f(c)\big)$; that is, $x=c$.
+
+### Finding equations of normal lines {#ex_normal1}
+
+Let $f(x) = 3x^2+5x-7$, as in Example \@ref(exdervpoint1). Find the
+equations of the normal lines to the graph of $f$ at $x=1$ and $x=3$.
+
+In Example \@ref(exdervpoint1), we found that ${f'}(1)=11$. Hence at
+$x=1$, the normal line will have slope $-1/11$. An equation for the
+normal line is $$n(x) = \frac{-1}{11}(x-1)+1.$$ The normal line is
+plotted with $y=f(x)$ in Figure \@ref(fig:normal1). Note how the line looks
+perpendicular to $f$. (A key word here is “looks.” Mathematically, we
+say that the normal line *is* perpendicular to $f$ at $x=1$ as the slope
+of the normal line is the opposite–reciprocal of the slope of the
+tangent line. However, normal lines may not always *look* perpendicular.
+The aspect ratio of the picture of the graph plays a big role in this.)
+
+We also found that ${f'}(3) = 23$, so the normal line to the graph of
+$f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is
+$$n(x) = \frac{-1}{23}(x-3)+35.$$ -
+
+\
+Linear functions are easy to work with; many functions that arise in the
+course of solving real problems are not easy to work with. A common
+practice in mathematical problem solving is to approximate difficult
+functions with not–so–difficult functions. Lines are a common choice. It
+turns out that at any given point on the graph of a differentiable
+function $f$, the best linear approximation to $f$ is its tangent line.
+That is one reason we’ll spend considerable time finding tangent lines
+to functions.
+
+One type of function that does not benefit from a tangent–line
+approximation is a line; it is rather simple to recognize that the
+tangent line to a line is the line itself. We look at this in the
+following example.\
+
+### Finding the derivative of a linear function {#ex_der_line}
+
+Consider $f(x) = 3x+5$. Find the equation of the tangent line to $f$ at
+$x=1$ and $x=7$.
+
+We find the slope of the tangent line by using Definition
+\@ref(def:derivativeatapoint).
+
+$$\begin{aligned}
+    {f'}(1) &=   \lim_{h\to 0}\frac{f(1+h)-f(1)}{h} \\
+                    &=  \lim_{h\to 0} \frac{3(1+h)+5 - (3+5)}{h}\\
+                    &=  \lim_{h\to 0} \frac{3h}{h}\\
+                    &=  \lim_{h\to 0} 3\\
+                    &= 3.
+    \end{aligned}$$
+
+We just found that ${f'}(1) = 3$. That is, we found the *instantaneous
+rate of change* of $f(x) = 3x+5$ is $3$. This is not surprising; lines
+are characterized by being the *only* functions with a *constant rate of
+change.* That rate of change is called the *slope* of the line. Since
+their rates of change are constant, their *instantaneous* rates of
+change are always the same; they are all the slope.
+
+So given a line $f(x) = ax+b$, the derivative at any point $x$ will be
+$a$; that is, ${f'}(x) = a$.
+
+It is now easy to see that the tangent line to the graph of $f$ at $x=1$
+is just $f$, with the same being true for $x=7$.
+
+\
+We often desire to find the tangent line to the graph of a function
+without knowing the actual derivative of the function. In these cases,
+the best we may be able to do is approximate the tangent line. We
+demonstrate this in the next example.\
+
+### Numerical approximation of the tangent line {#ex_der_num_approx}
+
+Approximate the equation of the tangent line to the graph of
+$f(x)=\sin x$ at $x=0$.
+
+[In order to find the equation of the tangent line, we need a slope and
+a point. The point is given to us: $(0,\sin 0) = (0,0)$. To compute the
+slope, we need the derivative. This is where we will make an
+approximation. Recall that
+$${f'}(0) \approx \frac{\sin(0+h)- \sin 0}{h}$$ for a small value of
+$h$. We choose (somewhat arbitrarily) to let $h=0.1$. Thus
+$${f'}(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.$$ Thus
+our approximation of the equation of the tangent line is
+$y = 0.9983(x-0) +0 = 0.9983x$; it is graphed in Figure
+\@ref(fig:tangentsinx). The graph seems to imply the approximation is
+rather good. ]{}
+
+\
+Recall from Section \@ref(sec:limitanalytically) that
+$ \lim_{x\to 0}\frac{\sin x}x =1$, meaning for values of $x$ near 0,
+$\sin x \approx x$. Since the slope of the line $y=x$ is 1 at $x=0$, it
+should seem reasonable that “the slope of $f(x)=\sin x$” is near 1 at
+$x=0$. In fact, since we *approximated* the value of the slope to be
+$0.9983$, we might guess the *actual value* is 1. We’ll come back to
+this later.\
+Consider again Example \@ref(exdervpoint1). To find the derivative of
+$f$ at $x=1$, we needed to evaluate a limit. To find the derivative of
+$f$ at $x=3$, we needed to again evaluate a limit. We have this process:
+
+(0,0) node (n1) \[text width=60pt,align=center\] [input specific number
+$c$ ]{} (3,0) node (n2) \[draw,text width=60pt,align=center\] [do
+something to $f$ and $c$]{} (6,0) node (n3) \[text
+width=60pt,align=center\] [return number ${f'}(c)$]{}; (n1) – (n2); (n2)
+– (n3);
+
+This process describes a *function*; given one input (the value of $c$),
+we return exactly one output (the value of ${f'}(c)$). The “do
+something” box is where the tedious work (taking limits) of this
+function occurs.
+
+Instead of applying this function repeatedly for different values of
+$c$, let us apply it just once to the variable $x$. We then take a limit
+just once. The process now looks like:
+
+(0,0) node (n1) \[text width=60pt,align=center\] [input variable $x$ ]{}
+(3,0) node (n2) \[draw,text width=60pt,align=center\] [do something to
+$f$ and $x$]{} (6,0) node (n3) \[text width=60pt,align=center\] [return
+function ${f'}(x)$]{}; (n1) – (n2); (n2) – (n3);
+
+The output is the “derivative function,” ${f'}(x)$. The ${f'}(x)$
+function will take a number $c$ as input and return the derivative of
+$f$ at $c$. This calls for a definition.
+
+### Derivative Function {#def:the_derivative}
+
+Let $f$ be a differentiable function on an open interval $I$. The
+function $${f'}(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is [the
+derivative of $f$]{}.\
+[Notation:]{}
+
+Let $y = f(x)$. The following notations all represent the derivative of
+$f$:
+$${f'}(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y).$$
+
+**Important:** The notation ${\displaystyle}\frac{dy}{dx}$ is one
+symbol; it is **not** the fraction “$dy/dx$”. The notation, while
+somewhat confusing at first, was chosen with care. A fraction–looking
+symbol was chosen because the derivative has many fraction–like
+properties. Among other places, we see these properties at work when we
+talk about the units of the derivative, when we discuss the Chain Rule,
+and when we learn about integration (topics that appear in later
+sections and chapters).\
+Examples will help us understand this definition.\
+
+### Finding the derivative of a function {#ex_deriv1}
+
+Let $f(x) = 3x^2+5x-7$ as in Example \@ref(exdervpoint1). Find
+${f'}(x)$.
+
+[We apply Definition \@ref(def:thederivative). $$\begin{aligned}
+    {f'}(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
+                    &=  \lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
+                    &=  \lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}\\
+                    &= \lim_{h\to 0} (3h+6x+5)\\
+                    &= 6x+5
+    \end{aligned}$$ So ${f'}(x) = 6x+5$. Recall earlier we found that
+${f'}(1) = 11$ and ${f'}(3) = 23$. Note our new computation of ${f'}(x)$
+affirm these facts. ]{}
+
+\
+
+### Finding the derivative of a function {#ex_deriv2}
+
+Let ${\displaystyle}f(x) = \frac{1}{x+1}$. Find ${f'}(x)$.
+
+We apply Definition \@ref(def:thederivative). $$\begin{aligned}
+        {f'}(x)  &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
+                        &=  \lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \intertext{Now find common denominator then subtract; pull $1/h$ out front to facilitate reading.}
+                        &= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
+                        &=  \lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
+    
+    
+                        &=  \lim_{h\to 0} \frac1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
+                        &=  \lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)} \\
+                        &= \frac{-1}{(x+1)(x+1)}\\
+                        &= \frac{-1}{(x+1)^2}.
+    \end{aligned}$$
+
+So ${\displaystyle}{f'}(x) = \frac{-1}{(x+1)^2}$. To practice using our
+notation, we could also state
+$${\displaystyle}\frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.$$
+-
+
+\
+
+### Finding the derivative of a function {#ex_deriv_sinx}
+
+Find the derivative of $f(x) = \sin x$.
+
+Before applying Definition \@ref(def:thederivative), note that once this
+is found, we can find the actual tangent line to $f(x) = \sin x$ at
+$x=0$, whereas we settled for an approximation in Example
+\@ref(exdernumapprox). $$\begin{aligned}
+        {f'}(x) &= \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} & & \left(\text{\scriptsize \parbox{110pt}{\centering Use trig identity $\sin(x+h) = \sin x\cos h+\cos x\sin h$}}\right) \\
+                        &= \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} & & \text{\scriptsize (regroup)}\\
+                        &= \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} & & \text{\scriptsize (split into two fractions)}\\
+                        &= \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) & & \left(\parbox{130pt}{\scriptsize use ${\displaystyle}\lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and ${\displaystyle}\lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)\\
+                        &=  \sin x\cdot 0 + \cos x \cdot 1 \\
+                        &= \cos x\ !
+        \end{aligned}$$ We have found that when $f(x) = \sin x$,
+${f'}(x) = \cos x$. This should be somewhat surprising; the result of a
+tedious limit process and the sine function is a nice function. Then
+again, perhaps this is not entirely surprising. The sine function is
+periodic – it repeats itself on regular intervals. Therefore its rate of
+change also repeats itself on the same regular intervals. We should have
+known the derivative would be periodic; we now know exactly which
+periodic function it is.
+
+Thinking back to Example \@ref(exdernumapprox), we can find the slope
+of the tangent line to $f(x)=\sin x$ at $x=0$ using our derivative. We
+approximated the slope as $0.9983$; we now know the slope is *exactly*
+$\cos 0 =1$.
+
+\
+
+### Finding the derivative of a piecewise defined function {#ex_not_diff}
+
+[ ]{} Find the derivative of the absolute value function,
+$$f(x) = |x| = \left\{\begin{array}{cc} -x & x<0 \\ x & x\geq 0\end{array}.\right.$$
+See Figure \@ref(fig:absolutevalue).
+
+We need to evaluate ${\displaystyle}\lim_{h\to0}\frac{f(x+h)-f(x)}{h}.$
+As $f$ is piecewise–defined, we need to consider separately the limits
+when $x<0$ and when $x>0$.\
+
+When $x<0$: $$\begin{aligned}
+    \frac{d}{dx}\big(-x\big)    &= \lim_{h\to 0}\frac{-(x+h) - (-x)}{h} \\
+                                                        &=  \lim_{h\to 0}\frac{-h}{h}\\
+                                                        &=  \lim_{h\to 0}-1 \\
+                                                        &=  -1.
+    \end{aligned}$$ When $x>0$, a similar computation shows that
+${\displaystyle}\frac{d}{dx}\big(x\big) = 1$.\
+We need to also find the derivative at $x=0$. By the definition of the
+derivative at a point, we have
+$${f'}(0) = \lim_{h\to0}\frac{f(0+h)-f(0)}{h}.$$ Since $x=0$ is the
+point where our function’s definition switches from one piece to the
+other, we need to consider left and right-hand limits. Consider the
+following, where we compute the left and right hand limits side by side.
+
+$$\begin{aligned}
+\lim_{h\to0^-}\frac{f(0+h)-f(0)}{h} &= \\
+\lim_{h\to0^-}\frac{-h-0}{h} &= \\
+\lim_{h\to0^-}-1 & =-1\end{aligned}$$
+
+------------------------------------------------------------------------
+
+$$\begin{aligned}
+\lim_{h\to0^+}\frac{f(0+h)-f(0)}{h} &= \\
+\lim_{h\to0^+}\frac{h-0}{h} &= \\
+\lim_{h\to0^+}1 & =1\end{aligned}$$
+
+The last lines of each column tell the story: the left and right hand
+limits are not equal. Therefore the limit does not exist at 0, and $f$
+is not differentiable at 0. So we have
+$${f'}(x) = \left\{\begin{array}{cc} -1 & x<0 \\ 1 & x>0\end{array}.\right.$$
+At $x=0$, ${f'}(x)$ does not exist; there is a jump discontinuity at 0;
+see Figure \@ref(fig:absolutevalueprime). So $f(x) = |x|$ is differentiable
+everywhere except at 0.
+
+\
+The point of non-differentiability came where the piecewise defined
+function switched from one piece to the other. Our next example shows
+that this does not always cause trouble.\
+
+### Finding the derivative of a piecewise defined function {#ex_diff_piecewise}
+
+[ ]{} Find the derivative of $f(x)$, where
+${\displaystyle}f(x) = \left\{\begin{array}{cc} \sin x & x\leq \pi/2 \\ 1 & x>\pi/2 \end{array}.\right.$
+See Figure \@ref(fig:piecewisesinx1).
+
+Using Example \@ref(exderivsinx), we know that when $x<\pi/2$,
+${f'}(x) = \cos x$. It is easy to verify that when $x>\pi/2$,
+${f'}(x) = 0$; consider:
+$$\lim_{h\to0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to0}\frac{1-1}{h} = \lim_{h\to0}0 =0.$$
+
+So far we have
+$${f'}(x) = \left\{\begin{array}{cc} \cos x & x<\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
+We still need to find ${f'}(\pi/2)$. Notice at $x=\pi/2$ that both
+pieces of ${f'}$ are 0, meaning we can state that ${f'}(\pi/2)=0$.
+
+Being more rigorous, we can again evaluate the difference quotient limit
+at $x=\pi/2$, utilizing again left and right–hand limits:\
+
+$$\begin{aligned}
+\lim_{h\to0^-}\frac{f(\pi/2+h)-f(\pi/2)}{h} &=\\
+\lim_{h\to0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}&=\\
+\lim_{h\to0^-}{ \frac{\sin(\frac{\pi}{2})\cos(h)+\sin(h)\cos(\frac{\pi}{2})-\sin(\frac{\pi}{2})}{h}}&=\\
+\lim_{h\to0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} &=\\
+0.\end{aligned}$$
+
+------------------------------------------------------------------------
+
+$$\begin{aligned}
+\lim_{h\to0^+}\frac{f(\pi/2+h)-f(\pi/2)}{h} &=\\
+\lim_{h\to0^+}\frac{1-1}{h}&=\\
+\lim_{h\to0^+}\frac{0}{h}&=\\
+0.&\\
+\phantom{0}\\
+\phantom{0}\end{aligned}$$
+
+Since both the left and right hand limits are 0 at $x=\pi/2$, the limit
+exists and ${f'}(\pi/2)$ exists (and is 0). Therefore we can fully write
+${f'}$ as
+$${f'}(x) = \left\{\begin{array}{cc} \cos x & x\leq\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
+See Figure \@ref(fig:piecewisecosx1) for a graph of this function.
+
+\
+Recall we pseudo–defined a continuous function as one in which we could
+sketch its graph without lifting our pencil. We can give a
+pseudo–definition for differentiability as well: it is a continuous
+function that does not have any “sharp corners.” One such sharp corner
+is shown in Figure \@ref(fig:absolutevalue). Even though the function $f$
+in Example \@ref(exdiffpiecewise) is piecewise–defined, the transition
+is “smooth” hence it is differentiable. Note how in the graph of $f$ in
+Figure \@ref(fig:piecewisesinx1) it is difficult to tell when $f$ switches
+from one piece to the other; there is no “corner.”
+
+**Differentiablity on Closed Intervals**\
+When we defined the derivative at a point in Definition
+\@ref(def:derivativeatapoint), we specified that the interval $I$
+over which a function $f$ was defined needed to be an open interval.
+Open intervals are required so that we can take a limit at any point $c$
+in $I$, meaning we want to approach $c$ from both the left and right.
+
+Recall we also required open intervals in Definition \@ref(def:continuous)
+when we defined what it meant for a function to be continuous. Later, we
+used one-sided limits to extend continuity to closed intervals. We now
+extend differentiability to closed intervals by again considering
+one-sided limits.
+
+Our motivation is three-fold. First, we consider “common sense.” In
+Example \@ref(exderiv1) we found that when $f(x) =  3x^2+5x-7$,
+${f'}(x) = 6x+5$, and this derivative is defined for all real numbers,
+hence $f$ is differentiable everywhere. It seems appropriate to also
+conclude that $f$ is differentiable on closed intervals, like $[0,1]$,
+as well. After all, ${f'}(x)$ is defined at both $x=0$ and $x=1$.
+
+Secondly, consider $f(x) = \sqrt{x}$. The domain of $f$ is $[0,\infty)$.
+Is $f$ differentiable on its domain – specifically, is $f$
+differentiable at $0$? (We’ll consider this in the next example.)
+
+Finally, in later sections, having the derivative defined on closed
+intervals will prove useful. One such place is Section
+\@ref(sec:arclength) where the derivative plays a role in measuring the
+length of a curve.
+
+After a formal definition of differentiability on a closed interval, we
+explore the concept in an example.
+
+### Differentiability on a Closed Interval {#def:diff_closed}
+
+Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$, and let
+the one-sided limits
+$$\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}\quad\text{and}\quad\lim_{h\to0^-}\frac{f(b+h)-f(b)}{h}$$
+exist. Then we say [$f$ is differentiable on $[a,b]$.]{}
+
+For all the functions $f$ *in this text*, we can determine
+differentiability on $[a,b]$ by considering the limits
+$\lim_{x\to a^+}{f'}(x)$ and $\lim_{x\to b^-}{f'}(x)$. This is often
+easier to evaluate than the limit of the difference quotient.\
+
+### Differentiability at an endpoint {#ex_diff_closed1}
+
+Consider $f(x) = \sqrt{x}=x^{1/2}$ and $g(x) = \sqrt{x^3}=x^{3/2}$. The
+domain of each function is $[0,\infty)$. It can be shown that each is
+differentiable on $(0,\infty)$; determine the differentiability of each
+at $x=0$.
+
+We start by considering $f$ and take the right-hand limit of the
+difference quotient: $$\begin{aligned}
+\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h} &= \lim_{h\to0^+}\frac{\sqrt{0+h}-\sqrt{0}}h \\
+ &= \lim_{h\to0^+}\frac{\sqrt{h}}h\\
+ &= \lim_{h\to0^+}\frac{1}{h^{1/2}}\ =\ \infty.
+ \end{aligned}$$ The one-sided limit of the difference quotient does not
+exist at $x=0$ for $f$; therefore $f$ is differentiable on $(0,\infty)$
+and not differentiable on $[0,\infty)$.
+
+We state (without proof) that ${f'}(x) = 1/\big(2\sqrt{x}\big)$. Note
+that $\lim_{x\to0^+}{f'}(x) = \infty$; this limit was easier to evaluate
+than the limit of the difference quotient, though it required us to
+already know the derivative of $f$.
+
+Now consider $g$: $$\begin{aligned}
+\lim_{h\to0^+}\frac{g(a+h)-g(a)}{h} &= \lim_{h\to0^+}\frac{\sqrt{(0+h)^3}-\sqrt{0}}h \\
+ &= \lim_{h\to0^+}\frac{h^{3/2}}h\\
+ &= \lim_{h\to0^+}h^{1/2}\ =\ 0.
+ \end{aligned}$$ As the one-sided limit exists at $x=0$, we conclude $g$
+is differentiable on its domain of $[0,\infty)$.
+
+We state (without proof) that ${g'}(x) = 3\sqrt{x}/2$. Note that
+$\lim_{x\to0^+}{g'}(x) = 0$; again, this limit is easier to evaluate
+than the limit of the difference quotient.
+
+The two functions are graphed in Figure \@ref(fig:diffclosed1). Note how
+$f(x) = \sqrt{x}$ seems to “go vertical” as $x$ approaches 0, implying
+the slopes of its tangent lines are growing toward infinity. Also note
+how the slopes of the tangent lines to $g(x)= \sqrt{x^3}$ approach 0 as
+$x$ approaches 0.
+
+\
+Most calculus textbooks omit this topic and simply avoid specific cases
+where it could be applied. We choose in this text to not make use of the
+topic unless it is “needed.” Many theorems in later sections require a
+function $f$ to be differentiable on an *open* interval $I$; we could
+remove the word “open” and just use “$\ldots$ on an interval $I$,” but
+choose to not do so in keeping with the current mathematical tradition.
+Our first use of differentiability on closed intervals comes in Chapter
+\@ref(chapter:appofint), where we measure the lengths of curves.\
+This section defined the derivative; in some sense, it answers the
+question of “What *is* the derivative?” The next section addresses the
+question “What does the derivative *mean*?”

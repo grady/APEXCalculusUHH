@@ -46,8 +46,12 @@ knitr::include_url("https://www.youtube.com/embed/8z07z3yeChY")
 
 ### Example: Intervals of continuity {#ex:contint1}
 
-Let $f$ be defined as shown in Figure \@ref(figcontinuous1). Give the
+Let $f$ be defined as shown in Figure \@ref(fig:continuous1). Give the
 interval(s) on which $f$ is continuous.
+
+```{r continuous1, fig.cap="The graph of $f$ in Example \\@ref(ex:contint1).", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/fxehbzf7")
+```
 
 
 We proceed by examining the three criteria for continuity.
@@ -79,6 +83,11 @@ $f(\pi) = \lfloor \pi \rfloor = 3$.) The graph of $f$ in Figure
 function.”\
 Give the intervals on which $f$ is continuous.
 
+```{r continuous2, fig.cap="The graph of $f$ in Example \\@ref(ex:contint2).", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/rvp4h3na")
+```
+
+
 We examine the three criteria for continuity.
 
 1.  The limits $\lim_{x\to c} f(x)$ do not exist at the jumps from one
@@ -93,16 +102,17 @@ We examine the three criteria for continuity.
 
 We conclude that $f$ is continuous everywhere except at integer values
 of $c$. So the intervals on which $f$ is continuous are
-$$\ldots, (-2,-1), (-1,0), (0,1), (1,2), \ldots.$$ -
+$$\ldots, (-2,-1), (-1,0), (0,1), (1,2), \ldots.$$ 
 
-\
+### Continuity on Closed Intervals {-}
+
 Our definition of continuity on an interval specifies the interval is an
 open interval. We can extend the definition of continuity to closed
 intervals by considering the appropriate one-sided limits at the
 endpoints.
 
 >
-```{theorem, name="Continuity on Closed Intervals", echo=TRUE, label="closedcontinuity"}
+```{definition, name="Continuity on Closed Intervals", echo=TRUE, label="closedcontinuity"}
 Let $f$ be defined on the closed interval $[a,b]$ for some real numbers
 $a<b$. $f$ is **continuous on $[a,b]$** if:
 >
@@ -139,7 +149,7 @@ knitr::include_url("https://www.youtube.com/embed/by3ioPN6KRM")
 ```
 
 
-### Determining intervals on which a function is continuous {#ex:contfunct1}
+### Example: Determining intervals of continuity {#ex:contfunct1}
 
 For each of the following functions, give the domain of the function and
 the interval(s) on which it is continuous.
@@ -180,7 +190,6 @@ We examine each in turn.
     easy to verify that this is indeed true, hence we conclude that
     $f(x) = |x|$ is continuous everywhere.
 
--
 
 ### Properties of Continuous Functions {-}
 
@@ -226,7 +235,7 @@ are continuous on $I$.
 ```
 
 >
-```{theorem "Continuous Functions", echo=TRUE, label="continousfunctions"}
+```{theorem "Continuous Functions", echo=TRUE, label="continuousfunctions"}
 Let $n$ be a positive integer. The following functions are continuous on
 their domains.
 >
@@ -287,7 +296,7 @@ and \@ref(thm:continuousfunctions) as appropriate.
     and $(-\infty,5]$, respectively. As $f$ is continuous only where
     each term is continuous, $f$ is continuous on $[1,5]$, the
     intersection of these two intervals. A graph of $f$ is given in
-    Figure \@ref(figcontinuous3).
+    Figure \@ref(fig:continuous3).
 
 2.  The functions $y=x$ and $y=\sin x$ are each continuous everywhere,
     hence their product is, too.
@@ -304,6 +313,12 @@ and \@ref(thm:continuousfunctions) as appropriate.
     of $[1,\infty)$ restricts its output is $[0,\infty)$, on which
     $y = \sqrt{x}$ is defined. Thus the domain of $f(x) = \sqrt{\ln x}$
     is $[1,\infty)$.
+
+```{r continuous3, fig.cap="The graph of $\\sqrt{x-1}+\\sqrt{5-x}$.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.geogebra.org/calculator/s5z7eudc")
+```
+
+
 
 ---------
 
@@ -355,6 +370,11 @@ $f(c) = y$.
 
 
 
+```{r ivt, fig.cap="A Desmos application demonstrating the Intermediate Value Theorem.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/jyrs6nxzl5")
+```
+
+
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/Fx7Qu9tZlN4")
 ```
@@ -368,6 +388,8 @@ knitr::include_url("https://www.youtube.com/embed/mwq447zC9R0")
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/2ZSqVnhtLx4")
 ```
+
+
 
 One important application of the Intermediate Value Theorem is root
 finding. Given a function $f$, we are often interested in finding values
@@ -405,10 +427,17 @@ knitr::include_url("https://www.youtube.com/embed/dx5reJRcQD0")
 ```
 
 
-### Using the Bisection Method {#ex:bisectmethod}
+### Example: The Bisection Method {#ex:bisectmethod}
 
 Approximate the root of $f(x) = x-\cos x$, accurate to three places
 after the decimal.
+
+
+
+```{r xminuscosx, fig.cap="The graph of $x-\\cos x$.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/ilsd2geszv")
+```
+
 
 Consider the graph of $f(x) = x-\cos x$, shown in Figure
 \@ref(fig:xminuscosx). It is clear that the graph crosses the $x$-axis
@@ -426,8 +455,7 @@ Iteration 2:
 :   $f(0.7)<0$, $f(0.8) > 0$, and at the midpoint, $0.75$, we have
     $f(0.75) >0 $. So replace $0.8$ with $0.75$ and repeat. Note that we
     don’t need to continue to check the endpoints, just the midpoint.
-    Thus we put the rest of the iterations in Figure
-    \@ref(table:rootfinding).
+    Thus we put the rest of the iterations in Figure 1.5.5 in the printed book.
 
 Notice that in the 12$^\text{th}$ iteration we have the endpoints of the
 interval each starting with $0.739$. Thus we have narrowed the zero down

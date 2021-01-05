@@ -1,4 +1,4 @@
-# The Derivative
+# The Derivative {#chap:derivative}
 
 The previous chapter introduced the most fundamental of calculus topics:
 the limit. This chapter introduces the second most fundamental of
@@ -102,7 +102,7 @@ We have just introduced a number of important concepts that we will
 flesh out more within this section. First, we formally define two of
 them.
 
-### Derivative at a Point {#def:derivative_at_a_point}
+```{definition, label="derivativeatapoint", name="Derivative at a Point", echo=TRUE}
 
 Let $f$ be a continuous function on an open interval $I$ and let $c$ be
 in $I$. The [derivative of $f$ at $c$]{}, denoted ${f'}(c)$, is
@@ -112,7 +112,9 @@ limit does not exist, then [$f$ is not differentiable at $c$]{}. If $f$
 is differentiable at every point in $I$, then [$f$ is differentiable on
 $I$]{}.
 
-### Tangent Line {#def:tangent_line}
+```
+
+```{definition, label="tangentline", name="Tangent Line", echo=TRUE}
 
 Let $f$ be continuous on an open interval $I$ and differentiable at $c$,
 for some $c$ in $I$. The line with equation
@@ -120,9 +122,11 @@ $\ell(x) = {f'}(c)(x-c)+f(c)$ is the **tangent line** to the graph of
 $f$ at $c$; that is, it is the line through $(c,f(c))$ whose slope is
 the derivative of $f$ at $c$.
 
+```
+
 Some examples will help us understand these definitions.\
 
-### Finding derivatives and tangent lines {#ex_derv_point1}
+```{example, label="dervpoint1", name="Finding derivatives and tangent lines", echo=TRUE}
 
 Let $f(x) = 3x^2+5x-7$. Find:
 
@@ -136,7 +140,7 @@ Let $f(x) = 3x^2+5x-7$. Find:
 
 2.  The equation of the tangent line to the graph $f$ at $x=3$.
 
-<!-- -->
+------------------------------------------------------------------------
 
 1.  We compute this directly using Definition
     \@ref(def:derivativeatapoint). $$\begin{aligned}
@@ -169,13 +173,15 @@ Let $f(x) = 3x^2+5x-7$. Find:
 A graph of $f$ is given in Figure \@ref(fig:tangent1) along with the
 tangent lines at $x=1$ and $x=3$.
 
+```
+
 \
 Another important line that can be created using information from the
 derivative is the [normal line.]{} It is perpendicular to the tangent
 line, hence its slope is the opposite–reciprocal of the tangent line’s
 slope.
 
-### Normal Line {#def:normal_line}
+```{definition, label="normalline", name="Normal Line", echo=TRUE}
 
 Let $f$ be continuous on an open interval $I$ and differentiable at $c$,
 for some $c$ in $I$. The **normal line** to the graph of $f$ at $c$ is
@@ -183,10 +189,14 @@ the line with equation $$n(x) =\frac{-1}{{f'}(c)}(x-c)+f(c),$$ where
 ${f'}(c)\neq 0$. When ${f'}(c)=0$, the normal line is the vertical line
 through $\big(c,f(c)\big)$; that is, $x=c$.
 
-### Finding equations of normal lines {#ex_normal1}
+```
+
+```{example, label="normal1", name="Finding equations of normal lines", echo=TRUE}
 
 Let $f(x) = 3x^2+5x-7$, as in Example \@ref(exdervpoint1). Find the
 equations of the normal lines to the graph of $f$ at $x=1$ and $x=3$.
+
+------------------------------------------------------------------------
 
 In Example \@ref(exdervpoint1), we found that ${f'}(1)=11$. Hence at
 $x=1$, the normal line will have slope $-1/11$. An equation for the
@@ -201,6 +211,8 @@ The aspect ratio of the picture of the graph plays a big role in this.)
 We also found that ${f'}(3) = 23$, so the normal line to the graph of
 $f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is
 $$n(x) = \frac{-1}{23}(x-3)+35.$$ -
+
+```
 
 \
 Linear functions are easy to work with; many functions that arise in the
@@ -217,10 +229,12 @@ approximation is a line; it is rather simple to recognize that the
 tangent line to a line is the line itself. We look at this in the
 following example.\
 
-### Finding the derivative of a linear function {#ex_der_line}
+```{example, label="derline", name="Finding the derivative of a linear function", echo=TRUE}
 
 Consider $f(x) = 3x+5$. Find the equation of the tangent line to $f$ at
 $x=1$ and $x=7$.
+
+------------------------------------------------------------------------
 
 We find the slope of the tangent line by using Definition
 \@ref(def:derivativeatapoint).
@@ -246,19 +260,23 @@ $a$; that is, ${f'}(x) = a$.
 It is now easy to see that the tangent line to the graph of $f$ at $x=1$
 is just $f$, with the same being true for $x=7$.
 
+```
+
 \
 We often desire to find the tangent line to the graph of a function
 without knowing the actual derivative of the function. In these cases,
 the best we may be able to do is approximate the tangent line. We
 demonstrate this in the next example.\
 
-### Numerical approximation of the tangent line {#ex_der_num_approx}
+```{example, label="dernumapprox", name="Numerical approximation of the tangent line", echo=TRUE}
 
 Approximate the equation of the tangent line to the graph of
 $f(x)=\sin x$ at $x=0$.
 
-[In order to find the equation of the tangent line, we need a slope and
-a point. The point is given to us: $(0,\sin 0) = (0,0)$. To compute the
+------------------------------------------------------------------------
+
+In order to find the equation of the tangent line, we need a slope and a
+point. The point is given to us: $(0,\sin 0) = (0,0)$. To compute the
 slope, we need the derivative. This is where we will make an
 approximation. Recall that
 $${f'}(0) \approx \frac{\sin(0+h)- \sin 0}{h}$$ for a small value of
@@ -267,7 +285,9 @@ $${f'}(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.$$ Thus
 our approximation of the equation of the tangent line is
 $y = 0.9983(x-0) +0 = 0.9983x$; it is graphed in Figure
 \@ref(fig:tangentsinx). The graph seems to imply the approximation is
-rather good. ]{}
+rather good.
+
+```
 
 \
 Recall from Section \@ref(sec:limitanalytically) that
@@ -305,7 +325,7 @@ The output is the “derivative function,” ${f'}(x)$. The ${f'}(x)$
 function will take a number $c$ as input and return the derivative of
 $f$ at $c$. This calls for a definition.
 
-### Derivative Function {#def:the_derivative}
+```{definition, label="thederivative", name="Derivative Function", echo=TRUE}
 
 Let $f$ be a differentiable function on an open interval $I$. The
 function $${f'}(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is [the
@@ -315,6 +335,8 @@ derivative of $f$]{}.\
 Let $y = f(x)$. The following notations all represent the derivative of
 $f$:
 $${f'}(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y).$$
+
+```
 
 **Important:** The notation ${\displaystyle}\frac{dy}{dx}$ is one
 symbol; it is **not** the fraction “$dy/dx$”. The notation, while
@@ -326,12 +348,14 @@ and when we learn about integration (topics that appear in later
 sections and chapters).\
 Examples will help us understand this definition.\
 
-### Finding the derivative of a function {#ex_deriv1}
+```{example, label="deriv1", name="Finding the derivative of a function", echo=TRUE}
 
 Let $f(x) = 3x^2+5x-7$ as in Example \@ref(exdervpoint1). Find
 ${f'}(x)$.
 
-[We apply Definition \@ref(def:thederivative). $$\begin{aligned}
+------------------------------------------------------------------------
+
+We apply Definition \@ref(def:thederivative). $$\begin{aligned}
     {f'}(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
                     &=  \lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
                     &=  \lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}\\
@@ -339,13 +363,17 @@ ${f'}(x)$.
                     &= 6x+5
     \end{aligned}$$ So ${f'}(x) = 6x+5$. Recall earlier we found that
 ${f'}(1) = 11$ and ${f'}(3) = 23$. Note our new computation of ${f'}(x)$
-affirm these facts. ]{}
+affirm these facts.
+
+```
 
 \
 
-### Finding the derivative of a function {#ex_deriv2}
+```{example, label="deriv2", name="Finding the derivative of a function", echo=TRUE}
 
 Let ${\displaystyle}f(x) = \frac{1}{x+1}$. Find ${f'}(x)$.
+
+------------------------------------------------------------------------
 
 We apply Definition \@ref(def:thederivative). $$\begin{aligned}
         {f'}(x)  &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
@@ -365,11 +393,15 @@ notation, we could also state
 $${\displaystyle}\frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.$$
 -
 
+```
+
 \
 
-### Finding the derivative of a function {#ex_deriv_sinx}
+```{example, label="derivsinx", name="Finding the derivative of a function", echo=TRUE}
 
 Find the derivative of $f(x) = \sin x$.
+
+------------------------------------------------------------------------
 
 Before applying Definition \@ref(def:thederivative), note that once this
 is found, we can find the actual tangent line to $f(x) = \sin x$ at
@@ -395,11 +427,19 @@ of the tangent line to $f(x)=\sin x$ at $x=0$ using our derivative. We
 approximated the slope as $0.9983$; we now know the slope is *exactly*
 $\cos 0 =1$.
 
+```
+
 \
 
-### Finding the derivative of a piecewise defined function {#ex_not_diff}
+```{example, label="notdiff", name="Finding the derivative of a piecewise defined function", echo=TRUE}
 
-[ ]{} Find the derivative of the absolute value function,
+------------------------------------------------------------------------
+
+F
+
+```
+
+ind the derivative of the absolute value function,
 $$f(x) = |x| = \left\{\begin{array}{cc} -x & x<0 \\ x & x\geq 0\end{array}.\right.$$
 See Figure \@ref(fig:absolutevalue).
 
@@ -446,9 +486,15 @@ The point of non-differentiability came where the piecewise defined
 function switched from one piece to the other. Our next example shows
 that this does not always cause trouble.\
 
-### Finding the derivative of a piecewise defined function {#ex_diff_piecewise}
+```{example, label="diffpiecewise", name="Finding the derivative of a piecewise defined function", echo=TRUE}
 
-[ ]{} Find the derivative of $f(x)$, where
+------------------------------------------------------------------------
+
+F
+
+```
+
+ind the derivative of $f(x)$, where
 ${\displaystyle}f(x) = \left\{\begin{array}{cc} \sin x & x\leq \pi/2 \\ 1 & x>\pi/2 \end{array}.\right.$
 See Figure \@ref(fig:piecewisesinx1).
 
@@ -531,24 +577,28 @@ length of a curve.
 After a formal definition of differentiability on a closed interval, we
 explore the concept in an example.
 
-### Differentiability on a Closed Interval {#def:diff_closed}
+```{definition, label="diffclosed", name="Differentiability on a Closed Interval", echo=TRUE}
 
 Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$, and let
 the one-sided limits
 $$\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}\quad\text{and}\quad\lim_{h\to0^-}\frac{f(b+h)-f(b)}{h}$$
 exist. Then we say [$f$ is differentiable on $[a,b]$.]{}
 
+```
+
 For all the functions $f$ *in this text*, we can determine
 differentiability on $[a,b]$ by considering the limits
 $\lim_{x\to a^+}{f'}(x)$ and $\lim_{x\to b^-}{f'}(x)$. This is often
 easier to evaluate than the limit of the difference quotient.\
 
-### Differentiability at an endpoint {#ex_diff_closed1}
+```{example, label="diffclosed1", name="Differentiability at an endpoint", echo=TRUE}
 
 Consider $f(x) = \sqrt{x}=x^{1/2}$ and $g(x) = \sqrt{x^3}=x^{3/2}$. The
 domain of each function is $[0,\infty)$. It can be shown that each is
 differentiable on $(0,\infty)$; determine the differentiability of each
 at $x=0$.
+
+------------------------------------------------------------------------
 
 We start by considering $f$ and take the right-hand limit of the
 difference quotient: $$\begin{aligned}
@@ -580,6 +630,8 @@ $f(x) = \sqrt{x}$ seems to “go vertical” as $x$ approaches 0, implying
 the slopes of its tangent lines are growing toward infinity. Also note
 how the slopes of the tangent lines to $g(x)= \sqrt{x^3}$ approach 0 as
 $x$ approaches 0.
+
+```
 
 \
 Most calculus textbooks omit this topic and simply avoid specific cases

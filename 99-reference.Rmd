@@ -1,5 +1,7 @@
 # Reference Material {-}
 
+## Differentiation Rules {-}
+
 $$
 \newcommand{\ds}{\displaystyle}
 \newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
@@ -7,8 +9,6 @@ $$
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
 $$
-
-### Differentiation Rules {-}
 
 1.  $\deriv{cx}{c}$
 1.  $\deriv{u\pm v}{u'\pm v'}$
@@ -47,7 +47,15 @@ $$
 1.  $\deriv{\tanh^{-1}x}{\frac1{1-x^2}}$
 1.  $\deriv{\coth^{-1}x}{\frac1{1-x^2}}$
 
-### Integration Rules  {-}
+## Integration Rules  {-}
+
+$$
+\newcommand{\ds}{\displaystyle}
+\newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\ds\int #1\ dx = #2}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+$$
 
 1.  $\myint{c\cdot f(x)}{c\int f(x)\ dx}$
 1.  $\myint{f(x)\pm g(x)}{}\\$
@@ -84,7 +92,10 @@ $$
 1.  $\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}$
 1.  $\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}$
 
-### The Unit Circle {-}
+## The Unit Circle {-}
+
+
+
 
 ```{tikz unitcircle, dev="png", echo=FALSE, cache=TRUE, fig.width=NULL}
 \begin{tikzpicture}[scale=3]
@@ -119,7 +130,15 @@ $$
 \end{tikzpicture}
 ```
 
-### Definitions of the Trigonometric Functions {-}
+## Trigonometric Functions {-}
+
+$$
+\newcommand{\ds}{\displaystyle}
+\newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\ds\int #1\ dx = #2}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+$$
 
 ### Unit Circle Definition {-}
 
@@ -178,25 +197,34 @@ $\ds\tan \theta = \frac{\text{O}}{\text{A}}$ & $\ds\cot \theta = \frac{\text{A}}
 
 
   $\ds \sin\left(\frac{\pi}{2}-x\right) = \cos x$ 
+  
   $\ds \cos\left(\frac{\pi}{2}-x\right) = \sin x$ 
+  
   $\ds \tan\left(\frac{\pi}{2}-x\right) = \cot x$ 
+  
   $\ds \csc\left(\frac{\pi}{2}-x\right) = \sec x$ 
+  
   $\ds \sec\left(\frac{\pi}{2}-x\right) = \csc x$ 
+  
   $\ds \cot\left(\frac{\pi}{2}-x\right) = \tan x$ 
 
 ### Double Angle Formulas {-}
-  $\sin 2x = 2\sin x\cos x$  
-  $\cos 2x = \cos^2x - \sin^2 x$ 
-  $\phantom{\cos 2x}= 2\cos^2x-1$ 
-  $\phantom{\cos 2x}= 1-2\sin^2x$ 
-  $\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}$
+
+  $$\sin 2x = 2\sin x\cos x$$
+  
+  $$\begin{align}\cos 2x &= \cos^2x - \sin^2 x\\ 
+  &= 2\cos^2x-1 \\
+  &= 1-2\sin^2x\\
+  \end{align}$$
+  
+  $$\ds\tan 2x = \frac{2\tan x}{1-\tan^2 x}$$
 
 ### Sum to Product Formulas {-}
 
-$\ds \sin x+\sin y = 2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$ 
-$\ds \sin x-\sin y = 2\sin \left(\frac{x-y}2\right)\cos\left(\frac{x+y}2\right)$ 
-$\ds \cos x+\cos y = 2\cos \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$ 
-$\ds \cos x-\cos y = -2\sin \left(\frac{x+y}2\right)\sin\left(\frac{x-y}2\right)$ 
+$$\ds \sin x+\sin y = 2\sin \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$$
+$$\ds \sin x-\sin y = 2\sin \left(\frac{x-y}2\right)\cos\left(\frac{x+y}2\right)$$
+$$\ds \cos x+\cos y = 2\cos \left(\frac{x+y}2\right)\cos\left(\frac{x-y}2\right)$$
+$$\ds \cos x-\cos y = -2\sin \left(\frac{x+y}2\right)\sin\left(\frac{x-y}2\right)$$
 
 ### Power--Reducing Formulas {-}
 
@@ -206,34 +234,44 @@ $\ds \tan^2x = \frac{1-\cos 2x}{1+\cos 2x}$
  
  
 ### Even/Odd Identities  {-}
-$\sin(-x) = -\sin x$ 
-$\cos (-x) = \cos x$ 
-$\tan (-x) = -\tan x$ 
-$\csc(-x) = -\csc x$ 
-$\sec (-x) = \sec x$ 
-$\cot (-x) = -\cot x$ 
- 
+
+$$\begin{align}
+\sin(-x) &= -\sin x\\
+\cos (-x) &= \cos x\\
+\tan (-x) &= -\tan x\\ 
+\csc(-x) &= -\csc x\\
+\sec (-x) &= \sec x\\ 
+\cot (-x) &= -\cot x
+ \end{align}$$
 
  
 ### Product to Sum Formulas {-}
 $\ds \sin x\sin y = \frac12 \big(\cos(x-y) - \cos (x+y)\big)$ 
+
 $\ds \cos x\cos y = \frac12\big(\cos (x-y) +\cos (x+y)\big)$ 
+
 $\ds \sin x\cos y = \frac12 \big(\sin(x+y) + \sin (x-y)\big)$ 
  
  
 ### Angle Sum/Difference Formulas  {-}
+
 $\sin (x\pm y) = \sin x\cos y \pm \cos x\sin y$ 
+
 $\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y$ 
+
 $\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}$
  
 
-###   Areas and Volumes {-}
+##   Areas and Volumes {-}
  
-%\begin{tabular}{cc}
- %
-%
+$$
+\newcommand{\ds}{\displaystyle}
+\newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\ds\int #1\ dx = #2}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+$$ 
  
-   
 ### Triangles {-}
 
   $h=a\sin \theta$ 
@@ -412,7 +450,15 @@ $\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}$
 ```   
  
 
-###   Algebra {-}
+##   Algebra {-}
+
+$$
+\newcommand{\ds}{\displaystyle}
+\newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\ds\int #1\ dx = #2}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+$$
 
 ###   Factors and Zeros of Polynomials {-}
 Let $p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ be a polynomial.  If $p(a)=0$, then $a$ is a $zero$ of the polynomial and a solution
@@ -465,7 +511,7 @@ $ac x^3 + adx^2 + bcx + bd = ax^2(cx+d)+b(cx+d)=(ax^2+b)(cx+d)$
 
 ###   Arithmetic Operations  {-}
 
-$
+$$
 \begin{array}{lll}
 ab+ac=a(b+c) \qquad \qquad & \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \qquad \qquad & \displaystyle \frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}\\	\\
 \displaystyle\frac{\left(\displaystyle\frac{a}{b}\right)}{\left(\displaystyle\frac{c}{d}\right)}=\left(\frac{a}{b}\right)\left(\frac{d}{c}\right)=\frac{ad}{bc} 
@@ -473,19 +519,28 @@ ab+ac=a(b+c) \qquad \qquad & \displaystyle \frac{a}{b}+\frac{c}{d} = \frac{ad+bc
 &\displaystyle \frac{a}{\left(\displaystyle\frac{b}{c}\right)} =\displaystyle \frac{ac}{b}\\ \\
 a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}&\displaystyle\frac{a-b}{c-d}=\frac{b-a}{d-c}&\displaystyle\frac{ab+ac}{a}=b+c\\
 \end{array}
-$ 
+$$ 
 
 ### Exponents and Radicals {-}
 
 $$
 \begin{array}{llllll}
-a^0=1, \; \; a \ne 0 \quad & (ab)^x=a^xb^x \quad & a^xa^y = a^{x+y}\quad  & \sqrt{a}=a^{1/2}   &\displaystyle \frac{a^x}{a^y}=a^{x-y}  &\sqrt[n]{a}=a^{1/n}\\[15pt]
-\left(\displaystyle\frac{a}{b}\right)^x=\displaystyle\frac{a^x}{b^x} &\sqrt[n]{a^m}=a^{m/n} & a^{-x}=\displaystyle\frac{1}{a^x} & \sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b} \quad &
+a^0=1, \; \; a \ne 0 \quad & (ab)^x=a^xb^x \quad & a^xa^y = a^{x+y}\quad \\
+\sqrt{a}=a^{1/2}   &\displaystyle \frac{a^x}{a^y}=a^{x-y}  &\sqrt[n]{a}=a^{1/n}\\
+\left(\displaystyle\frac{a}{b}\right)^x=\displaystyle\frac{a^x}{b^x} &\sqrt[n]{a^m}=a^{m/n} & a^{-x}=\displaystyle\frac{1}{a^x} \\ \sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b} \quad &
 (a^x)^y=a^{xy} \quad& \displaystyle\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}
 \end{array}
 $$
 
-###   Additional Formulas {-}
+##   Additional Formulas {-}
+
+$$
+\newcommand{\ds}{\displaystyle}
+\newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
+\newcommand{\myint}[2]{\ds\int #1\ dx = #2}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+$$
 
 ###   Summation Formulas  {-}
 

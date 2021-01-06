@@ -14,9 +14,42 @@ description: "This is a minimal example of using the bookdown package to write a
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE)
 library(tidyverse)
+
+eng_ggb <- function(options){
+  `%n%` <- knitr:::`%n%`
+  options$echo <- FALSE
+  options$results <- 'asis'
+  options$fig.num <- 1L
+  options$fig.show <- 'asis'
+  
+  code <- yaml::yaml.load(options$code)
+  code$id <- code$id %n% options$label
+  code$width <- code$width %n% options$width %n% 770
+  code$height <- code$height %n% options$height %n% 400
+  
+  options$fig.cap <- options$fig.cap %n% code$caption 
+  
+  options$json <- jsonlite::toJSON(code, auto_unbox = TRUE)
+  
+  out = if (options$eval && knitr:::is_html_output(excludes = 'markdown')){
+    knitr:::add_html_caption(options,
+    knitr:::one_string(c(
+      stringr::str_interp('<div id="${label}"></div>', options),
+      '<script type="text/javascript">', 
+      stringr::str_interp('window.addEventListener("load", function(){
+                          (new GGBApplet(${json}, true)).inject("${label}");
+                          });', options),
+      '</script>'
+    )))
+  }
+  knitr::engine_output(options, options$code, out)
+}
+knitr::knit_engines$set(geogebra = eng_ggb)
 ```
 
 # Preface {-}
+
+
 
 ![CC-BY-NC](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc.svg)
 

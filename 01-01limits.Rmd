@@ -98,8 +98,9 @@ For values of $x$ near 1, it seems that $y$ takes on values near $0.85$.
 In fact, when $x=1$, then $y=\frac{\sin 1}{1} \approx 0.84$, so it makes
 sense that when $x$ is "near" 1, $y$ will be "near" $0.84$.
 
-```{r sinxoverx, fig.cap="Graph of $f(x)=\\sin x / x$.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/pbwtkz3r?embed")
+```{geogebra, sinxoverx}
+material_id: pbwtkz3r 
+caption: "Graph of $f(x)=\\sin x/x$."
 ```
 
 Consider this again at a different value for $x$. When $x$ is near 0,
@@ -191,8 +192,9 @@ numerically approximate the limit, create a table of values where the
 $x$ values are near 3. This is done in Figures \@ref(fig:limit1) and
 Table \@ref(tab:limit1table), respectively.
 
-```{r limit1, fig.cap="Graphically approximating the limit of a rational function.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/ahxgeetr?embed")
+```{geogebra limit1}
+material_id: ahxgeetr
+caption: Graphically approximating the limit of a rational function.
 ```
 
 ```{r limit1table, class.output="centered"}
@@ -270,8 +272,9 @@ We’ll explore each of these in turn.
 Explore why $\displaystyle\lim_{x\to 1} f(x)$ does not exist, where 
 $$f(x) = \begin{cases} x^2-2x+3 & x\leq 1 \\ x & x>1 \end{cases}.$$
 
-```{r nolimit1, fig.cap="Graphically approximating the limit of a piecewise function.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/qmysttuf?embed")
+```{geogebra nolimit1}
+material_id: qmysttuf
+caption: "This function has no limit as $x \\to 1$."
 ```
 
 ```{r nolimit1table, class.output="centered"}
@@ -312,9 +315,11 @@ $f(x)$ is not approaching a single number, we conclude that
 $$\lim_{x\to 1}\frac{1}{(x-1)^2}$$ does not exist.
 
 
-```{r nolimit2, fig.cap="A function that grows without bound.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/q9kc2gtt?embed")
+```{geogebra, nolimit2}
+material_id: q9kc2gtt
+caption: "A function that grows without bound as $x \\to 1$."
 ```
+
 
 ```{r nolimit2table, class.output="centered"}
 tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>% 
@@ -330,9 +335,9 @@ Explore why $\displaystyle \lim_{x\to 0}\sin(1/x)$ does not exist.
 knitr::include_url("https://www.youtube.com/embed/gGvvFX5QyjE")
 ```
 
-
-```{r nolimit3, fig.cap="A function that oscillates at the limit point.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/ewgs887d?embed")
+```{geogebra nolimit3}
+material_id: ewgs887d
+caption: "A function that oscillates as $x\\to 0$"
 ```
 
 A graphs of $f(x) = \sin(1/x)$ is given in Figure \@ref(fig:nolimit3).
@@ -406,9 +411,9 @@ to wonder what the limit of the difference quotient is as $h$ approaches
 0. That is, $$\lim_{h\to 0} \frac{f(1+h)-f(1)}{h} = \text{ ? }$$
 
 
-
-```{r diffquot, fig.cap="The secant lines of $f(x)$ at a point $a$. Move the slider for $h$ to investigate the limit of the difference quotient.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/cgazabpr?embed")
+```{geogebra diffquot}
+material_id: cgazabpr
+caption: "The secant lines of $f(x)$ at a point $a$. Move the slider for $h$ to investigate the limit of the difference quotient."
 ```
 
 As we do not yet have a true definition of a limit nor an exact
@@ -447,10 +452,6 @@ our study of finding limits analytically. In the following exercises, we
 continue our introduction and approximate the value of limits.\
 
 
-
-
-
-
 ## Epsilon-Delta Definition of a Limit {#sec:limitdef}
 
 
@@ -484,8 +485,6 @@ The definition we describe in this section comes from formalizing
     corresponding value $y=f(x)$ is within a certain *tolerance level*
     of $L$.
 
-
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/npoSY-AFvOY")
 ```
@@ -511,7 +510,6 @@ positive (but typically small) values. Finally, we have the formal
 definition of the limit with the notation seen in the previous section.
 
 
-> 
 ```{definition, name="The Limit of a Function $f$ at a point $c$.", label="limit", echo=TRUE}
 Let $I$ be an open interval containing $c$, and let $f$ be a function defined on $I$, except possibly at $c$. The **limit of $f(x)$, as $x$ approaches $c$, is $L$**, denoted by  
 $$\displaystyle \lim_{x\rightarrow c} f(x) = L,$$
@@ -854,12 +852,12 @@ is $\lim_{x\to 2}(f(x)+g(x))$? Intuition tells us that the limit should
 be 5, as we expect limits to behave in a nice way. The following theorem
 states that already established limits do behave nicely.
 
->
+
 ```{theorem, label="limitalgebra", name="Basic Limit Properties", echo=TRUE}
 Let $b$, $c$, $L$ and $K$ be real numbers, let $n$ be a positive integer, and let $f$ and $g$ be functions defined on an open interval $I$ containing $c$ with the following limits: \index{limit!properties}
 $$\lim_{x\to c}f(x) = L \text{\ and\ } \lim_{x\to c} g(x) = K.$$
 The following limits hold.
->
+
 1. Constants: $\displaystyle \lim_{x\to c} b = b$
 1. Identity:						$\displaystyle \lim_{x\to c} x = c$
 1. Sums/Differences: $\displaystyle \lim_{x\to c}(f(x)\pm g(x)) = L\pm K$
@@ -921,21 +919,21 @@ knitr::include_url("https://www.youtube.com/embed/8x42kGfu9ts")
 Let $$\lim_{x\to 2} f(x)=2,\quad\lim_{x\to 2} g(x) = 3\quad \text{ and }\quad p(x) = 3x^2-5x+7.$$ Find the following limits:
 
 
-1.		$\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big)$
-1.		$\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big)$
-1.		$\displaystyle \lim_{x\to 2} p(x)$
+1. $\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big)$
+1. $\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big)$
+1. $\displaystyle \lim_{x\to 2} p(x)$
 
 Solutions:
 
-1.		Using the Sum/Difference rule, we know that $\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5$.
-1.		Using the Scalar Multiple and Sum/Difference rules, we find that $\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.$
-1.		Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
-				\begin{align*}
-				\lim_{x\to 2} p(x) &= \lim_{x\to 2} (3x^2-5x+7) \\
-				&= \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7 \\
-				 &= 3\cdot 2^2 - 5\cdot 2+7 \\
-				 &= 9
-				\end{align*}
+1. Using the Sum/Difference rule, we know that $\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big) = 2+3 =5$.
+1. Using the Scalar Multiple and Sum/Difference rules, we find that $\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big) = 5\cdot 2 + 3^2 = 19.$
+1. Here we combine the Power, Scalar Multiple, Sum/Difference and Constant Rules. We show quite a few steps, but in general these can be omitted:
+\begin{align*}
+\lim_{x\to 2} p(x) &= \lim_{x\to 2} (3x^2-5x+7) \\
+&= \lim_{x\to 2} 3x^2-\lim_{x\to 2} 5x+\lim_{x\to 2}7 \\
+&= 3\cdot 2^2 - 5\cdot 2+7 \\
+&= 9
+\end{align*}
 
 ### Limits of polynomial and rational functions {-}
 
@@ -953,10 +951,10 @@ knitr::include_url("https://www.youtube.com/embed/NGoUHZESPso")
 ```
 
 
->
+
 ```{theorem, label="polyrat", title="Limits of Polynomial and Rational Functions", echo=TRUE}
 Let $p(x)$ and $q(x)$ be polynomials and $c$ a real number. Then:
->
+
 1.	$\displaystyle \lim_{x\to c} p(x) = p(c)$
 1. $\displaystyle \lim_{x\to c} \frac{p(x)}{q(x)} = \frac{p(c)}{q(c)}$, where $q(c) \neq 0$.
 
@@ -987,18 +985,15 @@ Evaluate the following limit: $$\lim_{x\to 1}\frac{x^2-1}{x-1}.$$
 We begin by attempting to apply Theorem \@ref(thm:polyrat) and substituting 1 for $x$ in the quotient. This gives:
 		$$\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} \to \frac{0}{0},$$ an indeterminate form. We cannot apply the theorem.
 
-
-```{r limitxplus1, fig.cap="The function for Example \\@ref(ex:limitonept)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/bbheqmd3")
+```{geogebra limitxplus1}
+material_id: bbheqmd3
+caption: "The function for Example \\@ref(ex:limitonept)."
 ```
-
 		
-\mfigure{.6}{Graphing $f$ in Example \@ref(ex_limit_onept) to understand a limit.}{fig:limitxplus1}{figures/fig_LimitXplus1}
-		
-		By graphing the function, as in Figure \@ref(fig:limitxplus1), we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
-		$$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}.$$
-		The function is not defined when $x=1$, but for all other $x$, $$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1.$$
-		Clearly $\displaystyle \lim_{x\to 1}x+1 = 2$. Recall that when considering limits, we are not concerned with the value of the function at 1, only the value the function approaches as $x$ approaches 1. Since $(x^2-1)/(x-1)$ and $x+1$ are the same at all points except $x=1$, they both approach the same value as $x$ approaches 1. Therefore we can conclude that $$\lim_{x\to 1}\frac{x^2-1}{x-1}=2.$$
+By graphing the function, as in Figure \@ref(fig:limitxplus1), we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
+$$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}.$$
+The function is not defined when $x=1$, but for all other $x$, $$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1.$$
+Clearly $\displaystyle \lim_{x\to 1}x+1 = 2$. Recall that when considering limits, we are not concerned with the value of the function at 1, only the value the function approaches as $x$ approaches 1. Since $(x^2-1)/(x-1)$ and $x+1$ are the same at all points except $x=1$, they both approach the same value as $x$ approaches 1. Therefore we can conclude that $$\lim_{x\to 1}\frac{x^2-1}{x-1}=2.$$
 
 
 
@@ -1009,7 +1004,7 @@ $y=x+1$ are identical except at $x=1$. Since limits describe a value the
 function is approaching, not the value the function actually attains,
 the limits of the two functions are always equal.
 
->
+
 ```{theorem, label="limitallbut1", name="Limits of Functions Equal At All But One Point", echo=TRUE}
 Let $g(x) = f(x)$ for all $x$ in an open interval, except possibly at $c$, and let $\displaystyle \lim_{x\to c} g(x) = L$ for some real number $L$. Then $$\lim_{x\to c}f(x) = L.$$
 ```
@@ -1024,7 +1019,6 @@ We demonstrate this once more.
 ### Example: Evaluating a limit using Theorem \@ref(thm:limitallbut1) {#ex:limitallbut1}
 
 Evaluate $\displaystyle \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}$.
-
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -1067,20 +1061,28 @@ knitr::include_url("https://www.youtube.com/embed/L2ohy96L-F4")
 ```
 
 
->
+
 ```{theorem, label="limcontinuous", name="Special Limits", echo=TRUE}
 Let $c$ be a real number in the domain of the given function and let $n$ be a positive integer. The following limits hold: 
->
-1.		$\displaystyle \lim_{x\to c} \sin x = \sin c$
-1.		$\displaystyle \lim_{x\to c} \cos x = \cos c$
-1.		$\displaystyle \lim_{x\to c} \tan x = \tan c$
-1.		$\displaystyle \lim_{x\to c} \csc x = \csc c$
-1.		$\displaystyle \lim_{x\to c} \sec x = \sec c$
-1.		$\displaystyle \lim_{x\to c} \cot x = \cot c$
-1.		$\displaystyle \lim_{x\to c} a^x = a^c$ ($a>0$)
-1.		$\displaystyle \lim_{x\to c} \ln x = \ln c$
-1.		$\displaystyle \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}$
->
+
+1. $\displaystyle \lim_{x\to c} \sin x = \sin c$
+  
+1. $\displaystyle \lim_{x\to c} \cos x = \cos c$
+
+1. $\displaystyle \lim_{x\to c} \tan x = \tan c$
+
+1. $\displaystyle \lim_{x\to c} \csc x = \csc c$
+
+1. $\displaystyle \lim_{x\to c} \sec x = \sec c$
+
+1. $\displaystyle \lim_{x\to c} \cot x = \cot c$
+
+1. $\displaystyle \lim_{x\to c} a^x = a^c$ ($a>0$)
+  
+1. $\displaystyle \lim_{x\to c} \ln x = \ln c$
+
+1. $\displaystyle \lim_{x\to c} \sqrt[n]{x} = \sqrt[n]{c}$
+
 ```
 
 
@@ -1088,22 +1090,28 @@ Let $c$ be a real number in the domain of the given function and let $n$ be a po
 
 Evaluate the following limits. 
 
-1.		$\displaystyle \lim_{x\to \pi} \cos x$
-1.		$\displaystyle \lim_{x\to 3} (\sec^2x - \tan^2 x)$
-1.		$\displaystyle \lim_{x\to \pi/2} \cos x\sin x$
-1.		$\displaystyle \lim_{x\to 1} e^{\ln x}$
-1.		$\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
+1. $\displaystyle \lim_{x\to \pi} \cos x$
+
+1. $\displaystyle \lim_{x\to 3} (\sec^2x - \tan^2 x)$
+
+1. $\displaystyle \lim_{x\to \pi/2} \cos x\sin x$
+
+1. $\displaystyle \lim_{x\to 1} e^{\ln x}$
+
+1. $\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
 
 Solutions:
 
-1.		This is a straightforward application of Theorem \@ref(thm:lim_continuous). $\displaystyle \lim_{x\to \pi} \cos x = \cos \pi = -1$.
-1.		We can approach this in at least two ways. First, by directly applying Theorem \@ref(thm:lim_continuous), we have:
-				$$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.$$ Using the Pythagorean Theorem, this last expression is 1; therefore $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.$$ We can also use the Pythagorean Theorem from the start. $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,$$ using the Constant limit rule. Either way, we find the limit is 1.
-1.		Applying the Product limit rule of Theorem \@ref(thm:limit_algebra) and Theorem \@ref(thm:lim_continuous) gives $$\displaystyle \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.$$
-1.		Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that $e^{\ln x} = x$ and evaluate $\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.$ 
+1. This is a straightforward application of Theorem \@ref(thm:lim_continuous). $\displaystyle \lim_{x\to \pi} \cos x = \cos \pi = -1$.
+
+1. We can approach this in at least two ways. First, by directly applying Theorem \@ref(thm:lim_continuous), we have:	$$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.$$ Using the Pythagorean Theorem, this last expression is 1; therefore $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.$$ We can also use the Pythagorean Theorem from the start. $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,$$ using the Constant limit rule. Either way, we find the limit is 1.
+
+1. Applying the Product limit rule of Theorem \@ref(thm:limit_algebra) and Theorem \@ref(thm:lim_continuous) gives $$\displaystyle \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.$$
+
+1. Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that $e^{\ln x} = x$ and evaluate $\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.$ 
 We can also use the limit Composition Rule of Theorem \@ref(thm:limit_algebra). Using Theorem \@ref(thm:lim_continuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
 
-1.		We encountered this limit in Section \@ref(sec:limit_intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+1. We encountered this limit in Section \@ref(sec:limit_intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
 
 ### Squeeze Theorem {-}
 
@@ -1126,12 +1134,10 @@ have the same limit at $c$, and $g$ is always "squeezed" between them,
 then $g$ must have the same limit as well. That is what the Squeeze
 Theorem states.
 
->
 ```{theorem, name="Squeeze Theorem", label="sqz", echo=TRUE}
 Let $f$, $g$ and $h$ be functions on an open interval $I$ containing $c$ such that for all $x$ in $I$, $f(x)\leq g(x) \leq h(x).$ 
->
+
 If $$\lim_{x\to c} f(x) = L = \lim_{x\to c} h(x),$$ then $$\lim_{x\to c} g(x) = L.$$
->
 ```
 
 
@@ -1153,7 +1159,6 @@ knitr::include_url("https://www.youtube.com/embed/pgjv3ojtXh4")
 knitr::include_url("https://www.desmos.com/calculator/291p7twtnd")
 ```
 
-
 Two notes about the previous example are worth mentioning. First, one
 might be discouraged by this application, thinking "I would *never* have
 come up with that on my own. This is too hard!" Don’t be discouraged;
@@ -1169,24 +1174,25 @@ is: for small $x$, the functions $y=x$ and $y=\sin x$ are essentially
 indistinguishable.\
 
 
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/Wd464IIls5Y")
 ```
 
-
 We include this special limit, along with three others, in the following
 theorem.
 
->
+
 ```{theorem, label="speciallimits", name="Special Limits", echo=TRUE}
 These special limits are useful in finding limits of difference quotients.
->
+
 1. $\displaystyle \lim_{x\to 0} \frac{\sin x}{x} = 1$
+  
 1. $\displaystyle \lim_{x\to 0} \frac{\cos x-1}{x} = 0$
+
 1. $\displaystyle \lim_{x\to 0} (1+x)^\frac1x = e$
+
 1. $\displaystyle \lim_{x\to 0} \frac{e^x-1}{x} = 1$
->
+
 ```
 
 A short word on how to interpret the latter three limits. We know that
@@ -1204,8 +1210,6 @@ approximately $2.718.$
 
 In the fourth limit, we see that as $x\to 0$, $e^x$ approaches 1 "just
 as fast" as $x\to 0$, resulting in a limit of 1.\
-
-
 
 
 
@@ -1275,24 +1279,21 @@ are very similar to the definition of the limit given in Section
 knitr::include_url("https://www.youtube.com/embed/VU8lUocFAfE")
 ```
 
->
 ```{definition, label="onesidedlimit", name="One Sided Limits: Left- and Right-Hand Limits", echo=TRUE}
 
->
 Left-Hand Limit
->
+
 : Let $f$ be a function defined on $(a,c)$ for some $a<c$ and let $L$ be a real number. The _limit of $f(x)$, as $x$ approaches $c$ from the left, is $L$_, or, the left-hand limit of $f$ at $c$ is $L$, denoted by  
 $$\displaystyle \lim_{x\rightarrow c^-} f(x) = L,$$
 means  given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $a<x<c$,  
 if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
->
+
 Right-Hand Limit
->
+
 : Let $f$ be a function defined on $(c,b)$ for some $b>c$ and let $L$ be a real number. 
->
+
 The limit of $f(x)$, as $x$ approaches $c$ from the right, is $L$_, or, the right-hand limit of $f$ at $c$ is $L$, denoted by $$\displaystyle \lim_{x\rightarrow c^+} f(x) = L,$$ means  given any $\epsilon > 0$, there exists $\delta > 0$ such that for all $c<x<b$,  
 if  $|x - c| < \delta$, then $|f(x) - L| < \epsilon$.
->
 ```
 
 
@@ -1317,9 +1318,11 @@ examples.
 
 ### Example: Evaluating one sided limits {#ex:onesidea}
 
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
+```
+
 Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cases},$ as shown in Figure \@ref(fig:onesided1). Find each of the following: 
-
-
 
 1.	$\displaystyle \lim_{x\to 1^-} f(x)$
 1.	$\displaystyle \lim_{x\to 1^+} f(x)$
@@ -1331,15 +1334,10 @@ Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cas
 1.	$f(2)$
 
 
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
+```{geogebra onesided1}
+material_id: t9dpjyng
+caption: "The function for Example \\@ref(ex:onesidea)"
 ```
-
-		
-```{r onesided1, fig.cap="The function for Example \\@ref(ex:onesidea)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/t9dpjyng")
-```
-
 
 For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
 
@@ -1361,7 +1359,7 @@ of course, causes *the* limit to not exist. The following theorem states
 what is fairly intuitive: *the* limit exists precisely when the left and
 right-hand limits are equal.
 
->
+
 ```{theorem, label="leftrightlimits", name="Limits and One Sided Limits", echo=TRUE}
 Let $f$ be a function defined on an open interval $I$ containing $c$. Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{ and } \quad \lim_{x\to c^+}f(x) = L.$$
 ```  
@@ -1412,14 +1410,18 @@ In this example, we evaluate each expression using just the definition of $f$, w
 
 We can confirm our analytic result by consulting the graph of $f$ shown in Figure \ref{fig:onesidedb}.	Note the open circles on the graph at $x=0$, $1$ and $2$, where $f$ is not defined.	
 
-		
-```{r onesidedb, fig.cap="The function for Example \\@ref(ex:onesideb)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/y3zaqrhv")
+
+```{geogebra onesidedb}
+material_id: y3zaqrhv
+caption: "The function for Example \\@ref(ex:onesideb)"
 ```
 
-
-
 ### Example: Evaluating limits of a piecewise--defined function {#ex:onesidec}
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Nn6JoJRK7nk")
+```
+
 
 Let $f(x) = \begin{cases} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{cases},$ as shown in Figure \@ref(fig:onesidedc). Evaluate the following.
 
@@ -1429,18 +1431,19 @@ Let $f(x) = \begin{cases} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{cases},
 1.  $f(1)$
 
 
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/Nn6JoJRK7nk")
-```
-
-
-```{r onesidedc, fig.cap="The function for Example \\@ref(ex:onesidec)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/rjr9ejfd")
+```{geogebra onesidedc}
+material_id: rjr9ejfd
+caption: "The function for Example \\@ref(ex:onesidec)"
 ```
 
 It is clear by looking at the graph that both the left and right-hand limits of $f$, as $x$ approaches 1, are 0. Thus it is also clear that _the_ limit is 0; i.e., $\displaystyle \lim_{x\to 1} f(x) = 0$. It is also clearly stated that $f(1) = 1$.
 
 ### Example: Evaluating limits of a piecewise--defined function {#ex:onesided}
+
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/HVFazve-Qxc")
+```
 
 Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as shown in Figure \ref{fig:onesidedd}. Evaluate the following. 
 
@@ -1450,15 +1453,12 @@ Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as
 1.  $f(1)$
 
 
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/HVFazve-Qxc")
+
+```{geogebra onesidedd}
+material_id: ryxpsrqc
+caption: "The function for Example \\@ref(ex:onesided)"
 ```
 
-
-
-```{r onesidedd, fig.cap="The function for Example \\@ref(ex:onesided)", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/ryxpsrqc")
-```
 
 It is clear from the definition of the function and its graph that all of the following are equal:
 $$ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.$$

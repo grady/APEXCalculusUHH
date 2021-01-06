@@ -26,7 +26,7 @@ eng_ggb <- function(options){
   code$id <- code$id %n% options$label
   code$width <- code$width %n% options$width %n% 770
   code$height <- code$height %n% options$height %n% 400
-  
+  code$AppName <- code$AppName %n% "graphing"
   options$fig.cap <- options$fig.cap %n% code$caption 
   
   options$json <- jsonlite::toJSON(code, auto_unbox = TRUE)

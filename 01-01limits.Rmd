@@ -1102,16 +1102,16 @@ Evaluate the following limits.
 
 Solutions:
 
-1. This is a straightforward application of Theorem \@ref(thm:lim_continuous). $\displaystyle \lim_{x\to \pi} \cos x = \cos \pi = -1$.
+1. This is a straightforward application of Theorem \@ref(thm:limcontinuous). $\displaystyle \lim_{x\to \pi} \cos x = \cos \pi = -1$.
 
-1. We can approach this in at least two ways. First, by directly applying Theorem \@ref(thm:lim_continuous), we have:	$$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.$$ Using the Pythagorean Theorem, this last expression is 1; therefore $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.$$ We can also use the Pythagorean Theorem from the start. $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,$$ using the Constant limit rule. Either way, we find the limit is 1.
+1. We can approach this in at least two ways. First, by directly applying Theorem \@ref(thm:limcontinuous), we have:	$$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \sec^23-\tan^23.$$ Using the Pythagorean Theorem, this last expression is 1; therefore $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = 1.$$ We can also use the Pythagorean Theorem from the start. $$\lim_{x\to 3} (\sec^2x - \tan^2 x) = \lim_{x\to 3} 1 = 1,$$ using the Constant limit rule. Either way, we find the limit is 1.
 
-1. Applying the Product limit rule of Theorem \@ref(thm:limit_algebra) and Theorem \@ref(thm:lim_continuous) gives $$\displaystyle \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.$$
+1. Applying the Product limit rule of Theorem \@ref(thm:limitalgebra) and Theorem \@ref(thm:limcontinuous) gives $$\displaystyle \lim_{x\to \pi/2} \cos x\sin x = \cos (\pi/2)\sin(\pi/2) = 0\cdot 1 = 0.$$
 
 1. Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that $e^{\ln x} = x$ and evaluate $\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.$ 
-We can also use the limit Composition Rule of Theorem \@ref(thm:limit_algebra). Using Theorem \@ref(thm:lim_continuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
+We can also use the limit Composition Rule of Theorem \@ref(thm:limitalgebra). Using Theorem \@ref(thm:limcontinuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
 
-1. We encountered this limit in Section \@ref(sec:limit_intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+1. We encountered this limit in Section \@ref(sec:limitintro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
 
 ### Squeeze Theorem {-}
 
@@ -1280,6 +1280,7 @@ knitr::include_url("https://www.youtube.com/embed/VU8lUocFAfE")
 ```
 
 ```{definition, label="onesidedlimit", name="One Sided Limits: Left- and Right-Hand Limits", echo=TRUE}
+One sided lmits are concerned with $x$ values on one side of the point $c$.
 
 Left-Hand Limit
 
@@ -1440,10 +1441,6 @@ It is clear by looking at the graph that both the left and right-hand limits of 
 
 ### Example: Evaluating limits of a piecewise--defined function {#ex:onesided}
 
-
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/HVFazve-Qxc")
-```
 
 Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as shown in Figure \ref{fig:onesidedd}. Evaluate the following. 
 

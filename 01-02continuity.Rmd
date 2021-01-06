@@ -8,15 +8,12 @@ indicator of what $f(1)$ actually is. This can be problematic; functions
 can tend to one value but attain another. This section focuses on
 functions that *do not* exhibit such behavior.
 
->
 ```{definition, name="Continuous Function", echo=TRUE, label="continuous"}
 Let $f$ be a function defined on an open interval $I$ containing $c$.
->
 1.  $f$ is **continuous at $c$** if $\displaystyle \lim_{x\to c}f(x) = f(c)$.
 2.  $f$ is **continuous on $I$** if $f$ is continuous at $c$ for all
     values of $c$ in $I$. If $f$ is continuous on $(-\infty,\infty)$, we
     say $f$ is **continuous everywhere**.
->
 ```
 
 
@@ -111,15 +108,14 @@ open interval. We can extend the definition of continuity to closed
 intervals by considering the appropriate one-sided limits at the
 endpoints.
 
->
 ```{definition, name="Continuity on Closed Intervals", echo=TRUE, label="closedcontinuity"}
 Let $f$ be defined on the closed interval $[a,b]$ for some real numbers
 $a<b$. $f$ is **continuous on $[a,b]$** if:
->
+
 1.  $f$ is continuous on $(a,b)$,
 2.  $\displaystyle \lim_{x\to a^+} f(x) = f(a)$ and
 3.  $\displaystyle \lim_{x\to b^-} f(x) = f(b)$.
->
+
 ```
 
 We can make the appropriate adjustments to talk about continuity on
@@ -214,16 +210,15 @@ knitr::include_url("https://www.youtube.com/embed/GTiNiZT5ukg")
 ```
 
 
->
 ```{theorem "Properties of Continuous Functions", echo=TRUE, label="continuityalgebra"}
 Let $f$ and $g$ be continuous functions on an interval $I$, let $c$ be a
 real number and let $n$ be a positive integer. The following functions
 are continuous on $I$.
->
+
 Let $f$ and $g$ be continuous functions on an interval $I$, let $c$ be a
 real number and let $n$ be a positive integer. The following functions
 are continuous on $I$.
->
+
 1. Sums/Differences: $f\pm g$
 2. Constant Multiples:  $c\cdot f$
 3.  Products: $f\cdot g$
@@ -231,14 +226,13 @@ are continuous on $I$.
 5.  Powers: $f\,^n$
 6. Roots:  $\sqrt[n]{f}$(If $n$ is eve, then require that $f(x) \geq 0$ on $I$.)
 7. Adjust the definitions of $f$ and $g$ to: Let $f$ be continuous on $I$, where the range of $f$ on $I$ is $J$, and let $g$ be continuous on $J$. Then $g\circ f$, i.e., $g(f(x))$, is continuous on $I$.
->
+
 ```
 
->
 ```{theorem "Continuous Functions", echo=TRUE, label="continuousfunctions"}
 Let $n$ be a positive integer. The following functions are continuous on
 their domains.
->
+
 1.  $\displaystyle f(x) = \sin x$
 2.  $\displaystyle f(x) = \cos x$
 3.  $\displaystyle f(x) =  \tan x$
@@ -248,7 +242,7 @@ their domains.
 1.  $\displaystyle f(x) =  a^x$ ($a>0$)
 2.  $\displaystyle f(x) =  \ln x$
 3.  $\displaystyle f(x) =  \sqrt[n]{x}$
->
+
 ```
 
 We apply these theorems in the following Example.
@@ -318,10 +312,7 @@ and \@ref(thm:continuousfunctions) as appropriate.
 knitr::include_url("https://www.geogebra.org/calculator/s5z7eudc")
 ```
 
-
-
 ---------
-
 
 A common way of thinking of a continuous function is that “its graph can
 be sketched without lifting your pencil.” That is, its graph forms a
@@ -360,7 +351,6 @@ knitr::include_url("https://www.youtube.com/embed/10aiLy5alTg")
 
 ### Intermediate Value Theorem {- #sec:IVT}
 
->
 ```{theorem, name="Intermediate Value Theorem", echo=TRUE, label="IVT"}
 Let $f$ be a continuous function on $[a,b]$ and, without loss of
 generality, let $f(a) < f(b)$. Then for every value $y$, where

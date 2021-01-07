@@ -38,19 +38,19 @@ div.definition {
   background-color: lightblue;
   padding: 15px;
   border-left: 5px solid blue;
-  margin 15px 0;
+  margin: 15px;
 }
 
 div.example {
   background-color: lightgrey;
   padding: 15px;
   border-left: 5px solid black;
-  margin 15px 0;
+  margin: 15px;
 }
 
 div.theorem {
   background-color: lightgreen;
   padding: 15px;
   border-left: 5px solid green;
-  margin 15px 0;
+  margin: 15px;
 }

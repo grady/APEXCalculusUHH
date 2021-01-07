@@ -303,7 +303,7 @@ knitr::include_url("https://www.youtube.com/embed/NnV1A1KTbg0")
 ```
 
 
-### Example: Growth Without Bound {#sec:ex_no_limit2}
+### Example: Growth Without Bound {#exm:no-limit2}
 
 A graph and table of $f(x) = 1/(x-1)^2$ are given in Figures \@ref(fig:nolimit2) and \@ref(tab:nolimit2table), respectively. Both show that as
 $x$ approaches 1, $f(x)$ grows larger and larger.
@@ -826,7 +826,7 @@ an incredibly important part of calculus (and hence much of higher
 mathematics), rarely are limits evaluated using the definition. Rather,
 the techniques of the following section are employed.
 
-## Finding Limits Analytically {#sec:limit_analytically}
+## Finding Limits Analytically {#sec:limit-analytically}
 
 
 In Section \@ref(sec:limitintro) we explored the concept of the limit

@@ -45,11 +45,26 @@ eng_ggb <- function(options){
   knitr::engine_output(options, options$code, out)
 }
 knitr::knit_engines$set(geogebra = eng_ggb)
+
+eng_youtube <- function(options){
+  `%n%` <- knitr:::`%n%`
+  options$echo <- FALSE
+  options$results <- 'asis'
+  
+  code <- yaml::yaml.load(options$code)
+  code$width <- code$width %n% options$width %n% 640
+  code$height <- code$height %n% options$height %n% 385
+  code$allow <- code$allow %n% "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  
+  template <- '<iframe width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="${allow}" allowfullscreen></iframe>'
+  
+  out <- if(options$eval && knitr:::is_html_output(excludes = 'markdown')) {stringr::str_interp(template, code)}
+  knitr::engine_output(options, options$code, out)
+}
+knitr::knit_engines$set(youtube = eng_youtube)
 ```
 
 # Preface {-}
-
-
 
 ![CC-BY-NC](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc.svg)
 

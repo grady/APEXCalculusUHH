@@ -21,6 +21,11 @@ We explore both types of use of $\infty$ in turn.
 
 ### Limits of Infinity and Verical Asymptotes {-}
 
+```{youtube}
+id: J09GkPDl9Xc
+```
+
+
 ```{definition, name="Limit of Infinity, $\\infty$", label="limit-of-infinity", echo=TRUE}
 Let $I$ be an open interval containing $c$, and let $f$ be a function
 defined on $I$, except possibly at $c$.
@@ -261,6 +266,10 @@ $f(x) = 1/x^2$ as $x$ grew very large. Graphically, it concerns the
 behavior of the function to the “far right” of the graph. We make this
 notion more explicit in the following definition.
 
+```{youtube}
+id: oAzOHweEgMI
+```
+
 ```{definition, name="Limits at Infinity and Horizontal Asymptotes", label="limit-at-infinity", echo=TRUE}
 Let $L$ be a real number.
 
@@ -282,6 +291,10 @@ Let $L$ be a real number.
 We can also define limits such as
 $\displaystyle\lim_{x\rightarrow\infty}f(x)=\infty$ by combining this definition
 with Definition \@ref(def:limit-of-infinity).\
+
+```{youtube}
+id: ykCblJVmWUw
+```
 
 
 ```{youtube}
@@ -393,6 +406,10 @@ Thus
 $$\sqrt{x^2+1}\approx \sqrt{x^2} = |x|,\quad \text{and}\quad \frac{x}{\sqrt{x^2+1}} \approx \frac{x}{|x|}.$$
 This expression is 1 when $x$ is positive and $-1$ when $x$ is negative.
 Hence we get asymptotes of $y=1$ and $y=-1$, respectively.\
+
+```{youtube}
+id: eO3ZJO6qLrA
+```
 
 ```{youtube}
 id: cmZ39j1YI-o

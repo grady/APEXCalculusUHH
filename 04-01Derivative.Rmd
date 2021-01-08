@@ -85,15 +85,13 @@ $$\begin{aligned}
   &=-64.
 \end{aligned}$$
 
-------------------------------------------------------------------------
 
-Table Caption: Approximating the instantaneous velocity with average
-velocities over a small time period $h$.
-
-[\[table:falling\]]{#table:falling label="table:falling"}
-
-
-------------------------------------------------------------------------
+```{r table:falling, class.output="centered"}
+f <- function(t) -16*t^2 + 150
+tibble::tibble(h=c(1,0.5,0.1,0.01,0.001), "Average Velocity (ft/s)"=(f(2+h)-f(2))/h) %>% 
+  knitr::kable(caption="Approximating the instantaneous velocity with average velocities over a small time period $h$.",
+               table.attr='class="centered"', format="html")
+```
 
 Graphically, we can view the average velocities we computed numerically
 as the slopes of secant lines on the graph of $f$ going through the
@@ -108,13 +106,13 @@ practice to approximate functions with straight lines.
 As $h\to 0$, these secant lines approach the *tangent line*, a line that
 goes through the point $(2,f(2))$ with the special slope of $-64$. In
 parts (c) and (d) of Figure \@ref(fig:derivfalling), we zoom in around
-the point $(2,86)$. In (c) we see the secant line, which approximates
-$f$ well, but not as well the tangent line shown in (d).\
+the point $(2,86)$. Try zooming in and changing the value of $h$ and 
+observe what happens to the secant line as $h\to 0$.
 
-------- -------
- \(a\)   \(b\)
- \(c\)   \(d\)
-------- -------
+```{geogebra derivfalling}
+material_id: gsxutyej
+caption: The secant line to $f(t)$ near $t=2$. Adjust the value of $h$ and observe what happens as $h\to 0$.
+```
 
 We have just introduced a number of important concepts that we will
 flesh out more within this section. First, we formally define two of
@@ -128,7 +126,7 @@ id: JXFMh21PMx4
 
 (Derivative at a Point). *Let $f$ be a continuous function on an open
 interval $I$ and let $c$ be in $I$. The **derivative of $f$ at $c$**,
-denoted $f\,'(c)$, is $$\lim_{h\to 0}\frac{f(c+h)-f(c)}{h},$$ provided
+denoted $f^\prime(c)$, is $$\lim_{h\to 0}\frac{f(c+h)-f(c)}{h},$$ provided
 the limit exists. If the limit exists, we say that **$f$ is
 differentiable at $c$**; if the limit does not exist, then **$f$ is not
 differentiable at $c$**. If $f$ is differentiable at every point in $I$,
@@ -139,7 +137,7 @@ then **$f$ is differentiable on $I$**.*
 
 (Tangent Line). *Let $f$ be continuous on an open interval $I$ and
 differentiable at $c$, for some $c$ in $I$. The line with equation
-$\ell(x) = f\,'(c)(x-c)+f(c)$ is the **tangent line** to the graph of
+$\ell(x) = f^\prime(c)(x-c)+f(c)$ is the **tangent line** to the graph of
 $f$ at $c$; that is, it is the line through $(c,f(c))$ whose slope is
 the derivative of $f$ at $c$.*
 
@@ -147,15 +145,19 @@ the derivative of $f$ at $c$.*
 
 Some examples will help us understand these definitions.\
 
+```{youtube}
+id: q_XfRMmSEmc
+```
+
 ```{example, label="derv-point1", echo=TRUE}
 
 (Finding derivatives and tangent lines). Let $f(x) = 3x^2+5x-7$. Find:
 
-1.  $f\,'(1)$
+1.  $f^\prime(1)$
 
 2.  The equation of the tangent line to the graph of $f$ at $x=1$.
 
-1.  $f\,'(3)$
+1.  $f^\prime(3)$
 
 2.  The equation of the tangent line to the graph $f$ at $x=3$.
 
@@ -163,46 +165,40 @@ Some examples will help us understand these definitions.\
 
 1. We compute this directly using Definition \@ref(def:derivative-at-a-point). 
 $$\begin{aligned}
-f\,'(1) &=   \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
+f^\prime(1) &=   \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
 &=  \lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
 &=  \lim_{h\to 0} \frac{3h^2+11h}{h}\\
 &=  \lim_{h\to 0}   (3h+11)=11.
 \end{aligned}$$
 
-2.  The tangent line at $x=1$ has slope $f\,'(1)$ and goes through the
+2.  The tangent line at $x=1$ has slope $f^\prime(1)$ and goes through the
     point $(1,f(1)) = (1,1)$. Thus the tangent line has equation, in
     point-slope form, $y = 11(x-1) + 1$. In slope-intercept form we have
     $y = 11x-10$.*
 
-3.  *Again, using the definition, $$\begin{aligned}
-                        f\,'(3) &=   \lim_{h\to 0} \frac{f(3+h)-f(3)}{h} \\
+3.  Again, using the definition, $$\begin{aligned}
+                        f^\prime(3) &=   \lim_{h\to 0} \frac{f(3+h)-f(3)}{h} \\
                                         &=  \lim_{h\to 0} \frac{3(3+h)^2+5(3+h)-7 - (3(3)^2+5(3)-7)}{h} \\
                                         &=  \lim_{h\to 0} \frac{3h^2+23h}{h}\\
                                         &= \lim_{h\to 0} (3h+23) \\
                                         &= 23.
-                        \end{aligned}$$*
+                        \end{aligned}$$
 
-4.  *The tangent line at $x=3$ has slope $23$ and goes through the point
+4.  The tangent line at $x=3$ has slope $23$ and goes through the point
     $(3,f(3)) = (3,35)$. Thus the tangent line has equation
-    $y=23(x-3)+35 = 23x-34$.*
+    $y=23(x-3)+35 = 23x-34$.
 
-------------------------------------------------------------------------
-
-*Figure Caption: A graph of $f(x) = 3x^2+5x-7$ and its tangent lines at
-$x=1$ and $x=3$.*
-
-*[\[fig:tangent1\]]{#fig:tangent1 label="fig:tangent1"}*
-
-*figures/figtangent1*
-
-------------------------------------------------------------------------
-
-*A graph of $f$ is given in Figure \@ref(fig:tangent1) along with the
-tangent lines at $x=1$ and $x=3$.*
+A graph of $f$ is given in Figure \@ref(fig:tangent1) along with the
+tangent lines at $x=1$ and $x=3$.
 
 ```
 
-\
+```{geogebra tangent1}
+material_id: f5hcudek
+caption: "A graph of $f(x) = 3x^2+5x-7$ and its tangent lines at $x=1$ and $x=3$."
+```
+
+
 Another important line that can be created using information from the
 derivative is the **normal line.** It is perpendicular to the tangent
 line, hence its slope is the opposite--reciprocal of the tangent line's
@@ -213,20 +209,21 @@ slope.
 (Normal Line). *Let $f$ be continuous on an open interval $I$ and
 differentiable at $c$, for some $c$ in $I$. The **normal line** to the
 graph of $f$ at $c$ is the line with equation
-$$n(x) =\frac{-1}{f\,'(c)}(x-c)+f(c),$$ where $f\,'(c)\neq 0$. When
-$f\,'(c)=0$, the normal line is the vertical line through
+$$n(x) =\frac{-1}{f^\prime(c)}(x-c)+f(c),$$ where $f^\prime(c)\neq 0$. When
+$f^\prime(c)=0$, the normal line is the vertical line through
 $\big(c,f(c)\big)$; that is, $x=c$.*
 
 ```
-```{example, label="normal1", echo=TRUE}
+
+```{example, label="normal1ex", echo=TRUE}
 
 (Finding equations of normal lines). *Let $f(x) = 3x^2+5x-7$, as in
-Example \@ref(ex:derv-point1). Find the equations of the normal lines to
+Example \@ref(exm:derv-point1). Find the equations of the normal lines to
 the graph of $f$ at $x=1$ and $x=3$.*
 
 ------------------------------------------------------------------------
 
-*In Example \@ref(ex:derv-point1), we found that $f\,'(1)=11$. Hence at
+In Example \@ref(exm:derv-point1), we found that $f^\prime(1)=11$. Hence at
 $x=1$, the normal line will have slope $-1/11$. An equation for the
 normal line is $$n(x) = \frac{-1}{11}(x-1)+1.$$ The normal line is
 plotted with $y=f(x)$ in Figure \@ref(fig:normal1). Note how the line
@@ -234,26 +231,20 @@ looks perpendicular to $f$. (A key word here is "looks." Mathematically,
 we say that the normal line *is* perpendicular to $f$ at $x=1$ as the
 slope of the normal line is the opposite--reciprocal of the slope of the
 tangent line. However, normal lines may not always *look* perpendicular.
-The aspect ratio of the picture of the graph plays a big role in this.)*
+The aspect ratio of the picture of the graph plays a big role in this.)
 
-------------------------------------------------------------------------
-
-*Figure Caption: A graph of $f(x)=3x^2+5x-7$, along with its normal line
-at $x=1$.*
-
-*[\[fig:normal1\]]{#fig:normal1 label="fig:normal1"}*
-
-*figures/fignormal1*
-
-------------------------------------------------------------------------
-
-*We also found that $f\,'(3) = 23$, so the normal line to the graph of
+We also found that $f^\prime(3) = 23$, so the normal line to the graph of
 $f$ at $x=3$ will have slope $-1/23$. An equation for the normal line is
-$$n(x) = \frac{-1}{23}(x-3)+35.$$ -*
+$$n(x) = \frac{-1}{23}(x-3)+35.$$
 
 ```
 
-\
+```{geogebra normal1}
+material_id: uusnjpy6
+caption: "A graph of $f(x)=3x^2+5x-7$, along with its normal line
+at $x=1$."
+```
+
 Linear functions are easy to work with; many functions that arise in the
 course of solving real problems are not easy to work with. A common
 practice in mathematical problem solving is to approximate difficult
@@ -266,7 +257,7 @@ to functions.
 One type of function that does not benefit from a tangent--line
 approximation is a line; it is rather simple to recognize that the
 tangent line to a line is the line itself. We look at this in the
-following example.\
+following example.
 
 ```{example, label="der-line", echo=TRUE}
 
@@ -279,14 +270,14 @@ Find the equation of the tangent line to $f$ at $x=1$ and $x=7$.*
 \@ref(def:derivative-at-a-point).*
 
 *$$\begin{aligned}
-    f\,'(1) &=   \lim_{h\to 0}\frac{f(1+h)-f(1)}{h} \\
+    f^\prime(1) &=   \lim_{h\to 0}\frac{f(1+h)-f(1)}{h} \\
                     &=  \lim_{h\to 0} \frac{3(1+h)+5 - (3+5)}{h}\\
                     &=  \lim_{h\to 0} \frac{3h}{h}\\
                     &=  \lim_{h\to 0} 3\\
                     &= 3.
     \end{aligned}$$*
 
-*We just found that $f\,'(1) = 3$. That is, we found the *instantaneous
+*We just found that $f^\prime(1) = 3$. That is, we found the *instantaneous
 rate of change* of $f(x) = 3x+5$ is $3$. This is not surprising; lines
 are characterized by being the *only* functions with a *constant rate of
 change.* That rate of change is called the *slope* of the line. Since
@@ -294,29 +285,19 @@ their rates of change are constant, their *instantaneous* rates of
 change are always the same; they are all the slope.*
 
 *So given a line $f(x) = ax+b$, the derivative at any point $x$ will be
-$a$; that is, $f\,'(x) = a$.*
+$a$; that is, $f^\prime(x) = a$.*
 
 *It is now easy to see that the tangent line to the graph of $f$ at
 $x=1$ is just $f$, with the same being true for $x=7$.*
 
 ```
 
-\
+
 We often desire to find the tangent line to the graph of a function
 without knowing the actual derivative of the function. In these cases,
 the best we may be able to do is approximate the tangent line. We
-demonstrate this in the next example.\
+demonstrate this in the next example.
 
-------------------------------------------------------------------------
-
-Figure Caption: $f(x) = \sin x$ graphed with an approximation to its
-tangent line at $x=0$.
-
-[\[fig:tangentsinx\]]{#fig:tangentsinx label="fig:tangentsinx"}
-
-figures/figtangentsinx
-
-------------------------------------------------------------------------
 
 ```{example, label="der-num-approx", echo=TRUE}
 
@@ -325,21 +306,25 @@ of the tangent line to the graph of $f(x)=\sin x$ at $x=0$.*
 
 ------------------------------------------------------------------------
 
-*In order to find the equation of the tangent line, we need a slope and
+In order to find the equation of the tangent line, we need a slope and
 a point. The point is given to us: $(0,\sin 0) = (0,0)$. To compute the
 slope, we need the derivative. This is where we will make an
 approximation. Recall that
-$$f\,'(0) \approx \frac{\sin(0+h)- \sin 0}{h}$$ for a small value of
+$$f^\prime(0) \approx \frac{\sin(0+h)- \sin 0}{h}$$ for a small value of
 $h$. We choose (somewhat arbitrarily) to let $h=0.1$. Thus
-$$f\,'(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.$$ Thus
+$$f^\prime(0) \approx \frac{\sin(0.1)-\sin 0}{0.1} \approx 0.9983.$$ Thus
 our approximation of the equation of the tangent line is
 $y = 0.9983(x-0) +0 = 0.9983x$; it is graphed in Figure
 \@ref(fig:tangentsinx). The graph seems to imply the approximation is
-rather good.*
-
+rather good.
 ```
 
-\
+```{geogebra tangentsinx}
+material_id: wsapqdse
+caption: "$f(x) = \\sin x$ graphed with an approximation to its
+tangent line at $x=0$."
+```
+
 Recall from Section \@ref(sec:limit-analytically) that
 $\lim-{x\to 0}\frac{\sin x}x =1$, meaning for values of $x$ near 0,
 $\sin x \approx x$. Since the slope of the line $y=x$ is 1 at $x=0$, it
@@ -347,15 +332,22 @@ should seem reasonable that "the slope of $f(x)=\sin x$" is near 1 at
 $x=0$. In fact, since we *approximated* the value of the slope to be
 $0.9983$, we might guess the *actual value* is 1. We'll come back to
 this later.\
-Consider again Example \@ref(ex:derv-point1). To find the derivative of
+Consider again Example \@ref(exm:derv-point1). To find the derivative of
 $f$ at $x=1$, we needed to evaluate a limit. To find the derivative of
 $f$ at $x=3$, we needed to again evaluate a limit. We have this process:
 
-::: {.center}
-:::
+```{tikz, cache=TRUE}
+\begin{tikzpicture}[>=latex]
+\draw (0,0) node (n1) [text width=60pt,align=center] {\small \centering input specific  number $c$ } 
+			(3,0) node (n2) [draw,text width=60pt,align=center] {\small  \centering do something to $f$ and $c$}
+			(6,0) node (n3) [text width=60pt,align=center] {\small \centering return number  $f^\prime(c)$};
+\draw [->] (n1) -- (n2);
+\draw [->] (n2) -- (n3);
+\end{tikzpicture}
+```		
 
 This process describes a *function*; given one input (the value of $c$),
-we return exactly one output (the value of $f\,'(c)$). The "do
+we return exactly one output (the value of $f^\prime(c)$). The "do
 something" box is where the tedious work (taking limits) of this
 function occurs.
 
@@ -363,25 +355,42 @@ Instead of applying this function repeatedly for different values of
 $c$, let us apply it just once to the variable $x$. We then take a limit
 just once. The process now looks like:
 
-::: {.center}
-:::
+```{tikz, cache=TRUE}
+		\begin{tikzpicture}[>=latex]
+		\draw (0,0) node (n1) [text width=60pt,align=center] {\small \centering input variable $x$ } 
+					(3,0) node (n2) [draw,text width=60pt,align=center] {\small  \centering do something to $f$ and $x$}
+					(6,0) node (n3) [text width=60pt,align=center] {\small \centering return function  $f^\prime(x)$};
+		\draw [->] (n1) -- (n2);
+		\draw [->] (n2) -- (n3);
+		\end{tikzpicture}
+```
 
-The output is the "derivative function," $f\,'(x)$. The $f\,'(x)$
+The output is the "derivative function," $f^\prime(x)$. The $f^\prime(x)$
 function will take a number $c$ as input and return the derivative of
 $f$ at $c$. This calls for a definition.
+
+### The derivative function
+
+```{youtube}
+id: yPzNYlzA0Js
+```
 
 ```{definition, label="the-derivative", echo=TRUE}
 
 (Derivative Function). *Let $f$ be a differentiable function on an open
 interval $I$. The function
-$$f\,'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is **the derivative of
+$$f^\prime(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$$ is **the derivative of
 $f$**.\
 **Notation:***
 
 *Let $y = f(x)$. The following notations all represent the derivative of
 $f$:
-$$f\,'(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y).$$*
+$$f^\prime(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\ \frac{d}{dx}(y).$$*
 
+```
+
+```{youtube}
+id: TJhJiA_w4mQ
 ```
 
 **Important:** The notation $\displaystyle\frac{dy}{dx}$ is one symbol;
@@ -392,57 +401,60 @@ other places, we see these properties at work when we talk about the
 units of the derivative, when we discuss the Chain Rule, and when we
 learn about integration (topics that appear in later sections and
 chapters).\
+
 Examples will help us understand this definition.\
 
 ```{example, label="deriv1", echo=TRUE}
 
 (Finding the derivative of a function). *Let $f(x) = 3x^2+5x-7$ as in
-Example \@ref(ex:derv-point1). Find $f\,'(x)$.*
+Example \@ref(exm:derv-point1). Find $f^\prime(x)$.*
 
 ------------------------------------------------------------------------
 
 *We apply Definition \@ref(def:the-derivative). $$\begin{aligned}
-    f\,'(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
+    f^\prime(x) &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} \\
                     &=  \lim_{h\to 0} \frac{3(x+h)^2+5(x+h)-7-(3x^2+5x-7)}{h}\\
                     &=  \lim_{h\to 0} \frac{3h^2 +6xh+5h}{h}\\
                     &= \lim_{h\to 0} (3h+6x+5)\\
                     &= 6x+5
-    \end{aligned}$$ So $f\,'(x) = 6x+5$. Recall earlier we found that
-$f\,'(1) = 11$ and $f\,'(3) = 23$. Note our new computation of $f\,'(x)$
+    \end{aligned}$$ So $f^\prime(x) = 6x+5$. Recall earlier we found that
+$f^\prime(1) = 11$ and $f^\prime(3) = 23$. Note our new computation of $f^\prime(x)$
 affirm these facts.*
 
 ```
 
-\
+```{youtube}
+id: JKHbXYanjDs
+```
 
 ```{example, label="deriv2", echo=TRUE}
 
 (Finding the derivative of a function). *Let
-$\displaystyle f(x) = \frac{1}{x+1}$. Find $f\,'(x)$.*
+$\displaystyle f(x) = \frac{1}{x+1}$. Find $f^\prime(x)$.*
 
 ------------------------------------------------------------------------
 
-*We apply Definition \@ref(def:the-derivative). $$\begin{aligned}
-        f\,'(x)  &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
-                        &=  \lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \intertext{Now find common denominator then subtract; pull $1/h$ out front to facilitate reading.}
-                        &= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
-                        &=  \lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
-    
-    
-                        &=  \lim_{h\to 0} \frac 1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
-                        &=  \lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)} \\
-                        &= \frac{-1}{(x+1)(x+1)}\\
-                        &= \frac{-1}{(x+1)^2}.
-    \end{aligned}$$*
+We apply Definition \@ref(def:the-derivative). 
+$$\begin{aligned}
+f^\prime(x)  &= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}\\
+    &=  \lim_{h\to 0} \frac{\frac{1}{x+h+1}-\frac{1}{x+1}}{h} \text{Now find common denominator and subtract; pull out $1/h$.}\\
+    &= \lim_{h\to 0} \frac{1}{h}\cdot\left(\frac{x+1}{(x+1)(x+h+1)} - \frac{x+h+1}{(x+1)(x+h+1)}\right)\\
+  &=  \lim_{h\to 0} \frac 1h\cdot\left(\frac{x+1-(x+h+1)}{(x+1)(x+h+1)}\right)\\
+  &=  \lim_{h\to 0} \frac 1h\cdot\left(\frac{-h}{(x+1)(x+h+1)}\right)\\
+    &=  \lim_{h\to 0} \frac{-1}{(x+1)(x+h+1)} \\
+  &= \frac{-1}{(x+1)(x+1)}\\
+  &= \frac{-1}{(x+1)^2}.
+\end{aligned}$$
 
-*So $\displaystyle f\,'(x) = \frac{-1}{(x+1)^2}$. To practice using our
+So $\displaystyle f^\prime(x) = \frac{-1}{(x+1)^2}$. To practice using our
 notation, we could also state
 $$\displaystyle\frac{d}{dx}\left(\frac{1}{x+1}\right) = \frac{-1}{(x+1)^2}.$$
--*
-
+  
 ```
 
-\
+```{youtube}
+id: vsnDopbWHXQ
+```
 
 ```{example, label="deriv-sinx", echo=TRUE}
 
@@ -451,33 +463,41 @@ $f(x) = \sin x$.*
 
 ------------------------------------------------------------------------
 
-*Before applying Definition \@ref(def:the-derivative), note that once
+Before applying Definition \@ref(def:the-derivative), note that once
 this is found, we can find the actual tangent line to $f(x) = \sin x$ at
 $x=0$, whereas we settled for an approximation in Example
-\@ref(ex:der-num-approx). $$\begin{aligned}
-        f\,'(x) &= \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} & & \left(\text{\scriptsize \parbox{110pt}{\centering Use trig identity $\sin(x+h) = \sin x\cos h+\cos x\sin h$}}\right) \\
-                        &= \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} & & \text{\scriptsize (regroup)}\\
-                        &= \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} & & \text{\scriptsize (split into two fractions)}\\
-                        &= \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) & & \left(\parbox{130pt}{\scriptsize use $\displaystyle\lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and $\displaystyle\lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)\\
-                        &=  \sin x\cdot 0 + \cos x \cdot 1 \\
-                        &= \cos x\ !
-        \end{aligned}$$ We have found that when $f(x) = \sin x$,
-$f\,'(x) = \cos x$. This should be somewhat surprising; the result of a
+\@ref(exm:der-num-approx). $$\begin{aligned}
+        f^\prime(x) &= \lim_{h\to 0} \frac{\sin(x+h)-\sin x}{h} & & \left(\text{Use trig angle addition identity.}\right) \\
+  &= \lim_{h\to 0} \frac{\sin x\cos h+\cos x\sin h-\sin x}{h} & & \text{(regroup)}\\
+  &= \lim_{h\to 0} \frac{\sin x(\cos h-1) + \cos x\sin h}{h} & & \text{(split into two fractions)}\\
+  &= \lim_{h\to 0} \left(\frac{\sin x(\cos h-1)}{h} + \frac{\cos x\sin h}{h}\right) & & \left(\text{use $\displaystyle\lim_{h\to 0} \frac{\cos h-1}{h} = 0$ and $\displaystyle\lim_{h\to 0} \frac{\sin h}{h} = 1$}\right)\\
+&=  \sin x\cdot 0 + \cos x \cdot 1 \\
+&= \cos x\ !
+\end{aligned}$$ 
+
+We have found that when $f(x) = \sin x$,
+$f^\prime(x) = \cos x$. This should be somewhat surprising; the result of a
 tedious limit process and the sine function is a nice function. Then
 again, perhaps this is not entirely surprising. The sine function is
 periodic -- it repeats itself on regular intervals. Therefore its rate
 of change also repeats itself on the same regular intervals. We should
 have known the derivative would be periodic; we now know exactly which
-periodic function it is.*
+periodic function it is.
 
-*Thinking back to Example \@ref(ex:der-num-approx), we can find the
+Thinking back to Example \@ref(exm:der-num-approx), we can find the
 slope of the tangent line to $f(x)=\sin x$ at $x=0$ using our
 derivative. We approximated the slope as $0.9983$; we now know the slope
-is *exactly* $\cos 0 =1$.*
+is *exactly* $\cos 0 =1$.
 
 ```
 
-\
+```{youtube}
+id: -1lOFzhDJAo
+```
+
+```{youtube}
+id: Ev9hJVbDO1k
+```
 
 ```{example, label="not-diff", echo=TRUE}
 
@@ -488,24 +508,12 @@ See Figure \@ref(fig:absolutevalue).*
 
 ------------------------------------------------------------------------
 
-*We need to evaluate $\displaystyle\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.$
+We need to evaluate $\displaystyle\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.$
 As $f$ is piecewise--defined, we need to consider separately the limits
 when $x<0$ and when $x>0$.\
-*
 
-------------------------------------------------------------------------
 
-*Figure Caption: The absolute value function, $f(x) = |x|$. Notice how
-the slope of the lines (and hence the tangent lines) abruptly changes at
-$x=0$.*
-
-*[\[fig:absolutevalue\]]{#fig:absolutevalue label="fig:absolutevalue"}*
-
-*figures/figabsolutevalue*
-
-------------------------------------------------------------------------
-
-*When $x<0$: $$\begin{aligned}
+When $x<0$: $$\begin{aligned}
     \frac{d}{dx}\big(-x\big)    &= \lim_{h\to 0}\frac{-(x+h) - (-x)}{h} \\
                                                         &=  \lim_{h\to 0}\frac{-h}{h}\\
                                                         &=  \lim_{h\to 0}-1 \\
@@ -514,46 +522,47 @@ $x=0$.*
 $\displaystyle\frac{d}{dx}\big(x\big) = 1$.\
 We need to also find the derivative at $x=0$. By the definition of the
 derivative at a point, we have
-$$f\,'(0) = \lim_{h\to 0}\frac{f(0+h)-f(0)}{h}.$$ Since $x=0$ is the
+$$f^\prime(0) = \lim_{h\to 0}\frac{f(0+h)-f(0)}{h}.$$ Since $x=0$ is the
 point where our function's definition switches from one piece to the
 other, we need to consider left and right-hand limits. Consider the
 following, where we compute the left and right hand limits side by
-side.*
+side.
 
-*$$\begin{aligned}
+$$\begin{aligned}
 \lim_{h\to 0^-}\frac{f(0+h)-f(0)}{h} &= \\
 \lim_{h\to 0^-}\frac{-h-0}{h} &= \\
-\lim_{h\to 0^-}-1 & =-1\end{aligned}$$*
+\lim_{h\to 0^-}-1 & =-1\end{aligned}$$
 
 ------------------------------------------------------------------------
 
-*$$\begin{aligned}
+$$\begin{aligned}
 \lim_{h\to 0^+}\frac{f(0+h)-f(0)}{h} &= \\
 \lim_{h\to 0^+}\frac{h-0}{h} &= \\
-\lim_{h\to 0^+}1 & =1\end{aligned}$$*
+\lim_{h\to 0^+}1 & =1\end{aligned}$$
 
-------------------------------------------------------------------------
-
-*Figure Caption: A graph of the derivative of $f(x) = |x|$.*
-
-*[\[fig:absolutevalueprime\]]{#fig:absolutevalueprime
-label="fig:absolutevalueprime"}*
-
-*figures/figabsolutevalueprime*
-
-------------------------------------------------------------------------
 
 *The last lines of each column tell the story: the left and right hand
 limits are not equal. Therefore the limit does not exist at 0, and $f$
 is not differentiable at 0. So we have
-$$f\,'(x) = \left\{\begin{array}{cc} -1 & x<0 \\ 1 & x>0\end{array}.\right.$$
-At $x=0$, $f\,'(x)$ does not exist; there is a jump discontinuity at 0;
+$$f^\prime(x) = \left\{\begin{array}{cc} -1 & x<0 \\ 1 & x>0\end{array}.\right.$$
+At $x=0$, $f^\prime(x)$ does not exist; there is a jump discontinuity at 0;
 see Figure \@ref(fig:absolutevalueprime). So $f(x) = |x|$ is
 differentiable everywhere except at 0.*
 
 ```
 
-\
+```{geogebra absolutevalue}
+material_id: t2pjtsh6
+caption: "The absolute value function, $f(x) = |x|$. Notice how
+the slope of the lines (and hence the tangent lines) abruptly changes at
+$x=0$."
+```
+
+```{geogebra absolutevalueprime}
+material_id: xbbjagjj
+caption: "A graph of the derivative of $f(x) = |x|$."
+```
+
 The point of non-differentiability came where the piecewise defined
 function switched from one piece to the other. Our next example shows
 that this does not always cause trouble.\
@@ -567,81 +576,67 @@ See Figure \@ref(fig:piecewisesinx1).*
 
 ------------------------------------------------------------------------
 
-*Using Example \@ref(ex:deriv-sinx), we know that when $x<\pi/2$,
-$f\,'(x) = \cos x$. It is easy to verify that when $x>\pi/2$,
-$f\,'(x) = 0$; consider:
-$$\lim_{h\to 0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to 0}\frac{1-1}{h} = \lim_{h\to 0}0 =0.$$*
+Using Example \@ref(exm:deriv-sinx), we know that when $x<\pi/2$,
+$f^\prime(x) = \cos x$. It is easy to verify that when $x>\pi/2$,
+$f^\prime(x) = 0$; consider:
+$$\lim_{h\to 0}\frac{f(x+h) - f(x)}{h} = \lim_{h\to 0}\frac{1-1}{h} = \lim_{h\to 0}0 =0.$$
 
-------------------------------------------------------------------------
+So far we have
+$$f^\prime(x) = \left\{\begin{array}{cc} \cos x & x<\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
+We still need to find $f^\prime(\pi/2)$. Notice at $x=\pi/2$ that both
+pieces of $f^\prime$ are 0, meaning we can state that $f^\prime(\pi/2)=0$.
 
-*Figure Caption: A graph of $f(x)$ as defined in Example
-\@ref(ex:diff-piecewise).*
-
-*[\[fig:piecewisesinx1\]]{#fig:piecewisesinx1
-label="fig:piecewisesinx1"}*
-
-*figures/figpiecewisesinx1*
-
-------------------------------------------------------------------------
-
-*So far we have
-$$f\,'(x) = \left\{\begin{array}{cc} \cos x & x<\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
-We still need to find $f\,'(\pi/2)$. Notice at $x=\pi/2$ that both
-pieces of $f\,'$ are 0, meaning we can state that $f\,'(\pi/2)=0$.*
-
-*Being more rigorous, we can again evaluate the difference quotient
+Being more rigorous, we can again evaluate the difference quotient
 limit at $x=\pi/2$, utilizing again left and right--hand limits:\
-*
 
-*$$\begin{aligned}
+
+$$\begin{aligned}
 \lim_{h\to 0^-}\frac{f(\pi/2+h)-f(\pi/2)}{h} &=\\
 \lim_{h\to 0^-}\frac{\sin(\pi/2+h)-\sin(\pi/2)}{h}&=\\
 \lim_{h\to 0^-}{ \frac{\sin(\frac{\pi}{2})\cos(h)+\sin(h)\cos(\frac{\pi}{2})-\sin(\frac{\pi}{2})}{h}}&=\\
 \lim_{h\to 0^-}\frac{1\cdot\cos(h)+\sin(h)\cdot 0-1}{h} &=\\
-0.\end{aligned}$$*
+0.\end{aligned}$$
 
 ------------------------------------------------------------------------
 
-*$$\begin{aligned}
+$$\begin{aligned}
 \lim_{h\to 0^+}\frac{f(\pi/2+h)-f(\pi/2)}{h} &=\\
 \lim_{h\to 0^+}\frac{1-1}{h}&=\\
 \lim_{h\to 0^+}\frac{0}{h}&=\\
 0.&\\
 \phantom{0}\\
-\phantom{0}\end{aligned}$$*
+\phantom{0}\end{aligned}$$
 
-------------------------------------------------------------------------
-
-*Figure Caption: A graph of $f\,'(x)$ in Example
-\@ref(ex:diff-piecewise).*
-
-*[\[fig:piecewisecosx1\]]{#fig:piecewisecosx1
-label="fig:piecewisecosx1"}*
-
-*figures/figpiecewisecosx1*
-
-------------------------------------------------------------------------
-
-*Since both the left and right hand limits are 0 at $x=\pi/2$, the limit
-exists and $f\,'(\pi/2)$ exists (and is 0). Therefore we can fully write
-$f\,'$ as
-$$f\,'(x) = \left\{\begin{array}{cc} \cos x & x\leq\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
-See Figure \@ref(fig:piecewisecosx1) for a graph of this function.*
-
+Since both the left and right hand limits are 0 at $x=\pi/2$, the limit
+exists and $f^\prime(\pi/2)$ exists (and is 0). Therefore we can fully write
+$f^\prime$ as
+$$f^\prime(x) = \left\{\begin{array}{cc} \cos x & x\leq\pi/2\\ 0 & x>\pi/2\end{array}.\right.$$
+See Figure \@ref(fig:piecewisesinx1) for a graph of this function.
 ```
 
-\
+```{geogebra piecewisesinx1}
+material_id: vvndcbgb
+caption: "A graph of $f(x)$ as defined in Example \\@ref(exm:diff-piecewise) along with its derivative $f^\\prime(x)$."
+```
+
+
 Recall we pseudo--defined a continuous function as one in which we could
 sketch its graph without lifting our pencil. We can give a
 pseudo--definition for differentiability as well: it is a continuous
 function that does not have any "sharp corners." One such sharp corner
 is shown in Figure \@ref(fig:absolutevalue). Even though the function
-$f$ in Example \@ref(ex:diff-piecewise) is piecewise--defined, the
+$f$ in Example \@ref(exm:diff-piecewise) is piecewise--defined, the
 transition is "smooth" hence it is differentiable. Note how in the graph
 of $f$ in Figure \@ref(fig:piecewisesinx1) it is difficult to tell when
 $f$ switches from one piece to the other; there is no "corner."
 
-**Differentiablity on Closed Intervals**\
+
+```{youtube}
+id: q1ZAqRsgVPk
+```
+
+### Differentiablity on Closed Intervals
+
 When we defined the derivative at a point in Definition
 \@ref(def:derivative-at-a-point), we specified that the interval $I$
 over which a function $f$ was defined needed to be an open interval.
@@ -655,11 +650,11 @@ closed intervals. We now extend differentiability to closed intervals by
 again considering one-sided limits.
 
 Our motivation is three-fold. First, we consider "common sense." In
-Example \@ref(ex:deriv1) we found that when $f(x) =  3x^2+5x-7$,
-$f\,'(x) = 6x+5$, and this derivative is defined for all real numbers,
+Example \@ref(exm:deriv1) we found that when $f(x) =  3x^2+5x-7$,
+$f^\prime(x) = 6x+5$, and this derivative is defined for all real numbers,
 hence $f$ is differentiable everywhere. It seems appropriate to also
 conclude that $f$ is differentiable on closed intervals, like $[0,1]$,
-as well. After all, $f\,'(x)$ is defined at both $x=0$ and $x=1$.
+as well. After all, $f^\prime(x)$ is defined at both $x=0$ and $x=1$.
 
 Secondly, consider $f(x) = \sqrt{x}$. The domain of $f$ is $[0,\infty)$.
 Is $f$ differentiable on its domain -- specifically, is $f$
@@ -684,10 +679,10 @@ exist. Then we say **$f$ is differentiable on $[a,b]$.***
 
 For all the functions $f$ *in this text*, we can determine
 differentiability on $[a,b]$ by considering the limits
-$\lim_{x\to a^+}f\,'(x)$ and $\lim_{x\to b^-}f\,'(x)$. This is often
+$\lim_{x\to a^+}f^\prime(x)$ and $\lim_{x\to b^-}f^\prime(x)$. This is often
 easier to evaluate than the limit of the difference quotient.\
 
-```{example, label="diff-closed1", echo=TRUE}
+```{example, label="diff-closed1ex", echo=TRUE}
 
 (Differentiability at an endpoint). *Consider $f(x) = \sqrt{x}=x^{1/2}$
 and $g(x) = \sqrt{x^3}=x^{3/2}$. The domain of each function is
@@ -705,8 +700,8 @@ difference quotient: $$\begin{aligned}
 exist at $x=0$ for $f$; therefore $f$ is differentiable on $(0,\infty)$
 and not differentiable on $[0,\infty)$.*
 
-*We state (without proof) that $f\,'(x) = 1/\big(2\sqrt{x}\big)$. Note
-that $\lim_{x\to 0^+}f\,'(x) = \infty$; this limit was easier to
+*We state (without proof) that $f^\prime(x) = 1/\big(2\sqrt{x}\big)$. Note
+that $\lim_{x\to 0^+}f^\prime(x) = \infty$; this limit was easier to
 evaluate than the limit of the difference quotient, though it required
 us to already know the derivative of $f$.*
 
@@ -717,19 +712,8 @@ us to already know the derivative of $f$.*
  \end{aligned}$$ As the one-sided limit exists at $x=0$, we conclude $g$
 is differentiable on its domain of $[0,\infty)$.*
 
-------------------------------------------------------------------------
-
-*Figure Caption: A graph of $y=x^{1/2}$ and $y=x^{3/2}$ in Example
-\@ref(ex:diff-closed1).*
-
-*[\[fig:diff-closed1\]]{#fig:diff-closed1 label="fig:diff-closed1"}*
-
-*figures/figdiff-closed1*
-
-------------------------------------------------------------------------
-
-*We state (without proof) that $g\,'(x) = 3\sqrt{x}/2$. Note that
-$\lim_{x\to 0^+}g\,'(x) = 0$; again, this limit is easier to evaluate
+*We state (without proof) that $g^\prime(x) = 3\sqrt{x}/2$. Note that
+$\lim_{x\to 0^+}g^\prime(x) = 0$; again, this limit is easier to evaluate
 than the limit of the difference quotient.*
 
 *The two functions are graphed in Figure \@ref(fig:diff-closed1). Note
@@ -740,7 +724,11 @@ approach 0 as $x$ approaches 0.*
 
 ```
 
-\
+```{geogebra, diff-closed1}
+material_id: jeah88sg
+caption: " A graph of $y=x^{1/2}$ and $y=x^{3/2}$ in Example
+\\@ref(exm:diff-closed1ex)."
+```
 Most calculus textbooks omit this topic and simply avoid specific cases
 where it could be applied. We choose in this text to not make use of the
 topic unless it is "needed." Many theorems in later sections require a

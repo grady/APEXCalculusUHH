@@ -46,10 +46,10 @@ knitr::include_url("https://www.youtube.com/embed/8z07z3yeChY")
 Let $f$ be defined as shown in Figure \@ref(fig:continuous1). Give the
 interval(s) on which $f$ is continuous.
 
-```{r continuous1, fig.cap="The graph of $f$ in Example \\@ref(ex:contint1).", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/fxehbzf7")
+```{geogebra continuous1}
+material_id: fxehbzf7
+caption: "The graph of $f$ in Example \\@ref(ex:contint1)."
 ```
-
 
 We proceed by examining the three criteria for continuity.
 
@@ -80,10 +80,11 @@ $f(\pi) = \lfloor \pi \rfloor = 3$.) The graph of $f$ in Figure
 function.”\
 Give the intervals on which $f$ is continuous.
 
-```{r continuous2, fig.cap="The graph of $f$ in Example \\@ref(ex:contint2).", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/rvp4h3na")
-```
 
+```{geogebra continuous2}
+material_id: rvp4h3na
+caption: "The graph of $f$ in Example \\@ref(ex:contint2)."
+```
 
 We examine the three criteria for continuity.
 
@@ -308,8 +309,9 @@ and \@ref(thm:continuousfunctions) as appropriate.
     $y = \sqrt{x}$ is defined. Thus the domain of $f(x) = \sqrt{\ln x}$
     is $[1,\infty)$.
 
-```{r continuous3, fig.cap="The graph of $\\sqrt{x-1}+\\sqrt{5-x}$.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.geogebra.org/calculator/s5z7eudc")
+```{geogebra continuous3}
+material_id: s5z7eudc
+caption: "The graph of $\\sqrt{x-1} + \\sqrt{5-x}$."
 ```
 
 ---------

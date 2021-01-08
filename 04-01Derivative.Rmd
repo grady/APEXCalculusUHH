@@ -1,23 +1,22 @@
-# The Derivative
+# The Derivative {#chap:derivative}
 
 The previous chapter introduced the most fundamental of calculus topics:
 the limit. This chapter introduces the second most fundamental of
 calculus topics: the derivative. Limits describe *where* a function is
 going; derivatives describe *how fast* the function is going.
 
-<div id="ggb-element"></div> 
 
-```{js}
-var params = {"appName": "graphing", width: "auto", "showToolBar": true, "showMenuBar": true };
-var ggbApplet = new GGBApplet(params, true);
-window.addEventListener("load", function() { 
-    ggbApplet.inject('ggb-element');
-});
+```{youtube}
+id: 9vKqVkMQHKk
 ```
 
-
-
 ## Instantaneous Rates of Change: The Derivative {#sec:derivative}
+
+
+```{youtube}
+id: jRW9d25E_ls
+```
+
 
 A common amusement park ride lifts riders to a height then allows them
 to freefall a certain distance before safely stopping them. Suppose such
@@ -38,9 +37,10 @@ velocity*. We do not currently know how to calculate this.
 However, we do know from common experience how to calculate an *average
 velocity*. (If we travel 60 miles in 2 hours, we know we had an average
 velocity of 30 mph.) We looked at this concept in Section
-\@ref(sec:limit-intro) when we introduced the difference quotient. We
+\@ref(sec:limitintro) when we introduced the difference quotient. We
 have
-$$\frac{\text{change in distance}}{\text{change in time}} = \frac{\text{``\ rise\ ''}}{\text{run}} = \text{average velocity}.$$
+$$\frac{\text{change in distance}}{\text{change in time}} = 
+\frac{\text{rise}}{\text{run}} = \text{average velocity}.$$
 
 We can approximate the instantaneous velocity at $t=2$ by considering
 the average velocity over some time period containing $t=2$. If we make
@@ -72,17 +72,18 @@ $$\frac{f(2+h) - f(2)}{h}$$ where $h$ is small.
 
 We really want to use $h=0$, but this, of course, returns the familiar
 "$0/0$" indeterminate form. So we employ a limit, as we did in Section
-\@ref(sec:limit-intro).
+\@ref(sec:limitintro).
 
 We can approximate the value of this limit numerically with small values
 of $h$ as seen in Figure \@ref(table:falling). It looks as though the
 velocity is approaching $-64$ ft/s. Computing the limit directly gives
 $$\begin{aligned}
-\lim_{h\to 0} \frac{f(2+h)-f(2)}{h} &= \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h} \\
-                                                                                                            &=  \lim_{h\to 0}\frac{-64h-16h^2}{h} \\
-                                                                                                            &= \lim_{h\to 0}(-64 -16h) \\
-                                                                                                            &=-64.
-        \end{aligned}$$
+\lim_{h\to 0} \frac{f(2+h)-f(2)}{h} 
+  &= \lim_{h\to 0}\frac{-16(2+h)^2+150 - (-16(2)^2+150)}{h} \\
+  &=  \lim_{h\to 0}\frac{-64h-16h^2}{h} \\
+  &= \lim_{h\to 0}(-64 -16h) \\
+  &=-64.
+\end{aligned}$$
 
 ------------------------------------------------------------------------
 
@@ -91,13 +92,6 @@ velocities over a small time period $h$.
 
 [\[table:falling\]]{#table:falling label="table:falling"}
 
-  -- --
-     
-     
-     
-     
-     
-  -- --
 
 ------------------------------------------------------------------------
 
@@ -117,17 +111,18 @@ parts (c) and (d) of Figure \@ref(fig:derivfalling), we zoom in around
 the point $(2,86)$. In (c) we see the secant line, which approximates
 $f$ well, but not as well the tangent line shown in (d).\
 
-  ------- -------
-          
-   \(a\)   \(b\)
-          
-          
-   \(c\)   \(d\)
-  ------- -------
+------- -------
+ \(a\)   \(b\)
+ \(c\)   \(d\)
+------- -------
 
 We have just introduced a number of important concepts that we will
 flesh out more within this section. First, we formally define two of
 them.
+
+```{youtube}
+id: JXFMh21PMx4
+```
 
 ```{definition, label="derivative-at-a-point", echo=TRUE}
 
@@ -154,30 +149,27 @@ Some examples will help us understand these definitions.\
 
 ```{example, label="derv-point1", echo=TRUE}
 
-(Finding derivatives and tangent lines). *Let $f(x) = 3x^2+5x-7$. Find:*
+(Finding derivatives and tangent lines). Let $f(x) = 3x^2+5x-7$. Find:
 
-1.  *$f\,'(1)$*
+1.  $f\,'(1)$
 
-2.  *The equation of the tangent line to the graph of $f$ at $x=1$.*
+2.  The equation of the tangent line to the graph of $f$ at $x=1$.
 
-1.  *$f\,'(3)$*
+1.  $f\,'(3)$
 
-2.  *The equation of the tangent line to the graph $f$ at $x=3$.*
+2.  The equation of the tangent line to the graph $f$ at $x=3$.
 
 ------------------------------------------------------------------------
 
-1.  *We compute this directly using Definition
-    \@ref(def:derivative-at-a-point). $$\begin{aligned}
-                            f\,'(1) &=   \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
-                                            &=  \lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
-                        
-                        
-                                            &=  \lim_{h\to 0} \frac{3h^2+11h}{h}\\
-                                            &=  \lim_{h\to 0}   (3h+11)=11.
-                                            
-                        \end{aligned}$$*
+1. We compute this directly using Definition \@ref(def:derivative-at-a-point). 
+$$\begin{aligned}
+f\,'(1) &=   \lim_{h\to 0} \frac{f(1+h)-f(1)}{h} \\
+&=  \lim_{h\to 0} \frac{3(1+h)^2+5(1+h)-7 - (3(1)^2+5(1)-7)}{h}\\
+&=  \lim_{h\to 0} \frac{3h^2+11h}{h}\\
+&=  \lim_{h\to 0}   (3h+11)=11.
+\end{aligned}$$
 
-2.  *The tangent line at $x=1$ has slope $f\,'(1)$ and goes through the
+2.  The tangent line at $x=1$ has slope $f\,'(1)$ and goes through the
     point $(1,f(1)) = (1,1)$. Thus the tangent line has equation, in
     point-slope form, $y = 11(x-1) + 1$. In slope-intercept form we have
     $y = 11x-10$.*

@@ -27,7 +27,10 @@ eng_ggb <- function(options){
   code$width <- code$width %n% options$width %n% 770
   code$height <- code$height %n% options$height %n% 400
   code$AppName <- code$AppName %n% "graphing"
-  options$fig.cap <- options$fig.cap %n% code$caption 
+  code$preventFocus <- code$preventFocus %n% TRUE
+  
+  url <- stringr::str_interp(" [Open in new tab](https://www.geogebra.org/calculator/${material_id}){target=\"_blank\"}.", code)
+  options$fig.cap <- knitr:::one_string(options$fig.cap %n% code$caption, url)
   
   options$json <- jsonlite::toJSON(code, auto_unbox = TRUE)
   

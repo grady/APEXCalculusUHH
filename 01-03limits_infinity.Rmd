@@ -17,6 +17,14 @@ very large, $f(x)$ gets very, very small. We could represent this
 concept with notation such as
 $$\lim_{x\rightarrow \infty} \frac1{x^2}=0.$$
 
+```{geogebra oneoverxsquared}
+material_id: me5bgxq3
+caption: >
+  Graph of $f(x) = 1/x^2$ near $x=0$.
+```
+
+
+
 We explore both types of use of $\infty$ in turn.
 
 ### Limits of Infinity and Verical Asymptotes {-}
@@ -302,13 +310,13 @@ id: kYmfeq-qKiI
 ```
 
 
-```{example, name="Approximating horizontal asymptotes", label="hzasy1", echo=TRUE}
+```{example, name="Approximating horizontal asymptotes", label="hzasy1ex", echo=TRUE}
 Approximate the horizontal asymptote(s) of $\displaystyle f(x)=\frac{x^2}{x^2+4}$.
 
 We will approximate the horizontal asymptotes by approximating the
 limits
 $$\lim_{x\to-\infty} \frac{x^2}{x^2+4}\quad \text{and}\quad \lim_{x\to\infty} \frac{x^2}{x^2+4}.$$
-Figure \@ref(fig:hzasy1)(a) shows a sketch of $f$, and part (b) gives
+Figure \@ref(fig:hzasy1) shows a sketch of $f$, and the table gives
 values of $f(x)$ for large magnitude values of $x$. It seems reasonable
 to conclude from both of these sources that $f$ has a horizontal
 asymptote at $y=1$.
@@ -316,24 +324,30 @@ asymptote at $y=1$.
 Later, we will show how to determine this analytically.
 ```
 
+```{geogebra hzasy1}
+material_id: xydrmdnr
+caption: >
+  The function in Example \@ref(exm:hzasy1ex).
+```
 
 Horizontal asymptotes can take on a variety of forms. Figure
-\@ref(fig:hzasy)(a) shows that $f(x) = x/(x^2+1)$ has a horizontal
+\@ref(fig:hzasy) shows that $f(x) = x/(x^2+1)$ has a horizontal
 asymptote of $y=0$, where 0 is approached from both above and below.
 
-Figure \@ref(fig:hzasy)(b) shows that $f(x) =x/\sqrt{x^2+1}$ has two
+Figure \@ref(fig:hzasy) shows that $f(x) =x/\sqrt{x^2+1}$ has two
 horizontal asymptotes; one at $y=1$ and the other at $y=-1$.
 
-Figure \@ref(fig:hzasy)(c) shows that $f(x) = (\sin x)/x$ has even more
+Figure \@ref(fig:hzasy) shows that $f(x) = (\sin x)/x$ has even more
 interesting behavior than at just $x=0$; as $x$ approaches $\pm\infty$,
 $f(x)$ approaches 0, but oscillates as it does this.\
 
-  ----- ----- -----
-              
-   (a)   (b)   (c)
-  ----- ----- -----
-
-\
+```{geogebra hzasy}
+material_id: bbnn6hy8
+caption: >
+  Three functions with different types of horizontal asymptotes. 
+  Panning the view or holding shift and dragging the horizontal 
+  axis will allow you explore the behavior at $\infty$.
+```
 
 We can analytically evaluate limits at infinity for rational functions
 once we understand $\lim_{x\rightarrow\infty} 1/x$. As $x$ gets larger
@@ -419,7 +433,7 @@ id: cmZ39j1YI-o
 ```{example, name="Finding a limit of a rational function", label="hzasy2", echo=TRUE}
 Confirm analytically that $y=1$ is the horizontal asymptote of
 $\displaystyle f(x) = \frac{x^2}{x^2+4}$, as approximated in Example
-\@ref(exm:hzasy1).
+\@ref(exm:hzasy1ex).
 
 -----
 
@@ -442,7 +456,7 @@ of the numerator and denominator, i.e., 1/1 = 1.
 
 
 
-```{example, echo=TRUE, name="Finding limits of rational functions", label="hzasy3"}
+```{example, echo=TRUE, name="Finding limits of rational functions", label="hzasy3ex"}
 Use Theorem \@ref(thm:lim-rational-fn-at-infty) to evaluate each of the
 following limits.
 
@@ -468,6 +482,13 @@ following limits.
     The expression in the limit will behave like $x^2/(-x) = -x$ for
     large values of $x$. Therefore, the limit is $-\infty$. See Figure
     \@ref(fig:hzasy3)(c).
+```
+
+```{geogebra hzasy3}
+material_id: vdrehfxk
+caption: >
+  The functions in \@ref(exm:hzasy3ex). You should pan and zoom 
+  to investigate the behavior of each function separately.
 ```
 
 

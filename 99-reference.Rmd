@@ -1,3 +1,7 @@
+# Dummy Chapter {#chapter:app-of-int}
+## Dummy Section {#sec:newton}
+## Dummy Section {#sec:arc-length}
+
 # Reference Material {-}
 
 ## Differentiation Rules {-}

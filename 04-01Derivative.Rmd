@@ -75,7 +75,7 @@ We really want to use $h=0$, but this, of course, returns the familiar
 \@ref(sec:limitintro).
 
 We can approximate the value of this limit numerically with small values
-of $h$ as seen in Figure \@ref(table:falling). It looks as though the
+of $h$ as seen in Figure \@ref(tab:falling). It looks as though the
 velocity is approaching $-64$ ft/s. Computing the limit directly gives
 $$\begin{aligned}
 \lim_{h\to 0} \frac{f(2+h)-f(2)}{h} 
@@ -86,7 +86,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-```{r table:falling, class.output="centered"}
+```{r falling, class.output="centered"}
 f <- function(t) -16*t^2 + 150
 tibble::tibble(h=c(1,0.5,0.1,0.01,0.001), "Average Velocity (ft/s)"=(f(2+h)-f(2))/h) %>% 
   knitr::kable(caption="Approximating the instantaneous velocity with average velocities over a small time period $h$.",

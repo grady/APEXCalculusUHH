@@ -184,13 +184,19 @@ knitr::include_url("https://www.youtube.com/embed/eHx3LmrQZXM")
 We now consider several examples that allow us explore different aspects
 of the limit concept.\
 
-### Example: Rational function {#sec:limit1}
-
+```{example, name="Rational function", label="limit1ex", echo=TRUE}
 To graphically approximate the limit, graph
 $$y = \frac{x^2-x-6}{6x^2-19x+3}$$ on a small interval that contains 3. To
 numerically approximate the limit, create a table of values where the
 $x$ values are near 3. This is done in Figures \@ref(fig:limit1) and
 Table \@ref(tab:limit1table), respectively.
+
+The graph shows that when $x$ is near 3, the value of $y$ is very near
+$0.3$. By considering values of $x$ near 3, we see that $y=0.294$ is a
+better approximation. The graph and the table imply that
+$$\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294.$$
+
+```
 
 ```{geogebra limit1}
 material_id: ahxgeetr
@@ -202,12 +208,6 @@ tibble::tibble(x=c(2.9,2.99,2.999, 3, 3.001,3.01,3.1), y=(x^2-x-6)/(6*x^2 - 19*x
   knitr::kable(caption="Values of $y=\\frac{x^2-x-6}{6x^2-19x+3}$ with $x$ near 3.",
                table.attr='class="centered"', format="html")
 ```
-
-
-The graph shows that when $x$ is near 3, the value of $y$ is very near
-$0.3$. By considering values of $x$ near 3, we see that $y=0.294$ is a
-better approximation. The graph and the table imply that
-$$\lim_{x\to 3} \frac{x^2-x-6}{6x^2-19x+3} \approx 0.294.$$
 
 This example may bring up a few questions about approximating limits
 (and the nature of limits themselves).
@@ -229,7 +229,7 @@ Since tables and graphs are used only to *approximate* the value of a
 limit, there is not a firm answer to how many data points are "enough."
 Include enough so that a trend is clear, and use values (when possible)
 both less than and greater than the value in question. In Example
-\@ref(sec:limit1), we used both values less than and greater than 3. Had we
+\@ref(exm:limit1ex), we used both values less than and greater than 3. Had we
 used just $x=3.001$, we might have been tempted to conclude that the
 limit had a value of $0.3$. While this is not far off, we could do
 better. Using values "on both sides of 3" helps us identify trends.\
@@ -302,9 +302,7 @@ approaches 1.
 knitr::include_url("https://www.youtube.com/embed/NnV1A1KTbg0")
 ```
 
-
-### Example: Growth Without Bound {#exm:no-limit2}
-
+```{example, echo=TRUE, name="Growth Without Bound", label="no-limit2"}
 A graph and table of $f(x) = 1/(x-1)^2$ are given in Figures \@ref(fig:nolimit2) and \@ref(tab:nolimit2table), respectively. Both show that as
 $x$ approaches 1, $f(x)$ grows larger and larger.
 
@@ -313,13 +311,12 @@ If $x$ is near 1, then $(x-1)^2$ is very small, and:
 $$\frac{1}{\text{very small number}} = \text{very large number}.$$ Since
 $f(x)$ is not approaching a single number, we conclude that
 $$\lim_{x\to 1}\frac{1}{(x-1)^2}$$ does not exist.
-
+```
 
 ```{geogebra, nolimit2}
 material_id: q9kc2gtt
 caption: "A function that grows without bound as $x \\to 1$."
 ```
-
 
 ```{r nolimit2table, class.output="centered"}
 tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>% 
@@ -327,20 +324,16 @@ tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>%
                table.attr='class="centered"', format="html")
 ```
 
-### Example: Oscillation
-
-Explore why $\displaystyle \lim_{x\to 0}\sin(1/x)$ does not exist.
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/gGvvFX5QyjE")
 ```
 
-```{geogebra nolimit3}
-material_id: ewgs887d
-caption: "A function that oscillates as $x\\to 0$"
-```
+```{example, echo=TRUE, name="Oscillation"}
+Explore why $\displaystyle \lim_{x\to 0}\sin(1/x)$ does not exist.
 
-A graphs of $f(x) = \sin(1/x)$ is given in Figure \@ref(fig:nolimit3).
+----
+  
+A graph of $f(x) = \sin(1/x)$ is given in Figure \@ref(fig:nolimit3).
 Finally, in Table \@ref(tab:nolimit3table), we see $\sin(1/x)$ evaluated
 for values of $x$ near 0. As $x$ approaches 0, $f(x)$ does not appear to
 approach any value.
@@ -350,6 +343,13 @@ on all values between $-1$ and 1 infinitely many times! Because of this
 oscillation,
 
 $\displaystyle\lim_{x\to 0}\sin(1/x)$ does not exist.
+```
+
+```{geogebra nolimit3}
+material_id: ewgs887d
+caption: "A function that oscillates as $x\\to 0$"
+```
+
 
 ```{r nolimit3table, class.output="centered"}
 tibble::tibble(x=c(0.1,0.01,0.001, 0.0001,0.00001), "$\\sin(1/x)$"=sin(1/x)) %>% 
@@ -357,8 +357,6 @@ tibble::tibble(x=c(0.1,0.01,0.001, 0.0001,0.00001), "$\\sin(1/x)$"=sin(1/x)) %>%
   knitr::kable(caption="Values of $f(x)$ with $x$ near 0.",
                table.attr='class="centered"', format="html")
 ```
-
-
 
 ### Limits of Difference Quotients {-}
 
@@ -539,16 +537,13 @@ An example will help us understand this definition. Note that the
 explanation is long, but it will take one through all steps necessary to
 understand the ideas.\
 
-### Example: Square root function
-
-Show that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2$.
-
-
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/pdu3nRE8x1I")
+```{youtube}
+id: pdu3nRE8x1I
 ```
 
-
+```{example, echo=TRUE, name="Square root function"}
+Show that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2$.
+```
 
 Before we use the formal definition, let's try some numerical tolerances.  What if the $y$ tolerance is 0.5, or $\epsilon =0.5$?  How close to 4 does $x$ have to be so that $y$ is within 0.5 units of 2, i.e., $1.5 < y < 2.5$?  In this case, we can proceed as follows:
 \begin{alignedat}{3}
@@ -560,7 +555,6 @@ Before we use the formal definition, let's try some numerical tolerances.  What 
 
 So, what is the desired $x$ tolerance?  Remember, we want to find a symmetric interval of $x$ values, namely
 $4 - \delta < x < 4 + \delta$.  The lower bound of $2.25$ is $1.75$ units from 4; the upper bound of 6.25 is 2.25 units from 4. We need the smaller of these two distances; we must have $\delta < 1.75$. See Figure \@ref(fig:chooseed).
-
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/aJ33_ItUoLk")
@@ -582,15 +576,12 @@ What is the desired $x$ tolerance?  In this case we must have $\delta < 0.0399$,
 
 Note that in some sense, it looks like there are two tolerances (below 4 of 0.0399 units and above 4 of 0.0401 units).  However, we couldn't use the larger value of $0.0401$ for $\delta$ since then the interval for $x$ would be  $3.9599 < x < 4.0401$ resulting in $y$ values of $1.98995 < y < 2.01$ (which contains values NOT within 0.01 units of 2).
 
-What we have so far: if $\epsilon =0.5$, then $\delta < 1.75$ and if $\epsilon = 0.01$, then $\delta < 0.0399$. A pattern is not easy to see, so we switch to general $\epsilon$ try to determine $\delta$ symbolically.  We start by assuming $y=\sqrt{x}$ is within $\epsilon$ units of 2:
-
-
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/zA_u1Hsd0Jg")
 ```
 
 
+What we have so far: if $\epsilon =0.5$, then $\delta < 1.75$ and if $\epsilon = 0.01$, then $\delta < 0.0399$. A pattern is not easy to see, so we switch to general $\epsilon$ try to determine $\delta$ symbolically.  We start by assuming $y=\sqrt{x}$ is within $\epsilon$ units of 2:
 
 \begin{eqnarray*}
 |y - 2| < \epsilon &\\
@@ -615,7 +606,7 @@ knitr::include_url("https://www.youtube.com/embed/Yt9l19jrnBU")
 ```
 
 
-So given any $\epsilon >0$, set $\delta < 4\epsilon - \epsilon^2$. Then if $|x-4|<\delta$ (and $x\neq 4$), then $|f(x) - 2| < \epsilon$,  satisfying the definition of the limit.  We have shown formally (and finally!) that $\displaystyle \lim_{x\rightarrow 4} \sqrt{x} = 2 $.
+So given any $\epsilon >0$, set $\delta < 4\epsilon - \epsilon^2$. Then if $|x-4|<\delta$ (and $x\neq 4$), then $|f(x) - 2| < \epsilon$,  satisfying the definition of the limit.  We have shown formally (and finally!) that $\displaystyle\lim_{x\rightarrow 4} \sqrt{x} = 2$.
 
 
 The previous example was a little long in that we sampled a few specific
@@ -629,16 +620,15 @@ section we will learn some theorems that allow us to evaluate limits
 *analytically*, that is, without using the $\epsilon$-$\delta$
 definition.\
 
-### Example: Square function
 
+```{example, echo=TRUE, name="Square function"}
 Show that $\displaystyle \lim_{x\rightarrow 2} x^2 = 4$.
 
-
+```
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/QGqoq-xEXyk")
 ```
-
 
 Let's do this example symbolically from the start.  Let $\epsilon > 0$ be given; we want $|y-4| < \epsilon$, i.e.,  $|x^2-4| < \epsilon$.  How do we find $\delta$ such that when $|x-2| < \delta$, we are guaranteed that $|x^2-4|<\epsilon$?
 
@@ -710,16 +700,11 @@ our "scratch–work" in reverse order.
 
 We highlight this process in the following example.
 
-### Example: Polynomial
-
-We illustrate evaluating limits once more.
-
-
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/--_Rq2GX9IY")
 ```
 
+```{example, echo=TRUE,name="Polynomial"}
 Prove that $\displaystyle \lim_{x\rightarrow 1}(x^3-2x) = -1$.
 
 We start our scratch--work by considering $|f(x) - (-1)| < \epsilon$:
@@ -760,10 +745,9 @@ Given $\epsilon$, let $\delta < \epsilon/5$. We want to show that when $|x-1|<\d
 |(x^3-2x)-(-1)| &<\epsilon,
 \end{align*}
 which is what we wanted to show. Thus $\displaystyle \lim_{x\to 1}(x^3-2x) = -1$.
+```
 
-
-### Example: Exponential
-
+```{example, echo=TRUE, name="Exponential"}
 Prove that $\displaystyle \lim_{x\rightarrow 0} e^x = 1$.
 
 Symbolically, we want to take the equation $|e^x - 1| < \epsilon$ and unravel it to the form $|x-0| < \delta$.  Here is our scratch--work:
@@ -792,6 +776,7 @@ The above line is true by our choice of $\delta$ and by the fact that since $|\l
 \end{align*}
 
 In summary, given $\epsilon > 0$, let $\delta = \ln(1+\epsilon)$. Then $|x - 0| < \delta$ implies $|e^x - 1|< \epsilon$ as desired.  We have shown that $\displaystyle \lim_{x\rightarrow 0} e^x = 1$.
+```
 
 
 We note that we could actually show that
@@ -804,13 +789,11 @@ fact the function $f(x)=e^x$ is *continuous* at all values of $x$, an
 important concept we will define in Section \@ref(sec:continuity).
 
 
-### Conclusion {-}
-
-
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/BapEm7_GQnM")
 ```
 
+### Conclusion {-}
 
 
 This formal definition of the limit is not an easy concept grasp. Our
@@ -827,7 +810,6 @@ mathematics), rarely are limits evaluated using the definition. Rather,
 the techniques of the following section are employed.
 
 ## Finding Limits Analytically {#sec:limit-analytically}
-
 
 In Section \@ref(sec:limitintro) we explored the concept of the limit
 without a strict definition, meaning we could only make approximations.
@@ -905,9 +887,6 @@ knitr::include_url("https://www.youtube.com/embed/9wKX2JgVHXA")
 ```
 
 
-
-### Example: Using basic limit properties.
-
 We apply the theorem to an example.
 
 
@@ -915,9 +894,8 @@ We apply the theorem to an example.
 knitr::include_url("https://www.youtube.com/embed/8x42kGfu9ts")
 ```
 
-
+```{example, echo=TRUE, name="Using basic limit properties."}
 Let $$\lim_{x\to 2} f(x)=2,\quad\lim_{x\to 2} g(x) = 3\quad \text{ and }\quad p(x) = 3x^2-5x+7.$$ Find the following limits:
-
 
 1. $\displaystyle \lim_{x\to 2} \big(f(x) + g(x)\big)$
 1. $\displaystyle \lim_{x\to 2} \big(5f(x) + g(x)^2\big)$
@@ -934,6 +912,8 @@ Solutions:
 &= 3\cdot 2^2 - 5\cdot 2+7 \\
 &= 9
 \end{align*}
+```
+
 
 ### Limits of polynomial and rational functions {-}
 
@@ -960,7 +940,7 @@ Let $p(x)$ and $q(x)$ be polynomials and $c$ a real number. Then:
 
 ```
 
-### Example: Limit of a rational function {#ex:limrat}
+```{example, echo=TRUE, name="Limit of a rational function", label="limrat"}
 
 Using Theorem \@ref(thm:polyrat), find $$\lim_{x\to -1} \frac{3x^2-5x+1}{x^4-x^2+3}.$$
 
@@ -977,26 +957,27 @@ It was likely frustrating in Section \@ref(sec:limitdef) to do a lot of
 work to prove that $$\lim_{x\to 2} x^2 = 4$$ as it seemed fairly
 obvious. The previous theorems state that many functions behave in such
 an "obvious" fashion, as demonstrated by the rational function in
-Example \@ref(ex:limrat).
+Example \@ref(exm:limrat).
+```
 
-### Example: Evaluating limits using algebra {#ex:limitonept}
+```{example, echo=TRUE, name="Evaluating limits using algebra", label="limitonept"}
 Evaluate the following limit: $$\lim_{x\to 1}\frac{x^2-1}{x-1}.$$
 
 We begin by attempting to apply Theorem \@ref(thm:polyrat) and substituting 1 for $x$ in the quotient. This gives:
 		$$\lim_{x\to 1}\frac{x^2-1}{x-1} = \frac{1^2-1}{1-1} \to \frac{0}{0},$$ an indeterminate form. We cannot apply the theorem.
 
-```{geogebra limitxplus1}
-material_id: bbheqmd3
-caption: "The function for Example \\@ref(ex:limitonept)."
-```
-		
 By graphing the function, as in Figure \@ref(fig:limitxplus1), we see that the function seems to be linear, implying that the limit should be easy to evaluate. Recognize that the numerator of our quotient can be factored:
 $$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1}.$$
 The function is not defined when $x=1$, but for all other $x$, $$\frac{x^2-1}{x-1} = \frac{(x-1)(x+1)}{x-1} = x+1.$$
 Clearly $\displaystyle \lim_{x\to 1}x+1 = 2$. Recall that when considering limits, we are not concerned with the value of the function at 1, only the value the function approaches as $x$ approaches 1. Since $(x^2-1)/(x-1)$ and $x+1$ are the same at all points except $x=1$, they both approach the same value as $x$ approaches 1. Therefore we can conclude that $$\lim_{x\to 1}\frac{x^2-1}{x-1}=2.$$
 
+```
 
-
+```{geogebra limitxplus1}
+material_id: bbheqmd3
+caption: "The function for Example \\@ref(exm:limitonept)."
+```
+		
 ### Functions equal everywhere except one point {-}
 
 The key to the above example is that the functions $y=(x^2-1)/(x-1)$ and
@@ -1016,15 +997,9 @@ is a factor of both $g(x)$ and $f(x)$. One can then use algebra to
 factor this term out, cancel, then apply Theorem \@ref(thm:limitallbut1).
 We demonstrate this once more.
 
-### Example: Evaluating a limit using Theorem \@ref(thm:limitallbut1) {#ex:limitallbut1}
+```{example, echo=TRUE, name="Evaluating a limit using Theorem \\@ref(thm:limitallbut1)", label="limitallbut1ex"}
 
 Evaluate $\displaystyle \lim_{x\to 3} \frac{x^3-2 x^2-5 x+6}{2 x^3+3 x^2-32 x+15}$.
-
-
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/MSckoYqdKH4")
-```
-
 
 We attempt to apply Theorem \@ref(thm:polyrat) by substituting 3 for $x$. This returns the familiar indeterminate form of "0/0".
 
@@ -1035,7 +1010,11 @@ Since the numerator and denominator are each polynomials, we know that $(x-3)$ i
 																															&= \frac{10}{40} = \frac14.
 		\end{align*}
 
-----
+```
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/MSckoYqdKH4")
+```
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -1086,7 +1065,7 @@ Let $c$ be a real number in the domain of the given function and let $n$ be a po
 ```
 
 
-### Example: Evaluating limits analytically {#ex:limit1}
+```{example, echo=TRUE, name="Evaluating limits analytically", label="limit2ex"}
 
 Evaluate the following limits. 
 
@@ -1219,7 +1198,7 @@ $f(x) = -1.5x^2+11.5x$; we approximated the limit
 $\displaystyle \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.$ We formally
 evaluate this limit in the following example.\
 
-### Example: Evaluating the limit of a difference quotient {#ex:limitdiffquot}
+```{example, echo=TRUE, name="Evaluating the limit of a difference quotient", label="limitdiffquot"}
 
 Let $f(x) = -1.5x^2+11.5x$; find $\displaystyle \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}.$
 
@@ -1234,7 +1213,7 @@ Since $f$ is a polynomial, our first attempt should be to employ Theorem \@ref(t
 																				&= 	8.5 
 		\end{align*}																		
 This matches our previous approximation.
-
+```
 
 ### Conclusion {-}
 
@@ -1317,12 +1296,13 @@ knitr::include_url("https://www.youtube.com/embed/zQ5n78F49Bo")
 We practice evaluating left- and right-hand limits through a series of
 examples.
 
-### Example: Evaluating one sided limits {#ex:onesidea}
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/NdBPwaP4Xkk")
 ```
 
+
+```{example, echo=TRUE, name="Evaluating one sided limits", label="onesidea"}
 Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cases},$ as shown in Figure \@ref(fig:onesided1). Find each of the following: 
 
 1.	$\displaystyle \lim_{x\to 1^-} f(x)$
@@ -1334,11 +1314,7 @@ Let $\displaystyle f(x) = \begin{cases} x & 0\leq x\leq 1 \\ 3-x & 1<x<2\end{cas
 1.	$\displaystyle \lim_{x\to 2^-} f(x)$
 1.	$f(2)$
 
-
-```{geogebra onesided1}
-material_id: t9dpjyng
-caption: "The function for Example \\@ref(ex:onesidea)"
-```
+------
 
 For these problems, the visual aid of the graph is likely more effective in evaluating the limits than using $f$ itself. Therefore we will refer often to the graph.
 
@@ -1350,16 +1326,18 @@ For these problems, the visual aid of the graph is likely more effective in eval
 1.	Using the definition and the graph, $f(0) = 0$.
 1.	As $x$ goes to 2 from the left, we see that $f(x)$ is approaching the value of 1. Therefore $\displaystyle \lim_{x\to 2^-} f(x)=1.$
 1.	The graph and the definition of the function show that $f(2)$ is not defined.
-			
-----
 
+```
 
+```{geogebra onesided1}
+material_id: t9dpjyng
+caption: "The function for Example \\@ref(exm:onesidea)"
+```
 
 Note how the left and right-hand limits were different at $x=1$. This,
 of course, causes *the* limit to not exist. The following theorem states
 what is fairly intuitive: *the* limit exists precisely when the left and
 right-hand limits are equal.
-
 
 ```{theorem, label="leftrightlimits", name="Limits and One Sided Limits", echo=TRUE}
 Let $f$ be a function defined on an open interval $I$ containing $c$. Then $$\lim_{x\to c}f(x) = L$$ if, and only if, $$\lim_{x\to c^-}f(x) = L \quad \text{ and } \quad \lim_{x\to c^+}f(x) = L.$$
@@ -1372,14 +1350,13 @@ the left and right hand limits both equal $L$. If the limit is not equal
 to $L$, then at least one of the left and right-hand limits is not equal
 to $L$ (it may not even exist).
 
-One thing to consider in Examples \@ref(ex:onesidea) – \@ref(ex:onesided) is
+One thing to consider in Examples \@ref(exm:onesidea) – \@ref(exm:onesided) is
 that the value of the function may/may not be equal to the value(s) of
 its left/right-hand limits, even when these limits agree.
 
 
-### Example: Evaluating limits of a piecewise--defined function {#ex:onesideb}
+```{example, echo=TRUE, name="Evaluating limits of a piecewise--defined function", label="onesideb"}
 Let $f(x) = \begin{cases} 2-x & 0<x<1 \\ (x-2)^2 & 1<x<2 \end{cases}.$  Evaluate the following. 
-
 
 1. $\displaystyle \lim_{x\to 1^-} f(x)$
 1. $\displaystyle \lim_{x\to 1^+} f(x)$
@@ -1390,15 +1367,9 @@ Let $f(x) = \begin{cases} 2-x & 0<x<1 \\ (x-2)^2 & 1<x<2 \end{cases}.$  Evaluate
 1. $\displaystyle \lim_{x\to 2^-} f(x)$
 1. $f(2)$
 
-
-
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/vE_7FG2h_LU")
-```
-
-
 In this example, we evaluate each expression using just the definition of $f$, without using a graph as we did in the previous example.
 
+------------------
 
 1. As $x$ approaches 1 from the left, we consider a limit where all $x$-values are less than 1. This means we use the $2-x$ piece of the piecewise function $f$ as the domain for that piece is $(0,1)$. As the $x$-values near 1, $2-x$ approaches 1; that is, $f(x)$ approaches 1. Therefore $\displaystyle \lim_{x\to 1^-} f(x)=1.$
 1. As $x$ approaches 1 from the right, we consider a limit where all $x$-values are greater than 1. This means we use the $(x-2)^2$ piece of $f$ as the domain for that piece is $(1,2)$. As the $x$-values near 1, $(x-2)^2$ approaches 1; that is, we see that again $f(x)$ approaches 1. Therefore $\displaystyle \lim_{x\to 1+} f(x)=1$.
@@ -1410,18 +1381,24 @@ In this example, we evaluate each expression using just the definition of $f$, w
 1. $f(2)$  is not defined as 2 is not in the domain of $f$.
 
 We can confirm our analytic result by consulting the graph of $f$ shown in Figure \ref{fig:onesidedb}.	Note the open circles on the graph at $x=0$, $1$ and $2$, where $f$ is not defined.	
+```
+
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/vE_7FG2h_LU")
+```
+
+
 
 
 ```{geogebra onesidedb}
 material_id: y3zaqrhv
-caption: "The function for Example \\@ref(ex:onesideb)"
+caption: "The function for Example \\@ref(exm:onesideb)"
 ```
 
-### Example: Evaluating limits of a piecewise--defined function {#ex:onesidec}
 
-```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
-knitr::include_url("https://www.youtube.com/embed/Nn6JoJRK7nk")
-```
+
+```{example, echo=TRUE, name="Evaluating limits of a piecewise--defined function", label="onesidec"}
+
 
 
 Let $f(x) = \begin{cases} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{cases},$ as shown in Figure \@ref(fig:onesidedc). Evaluate the following.
@@ -1430,17 +1407,24 @@ Let $f(x) = \begin{cases} (x-1)^2 & 0\leq x\leq 2, x\neq 1\\ 1 & x=1\end{cases},
 1.  $\displaystyle \lim_{x\to 1^+} f(x)$
 1.  $\displaystyle \lim_{x\to 1} f(x)$
 1.  $f(1)$
-
-
-```{geogebra onesidedc}
-material_id: rjr9ejfd
-caption: "The function for Example \\@ref(ex:onesidec)"
-```
+  
+---------------
+  
 
 It is clear by looking at the graph that both the left and right-hand limits of $f$, as $x$ approaches 1, are 0. Thus it is also clear that _the_ limit is 0; i.e., $\displaystyle \lim_{x\to 1} f(x) = 0$. It is also clearly stated that $f(1) = 1$.
 
-### Example: Evaluating limits of a piecewise--defined function {#ex:onesided}
+```
+  
+```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
+knitr::include_url("https://www.youtube.com/embed/Nn6JoJRK7nk")
+```
 
+```{geogebra onesidedc}
+material_id: rjr9ejfd
+caption: "The function for Example \\@ref(exm:onesidec)"
+```
+
+```{example, echo=TRUE, name="Evaluating limits of a piecewise--defined function", label="onesided"}
 
 Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as shown in Figure \ref{fig:onesidedd}. Evaluate the following. 
 
@@ -1449,31 +1433,29 @@ Let $f(x) = \begin{cases} x^2 & 0\leq x\leq 1 \\ 2-x & 1<x\leq 2\end{cases},$ as
 1.  $\displaystyle \lim_{x\to 1} f(x)$
 1.  $f(1)$
 
-
-
-```{geogebra onesidedd}
-material_id: ryxpsrqc
-caption: "The function for Example \\@ref(ex:onesided)"
-```
-
+-------------------
 
 It is clear from the definition of the function and its graph that all of the following are equal:
 $$ \lim_{x\to 1^-} f(x) = \lim_{x\to 1^+} f(x) =\lim_{x\to 1} f(x) =f(1) = 1.$$
+```
 
------
+```{geogebra onesidedd}
+material_id: ryxpsrqc
+caption: "The function for Example \\@ref(exm:onesided)"
+```
+  
 
-
-In Examples \@ref(ex:onesidea) – \@ref(ex:onesided) we were asked to find
+In Examples \@ref(exm:onesidea) – \@ref(exm:onesided) we were asked to find
 both $\displaystyle \lim_{x\to 1}f(x)$ and $f(1)$. Consider the following table:
 
   Example  | $\displaystyle \lim_{x\to 1}f(x)$ | $f(1)$
   :-----------------:  | :------------------:  | :------------:
-  \@ref(ex:onesidea)   |    does not exist     |       1
-  \@ref(ex:onesideb)   |          1            |   not defined
-  \@ref(ex:onesidec)   |          0            |       1
-  \@ref(ex:onesided)   |          1            |       1
+  \@ref(exm:onesidea)   |    does not exist     |       1
+  \@ref(exm:onesideb)   |          1            |   not defined
+  \@ref(exm:onesidec)   |          0            |       1
+  \@ref(exm:onesided)   |          1            |       1
 
-Only in Example \@ref(ex:onesided) do both the function and the limit
+Only in Example \@ref(exm:onesided) do both the function and the limit
 exist and agree. This seems "nice;" in fact, it seems "normal." This is
 in fact an important situation which we explore in the next section,
 entitled "Continuity." In short, a *continuous function* is one in which

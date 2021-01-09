@@ -23,7 +23,12 @@ table.centered {
   margin-left: auto;
   margin-right: auto;
 }
-
+.center{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 blockquote {
   opacity: unset !important;
 }
@@ -38,19 +43,22 @@ div.definition {
   background-color: lightblue;
   padding: 15px;
   border-left: 5px solid blue;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 div.example {
   background-color: lightgrey;
   padding: 15px;
   border-left: 5px solid black;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 div.theorem {
   background-color: lightgreen;
   padding: 15px;
   border-left: 5px solid green;
-  margin: 15px;
+  margin: 15px 0;
+}
+svg {
+  fill: currentColor;
 }

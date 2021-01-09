@@ -297,6 +297,7 @@ this in greater depth later. Right now, it suffices to say that the
 limit does not exist since $f(x)$ is not approaching one value as $x$
 approaches 1.
 
+### Growth without bound
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/NnV1A1KTbg0")
@@ -324,9 +325,14 @@ tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>%
                table.attr='class="centered"', format="html")
 ```
 
+
+### Oscillation
+
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/gGvvFX5QyjE")
 ```
+
+
 
 ```{example, echo=TRUE, name="Oscillation"}
 Explore why $\displaystyle \lim_{x\to 0}\sin(1/x)$ does not exist.

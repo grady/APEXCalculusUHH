@@ -2,7 +2,8 @@
 ## Dummy Section {#sec:newton}
 ## Dummy Section {#sec:arc-length}
 
-# Reference Material {-}
+# (APPENDIX) Appendix {-}
+
 
 ## Differentiation Rules {-}
 
@@ -297,6 +298,7 @@ $$
 
 ### Right Circular Cone {-}
   Volume = $\frac 13 \pi r^2h$  
+  
   Surface Area = $\pi r\sqrt{r^2+h^2} +\pi r^2$
    
 ```{tikz circlecone, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}
@@ -360,6 +362,7 @@ $$
  
 ### Sphere {-}
   Volume = $\frac43\pi r^3$  
+  
   Surface Area =$4\pi r^2$
    
 ```{tikz sphere, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}
@@ -376,6 +379,7 @@ $$
  
 ### Circles {-}
   Area = $\pi r^2$ 
+  
   Circumference = $2\pi r$
    
 ```{tikz circles, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}
@@ -390,6 +394,7 @@ $$
  
 ### General Cone {-}
   Area of Base = $A$ 
+  
   Volume = $\frac13Ah$  
    
 ```{tikz cone, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}
@@ -415,7 +420,9 @@ $$
 ### Sectors of Circles {-}
 
   $\theta$ in radians  
+  
   Area = $\frac12\theta r^2$ 
+  
   $s=r\theta$
    
 ```{tikz sectors, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}
@@ -433,6 +440,7 @@ $$
 ### General Right Cylinder {-}
 
   Area of Base = $A$ 
+  
   Volume = $Ah$  
    
 ```{tikz generalcylinder, dev="svg", cache=TRUE, fig.width=NULL, echo=FALSE}

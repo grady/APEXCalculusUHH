@@ -38,6 +38,7 @@ eng_ggb <- function(options){
   code$height <- code$height %n% options$height %n% 400
   code$AppName <- code$AppName %n% "graphing"
   code$preventFocus <- code$preventFocus %n% TRUE
+  code$material_id <- code$material_id %n% ''
   
   url <- stringr::str_interp(" [Open in new tab](https://www.geogebra.org/calculator/${material_id}){target=\"_blank\"}.", code)
   options$fig.cap <- knitr:::one_string(options$fig.cap %n% code$caption, url)

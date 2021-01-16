@@ -37,7 +37,7 @@ velocity*. We do not currently know how to calculate this.
 However, we do know from common experience how to calculate an *average
 velocity*. (If we travel 60 miles in 2 hours, we know we had an average
 velocity of 30 mph.) We looked at this concept in Section
-\@ref(sec:limitintro) when we introduced the difference quotient. We
+\@ref(sec:limit-intro) when we introduced the difference quotient. We
 have
 $$\frac{\text{change in distance}}{\text{change in time}} = 
 \frac{\text{rise}}{\text{run}} = \text{average velocity}.$$
@@ -72,7 +72,7 @@ $$\frac{f(2+h) - f(2)}{h}$$ where $h$ is small.
 
 We really want to use $h=0$, but this, of course, returns the familiar
 "$0/0$" indeterminate form. So we employ a limit, as we did in Section
-\@ref(sec:limitintro).
+\@ref(sec:limit-intro).
 
 We can approximate the value of this limit numerically with small values
 of $h$ as seen in Figure \@ref(tab:falling). It looks as though the

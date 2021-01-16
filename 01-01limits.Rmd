@@ -68,7 +68,7 @@ knitr::include_url("https://www.youtube.com/embed/37n0cZn6Lyc")
 
 
 
-## An Introduction To Limits {#sec:limitintro}
+## An Introduction To Limits {#sec:limit-intro}
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -817,7 +817,7 @@ the techniques of the following section are employed.
 
 ## Finding Limits Analytically {#sec:limit-analytically}
 
-In Section \@ref(sec:limitintro) we explored the concept of the limit
+In Section \@ref(sec:limit-intro) we explored the concept of the limit
 without a strict definition, meaning we could only make approximations.
 In the previous section we gave the definition of the limit and
 demonstrated how to use it to verify our approximations were correct.
@@ -1096,7 +1096,7 @@ Solutions:
 1. Again, we can approach this in two ways. First, we can use the exponential/logarithmic identity that $e^{\ln x} = x$ and evaluate $\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 1} x = 1.$ 
 We can also use the limit Composition Rule of Theorem \@ref(thm:limitalgebra). Using Theorem \@ref(thm:limcontinuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
 
-1. We encountered this limit in Section \@ref(sec:limitintro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+1. We encountered this limit in Section \@ref(sec:limit-intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
 
 ### Squeeze Theorem {-}
 
@@ -1199,7 +1199,7 @@ as fast" as $x\to 0$, resulting in a limit of 1.\
 
 
 We end this section by revisiting a limit first seen in Section
-\@ref(sec:limitintro), a limit of a difference quotient. Let
+\@ref(sec:limit-intro), a limit of a difference quotient. Let
 $f(x) = -1.5x^2+11.5x$; we approximated the limit
 $\displaystyle \lim_{h\to 0}\frac{f(1+h)-f(1)}{h}\approx 8.5.$ We formally
 evaluate this limit in the following example.\
@@ -1244,7 +1244,7 @@ that polynomials and rational, trigonometric, exponential and
 logarithmic functions (and their sums, products, etc.) all behave
 "nicely." In this section we rigorously define what we mean by "nicely."
 
-In Section \@ref(sec:limitintro) we saw three ways in which limits of
+In Section \@ref(sec:limit-intro) we saw three ways in which limits of
 functions failed to exist:
 
 1.  The function approached different values from the left and right,

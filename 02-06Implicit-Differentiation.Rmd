@@ -96,7 +96,7 @@ function $\sin y + y^3=6-x^3$ at the point $(\sqrt[3]6,0)$.
 
 ------------------------------------------------------------------------
 
-In Example \@ref(exm:implicit1) we found that
+In Example \@ref(exm:implicit1ex) we found that
 $$y\,' = \frac{-3x^2}{\cos y +3y^2}.$$ We find the slope of the tangent
 line at the point $(\sqrt[3]6,0)$ by substituting $\sqrt[3]6$ for $x$
 and $0$ for $y$. Thus at the point $(\sqrt[3]6,0)$, we have the slope as

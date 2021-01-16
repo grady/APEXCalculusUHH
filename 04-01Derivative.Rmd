@@ -118,6 +118,8 @@ We have just introduced a number of important concepts that we will
 flesh out more within this section. First, we formally define two of
 them.
 
+### The derivative at a point
+
 ```{youtube}
 id: JXFMh21PMx4
 ```

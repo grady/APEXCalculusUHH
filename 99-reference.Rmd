@@ -4,9 +4,7 @@
 
 # (APPENDIX) Appendix {-}
 
-
-## Differentiation Rules {-}
-
+# Differentiation Rules 
 $$
 \newcommand{\ds}{\displaystyle}
 \newcommand{\deriv}[2]{\ds\frac{d}{dx}\left(#1\right)=#2}
@@ -52,7 +50,7 @@ $$
 1.  $\deriv{\tanh^{-1}x}{\frac1{1-x^2}}$
 1.  $\deriv{\coth^{-1}x}{\frac1{1-x^2}}$
 
-## Integration Rules  {-}
+# Integration Rules
 
 $$
 \newcommand{\ds}{\displaystyle}
@@ -97,7 +95,7 @@ $$
 1.  $\myint{\frac{1}{x\sqrt{a^2-x^2}}}{\frac1a\ln\left(\frac{x}{a+\sqrt{a^2-x^2}}\right)+C}$
 1.  $\myint{\frac{1}{x\sqrt{x^2+a^2}}}{\frac1a\ln\left|\frac{x}{a+\sqrt{x^2+a^2}}\right|+C}$
 
-## The Unit Circle {-}
+# The Unit Circle 
 
 
 
@@ -135,7 +133,7 @@ $$
 \end{tikzpicture}
 ```
 
-## Trigonometric Functions {-}
+# Trigonometric Functions 
 
 $$
 \newcommand{\ds}{\displaystyle}
@@ -267,7 +265,7 @@ $\cos (x\pm y) = \cos x\cos y \mp \sin x\sin y$
 $\ds \tan (x\pm y) = \frac{\tan x\pm \tan y}{1\mp \tan x\tan y}$
  
 
-##   Areas and Volumes {-}
+#   Areas and Volumes
  
 $$
 \newcommand{\ds}{\displaystyle}
@@ -462,7 +460,7 @@ $$
 ```   
  
 
-##   Algebra {-}
+#   Algebra 
 
 $$
 \newcommand{\ds}{\displaystyle}
@@ -502,7 +500,7 @@ $$
 $$ 
 
 
-###   Binomial Theorem} {-}
+##   Binomial Theorem} {-}
 $$
 \begin{array}{ll}
 (x+y)^2 = x^2 + 2xy + y^2 \qquad & (x-y)^2 = x^2 -2xy +y^2\\
@@ -511,17 +509,17 @@ $$
 \end{array}
 $$
 
-###   Rational Zero Theorem} {-}
+##   Rational Zero Theorem} {-}
 If $p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$ has integer coefficients, then every $rational$ $zero$ of $p$ is of the form
 $x=r/s$, where $r$ is a factor of $a_0$ and $s$ is a factor of $a_n$.
  
 
-###   Factoring by Grouping  {-}
+##   Factoring by Grouping  {-}
 
 $ac x^3 + adx^2 + bcx + bd = ax^2(cx+d)+b(cx+d)=(ax^2+b)(cx+d)$
  
 
-###   Arithmetic Operations  {-}
+##   Arithmetic Operations  {-}
 
 $$
 \begin{array}{lll}
@@ -533,7 +531,7 @@ a\left(\displaystyle\frac{b}{c}\right)= \displaystyle \frac{ab}{c}&\displaystyle
 \end{array}
 $$ 
 
-### Exponents and Radicals {-}
+## Exponents and Radicals {-}
 
 $$
 \begin{array}{llllll}
@@ -544,7 +542,7 @@ a^0=1, \; \; a \ne 0 \quad & (ab)^x=a^xb^x \quad & a^xa^y = a^{x+y}\quad \\
 \end{array}
 $$
 
-##   Additional Formulas {-}
+#   Additional Formulas {-}
 
 $$
 \newcommand{\ds}{\displaystyle}
@@ -554,7 +552,7 @@ $$
 \DeclareMathOperator{\csch}{csch}
 $$
 
-###   Summation Formulas  {-}
+##   Summation Formulas  {-}
 
 $\ds \sum^n_{i=1}{c} = cn$ \hskip 100pt\ & $\ds\sum^n_{i=1}{i} = \frac{n(n+1)}{2}$
 
@@ -563,26 +561,26 @@ $\ds\sum^n_{i=1}{i\hskip1pt^2} = \frac{n(n+1)(2n+1)}{6}$
 $\ds\sum^n_{i=1}{i\hskip1pt^3}= \left(\frac{n(n+1)}{2}\right)^2$
 
 
-###   Trapezoidal Rule  {-}
+##   Trapezoidal Rule  {-}
 
  $\ds \int_a^b{f(x)}\ dx  \approx \frac{\Delta x}{2}\big[f(x_1)+2f(x_2) + 2f(x_3) + \cdots + 2f(x_{n}) + f(x_{n+1})\big]$
 
 with  $\displaystyle \text{Error} \leq \frac{(b-a)^3}{12n^2}\big[ \max \big|f''(x) \big|\big]$
 
-###   Simpson's Rule  {-}
+##   Simpson's Rule  {-}
 
  $\ds\int_a^b{f(x)}\ dx  \approx  \frac{\Delta x}{3}\big[f(x_1)+4f(x_2) + 2f(x_3) + 4f(x_4) + \cdots + 2f(x_{n-1}) + 4f(x_{n}) + f(x_{n+1})\big] $
  
 with $\displaystyle \text{Error} \leq \frac{(b-a)^5}{180n^4}\big[ \max \big| f^{(4)}(x) \big|\big]$
  
 
-###   Arc Length  {-}
+##   Arc Length  {-}
 
 $\displaystyleL = \int_a^b{\sqrt{1+ f\,'(x)^2}}\phantom{a}dx  $
 
 
 
-###   Surface of Revolution {-}
+##   Surface of Revolution {-}
 $\displaystyle S = 2\pi \int_a^b{f(x) \sqrt{1+ f\,'(x)^2}}\phantom{a}dx$
 (where $f(x)\geq 0$)
 
@@ -592,23 +590,23 @@ $\displaystyle S = 2\pi \int_a^b{x \sqrt{1+ f\,'(x)^2}}\phantom{a}dx$
 
 
 
-###   Work Done by a Variable Force  {-}
+##   Work Done by a Variable Force  {-}
 
 $\displaystyle W = \int_a^b{F(x)}\phantom{a}dx$
  
 
-###   Force Exerted by a Fluid {-}
+##   Force Exerted by a Fluid {-}
 
 $\displaystyle F = \int_a^b{w\,d(y)\,\ell(y)}\phantom{a}dy$
  
 
 
-###   Taylor Series Expansion for $f(x)$  {-}
+##   Taylor Series Expansion for $f(x)$  {-}
 
 $\displaystyle p_n(x) = f(c) + f\,'(c)(x-c) + \frac{f\,''(c)}{2!}(x-c)^2 + \frac{f\,'''(c)}{3!}(x-c)^3 + \cdots + \frac{f\,^{(n)}(c)}{n!}(x-c)^n + \cdots$
 
 
-###   Maclaurin Series Expansion for $f(x)$, where $c=0$  {-}
+##   Maclaurin Series Expansion for $f(x)$, where $c=0$  {-}
 
 $\displaystyle p_n(x) = f(0) + f\,'(0)x + \frac{f\,''(0)}{2!}x^2 + \frac{f\,'''(0)}{3!}x^3 + \cdots + \frac{f\,^{(n)}(0)}{n!}x^n+\cdots$
 

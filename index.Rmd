@@ -1,7 +1,17 @@
 --- 
 title: "APEX Calculus 1"
-author: "Gregory Hartman, with additional content by Sean Fitzpatrick, Grady Weyenberg, and others"
-date: "`r Sys.Date()`"
+author: 
+  - name: Gregory Hartman
+    email: hartmangn@vmi.edu
+    affiliation: Virginia Military Institute
+  - name: Grady Weyenberg
+    email: gradysw@hawaii.edu
+    affiliation: University of Hawaii at Hilo
+  - name: Sean Fitzpatrick
+    email: https://www.cs.uleth.ca/~fitzpat/
+    affiliation: University of Lethbridge
+
+date: "Last Update: `r format(Sys.time(), '%d %B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -69,19 +79,31 @@ knitr::knit_engines$set(youtube = eng_youtube)
 
 # Preface {-}
 
-![CC-BY-NC](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc.svg)
+Copyright ©`r format(Sys.time(), "%Y")` Grady Weyenberg
 
-Copyright © 2018 Gregory Hartman
-
-Bookdown translation and Geogebra plots by Grady Weyenberg. Other video content copyright of respective creators.
-
-Licensed to the public under Creative Commons Attribution-Noncommercial
-4.0 International Public License
-
+Original text by Gregory Hartman. Video lectures, Bookdown translation and Geogebra plots by Grady Weyenberg. 
+Additional video lecutres by Sean Fitzpatrick. Other video content copyright
+of respective creators. Licensed to the public under [Creative Commons 
+Attribution-Noncommercial 4.0 International Public License](https://creativecommons.org/licenses/by-nc/4.0/){target="_blank"}.
 
 Thank you for reading this short preface. Allow us to share a few key
 points about the text so that you may better understand what you will
 find beyond this page.
+
+This is a translation of the APEX Calculus Textbook into a Gitbook document.
+It closely follows the flow of the PDF and physical versions of the book, but
+**be aware that numbering of theorems, figures, examples, etc. will be different
+than in other versions.**
+
+You can navigate the Gitbook using the Table of Contents at the left, using the arrows 
+at the sides of the main page, or by using the left and right arrow keys. 
+The `s` key hides and shows the table of contents. The `A` icon at the top of the page has 
+buttons controlling the size and color of the text.
+
+I have not included the exercises in this version of the book. You will need 
+to consult the PDF version of the book for these.
+
+## Volume I {-}
 
 This text is Part I of a three–text series on Calculus. The first part
 covers material taught in many “Calc 1” courses: limits, derivatives,
@@ -92,7 +114,7 @@ Taylor Polynomials, found in Chapters 5 through 8. The third text covers
 topics common in “Calc 3” or “multivariable calc:” parametric equations,
 polar coordinates, vector–valued functions, and functions of more than
 one variable, found in Chapters 9 through 14. All three are available
-separately for free at `www.apexcalculus.com`. These three texts are
+separately for free at [www.apexcalculus.com](https://www.apexcalculus.com){target="_blank"}. These three texts are
 intended to work together and make one cohesive text, *APEX Calculus*,
 which can also be downloaded from the website.
 
@@ -101,7 +123,7 @@ cumbersome book. One can certainly only print the pages they currently
 need, but some prefer to have a nice, bound copy of the text. Therefore
 this text has been split into these three manageable parts, each of
 which can be purchased for about \$15 at
-[Amazon.com](https://www.amazon.com/APEX-Calculus-v4-0/dp/1719219591).
+[Amazon.com](https://www.amazon.com/APEX-Calculus-v4-0/dp/1719219591){target="_blank"}.
 
 A result of this splitting is that sometimes a concept is said to be
 explored in a “later section,” though that section does not actually
@@ -151,26 +173,14 @@ their instructor. In most cases, one is very capable of understanding
 what a theorem *means* and *how to apply it* without knowing fully *why*
 it is true.\
 
-## Interactive, 3D Graphics  {-}
+## Geogebra Graphics  {-}
 
-New to Version 3.0 was the addition of interactive, 3D graphics in the
-.pdf version. Nearly all graphs of objects in space can be rotated,
-shifted, and zoomed in/out so the reader can better understand the
-object illustrated.
+This edition of the text features Geogebra versions of all figures in 
+the original text. You are encouraged to explore these graphs, pan, zoom,
+and move any sliders to explore the ideas. Each graph has a link in the caption 
+allowing you to view the graph in a new broweser tab, where you can also edit 
+the graph as a part of your exploration.
 
-As of this writing, the only pdf viewers that support these 3D graphics
-are Adobe Reader & Acrobat (and only the versions for PC/Mac/Unix/Linux
-computers, not tablets or smartphones). To activate the interactive
-mode, click on the image. Once activated, one can click/drag to rotate
-the object and use the scroll wheel on a mouse to zoom in/out. (A great
-way to investigate an image is to first zoom in on the page of the pdf
-viewer so the graphic itself takes up much of the screen, then zoom
-inside the graphic itself.) A CTRL-click/drag pans the object left/right
-or up/down. By right-clicking on the graph one can access a menu of
-other options, such as changing the lighting scheme or perspective. One
-can also revert the graph back to its default view. If you wish to
-deactivate the interactivity, one can right-click and choose the
-“Disable Content” option.\
 
 ## Thanks {-}
 
@@ -229,11 +239,16 @@ money.
 
 We encourage others to adapt this work to fit their own needs. One might
 add sections that are “missing” or remove sections that your students
-won’t need. The source files can be found at `github.com/APEXCalculus`.
+won’t need. The source files can be found at https://github.com/APEXCalculus.
 
-You can learn more at `www.vmi.edu/APEX`.\
+You can learn more at https://www.vmi.edu/APEX
 
-## Version 4.0 {-}
+## Bookdown Version {-}
+
+This document is based on a transliteration from the Version 5 [github 
+repository](https://github.com/APEXCalculus/APEXCalculusV5){target="_blank"} 
+for the APEX book into [RMarkdown](https://rmarkdown.rstudio.com/){target="_blank"}.
+
 
 Key changes from Version 3.0 to 4.0:
 

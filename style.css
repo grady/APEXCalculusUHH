@@ -62,3 +62,10 @@ div.theorem {
 svg {
   fill: currentColor;
 }
+
+.author {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+

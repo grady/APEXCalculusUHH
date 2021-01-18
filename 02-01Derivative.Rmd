@@ -118,7 +118,24 @@ We have just introduced a number of important concepts that we will
 flesh out more within this section. First, we formally define two of
 them.
 
+```{youtube}
+id: 7X2AVKHXj1c
+```
+
+```{youtube}
+id: 2nMDH4HCsZ8
+```
+
+```{youtube}
+id: ypml6Be3oBM
+```
+
 ### The derivative at a point
+
+```{youtube}
+id: XPIS0bSEupo
+```
+
 
 ```{youtube}
 id: JXFMh21PMx4
@@ -146,6 +163,12 @@ the derivative of $f$ at $c$.*
 ```
 
 Some examples will help us understand these definitions.\
+
+
+```{youtube}
+id: 0o0eQbm-tpk
+```
+
 
 ```{youtube}
 id: q_XfRMmSEmc
@@ -373,6 +396,12 @@ $f$ at $c$. This calls for a definition.
 
 ### The derivative function
 
+
+```{youtube}
+id: akurAma1pOY
+```
+
+
 ```{youtube}
 id: yPzNYlzA0Js
 ```
@@ -392,7 +421,7 @@ $$f^\prime(x)\ =\ y'\ =\ \frac{dy}{dx}\ =\ \frac{df}{dx}\ =\ \frac{d}{dx}(f)\ =\
 ```
 
 ```{youtube}
-id: TJhJiA_w4mQ
+id: LjVm4_9zj3M
 ```
 
 **Important:** The notation $\displaystyle\frac{dy}{dx}$ is one symbol;
@@ -403,6 +432,12 @@ other places, we see these properties at work when we talk about the
 units of the derivative, when we discuss the Chain Rule, and when we
 learn about integration (topics that appear in later sections and
 chapters).\
+
+
+```{youtube}
+id: TJhJiA_w4mQ
+```
+
 
 Examples will help us understand this definition.\
 
@@ -636,6 +671,10 @@ $f$ switches from one piece to the other; there is no "corner."
 ```{youtube}
 id: q1ZAqRsgVPk
 ```
+
+
+
+
 
 ### Differentiablity on Closed Intervals
 

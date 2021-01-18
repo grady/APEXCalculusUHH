@@ -82,7 +82,8 @@ knitr::knit_engines$set(youtube = eng_youtube)
 
 Copyright ©`r format(Sys.time(), "%Y")` Grady Weyenberg
 
-Original text by Gregory Hartman. Video lectures, Bookdown translation and Geogebra plots by Grady Weyenberg. 
+Original text Copyright 2020 Gregory Hartman. Video lectures, Bookdown translation 
+and Geogebra plots by Grady Weyenberg. 
 Additional video lecutres by Sean Fitzpatrick. Other video content copyright
 of respective creators. Licensed to the public under [Creative Commons 
 Attribution-Noncommercial 4.0 International Public License](https://creativecommons.org/licenses/by-nc/4.0/){target="_blank"}.

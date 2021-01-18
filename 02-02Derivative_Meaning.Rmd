@@ -13,7 +13,7 @@ derivative?" and "How do I compute the derivative?" sections. Here we
 are concerned with "What does the derivative mean?", or perhaps, when
 read with the right emphasis, "What *is* the derivative?" We offer two
 interconnected interpretations of the derivative, hopefully explaining
-why we care about it and why it is worthy of study.\
+why we care about it and why it is worthy of study.
 
 ### Interpretation 1: Instantaneous Rate of Change
 The previous section started with an example of using the position of an
@@ -50,6 +50,12 @@ $f(2) = 86$ and $f^{\prime}(2) = -64$, we'd know that we'd have to stop the
 riders quickly otherwise they would hit the ground.
 
 ### Units of the Derivative
+
+```{youtube}
+id: bMeCSL0p9rw
+```
+
+
 It is useful to recognize the *units* of the derivative function. If $y$
 is a function of $x$, i.e., $y=f(x)$ for some function $f$, and $y$ is
 measured in feet and $x$ in seconds, then the units of $y' = f^{\prime}$ are
@@ -172,6 +178,15 @@ any means; many of the same concepts will be stressed, just from a
 slightly different perspective.
 
 ### Interpretation 2: The Slope of the Tangent Line
+
+```{youtube}
+id: mGI4WaC1cd8
+```
+
+```{youtube}
+id: P4B9RWGmapo
+```
+
 Given a function $y=f(x)$, the difference quotient
 $\displaystyle\frac{f(c+h)-f(c)}{h}$ gives a change in $y$ values
 divided by a change in $x$ values; i.e., it is a measure of the "rise
@@ -324,3 +339,9 @@ The importance of understanding the derivative cannot be understated.
 When $f$ is a function of $x$, $f^{\prime}(x)$ measures the instantaneous rate
 of change of $f$ with respect to $x$ and gives the slope of the tangent
 line to $f$ at $x$.
+
+
+```{youtube}
+id: _eI6LFHWgaM
+```
+

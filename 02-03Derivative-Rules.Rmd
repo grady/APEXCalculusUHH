@@ -31,6 +31,11 @@ certain functions and how derivatives interact with arithmetic
 operations. We start with a theorem.
 
 ```{youtube}
+id: MzkEsCKw43Y
+```
+
+
+```{youtube}
 id: Je10KZXLlwo
 ```
 
@@ -132,6 +137,12 @@ theorem helps with the first two of these examples (the third is
 answered in the next section).
 
 ```{youtube}
+id: vTqa-1p5QXc
+```
+
+
+
+```{youtube}
 id: Hr0sQcVhQ9A
 ```
 
@@ -217,6 +228,12 @@ they approximate.
 ```
 
 ### Higher Order Derivatives
+
+
+```{youtube}
+id: DyQ7hUAzj9o
+```
+
 
 ```{youtube}
 id: usabSpUh65w

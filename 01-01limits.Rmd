@@ -1147,7 +1147,7 @@ Use the Squeeze Theorem to show that $$\displaystyle \lim_{x\to 0} \frac{\sin x}
 We begin by considering the unit circle. Each point on the unit circle has coordinates $(\cos \theta,\sin \theta)$ for some angle $\theta$ as shown in Figure \ref{fig:squeeze_sinx}. Using similar triangles, we can extend the line from the origin through the point to the point $(1,\tan \theta)$, as shown. (Here we are assuming that $0\leq \theta \leq \pi/2$. Later we will show that we can also consider $\theta \leq 0$.)
 
 
-Figure \@ref{fig:squeeze-sinx} shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is $\frac12\tan\theta$; the area of the sector is $\theta/2$; the area of the triangle contained inside the sector is $\frac12\sin\theta$. It is then clear from the diagram that 
+Figure \@ref(fig:squeeze-sinx) shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is $\frac12\tan\theta$; the area of the sector is $\theta/2$; the area of the triangle contained inside the sector is $\frac12\sin\theta$. It is then clear from the diagram that 
 
 Multiply all terms by $\displaystyle\frac{2}{\sin \theta}$, giving $$\frac{1}{\cos\theta} \geq \frac{\theta}{\sin \theta} \geq 1.$$
 Taking reciprocals reverses the inequalities, giving $$ \cos \theta \leq \frac{\sin \theta}{\theta} \leq 1.$$ (These inequalities hold for all values of $\theta$ near 0, even negative values, since $\cos (-\theta) = \cos \theta$ and $\sin (-\theta) = -\sin \theta$.)
@@ -1158,7 +1158,7 @@ $$1 \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq  1 $$
 Clearly this means that $\displaystyle \lim_{\theta\to 0} \frac{\sin\theta}{\theta}=1$.
 ```
 
-```{geogebra squeeze-sinz}
+```{geogebra, squeeze-sinx}
 material_id: qwu4asbc
 caption: >
   The unit circle and related triangles. The area of the triangle associated with $\sin \theta$

@@ -304,7 +304,7 @@ knitr::include_url("https://www.youtube.com/embed/NnV1A1KTbg0")
 ```
 
 ```{example, echo=TRUE, name="Growth Without Bound", label="no-limit2"}
-A graph and table of $f(x) = 1/(x-1)^2$ are given in Figures \@ref(fig:nolimit2) and \@ref(tab:nolimit2table), respectively. Both show that as
+A graph and table of $f(x) = 1/(x-1)^2$ are given in Figure \@ref(fig:nolimit2) and Table \@ref(tab:nolimit2table), respectively. Both show that as
 $x$ approaches 1, $f(x)$ grows larger and larger.
 
 We can deduce this on our own, without the aid of the graph and table.
@@ -326,7 +326,7 @@ tibble::tibble(x=1+c(-0.1,-0.01,-0.001, 0, .001,.01,0.1), y=1/(x-1)^2) %>%
 ```
 
 
-
+### Oscillation
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/gGvvFX5QyjE")
@@ -843,7 +843,7 @@ states that already established limits do behave nicely.
 
 ```{theorem, label="limitalgebra", name="Basic Limit Properties", echo=TRUE}
 Let $b$, $c$, $L$ and $K$ be real numbers, let $n$ be a positive integer, and let $f$ and $g$ be functions defined on an open interval $I$ containing $c$ with the following limits: \index{limit!properties}
-$$\lim_{x\to c}f(x) = L \text{\ and\ } \lim_{x\to c} g(x) = K.$$
+$$\lim_{x\to c}f(x) = L \text{ and } \lim_{x\to c} g(x) = K.$$
 The following limits hold.
 
 1. Constants: $\displaystyle \lim_{x\to c} b = b$
@@ -1097,8 +1097,10 @@ Solutions:
 We can also use the limit Composition Rule of Theorem \@ref(thm:limitalgebra). Using Theorem \@ref(thm:limcontinuous), we have $\displaystyle \lim_{x\to 1}\ln x = \ln 1 = 0$ and $\displaystyle\lim_{x\to 0} e^x= e^0=1$, satisfying the conditions of the Composition Rule. Applying this rule, $$\displaystyle \lim_{x\to 1} e^{\ln x} = \lim_{x\to 0} e^x = e^0 = 1.$$ Both approaches are valid, giving the same result.
 
 1. We encountered this limit in Section \@ref(sec:limit-intro). Applying our theorems, we attempt to find the limit as $$\lim_{x\to 0}\frac{\sin x}{x}\rightarrow \frac{\sin 0}{0} \rightarrow \frac{0}{0}.$$ This, of course, violates a condition of Theorem \@ref(thm:limitalgebra), as the limit of the denominator is not allowed to be 0. Therefore, we are still unable to evaluate this limit with tools we currently have at hand.
+```
 
-### Squeeze Theorem {-}
+
+### The Squeeze Theorem {-}
 
 The section could have been titled "Using Known Limits to Find Unknown
 Limits." By knowing certain limits of functions, we can find limits

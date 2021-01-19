@@ -10,10 +10,13 @@ functions that *do not* exhibit such behavior.
 
 ```{definition, name="Continuous Function", echo=TRUE, label="continuous"}
 Let $f$ be a function defined on an open interval $I$ containing $c$.
+
 1.  $f$ is **continuous at $c$** if $\displaystyle \lim_{x\to c}f(x) = f(c)$.
 2.  $f$ is **continuous on $I$** if $f$ is continuous at $c$ for all
-    values of $c$ in $I$. If $f$ is continuous on $(-\infty,\infty)$, we
+    values of $c$ in $I$. 
+3.  If $f$ is continuous on $(-\infty,\infty)$, we
     say $f$ is **continuous everywhere**.
+    
 ```
 
 
@@ -41,15 +44,11 @@ knitr::include_url("https://www.youtube.com/embed/8z07z3yeChY")
 ```
 
 
-### Example: Intervals of continuity {#ex:contint1}
+```{example, name="Intervals of continuity", label="contint1", echo=TRUE}
 
 Let $f$ be defined as shown in Figure \@ref(fig:continuous1). Give the
 interval(s) on which $f$ is continuous.
 
-```{geogebra continuous1}
-material_id: fxehbzf7
-caption: "The graph of $f$ in Example \\@ref(ex:contint1)."
-```
 
 We proceed by examining the three criteria for continuity.
 
@@ -64,14 +63,20 @@ We proceed by examining the three criteria for continuity.
 
 We conclude that $f$ is continuous at every point of $(0,3)$ except at
 $x=1$. Therefore $f$ is continuous on $(0,1)$ and $(1,3)$.
+```
+
+```{geogebra continuous1}
+material_id: fxehbzf7
+caption: "The graph of $f$ in Example \\@ref(exm:contint1)."
+```
+
 
 Our definition of continuity (currently) only applies to open intervals.
 After Definition \@ref(def:closedcontinuity), we’ll be able to say that
 $f$ is continuous on $[0,1)$ and $(1,3]$.
 
-\
 
-### Example: Floor Function {#ex:contint2}
+```{example, echo=TRUE, name="Floor Function", label="contint2"}
 
 The *floor function*, $f(x) = \lfloor x \rfloor$, returns the largest
 integer smaller than, or equal to, the input $x$. (For example,
@@ -80,11 +85,7 @@ $f(\pi) = \lfloor \pi \rfloor = 3$.) The graph of $f$ in Figure
 function.”\
 Give the intervals on which $f$ is continuous.
 
-
-```{geogebra continuous2}
-material_id: rvp4h3na
-caption: "The graph of $f$ in Example \\@ref(ex:contint2)."
-```
+------
 
 We examine the three criteria for continuity.
 
@@ -101,6 +102,13 @@ We examine the three criteria for continuity.
 We conclude that $f$ is continuous everywhere except at integer values
 of $c$. So the intervals on which $f$ is continuous are
 $$\ldots, (-2,-1), (-1,0), (0,1), (1,2), \ldots.$$ 
+```
+
+```{geogebra continuous2}
+material_id: rvp4h3na
+caption: "The graph of $f$ in Example \\@ref(exm:contint2)."
+```
+
 
 ### Continuity on Closed Intervals {-}
 
@@ -123,9 +131,9 @@ We can make the appropriate adjustments to talk about continuity on
 half–open intervals such as $[a,b)$ or $(a,b]$ if necessary.
 
 Using this new definition, we can adjust our answer in Example
-\@ref(ex:contint1) by stating that $f$ is continuous on $[0,1)$ and
+\@ref(exm:contint1) by stating that $f$ is continuous on $[0,1)$ and
 $(1,3]$, as mentioned in that example. We can also revisit Example
-\@ref(ex:contint2) and state that the floor function is continuous on the
+\@ref(exm:contint2) and state that the floor function is continuous on the
 following half–open intervals
 $$\ldots, [-2,-1), [-1,0), [0,1), [1,2), \ldots.$$ This can tempt us to
 conclude that $f$ is continuous everywhere; after all, if $f$ is
@@ -146,7 +154,7 @@ knitr::include_url("https://www.youtube.com/embed/by3ioPN6KRM")
 ```
 
 
-### Example: Determining intervals of continuity {#ex:contfunct1}
+```{example, echo=TRUE, name="Determining intervals of continuity", label="contfunct1"}
 
 For each of the following functions, give the domain of the function and
 the interval(s) on which it is continuous.
@@ -186,7 +194,7 @@ We examine each in turn.
     transitions from one “piece” of its definition to the other. It is
     easy to verify that this is indeed true, hence we conclude that
     $f(x) = |x|$ is continuous everywhere.
-
+```
 
 ### Properties of Continuous Functions {-}
 
@@ -211,7 +219,7 @@ knitr::include_url("https://www.youtube.com/embed/GTiNiZT5ukg")
 ```
 
 
-```{theorem "Properties of Continuous Functions", echo=TRUE, label="continuityalgebra"}
+```{theorem, name="Properties of Continuous Functions", echo=TRUE, label="continuityalgebra"}
 Let $f$ and $g$ be continuous functions on an interval $I$, let $c$ be a
 real number and let $n$ be a positive integer. The following functions
 are continuous on $I$.
@@ -264,7 +272,7 @@ knitr::include_url("https://www.youtube.com/embed/I6Dlw4BUyF4")
 
 
 
-### Determining intervals on which a function is continuous {#ex:contfunct}
+
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
@@ -275,6 +283,7 @@ knitr::include_url("https://www.youtube.com/embed/6Lm-0eBi-5E")
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/nEg_y-J8Eoo")
 ```
+```{example, "Determining intervals on which a function is continuous", echo=TRUE, label="contfunct"}
 
 State the interval(s) on which each of the following functions is
 continuous.
@@ -284,6 +293,8 @@ continuous.
 1.  $\displaystyle f(x) = \tan x$
 2.  $\displaystyle f(x) = \sqrt{\ln x}$
 
+-------
+    
 We examine each in turn, applying Theorems \@ref(thm:continuityalgebra)
 and \@ref(thm:continuousfunctions) as appropriate.
 
@@ -308,6 +319,7 @@ and \@ref(thm:continuousfunctions) as appropriate.
     of $[1,\infty)$ restricts its output is $[0,\infty)$, on which
     $y = \sqrt{x}$ is defined. Thus the domain of $f(x) = \sqrt{\ln x}$
     is $[1,\infty)$.
+```
 
 ```{geogebra continuous3}
 material_id: s5z7eudc
@@ -331,6 +343,9 @@ knitr::include_url("https://www.youtube.com/embed/TevrD3qci0Q")
 
 
 
+### Intermediate Value Theorem {- #sec:IVT}
+
+
 This intuitive notion of continuity does help us understand another
 important concept as follows. Suppose $f$ is defined on $[1,2]$ and
 $f(1) = -10$ and $f(2) = 5$. If $f$ is continuous on $[1,2]$ (i.e., its
@@ -350,8 +365,6 @@ theorem.
 knitr::include_url("https://www.youtube.com/embed/10aiLy5alTg")
 ```
 
-
-### Intermediate Value Theorem {- #sec:IVT}
 
 ```{theorem, name="Intermediate Value Theorem", echo=TRUE, label="IVT"}
 Let $f$ be a continuous function on $[a,b]$ and, without loss of
@@ -382,6 +395,7 @@ knitr::include_url("https://www.youtube.com/embed/2ZSqVnhtLx4")
 ```
 
 
+### Root finding with the Bisection Method {-}
 
 One important application of the Intermediate Value Theorem is root
 finding. Given a function $f$, we are often interested in finding values
@@ -419,16 +433,12 @@ knitr::include_url("https://www.youtube.com/embed/dx5reJRcQD0")
 ```
 
 
-### Example: The Bisection Method {#ex:bisectmethod}
+```{example, echo=TRUE, name="The Bisection Method", label="bisectmethod"}
 
 Approximate the root of $f(x) = x-\cos x$, accurate to three places
 after the decimal.
 
-
-
-```{r xminuscosx, fig.cap="The graph of $x-\\cos x$.", echo=FALSE, out.extra='allow="fullscreen"'}
-knitr::include_url("https://www.desmos.com/calculator/ilsd2geszv")
-```
+------
 
 
 Consider the graph of $f(x) = x-\cos x$, shown in Figure
@@ -457,6 +467,12 @@ Either endpoint of the interval gives a good approximation of where $f$
 is 0. The Intermediate Value Theorem states that the actual zero is
 still within this interval. While we do not know its exact value, we
 know it starts with $0.739$.
+```
+
+```{r xminuscosx, fig.cap="The graph of $x-\\cos x$.", echo=FALSE, out.extra='allow="fullscreen"'}
+knitr::include_url("https://www.desmos.com/calculator/ilsd2geszv")
+```
+
 
 This type of exercise is rarely done by hand. Rather, it is simple to
 program a computer to run such an algorithm and stop when the endpoints

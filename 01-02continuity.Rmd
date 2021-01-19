@@ -497,8 +497,10 @@ for(i in 1:21){
     fm = m - cos(m)
     if (sign(m) == 0L)
         break
-    else if(sign(fa) * sign(fm) > 0)
+    else if(sign(fa) * sign(fm) > 0){
         a = m
+        fa = fm
+    }
     else 
         b = m
 }

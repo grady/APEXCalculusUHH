@@ -495,7 +495,7 @@ for(i in 1:21){
     m = (a + b) / 2
     result[i] = m  
     fm = m - cos(m)
-    if (sign(m) == 0L)
+    if (sign(fm) == 0L)
         break
     else if(sign(fa) * sign(fm) > 0){
         a = m

@@ -1141,7 +1141,31 @@ that $\displaystyle \lim_{x\to 0} \frac{\sin x}{x} = 1$.\
 knitr::include_url("https://www.youtube.com/embed/pgjv3ojtXh4")
 ```
 
-		
+```{example, label="limit-sinx-prove", echo=TRUE}
+Use the Squeeze Theorem to show that $$\displaystyle \lim_{x\to 0} \frac{\sin x}{x} = 1.$$
+
+We begin by considering the unit circle. Each point on the unit circle has coordinates $(\cos \theta,\sin \theta)$ for some angle $\theta$ as shown in Figure \ref{fig:squeeze_sinx}. Using similar triangles, we can extend the line from the origin through the point to the point $(1,\tan \theta)$, as shown. (Here we are assuming that $0\leq \theta \leq \pi/2$. Later we will show that we can also consider $\theta \leq 0$.)
+
+
+Figure \@ref{fig:squeeze-sinx} shows three regions have been constructed in the first quadrant, two triangles and a sector of a circle, which are also drawn below. The area of the large triangle is $\frac12\tan\theta$; the area of the sector is $\theta/2$; the area of the triangle contained inside the sector is $\frac12\sin\theta$. It is then clear from the diagram that 
+
+Multiply all terms by $\displaystyle\frac{2}{\sin \theta}$, giving $$\frac{1}{\cos\theta} \geq \frac{\theta}{\sin \theta} \geq 1.$$
+Taking reciprocals reverses the inequalities, giving $$ \cos \theta \leq \frac{\sin \theta}{\theta} \leq 1.$$ (These inequalities hold for all values of $\theta$ near 0, even negative values, since $\cos (-\theta) = \cos \theta$ and $\sin (-\theta) = -\sin \theta$.)
+Now take limits.
+$$\lim_{\theta\to 0} \cos \theta \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq \lim_{\theta\to 0}  1 $$
+$$\cos 0 \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq  1 $$
+$$1 \leq \lim_{\theta\to 0} \frac{\sin\theta}{\theta} \leq  1 $$
+Clearly this means that $\displaystyle \lim_{\theta\to 0} \frac{\sin\theta}{\theta}=1$.
+```
+
+```{geogebra squeeze-sinz}
+material_id: qwu4asbc
+caption: >
+  The unit circle and related triangles. The area of the triangle associated with $\sin \theta$
+  is less than the area of the circular sector with angle $\theta$, which is less than the triangle
+  associated with $\tan \theta$.
+```
+
 ```{r sqzsinxoverx, fig.cap="Squeeze Theorem applied to $\\sin(x)/x$.", echo=FALSE, out.extra='allow="fullscreen"'}
 knitr::include_url("https://www.desmos.com/calculator/291p7twtnd")
 ```
@@ -1164,6 +1188,9 @@ indistinguishable.\
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}
 knitr::include_url("https://www.youtube.com/embed/Wd464IIls5Y")
 ```
+
+
+### Special limits {-}
 
 We include this special limit, along with three others, in the following
 theorem.

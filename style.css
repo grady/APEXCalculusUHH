@@ -40,26 +40,26 @@ blockquote .definition, blockquote .theorem {
 }
 
 div.definition {
-  background-color: lightblue;
+  background-color: #1266f133;
   padding: 15px;
   border-left: 5px solid blue;
   margin: 15px 0;
 }
 
 div.example {
-  background-color: lightgrey;
+  background-color: #FBFBFB33;
   padding: 15px;
   border-left: 5px solid black;
   margin: 15px 0;
 }
 
 div.theorem {
-  background-color: lightgreen;
+  background-color: #B23CFD33;
   padding: 15px;
-  border-left: 5px solid green;
+  border-left: 5px solid #B23CFD;
   margin: 15px 0;
 }
-svg {
+nav svg {
   fill: currentColor;
 }
 
@@ -67,5 +67,7 @@ svg {
   font-weight: bold;
   margin-top: 10px;
 }
-
+.math {
+  font-size: 90%;
+}
 

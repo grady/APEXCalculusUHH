@@ -476,13 +476,34 @@ knitr::include_url("https://www.desmos.com/calculator/ilsd2geszv")
 
 This type of exercise is rarely done by hand. Rather, it is simple to
 program a computer to run such an algorithm and stop when the endpoints
-differ by a preset small amount. One of the authors did write such a
-program and found the zero of $f$, accurate to 10 places after the
-decimal, to be 0.7390851332. While it took a few minutes to write the
+differ by a preset small amount. Such a
+program is shown below. It finds zero of $f$, accurate to 7 places after the
+decimal, to be 0.7390851. While it took a few minutes to write the
 program, it took less than a thousandth of a second for the program to
-run the necessary 35 iterations. In less than 8 hundredths of a second,
+run the necessary 21 iterations. In less than 8 hundredths of a second,
 the zero was calculated to 100 decimal places (with less than 200
-iterations).
+iterations). As a practical matter, it is extremely rare for an applied
+problem to require a solution with more than five or six digits of 
+precision, so methods such as this one are of great use.
+
+```{r, echo=TRUE}
+a = 0.7
+b = 0.9
+fa = a - cos(a)
+result = c()
+for(i in 1:21){
+    m = (a + b) / 2
+    result[i] = m  
+    fm = m - cos(m)
+    if (sign(m) == 0L)
+        break
+    else if(sign(fa) * sign(fm) > 0)
+        a = m
+    else 
+        b = m
+}
+result
+```
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}

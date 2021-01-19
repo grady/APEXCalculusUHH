@@ -388,7 +388,7 @@ finding. Given a function $f$, we are often interested in finding values
 of $x$ where $f(x) = 0$. These roots may be very difficult to find
 exactly. Good approximations can be found through successive
 applications of this theorem. Suppose through direct computation we find
-that $f(a) <0 $ and $f(b)>0$, where $a<b$. The Intermediate Value
+that $f(a)<0$ and $f(b)>0$, where $a<b$. The Intermediate Value
 Theorem states that there is at least one $c$ in $(a,b)$ such that
 $f(c) = 0$. The theorem does not give us any clue as to where to find
 such a value in the interval $(a,b)$, just that at least one such value
@@ -409,9 +409,9 @@ three possibilities:
     $[a,d]$ – again,we have halved the size of our interval, hence are
     closer to a good approximation of the root.
 
-Successively applying this technique is called the [Bisection Method]{}
+Successively applying this technique is called the **Bisection Method**
 of root finding. We continue until the interval is sufficiently small.
-We demonstrate this in the following example.\
+We demonstrate this in the following example.
 
 
 ```{r, out.extra='allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"'}

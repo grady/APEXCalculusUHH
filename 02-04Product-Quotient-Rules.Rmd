@@ -1,5 +1,9 @@
 ## The Product and Quotient Rules {#sec:prod_quot_rules}
 
+```{youtube}
+id: YG15m2VwSjA
+```
+
 The previous section showed that, in some ways, derivatives behave
 nicely. The Constant Multiple and Sum/Difference Rules established that
 the derivative of $f(x) = 5x^2+\sin x$ was not complicated. We neglected

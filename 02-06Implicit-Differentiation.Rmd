@@ -1,5 +1,9 @@
 ## Implicit Differentiation {#sec:imp_deriv}
 
+```{youtube}
+id: qb40J4N1fa4
+```
+
 In the previous sections we learned to find the derivative,
 $\frac{dy}{dx}$, or $y\,'$, when $y$ is given *explicitly* as a function
 of $x$. That is, if we know $y=f(x)$ for some function $f$, we can find

@@ -47,7 +47,7 @@ products, it helps validate its truth.
 ```
 
 ```{geogebra, label="5xsquaredsinx"}
-
+material_id: yryceemc
 caption: A graph of $y = 5x^2\sin x$ and its tangent line at $x=\pi/2$.
 
 ```
@@ -232,7 +232,7 @@ tangent line, is graphed in Figure \@ref(fig:tanx).
 ```
 
 ```{geogebra, label="tanx"}
-
+material_id: fjbcf2rf
 caption: A graph of $y=\tan x$ along with its tangent line at $x=\pi/4$.
 
 ```

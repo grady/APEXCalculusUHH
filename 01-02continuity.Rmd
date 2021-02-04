@@ -248,7 +248,7 @@ their domains_.
 1.  Inverse trigonometric functions: $\arcsin x$, $\arccos x$, etc.
 1.  Roots: $f(x) = \sqrt[n]{x}$
 1.  Exponentials: $f(x) = a^x$ for $a>0$, and in particular _**the** exponential_ $f(x)=e^x$
-1.  Logarithms: $f(x) = \log_a x$, and in particular the _natural logarithm_ $f(x)=\ln x$
+1.  Logarithms: $f(x) = \log_a x$, and in particular the _natural logarithm_ $f(x)=\ln x=\log_e x$ 
 
 ```
 

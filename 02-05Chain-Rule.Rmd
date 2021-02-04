@@ -412,9 +412,9 @@ rate at which the $x$ gear makes a revolution. Using the terminology of
 calculus, the rate of $u$-change, with respect to $x$, is
 $\frac{du}{dx} = 2.$
 
-:::{style="float:right;max-width:200px;"}
+:::{style="float:right;max-width:30%"}
 
-```{tikz chainrulegears, fig.cap="A series of gears to demonstrate the Chain Rule. Note how $\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}$", echo=FALSE, dev="svg", fig.width=NULL, cache=TRUE}
+```{tikz chainrulegears, fig.cap="A series of gears to demonstrate the Chain Rule. Note how $\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}$", echo=FALSE, dev="svg", cache=TRUE}
 \begin{tikzpicture}[>=latex]
   \begin{scope}[shift={(0,-200pt)}]
   \begin{scope}

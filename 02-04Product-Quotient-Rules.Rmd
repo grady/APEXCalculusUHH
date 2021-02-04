@@ -194,8 +194,10 @@ $$\frac{d}{dx}\left(\frac{\text{HI}}{\text{LO}}\right) = \frac{\text{LO$\cdot$ d
 read "low dee high minus high dee low, over low low." Said fast, that
 phrase can roll off the tongue, making it easy to memorize. The "dee
 high" and "dee low" parts refer to the derivatives of the numerator and
-denominator, respectively.\
-Let's practice using the Quotient Rule.\
+denominator, respectively. Another way to remember which way the subtraction
+goes is to note that the derivative of the numerator comes first.
+
+Let's practice using the Quotient Rule.
 
 ```{example, label="quot1", echo=TRUE}
 
@@ -286,10 +288,10 @@ $\displaystyle f^{\prime}(x) = \frac{10x\sin x - 5x^2\cos x}{\sin^2 x}$.
 We now find $f^{\prime}$ using the Product Rule, considering $f$ as
 $f(x) = 5x^2\csc x$. $$\begin{aligned}
         f^{\prime}(x) &= \frac{d}{dx}\Big(5x^2\csc x\Big) \\
-                    &=  $5x^2(-\csc x\cot x) + 10x\csc x$\\
+                    &=  5x^2(-\csc x\cot x) + 10x\csc x\\
                     & \text{(now rewrite trig functions)}\\
                     &= 5x^2\cdot \frac{-1}{\sin x}\cdot \frac{\cos x}{\sin x} + \frac{10x}{\sin x}\\
-                    &=  $\displaystyle\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}$\\
+                    &=  \displaystyle\frac{-5x^2\cos x}{\sin ^2x}+\frac{10x}{\sin x}\\
                     & \text{(get common denominator)}\\
                     &= \frac{10x\sin x - 5x^2\cos x}{\sin^2x}
         \end{aligned}$$ Finding $f^{\prime}$ using either method

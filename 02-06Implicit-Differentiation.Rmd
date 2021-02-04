@@ -26,7 +26,7 @@ functions. The surprising thing is, however, that we can still find
 $y\,'$ via a process known as **implicit differentiation**.
 
 ```{geogebra, label="implicit1"}
-
+material_id: asyupekt
 caption: >
     A graph of the implicit function $\sin (y)+y^3=6-x^3$.
 
@@ -113,7 +113,7 @@ this tangent line are shown in Figure \@ref(fig:implicit2).
 ```
 
 ```{geogebra, label="implicit2"}
-
+material_id: tqvtbken
 caption: >
     The function $\sin y+y^3 = 6-x^3$ and its tangent line at the
     point $(\sqrt[3]{6},0)$.
@@ -367,7 +367,7 @@ its tangent line at $(8,8)$, is shown in Figure \@ref(fig:implicit8).
 
 
 ```{geogebra, label="implicit9"}
-
+material_id: aghrqpvv
 caption: >
     An astroid, traced out by a point on the smaller circle as it
     rolls inside the larger circle.
@@ -398,11 +398,11 @@ We found that $y\,' = \frac{dy}{dx} = -x/y$ in Example
 \@ref(exm:implicit7ex). To find $y\,''$, we apply implicit differentiation
 to $y\,'$. $$\begin{aligned}
 y\,'' &= \frac{d}{dx}\big(y\,'\big) \\
-        &= \frac{d}{dx}\left(-\frac xy\right)\qquad \text{(Now use the Quotient Rule.)} \\
-        &= -\frac{y(1) - x(y\,')}{y^2} \\
-\intertext{replace $y\,'$ with $-x/y$:}
-        &= -\frac{y-x(-x/y)}{y^2}\\
-        &= -\frac{y+x^2/y}{y^2}.\end{aligned}$$ While this is not a
+    &= \frac{d}{dx}\left(-\frac xy\right)\qquad \text{(Now use the Quotient Rule.)} \\
+    &= -\frac{y(1) - x(y\,')}{y^2} \\
+    &\text{(replace $y\,'$ with $-x/y$)}\\
+    &= -\frac{y-x(-x/y)}{y^2}\\
+    &= -\frac{y+x^2/y}{y^2}.\end{aligned}$$ While this is not a
 particularly simple expression, it is usable. We can see that $y\,''>0$
 when $y<0$ and $y\,''<0$ when $y>0$. In Section \@ref(sec:concavity), we
 will see how this relates to the shape of the graph.
@@ -442,12 +442,12 @@ differentiation to find $y\,'$.
 As suggested above, we start by taking the natural log of both sides
 then applying implicit differentiation. $$\begin{aligned}
 y &= x^x \\
-\ln (y) &= $\ln (x^x)$ \text{(apply logarithm rule)}\\
-\ln (y) &= $x\ln x$  \text{(now use implicit differentiation)}\\
+\ln (y) &= \ln (x^x) \quad\text{(apply logarithm rule)}\\
+\ln (y) &= x\ln x  \quad\text{(now use implicit differentiation)}\\
 \frac{d}{dx}\Big(\ln (y)\Big) &= \frac{d}{dx}\Big(x\ln x\Big) \\
 \frac{y\,'}{y} &= \ln x + x\cdot\frac 1x\\
 \frac{y\,'}{y} &= \ln x + 1\\
-y\,' &= $y\big(\ln x+1\big)$ \text{(substitute $y=x^x$)}\\
+y\,' &= y\big(\ln x+1\big) \quad\text{(substitute $y=x^x$)}\\
 y\,' &= x^x\big(\ln x+1\big).\end{aligned}$$
 
 To "test" our answer, let's use it to find the equation of the tangent
@@ -461,7 +461,7 @@ line.
 ```
 
 ```{geogebra, label="implicit10"}
-
+material_id: stfevyba
 caption: >
     A graph of $y=x^x$ and its tangent line at $x=1.5$.
 

@@ -28,6 +28,10 @@ multiple compositions like $f(g(h(x)))$ or $f(g(h(j(x))))$, etc.
 To motivate the rule, let's look at three derivatives we can already
 compute.\
 
+```{youtube}
+id: k7wX-kxd7Kw
+```
+
 ```{example, label="chain1", echo=TRUE}
 
 (Exploring similar derivatives). Find the derivatives of
@@ -75,6 +79,10 @@ is not differentiable.
 The following definition takes care to ensure this problem does not
 arise. We'll focus more on the derivative result than on the
 domain/range conditions.
+
+```{youtube}
+id: 1_Lp-ONIMuc
+```
 
 ```{theorem, label="chain-rule", echo=TRUE}
 
@@ -160,6 +168,10 @@ that.
 
 We now consider more examples that employ the Chain Rule.\
 
+```{youtube}
+id: yW1BbOeDFcM
+```
+
 ```{example, label="chain3", echo=TRUE}
 
 (Using the Chain Rule). Find the derivatives of the following functions:
@@ -243,6 +255,10 @@ applied to familiar functions.
 Of course, the Chain Rule can be applied in conjunction with any of the
 other rules we have already learned. We practice this next.\
 
+```{youtube}
+id: 2QJLR-Y-Ht8
+```
+
 ```{example, label="chain4", echo=TRUE}
 (Using the Product, Quotient and Chain Rules). Find the derivatives of
 the following functions.\
@@ -277,6 +293,10 @@ afterward.
 
 We can also employ the Chain Rule itself several times, as shown in the
 next example.\
+
+```{youtube}
+id: JeLuSDqqFPA
+```
 
 ```{example, label="chain6", echo=TRUE}
 
@@ -338,8 +358,11 @@ The Chain Rule also has theoretic value. That is, it can be used to find
 the derivatives of functions that we have not yet learned as we do in
 the following example.\
 
-```{example, label="chain8", echo=TRUE}
+```{youtube}
+id: LnmwxZ5w30w
+```
 
+```{example, label="chain8", echo=TRUE}
 (The Chain Rule and exponential functions). Use the Chain Rule to find
 the derivative of $y= 2^x.$
 

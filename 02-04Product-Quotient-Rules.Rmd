@@ -13,6 +13,8 @@ straightforward. (If you had to guess what their respective derivatives
 are, you would probably guess wrong.) For these, we need the Product and
 Quotient Rules, respectively, which are defined in this section.
 
+### The Product Rule
+
 We begin with the Product Rule.
 
 ```{youtube}
@@ -30,6 +32,11 @@ $$\frac{d}{dx}\Big(f(x)g(x)\Big) = f(x)g^{\prime}(x) + f^{\prime}(x)g(x).$$
 **Important:**
 $\displaystyle\frac{d}{dx}\Big(f(x)g(x)\Big) \neq f^{\prime}(x)g^{\prime}(x)$!
 While this answer is simpler than the Product Rule, it is wrong.
+
+```{youtube}
+id: IYDzYNQb9Ms
+```
+
 
 We practice using this new rule in an example, followed by an example
 that demonstrates why this theorem is true.\
@@ -66,6 +73,10 @@ caption: A graph of $y = 5x^2\sin x$ and its tangent line at $x=\pi/2$.
 
 
 We now investigate why the Product Rule is true.
+
+```{youtube}
+id: 3cTOJ-lTGcA
+```
 
 ```{youtube}
 id: i791Y97O5hI
@@ -195,6 +206,11 @@ find another; a correct answer will be *very* similar to this one.)
 
 ```
 
+### The Quotient Rule
+
+```{youtube}
+id: xes-lSVm4Kc
+```
 
 We have learned how to compute the derivatives of sums, differences, and
 products of functions. We now learn how to find the derivative of a
@@ -279,6 +295,7 @@ caption: A graph of $y=\tan x$ along with its tangent line at $x=\pi/4$.
 
 ```
 
+### Other Trig Derivatives
 
 We include this result in the following theorem about the derivatives of
 the trigonometric functions. Recall we found the derivative of
@@ -339,6 +356,8 @@ and useful to you.
 
 ```
 
+
+### Generalized Power Rule
 
 The Quotient Rule gives other useful results, as shown in the next
 example.
@@ -443,6 +462,14 @@ different expressions for $f^{\prime}$, including:
 $$1-\frac{1}{x^2} = \frac{x\cdot\big(2x-3\big)-\big(x^2-3x+1\big)\cdot 1}{x^2} =    \big(x^2-3x+1\big)\cdot (-1)x^{-2} + \big(2x-3\big)\cdot x^{-1}.$$
 They are equal; they are all correct; only the first is "clear." Work to
 make answers clear.
+
+```{youtube}
+id: qcMMRviw0mg
+```
+
+```{youtube}
+id: z-avxD6P59A
+```
 
 In the next section we continue to learn rules that allow us to more
 easily compute derivatives than using the limit definition directly. We

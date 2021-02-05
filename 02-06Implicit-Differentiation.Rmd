@@ -179,7 +179,7 @@ them is also important.
 ```
 
 ```{geogebra, label="implicit4"}
-
+material_id: bxbnssdy
 caption: >
     A graph of the implicitly defined function $y^3+x^2y^4=1+2x$
     along with its tangent line at the point $(0,1)$.
@@ -227,12 +227,12 @@ At $(0,1)$, the slope is $1/2$.
 At $(0,-1)$, the slope is also $1/2$.
 
 The tangent lines have been added to the graph of the function in Figure
-\@ref(fig:implicit6).
+\@ref(fig:implicit5).
 
 ```
 
 ```{geogebra, label="implicit5"}
-
+material_id: cbuzds79
 caption: >
     A graph of the implicitly defined function
     $\sin(x^2y^2)+y^3=x+y$.
@@ -240,8 +240,7 @@ caption: >
 ```
 
 
-```{geogebra, label="implicit6"}
-
+```{geogebra, label="implicit6", include=FALSE}
 caption: >
     A graph of the implicitly defined function
     $\sin(x^2y^2)+y^3=x+y$ and certain tangent lines.
@@ -276,7 +275,7 @@ all normal lines to a circle pass through the center of the circle.)
 ```
 
 ```{geogebra, label="implicit7"}
-
+material_id: btpuye4m
 caption: >
     The unit circle with its tangent line at $(1/2,\sqrt{3}/2)$.
 
@@ -375,7 +374,7 @@ caption: >
 ```
 
 ```{geogebra, label="implicit8"}
-
+material_id: thq6zjkw
 caption: An astroid with a tangent line.
 
 ```

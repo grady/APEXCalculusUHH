@@ -9,6 +9,10 @@ differentiation rules, we look at the last way two (or more) functions
 can be combined: the process of composition (i.e. one function "inside"
 another).
 
+```{youtube}
+id: woZ5J_YnrEQ
+```
+
 One example of a composition of functions is $f(x) = \cos(x^2).$ We
 currently do not know how to compute this derivative. If forced to
 guess, one would likely guess $f^{\prime}(x) = -\sin(2x)$, where we
@@ -199,7 +203,9 @@ id: yW1BbOeDFcM
 
 ```
 
-
+```{youtube}
+id: k6uUoYWhDcE
+```
 
 ```{example, label="chain7ex", echo=TRUE}
 
@@ -325,10 +331,17 @@ be careful to keep track of how to apply each of these steps.
 
 ```
 
-\
+```{youtube}
+id: BXsQRuwC06k
+```
+
 It is a traditional mathematical exercise to find the derivatives of
 arbitrarily complicated functions just to demonstrate that it *can be
 done*. Just break everything down into smaller pieces.\
+
+```{youtube}
+id: 0vQo_Fu2zZk
+```
 
 ```{example, label="chain5", echo=TRUE}
 
@@ -497,6 +510,11 @@ also often used in real life when actual functions are unknown. Through
 measurement, we can calculate (or, approximate) $\frac{dy}{du}$ and
 $\frac{du}{dx}.$ With our knowledge of the Chain Rule, we can find
 $\frac{dy}{dx}.$
+
+```{youtube}
+id: CZ-_4g9TNAM
+```
+
 
 In the next section, we use the Chain Rule to justify another
 differentiation technique. There are many curves that we can draw in the

@@ -11,6 +11,10 @@ $y\,'$. For example, given $y=3x^2-7$, we can easily find $y\,'=6x$.
 (Here we explicitly state how $x$ and $y$ are related. Knowing $x$, we
 can directly find $y$.)
 
+```{youtube}
+id: vfZPVDps6X8
+```
+
 Sometimes the relationship between $y$ and $x$ is not explicit; rather,
 it is *implicit*. For instance, we might know that $x^2-y=4$. This
 equality defines a relationship between $x$ and $y$; if we know $x$, we
@@ -309,10 +313,16 @@ caption: >
 
 
 
+### Derivative of Rational Roots
+
 This section has shown how to find the derivatives of implicitly defined
 functions, whose graphs include a wide variety of interesting and
 unusual shapes. Implicit differentiation can also be used to further our
 understanding of "regular" differentiation.
+
+```{youtube}
+id: 56iNE8iXZRQ
+```
 
 One hole in our current understanding of derivatives is this: what is
 the derivative of the square root function? That is,
@@ -355,7 +365,6 @@ rational powers. Using limits, we can extend this once more to include
 the following theorem.
 
 ```{theorem, label="finalpower", echo=TRUE}
-
 (Power Rule for Differentiation). Let $f(x) = x^n$, where $n\neq 0$ is a
 real number. Then $f$ is differentiable on its domain, except possibly
 at $x=0$, and $f^{\prime}(x) = n\cdot x\,^{n-1}$.
@@ -443,15 +452,23 @@ will see how this relates to the shape of the graph.
 id: QVM1RWqQM34
 ```
 
+```{youtube}
+id: nFbeE5aQvTY
+```
+
 
 ### Logarithmic Differentiation
 
+```{youtube}
+id: gMOxV-lCKJw
+```
+
 Consider the function $y=x^x$; it is graphed in Figure
-\@ref(fig:logdiffa). It is well--defined for $x>0$ and we might be
+\@ref(fig:implicit10). It is well--defined for $x>0$ and we might be
 interested in finding equations of lines tangent and normal to its
 graph. How do we take its derivative?
 
-```{geogebra, label="logdiffa"}
+```{geogebra, label="logdiffa", include=FALSE}
 
 caption: A plot of $y=x^x$.
 
@@ -519,4 +536,13 @@ id: w93T6AyU_aE
 
 ```{youtube}
 id: 3Cv2EgjH9ZE
+```
+
+
+```{youtube}
+id: zw0pD6LX4HM
+```
+
+```{youtube}
+id: PKLh7BJfI8o
 ```

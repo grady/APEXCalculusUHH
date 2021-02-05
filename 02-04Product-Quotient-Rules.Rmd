@@ -15,6 +15,10 @@ Quotient Rules, respectively, which are defined in this section.
 
 We begin with the Product Rule.
 
+```{youtube}
+id: 1X3PTrkMsJ8
+```
+
 ```{theorem, label="ProductRule", echo=TRUE}
 
 (Product Rule). Let $f$ and $g$ be differentiable functions on an open
@@ -29,6 +33,10 @@ While this answer is simpler than the Product Rule, it is wrong.
 
 We practice using this new rule in an example, followed by an example
 that demonstrates why this theorem is true.\
+
+```{youtube}
+id: 37efDywkDyE
+```
 
 ```{example, label="prod1", echo=TRUE}
 
@@ -56,8 +64,13 @@ caption: A graph of $y = 5x^2\sin x$ and its tangent line at $x=\pi/2$.
 
 ```
 
-\
-We now investigate why the Product Rule is true.\
+
+We now investigate why the Product Rule is true.
+
+```{youtube}
+id: i791Y97O5hI
+```
+
 
 ```{example, label="prove-product", echo=TRUE}
 
@@ -91,6 +104,10 @@ its proof yet somehow doubt its applicability to real problems. In the
 following example, we compute the derivative of a product of functions
 in two ways to verify that the Product Rule is indeed "right."\
 
+```{youtube}
+id: -plvLFQ21Ig
+```
+
 ```{example, label="prod2", echo=TRUE}
 
 (Exploring alternate derivative methods). Let
@@ -117,7 +134,9 @@ $y^{\prime} = (2x+3)(4x-3) = 8x^2+6x-9$. Obviously this is not correct.
 
 ```
 
-\
+```{youtube}
+id: PYK64WB4JUg
+```
 
 ```{example, label="prod10", echo=TRUE}
 
@@ -144,7 +163,10 @@ finding the derivative of a product of 4 or more functions.
 
 ```
 
-\
+```{youtube}
+id: QdQ14efmlMg
+```
+
 We consider one more example before discussing another derivative rule.\
 
 ```{example, label="deriv-ln", echo=TRUE}
@@ -173,10 +195,15 @@ find another; a correct answer will be *very* similar to this one.)
 
 ```
 
-\
+
 We have learned how to compute the derivatives of sums, differences, and
 products of functions. We now learn how to find the derivative of a
-quotient of functions.\
+quotient of functions.
+
+```{youtube}
+id: IlsA8342GvQ
+```
+
 
 ```{theorem, label="QuotientRule", echo=TRUE}
 
@@ -199,6 +226,10 @@ goes is to note that the derivative of the numerator comes first.
 
 Let's practice using the Quotient Rule.
 
+```{youtube}
+id: Hr4bt6yFwPg
+```
+
 ```{example, label="quot1", echo=TRUE}
 
 (Using the Quotient Rule). Let
@@ -217,6 +248,11 @@ Directly applying the Quotient Rule gives: $$\begin{aligned}
 The Quotient Rule allows us to fill in holes in our understanding of
 derivatives of the common trigonometric functions. We start with finding
 the derivative of the tangent function.\
+
+
+```{youtube}
+id: wslbADxDg4c
+```
 
 ```{example, label="der-tan", name="Using the Quotient Rule to find $(\\tan x)'$.",echo=TRUE}
 Find the derivative of $y=\tan x$.
@@ -307,6 +343,10 @@ and useful to you.
 The Quotient Rule gives other useful results, as shown in the next
 example.
 
+```{youtube}
+id: jPqqK-ObPm4
+```
+
 ```{example, label="deriv-power", echo=TRUE}
 
 (Using the Quotient Rule to expand the Power Rule). Find the derivatives
@@ -353,6 +393,10 @@ rules may be applied depending on how the function is treated. One of
 the beautiful things about calculus is that there is not "the" right
 way; each path, when applied correctly, leads to the same result, the
 derivative. We demonstrate this concept in an example.\
+
+```{youtube}
+id: ESYjxNMNvh8
+```
 
 ```{example, label="multiple-deriv", echo=TRUE}
 

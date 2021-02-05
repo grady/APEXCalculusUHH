@@ -35,7 +35,12 @@ caption: >
 Implicit differentiation is a technique based on the Chain Rule that is
 used to find a derivative when the relationship between the variables is
 given implicitly rather than explicitly (solved for one variable in
-terms of the other).\
+terms of the other).
+
+```{youtube}
+id: JWOOMkaNbQg
+```
+
 We begin by reviewing the Chain Rule. Let $f$ and $g$ be functions of
 $x$. Then
 $$\frac{d}{dx}\Big(f(g(x))\Big) = f^{\prime}(g(x))\cdot g'(x).$$ Suppose
@@ -44,6 +49,50 @@ $$\frac{d}{dx}\Big(f(y)\Big) = f^{\prime}(y)\cdot y\,', \quad \text{or}\quad \fr
 These equations look strange; the key concept to learn here is that we
 can find $y\,'$ even if we don't exactly know how $y$ and $x$ relate.\
 We demonstrate this process in the following example.\
+
+Quite a few "famous" curves have equations that are given implicitly. We
+can use implicit differentiation to find the slope at various points on
+those curves. We investigate two such curves in the next examples.\
+
+```{youtube}
+id: A134hhXIF-0
+```
+
+```{example, label="implicit7ex", echo=TRUE}
+
+(Finding slopes of tangent lines to a circle). Find the slope of the
+tangent line to the circle $x^2+y^2=1$ at the point $(1/2, \sqrt{3}/2)$.
+
+------------------------------------------------------------------------
+
+Taking derivatives, we get $2x+2yy\,'=0$. Solving for $y\,'$ gives:
+$$\displaystyle y\,' = \frac{-x}{y}.$$ This is a clever formula. Recall
+that the slope of the line through the origin and the point $(x,y)$ on
+the circle will be $y/x$. We have found that the slope of the tangent
+line to the circle at that point is the opposite reciprocal of $y/x$,
+namely, $-x/y$. Hence these two lines are always perpendicular.
+
+At the point $(1/2, \sqrt{3}/2)$, we have the tangent line's slope as
+$$y\,' = \frac{-1/2}{\sqrt{3}/2} = \frac{-1}{\sqrt{3}} \approx -0.577.$$
+
+A graph of the circle and its tangent line at $(1/2,\sqrt{3}/2)$ is
+given in Figure \@ref(fig:implicit7), along with a thin dashed line from
+the origin that is perpendicular to the tangent line. (It turns out that
+all normal lines to a circle pass through the center of the circle.)
+```
+
+```{geogebra, label="implicit7"}
+material_id: btpuye4m
+caption: >
+    The unit circle with its tangent line at $(1/2,\sqrt{3}/2)$.
+
+```
+
+
+```{youtube}
+id: 0baXlbhup0o
+```
+
 
 ```{example, label="implicit1ex", echo=TRUE}
 
@@ -92,6 +141,10 @@ see the right hand side is also $0$; the equation is satisfied. The
 following example finds the equation of the tangent line to this
 function at this point.\
 
+```{youtube}
+id: qYrcm4ObwOM
+```
+
 ```{example, label="implicit2ex", echo=TRUE}
 
 (Using Implicit Differentiation to find a tangent line). Find the
@@ -137,6 +190,11 @@ steps below assume $y$ is a function of $x$.
 **Practical Note:** When working by hand, it may be beneficial to use
 the symbol $\frac{dy}{dx}$ instead of $y\,'$, as the latter can be
 easily confused for $y$ or $y^1$.\
+
+```{youtube}
+id: O5OqJ7a_Ovo
+```
+
 
 ```{example, label="implicit3", echo=TRUE}
 
@@ -186,7 +244,9 @@ caption: >
 
 ```
 
-
+```{youtube}
+id: BMn-BU6VTQU
+```
 
 ```{example, label="implicit5ex", echo=TRUE}
 
@@ -247,39 +307,6 @@ caption: >
 
 ```
 
-Quite a few "famous" curves have equations that are given implicitly. We
-can use implicit differentiation to find the slope at various points on
-those curves. We investigate two such curves in the next examples.\
-
-```{example, label="implicit7ex", echo=TRUE}
-
-(Finding slopes of tangent lines to a circle). Find the slope of the
-tangent line to the circle $x^2+y^2=1$ at the point $(1/2, \sqrt{3}/2)$.
-
-------------------------------------------------------------------------
-
-Taking derivatives, we get $2x+2yy\,'=0$. Solving for $y\,'$ gives:
-$$\displaystyle y\,' = \frac{-x}{y}.$$ This is a clever formula. Recall
-that the slope of the line through the origin and the point $(x,y)$ on
-the circle will be $y/x$. We have found that the slope of the tangent
-line to the circle at that point is the opposite reciprocal of $y/x$,
-namely, $-x/y$. Hence these two lines are always perpendicular.
-
-At the point $(1/2, \sqrt{3}/2)$, we have the tangent line's slope as
-$$y\,' = \frac{-1/2}{\sqrt{3}/2} = \frac{-1}{\sqrt{3}} \approx -0.577.$$
-
-A graph of the circle and its tangent line at $(1/2,\sqrt{3}/2)$ is
-given in Figure \@ref(fig:implicit7), along with a thin dashed line from
-the origin that is perpendicular to the tangent line. (It turns out that
-all normal lines to a circle pass through the center of the circle.)
-```
-
-```{geogebra, label="implicit7"}
-material_id: btpuye4m
-caption: >
-    The unit circle with its tangent line at $(1/2,\sqrt{3}/2)$.
-
-```
 
 
 This section has shown how to find the derivatives of implicitly defined
@@ -386,6 +413,10 @@ theory, this is simple: first find $\frac{dy}{dx}$, then take its
 derivative with respect to $x$. In practice, it is not hard, but it
 often requires a bit of algebra. We demonstrate this in an example.\
 
+```{youtube}
+id: V6piqsjn2mk
+```
+
 ```{example, label="implicit9ex", echo=TRUE}
 
 (Finding the second derivative). Given $x^2+y^2=1$, find
@@ -406,6 +437,10 @@ particularly simple expression, it is usable. We can see that $y\,''>0$
 when $y<0$ and $y\,''<0$ when $y>0$. In Section \@ref(sec:concavity), we
 will see how this relates to the shape of the graph.
 
+```
+
+```{youtube}
+id: QVM1RWqQM34
 ```
 
 
@@ -430,6 +465,10 @@ A differentiation technique known as *logarithmic differentiation*
 becomes useful here. The basic principle is this: take the natural log
 of both sides of an equation $y=f(x)$, then use implicit differentiation
 to find $y\,'$. We demonstrate this in the following example.\
+
+```{youtube}
+id: aofx_jgKDhU
+```
 
 ```{example, label="implicit10ex", echo=TRUE}
 
@@ -473,3 +512,11 @@ it extended the Power Rule to rational exponents, which we then extended
 to all real numbers. In the next section, implicit differentiation will
 be used to find the derivatives of *inverse* functions, such as
 $y=\sin^{-1} x$.
+
+```{youtube}
+id: w93T6AyU_aE
+```
+
+```{youtube}
+id: 3Cv2EgjH9ZE
+```

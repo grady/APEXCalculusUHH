@@ -1,0 +1,422 @@
+## Concavity and the Second Derivative {#sec:concavity}
+
+Our study of "nice" functions continues. The previous section showed how
+the first derivative of a function, f\^, can relay important information
+about $f$. We now apply the same technique to f\^ itself, and learn what
+this tells us about $f$.
+
+The key to studying $f^{\prime}$ is to consider its derivative, namely
+$f^{\prime}'$, which is the second derivative of $f$. When
+$f^{\prime}'>0$, $f^{\prime}$ is increasing. When $f^{\prime}'<0$,
+f\^ is decreasing. $f^{\prime}$ has relative maxima and minima where
+$f^{\prime}'=0$ or is undefined.
+
+This section explores how knowing information about f\^ gives
+information about $f$.\
+**Concavity**
+
+We begin with a definition, then explore its meaning.
+
+```{definition, label="concavity", echo=TRUE}
+
+(Concave Up and Concave Down). Let $f$ be differentiable on an interval
+$I$. The graph of $f$ is **concave up** on $I$ if $f^{\prime}$ is
+increasing. The graph of $f$ is **concave down** on $I$ if $f^{\prime}$
+is decreasing. If $f^{\prime}$ is constant then the graph of $f$ is said
+to have **no concavity**.
+
+```
+
+> **Note:** We often state that "$f$ is concave up" instead of "the
+> graph of $f$ is concave up" for simplicity.
+
+The graph of a function $f$ is *concave up* when f\^ is *increasing.*
+That means as one looks at a concave up graph from left to right, the
+slopes of the tangent lines will be increasing. Consider Figure
+\@ref(fig:concavity1), where a concave up graph is shown along with some
+tangent lines. Notice how the tangent line on the left is steep,
+downward, corresponding to a small value of f\^. On the right, the
+tangent line is steep, upward, corresponding to a large value of f\^.
+
+```{geogebra, label="concavity1"}
+
+caption: >
+  A function $f$ with a concave up graph. Notice how the slopes
+  of the tangent lines, when looking from left to right, are increasing.
+
+```
+
+If a function is decreasing and concave up, then its rate of decrease is
+slowing; it is "leveling off." If the function is increasing and concave
+up, then the *rate* of increase is increasing. The function is
+increasing at a faster and faster rate.
+
+Now consider a function which is concave down. We essentially repeat the
+above paragraphs with slight variation.
+
+The graph of a function $f$ is *concave down* when f\^ is *decreasing.*
+That means as one looks at a concave down graph from left to right, the
+slopes of the tangent lines will be decreasing. Consider Figure
+\@ref(fig:concavity2), where a concave down graph is shown along with
+some tangent lines. Notice how the tangent line on the left is steep,
+upward, corresponding to a large value of f\^. On the right, the tangent
+line is steep, downward, corresponding to a small value of f\^.
+
+```{geogebra, label="concavity2"}
+
+caption: >
+  A function $f$ with a concave down graph. Notice how the slopes
+  of the tangent lines, when looking from left to right, are decreasing.
+
+```
+
+If a function is increasing and concave down, then its rate of increase
+is slowing; it is "leveling off." If the function is decreasing and
+concave down, then the *rate* of decrease is decreasing. The function is
+decreasing at a faster and faster rate.
+
+> **Note:** A mnemonic for remembering what concave up/down means is:
+> "Concave up is like a cup; concave down is like a frown." It is
+> admittedly terrible, but it works.
+
+Our definition of concave up and concave down is given in terms of when
+the first derivative is increasing or decreasing. We can apply the
+results of the previous section and to find intervals on which a graph
+is concave up or down. That is, we recognize that $f^{\prime}$ is
+increasing when $f^{\prime\prime}>0$, etc.
+
+```{theorem, label="concavity-deriv", echo=TRUE}
+
+(Test for Concavity). Let $f$ be twice differentiable on an interval
+$I$. The graph of $f$ is concave up if $f^{\prime\prime}>0$ on $I$, and
+is concave down if $f^{\prime\prime}<0$ on $I$.
+
+```
+```{geogebra, label="concavity3"}
+
+caption: >
+  Demonstrating the 4 ways that concavity interacts with
+  increasing/decreasing, along with the relationships with the first and
+  second derivatives.
+
+```
+
+> **Note:** Geometrically speaking, a function is concave up if its
+> graph lies above its tangent lines. A function is concave down if its
+> graph lies below its tangent lines.
+
+If knowing where a graph is concave up/down is important, it makes sense
+that the places where the graph changes from one to the other is also
+important. This leads us to a definition.
+
+```{definition, label="infl", echo=TRUE}
+
+(Point of Inflection). A **point of inflection** is a point on the graph
+of $f$ at which the concavity of $f$ changes.
+
+```
+
+Figure \@ref(fig:concavity4) shows a graph of a function with inflection
+points labeled.
+
+```{geogebra, label="concavity4"}
+
+caption: >
+  A graph of a function with its inflection points marked. The
+  intervals where concave up/down are also indicated.
+
+```
+
+If the concavity of $f$ changes at a point $(c,f(c))$, then f\^ is
+changing from increasing to decreasing (or, decreasing to increasing) at
+$x=c$. That means that the sign of f\^ is changing from positive to
+negative (or, negative to positive) at $x=c$. This leads to the
+following theorem.
+
+```{theorem, label="inflection", echo=TRUE}
+
+(Points of Inflection). If $(c,f(c))$ is a point of inflection on the
+graph of $f$, then either $f^{\prime\prime}(c)=0$ or $f^{\prime\prime}$
+is not defined at $c$.
+
+```
+
+We have identified the concepts of concavity and points of inflection.
+It is now time to practice using these concepts; given a function, we
+should be able to find its points of inflection and identify intervals
+on which it is concave up or down. We do so in the following examples.\
+
+```{example, label="conc1ex", echo=TRUE}
+
+(Finding intervals of concave up/down, inflection points). Let
+$f(x)=x^3-3x+1$. Find the inflection points of $f$ and the intervals on
+which it is concave up/down.
+
+------------------------------------------------------------------------
+
+We start by finding $f^{\prime}(x)=3x^2-3$ and $f^{\prime\prime}(x)=6x$.
+To find the inflection points, we use Theorem \@ref(thm:inflection) and
+find where $f^{\prime\prime}(x)=0$ or where f\^ is undefined. We find
+f\^ is always defined, and is 0 only when $x=0$. So the point $(0,1)$ is
+the only possible point of inflection.
+
+This possible inflection point divides the real line into two intervals,
+$(-\infty,0)$ and $(0,\infty)$. We use a process similar to the one used
+in the previous section to determine increasing/decreasing. Pick any
+$c<0$; $f^{\prime\prime}(c)<0$ so $f$ is concave down on $(-\infty,0)$.
+Pick any $c>0$; $f^{\prime\prime}(c)>0$ so $f$ is concave up on
+$(0,\infty)$. Since the concavity changes at $x=0$, the point $(0,1)$ is
+an inflection point.
+
+The number line in Figure \@ref(fig:concline1) illustrates the process
+of determining concavity; Figure \@ref(fig:conc1) shows a graph of $f$
+and f\^, confirming our results. Notice how $f$ is concave down
+precisely when $f^{\prime\prime}(x)<0$ and concave up when
+$f^{\prime\prime}(x)>0$.
+```
+
+```{geogebra, label="concline1"}
+
+caption: >
+  A number line determining the concavity of $f$ in Example
+  \@ref(exm:conc1ex).
+
+```
+```{geogebra, label="conc1"}
+
+caption: A graph of $f(x)$ used in Example \@ref(exm:conc1ex).
+
+```
+
+
+\
+
+```{example, label="conc2ex", echo=TRUE}
+
+(Finding intervals of concave up/down, inflection points). Let
+$f(x)=x/(x^2-1)$. Find the inflection points of $f$ and the intervals on
+which it is concave up/down.
+
+------------------------------------------------------------------------
+
+We need to find f\^ and f\^. Using the Quotient Rule and simplifying, we
+find
+$$f^{\prime}(x)=\frac{-(1+x^2)}{(x^2-1)^2} \quad \text{and}\quad f^{\prime\prime}(x) = \frac{2x(x^2+3)}{(x^2-1)^3}.$$
+
+To find the possible points of inflection, we seek to find where
+$f^{\prime\prime}(x)=0$ and where $f^{\prime\prime}$ is not defined.
+Solving $f^{\prime\prime}(x)=0$ reduces to solving $2x(x^2+3)=0$; we
+find $x=0$. We find that f\^ is not defined when $x=\pm 1$, for then the
+denominator of f\^ is 0. We also note that $f$ itself is not defined at
+$x=\pm 1$, having a domain of $(-\infty,-1)\cup(-1,1)\cup(1,\infty)$.
+Since the domain of $f$ is the union of three intervals, it makes sense
+that the concavity of $f$ could switch across intervals. We technically
+cannot say that $f$ has a point of inflection at $x=\pm 1$ as they are
+not part of the domain, but we must still consider these $x$-values to
+be important and will include them in our number line.
+
+The important $x$-values at which concavity might switch are $x=-1$,
+$x=0$ and $x=1$, which split the number line into four intervals as
+shown in Figure \@ref(fig:concline2). We determine the concavity on
+each. Keep in mind that all we are concerned with is the *sign* of
+f\^ on the interval.\
+**Interval 1,** $(-\infty,-1)$: Select a number $c$ in this interval
+with a large magnitude (for instance, $c=-100$). The denominator of
+$f^{\prime}'(x)$ will be positive. In the numerator, the $(c^2+3)$ will
+be positive and the $2c$ term will be negative. Thus the numerator is
+negative and $f^{\prime\prime}(c)$ is negative. We conclude $f$ is
+concave down on $(-\infty,-1)$.
+
+**Interval 2,** $(-1,0)$: For any number $c$ in this interval, the term
+$2c$ in the numerator will be negative, the term $(c^2+3)$ in the
+numerator will be positive, and the term $(c^2-1)^3$ in the denominator
+will be negative. Thus $f^{\prime\prime}(c)>0$ and $f$ is concave up on
+this interval.
+
+**Interval 3,** $(0,1)$: Any number $c$ in this interval will be
+positive and "small." Thus the numerator is positive while the
+denominator is negative. Thus $f^{\prime\prime}(c)<0$ and $f$ is concave
+down on this interval.
+
+**Interval 4,** $(1,\infty)$: Choose a large value for $c$. It is
+evident that $f^{\prime\prime}(c)>0$, so we conclude that $f$ is concave
+up on $(1,\infty)$.\
+
+\
+We conclude that $f$ is concave up on $(-1,0)$ and $(1,\infty)$ and
+concave down on $(-\infty,-1)$ and $(0,1)$. There is only one point of
+inflection, $(0,0)$, as $f$ is not defined at $x=\pm 1$. Our work is
+confirmed by the graph of $f$ in Figure \@ref(fig:conc2). Notice how $f$
+is concave up whenever f\^ is positive, and concave down when f\^ is
+negative.
+
+```
+
+```{geogebra, label="conc2"}
+
+caption: > 
+  A graph of $f(x)$ and $f^{\prime\prime}(x)$ in Example
+  \@ref(exm:conc2ex).
+
+```
+
+\
+Recall that relative maxima and minima of $f$ are found at critical
+points of $f$; that is, they are found when $f^{\prime}(x)=0$ or when
+$f^{\prime}$ is undefined. Likewise, the relative maxima and minima of
+f\^ are found when $f^{\prime\prime}(x)=0$ or when f\^ is undefined;
+note that these are the inflection points of $f$.
+
+What does a "relative maximum of f\^ " *mean*? The derivative measures
+the rate of change of $f$; maximizing f\^ means finding where $f$ is
+increasing the most -- where $f$ has the steepest tangent line. A
+similar statement can be made for minimizing f\^; it corresponds to
+where $f$ has the steepest negatively--sloped tangent line.
+
+We utilize this concept in the next example.\
+
+```{example, label="conc3ex", echo=TRUE}
+
+(Understanding inflection points). The sales of a certain product over a
+three-year span are modeled by $S(t)= t^4-8t^2+20$, where $t$ is the
+time in years, shown in Figure \@ref(fig:conc3). Over the first two
+years, sales are decreasing. Find the point at which sales are
+decreasing at their greatest rate.
+
+
+------------------------------------------------------------------------
+
+We want to maximize the rate of decrease, which is to say, we want to
+find where $S\,'$ has a minimum. To do this, we find where $S\,''$ is 0.
+We find $S\,'(t)=4t^3-16t$ and $S\,''(t)=12t^2-16$. Setting $S\,''(t)=0$
+and solving, we get $t=\sqrt{4/3}\approx 1.16$ (we ignore the negative
+value of $t$ since it does not lie in the domain of our function $S$).
+
+This is both the inflection point and the point of maximum decrease.
+This is the point at which things first start looking up for the
+company. After the inflection point, it will still take some time before
+sales start to increase, but at least sales are not decreasing quite as
+quickly as they had been.
+
+A graph of $S(t)$ and $S\,'(t)$ is given in Figure \@ref(fig:conc3b).
+When $S\,'(t)<0$, sales are decreasing; note how at $t\approx 1.16$,
+$S\,'(t)$ is minimized. That is, sales are decreasing at the fastest
+rate at $t\approx 1.16$. On the interval of $(1.16,2)$, $S$ is
+decreasing but concave up, so the decline in sales is "leveling off."
+
+```
+
+
+```{geogebra, label="conc3"}
+
+caption: > 
+  A graph of $S(t)$ in Example \@ref(exm:conc3ex), modeling the
+  sale of a product over time.
+
+```
+
+Not every critical point corresponds to a relative extrema; $f(x)=x^3$
+has a critical point at $(0,0)$ but no relative maximum or minimum.
+Likewise, just because $f^{\prime\prime}(x)=0$ we cannot conclude
+concavity changes at that point. We were careful before to use
+terminology "*possible* point of inflection" since we needed to check to
+see if the concavity changed. The canonical example of
+$f^{\prime\prime}(x)=0$ *without* concavity changing is $f(x)=x^4$. At
+$x=0$, $f^{\prime\prime}(x)=0$ but $f$ is always concave up, as shown in
+Figure \@ref(fig:concavity5).\
+
+```{geogebra, label="conc3b"}
+
+caption: > 
+  A graph of $S(t)$ in Example \@ref(exm:conc3) along with
+  $S\,'(t)$.
+
+```
+
+```{geogebra, label="concavity5"}
+
+caption: >
+  A graph of $f(x) = x^4$. Clearly $f$ is always concave up,
+  despite the fact that $f^{\prime\prime}(x) = 0$ when $x=0$. It this
+  example, the *possible* point of inflection $(0,0)$ is not a point of
+  inflection.
+
+```
+
+### The Second Derivative Test
+
+The first derivative of a function gave us a test to find if a critical
+value corresponded to a relative maximum, minimum, or neither. The
+second derivative gives us another way to test if a critical point is a
+local maximum or minimum. The following theorem officially states
+something that is intuitive: if a critical value occurs in a region
+where a function $f$ is concave up, then that critical value must
+correspond to a relative minimum of $f$, etc. See Figure
+\@ref(fig:concavity6) for a visualization of this.
+
+```{geogebra, label="concavity6"}
+
+caption: >
+  Demonstrating the fact that relative maxima occur when the
+  graph is concave down and relative minima occur when the graph is
+  concave up.
+
+```
+```{theorem, label="second-der", echo=TRUE}
+
+(The Second Derivative Test). Let $c$ be a critical value of $f$ where
+$f^{\prime\prime}(c)$ is defined.
+
+1.  If $f^{\prime\prime}(c)>0$, then $f$ has a local minimum at
+    $(c,f(c))$.
+
+2.  If $f^{\prime\prime}(c)<0$, then $f$ has a local maximum at
+    $(c,f(c))$.
+
+```
+
+The Second Derivative Test relates to the First Derivative Test in the
+following way. If $f^{\prime\prime}(c)>0$, then the graph is concave up
+at a critical point $c$ and $f^{\prime}$ itself is growing. Since
+$f^{\prime}(c)=0$ and $f^{\prime}$ is growing at $c$, then it must go
+from negative to positive at $c$. This means the function goes from
+decreasing to increasing, indicating a local minimum at $c$.\
+
+```{example, label="conc4ex", echo=TRUE}
+
+(Using the Second Derivative Test). Let $f(x)=100/x + x$. Find the
+critical points of $f$ and use the Second Derivative Test to label them
+as relative maxima or minima.
+
+------------------------------------------------------------------------
+
+We find $f^{\prime}(x)=-100/x^2+1$ and $f^{\prime\prime}(x) = 200/x^3.$
+We set $f^{\prime}(x)=0$ and solve for $x$ to find the critical values
+(note that f\^ is not defined at $x=0$, but neither is $f$ so this is
+not a critical value.) We find the critical values are $x=\pm 10$.
+Evaluating f\^ at $x=10$ gives $0.1>0$, so there is a local minimum at
+$x=10$. Evaluating $f^{\prime\prime}(-10)=-0.1<0$, determining a
+relative maximum at $x=-10$. These results are confirmed in Figure
+\@ref(fig:conc4).
+
+```
+
+\
+
+```{geogebra, label="conc4"}
+
+caption: >
+  A graph of $f(x)$ in Example \@ref(exm:conc4ex). The second
+  derivative is evaluated at each critical point. When the graph is
+  concave up, the critical point represents a local minimum; when the
+  graph is concave down, the critical point represents a local maximum.
+
+```
+
+We have been learning how the first and second derivatives of a function
+relate information about the graph of that function. We have found
+intervals of increasing and decreasing, intervals where the graph is
+concave up and down, along with the locations of relative extrema and
+inflection points. In Chapter \@ref(chapter:limits) we saw how limits
+explained asymptotic behavior. In the next section we combine all of
+this information to produce accurate sketches of functions.

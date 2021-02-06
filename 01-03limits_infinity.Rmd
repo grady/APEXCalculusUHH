@@ -100,7 +100,7 @@ id: S3dUAUQiKFQ
 Find $\displaystyle \lim_{x\rightarrow 1}\frac1{(x-1)^2}$ as shown in
 Figure \@ref(fig:inflim1).
 
-In Example \@ref(exm:no-limit2) of Section \@ref(sec:limitintro), by
+In Example \@ref(exm:no-limit2) of Section \@ref(sec:limit-intro), by
 inspecting values of $x$ close to 1 we concluded that this limit does
 not exist. That is, it cannot equal any real number. But the limit could
 be infinite. And in fact, we see that the function does appear to be

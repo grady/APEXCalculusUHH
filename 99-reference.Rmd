@@ -1,7 +1,7 @@
 # Dummy Chapter {#chapter:app-of-int}
 ## Dummy Section {#sec:newton}
 ## Dummy Section {#sec:arc-length}
-## Dummy Section {#sec:concavity}
+
 
 # (APPENDIX) Appendix {-}
 

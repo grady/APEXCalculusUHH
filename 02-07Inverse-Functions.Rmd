@@ -270,6 +270,12 @@ $$\begin{aligned}
         \end{aligned}$$
 ```
 
+
+```{youtube}
+id: B0C22F6gJD4
+```
+
+
 ## Chapter Summary {#chap-2-summary}
 
 In this chapter we have defined the derivative, given rules to

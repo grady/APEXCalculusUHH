@@ -43,10 +43,12 @@ occur. Finally, the function shown in (c) has both a maximum and a
 minimum; note that the function is continuous and the interval on which
 it is defined is closed.
 
-::: {#fig:extreme .tab}
-**Table 1**. caption: Graphs of functions with and without extreme
-values.
-:::
+
+```{r extreme, fig.cap="Graphs of functions with and without extreme values. Toggle the functions on and off by clicking in the circles on the left side of the graph."}
+knitr::include_url("https://www.desmos.com/calculator/qbcyuxgndp")
+```
+
+
 
 It is possible for discontinuous functions defined on an open interval
 to have both a maximum and minimum value, but we have just seen examples
@@ -88,13 +90,12 @@ $-27$.
 
 
 ```{geogebra, label="extval1"}
-
+material_id: ps9vpptc
 caption: >
     A graph of $f(x) = 2x^3-9x^2$ as in Example \@ref(exm:extval1ex).
 
 ```
 
-\
 Notice how the minimum value came at "the bottom of a hill," and the
 maximum value came at an endpoint. Also note that while $0$ is not an
 extreme value, it would be if we narrowed our interval to $[-1,4]$. The
@@ -156,7 +157,7 @@ case, $f^{\prime}(x) = 0$.
 
 
 ```{geogebra, label="extval2"}
-
+material_id: q6wpkzpz
 caption: > 
     A graph of $f(x) = (3x^4-4x^3-12x^2+5)/5$ as in Example \@ref(exm:extval2ex).
 
@@ -183,7 +184,7 @@ $f^{\prime}$ is undefined.
 
 
 ```{geogebra, label="extval3"}
-
+material_id: s9s5qypj
 caption: >
     A graph of $f(x) = (x-1)^{2/3}+2$ as in Example \@ref(exm:extval3ex).
 
@@ -220,7 +221,7 @@ $x=0$ is a critical number of $f$. However, $f$ has no relative extrema,
 as illustrated in Figure \@ref(fig:extreme4).
 
 ```{geogebra, label="extreme4"}
-
+material_id: rdxchnpu
 caption: >
     A graph of $f(x)=x^3$ which has a critical value of $x=0$, but
     no relative extrema.
@@ -236,6 +237,7 @@ theory tells us we need only check at the critical points that are in
 between the endpoints. We combine these concepts to offer a strategy for
 finding extrema.
 
+```{definition extrema, echo=TRUE}
 Let $f$ be a continuous function defined on a closed interval $[a,b]$.
 To find the maximum and minimum values of $f$ on $[a,b]$:
 
@@ -248,17 +250,19 @@ To find the maximum and minimum values of $f$ on $[a,b]$:
 4.  The absolute maximum of $f$ is the largest of these values, and the
     absolute minimum of $f$ is the least of these values.
 
+```
+
 We practice these ideas in the next examples.\
 
 ```{example, label="extval4", echo=TRUE}
 
 (Finding extreme values). Find the extreme values of
 $f(x) = 2x^3+3x^2-12x$ on $[0,3]$, graphed in Figure
-\@ref(table:ext4)(a).
+\@ref(fig:ext4).
 
 ------------------------------------------------------------------------
 
-We follow the steps outlined in Key Idea \@ref(idea:extrema). We first
+We follow the steps outlined in Key Idea \@ref(def:extrema). We first
 evaluate $f$ at the endpoints:
 $$f(0) = 0 \quad \text{and}\quad f(3) =45.$$ Next, we find the critical
 values of $f$ on $[0,3]$. $f^{\prime}(x) = 6x^2+6x-12 = 6(x+2)(x-1)$;
@@ -266,21 +270,20 @@ therefore the critical values of $f$ are $x=-2$ and $x=1$. Since $x=-2$
 does not lie in the interval $[0,3]$, we ignore it. Evaluating $f$ at
 the only critical number in our interval gives: $f(1) = -7$.
 
-The table in Figure \@ref(table:ext4)(b) gives $f$ evaluated at the
+The special points in Figure \@ref(fig:ext4) gives $f$ evaluated at the
 "important" $x$ values in $[0,3]$. We can easily see the maximum and
 minimum values of $f$: the maximum value is $45$ and the minimum value
 is $-7$.
 
-::: {#table:ext4 .tab}
-**Table 2**. caption: Finding the extreme values of
-$f(x)= 2x^3+3x^2-12x$ in Example \@ref(exm:extval4).
-:::
-
-\-
-
 ```
 
-\
+```{geogebra ext4}
+material_id: jxsdebf2
+caption: >
+    Finding the extreme values of
+    $f(x)= 2x^3+3x^2-12x$ in Example \@ref(exm:extval4).
+```
+
 Note that all this was done without the aid of a graph; this work
 followed an analytic algorithm and did not depend on any visualization.
 Figure \@ref(table:ext4) shows $f$ and we can confirm our answer, but it
@@ -299,7 +302,7 @@ graphed in Figure \@ref(table:ext5)(a).
 ------------------------------------------------------------------------
 
 Here $f$ is piecewise--defined, but we can still apply Key Idea
-\@ref(idea:extrema) as it is continuous on $[-4,2]$ (one should check to
+\@ref(def:extrema) as it is continuous on $[-4,2]$ (one should check to
 verify that $\displaystyle\lim_{x\to 0}f(x) =f(0)$). Evaluating $f$ at
 the endpoints gives: $$f(-4) = 25 \quad \text{and} \quad f(2) = 3.$$
 
@@ -336,7 +339,7 @@ $[-2,2]$, graphed in Figure \@ref(table:ext6)(a).
 
 ------------------------------------------------------------------------
 
-We again use Key Idea \@ref(idea:extrema). Evaluating $f$ at the
+We again use Key Idea \@ref(def:extrema). Evaluating $f$ at the
 endpoints of the interval gives:
 $f(-2) = f(2) = \cos (4) \approx -0.6536.$ We now find the critical
 values of $f$.

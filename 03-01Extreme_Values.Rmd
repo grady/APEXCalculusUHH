@@ -7,6 +7,10 @@ even nicer class of functions, functions that are differentiable.
 This chapter explores many of the ways we can take advantage of the
 information that continuous and differentiable functions provide.
 
+```{youtube}
+id: srE7xUmQtCQ
+```
+
 ## Extreme Values {#sec:extreme_values}
 
 Given any quantity described by a function, we are often interested in
@@ -54,6 +58,11 @@ It is possible for discontinuous functions defined on an open interval
 to have both a maximum and minimum value, but we have just seen examples
 where they did not. On the other hand, continuous functions on a closed
 interval *always* have a maximum and minimum value.
+
+```{youtube}
+id: GIcjxu8dTnY
+```
+
 
 ```{theorem, label="extreme-val", echo=TRUE}
 
@@ -109,6 +118,10 @@ $y$-value "nearby."
 > As it makes intuitive sense that an absolute maximum is also a
 > relative maximum, Definition \@ref(def:rel-ext) allows a relative
 > maximum to occur at an interval's endpoint.
+
+```{youtube}
+id: nBZTnxn0vqQ
+```
 
 ```{definition, label="rel-ext", echo=TRUE}
 
@@ -195,6 +208,11 @@ visually approximate relative extrema, and at each such point, the
 derivative was either 0 or it was not defined. This observation holds
 for all functions, leading to a definition and a theorem.
 
+```{youtube}
+id: WsBGpi006X0
+```
+
+
 ```{definition, label="criticalnum", echo=TRUE}
 
 (Critical Numbers and Critical Points). Let $f$ be defined at $c$. The
@@ -237,7 +255,7 @@ theory tells us we need only check at the critical points that are in
 between the endpoints. We combine these concepts to offer a strategy for
 finding extrema.
 
-```{definition extrema, echo=TRUE}
+```{theorem extrema, echo=TRUE}
 Let $f$ be a continuous function defined on a closed interval $[a,b]$.
 To find the maximum and minimum values of $f$ on $[a,b]$:
 
@@ -254,6 +272,11 @@ To find the maximum and minimum values of $f$ on $[a,b]$:
 
 We practice these ideas in the next examples.\
 
+```{youtube}
+id: LyhHlreZvhc
+```
+
+
 ```{example, label="extval4", echo=TRUE}
 
 (Finding extreme values). Find the extreme values of
@@ -262,7 +285,7 @@ $f(x) = 2x^3+3x^2-12x$ on $[0,3]$, graphed in Figure
 
 ------------------------------------------------------------------------
 
-We follow the steps outlined in Key Idea \@ref(def:extrema). We first
+We follow the steps outlined in Theorem \@ref(thm:extrema). We first
 evaluate $f$ at the endpoints:
 $$f(0) = 0 \quad \text{and}\quad f(3) =45.$$ Next, we find the critical
 values of $f$ on $[0,3]$. $f^{\prime}(x) = 6x^2+6x-12 = 6(x+2)(x-1)$;
@@ -286,23 +309,28 @@ caption: >
 
 Note that all this was done without the aid of a graph; this work
 followed an analytic algorithm and did not depend on any visualization.
-Figure \@ref(table:ext4) shows $f$ and we can confirm our answer, but it
+Figure \@ref(fig:ext4) shows $f$ and we can confirm our answer, but it
 is important to understand that these answers can be found without
 graphical assistance.
 
-We practice again.\
+We practice again.
+
+```{youtube}
+id: zn--ShSSMqk
+```
+
 
 ```{example, label="extval5", echo=TRUE}
 
 (Finding extreme values). Find the maximum and minimum values of $f$ on
 $[-4,2]$, where
 $$f(x) = \left\{\begin{array}{cc} (x-1)^2 & x\leq 0 \\ x+1 & x>0 \end{array}\right. ,$$
-graphed in Figure \@ref(table:ext5)(a).
+graphed in Figure \@ref(fig:ext5)(a).
 
 ------------------------------------------------------------------------
 
-Here $f$ is piecewise--defined, but we can still apply Key Idea
-\@ref(def:extrema) as it is continuous on $[-4,2]$ (one should check to
+Here $f$ is piecewise--defined, but we can still apply Theorem
+\@ref(thm:extrema) as it is continuous on $[-4,2]$ (one should check to
 verify that $\displaystyle\lim_{x\to 0}f(x) =f(0)$). Evaluating $f$ at
 the endpoints gives: $$f(-4) = 25 \quad \text{and} \quad f(2) = 3.$$
 
@@ -320,26 +348,31 @@ values from setting $f^{\prime}(x)=0$.
 
 So we have three important $x$ values to consider: $x= -4, 2$ and $0$.
 Evaluating $f$ at each gives, respectively, $25$, $3$ and $1$, shown in
-Figure \@ref(table:ext5)(b). Thus the absolute minimum of $f$ is 1, the
+Figure \@ref(fig:ext5)(b). Thus the absolute minimum of $f$ is 1, the
 absolute maximum of $f$ is $25$, confirmed by the graph of $f$.
-
-::: {#table:ext5 .tab}
-**Table 3**. caption: Finding the extreme values of a piecewise--defined
-function in Example \@ref(exm:extval5).
-:::
 
 ```
 
-\
+```{geogebra ext5}
+material_id: yxnn8hnr
+caption: >
+    Finding the extreme values of a piecewise--defined
+    function in Example \@ref(exm:extval5).
+```
+
+
+```{youtube}
+id: sT_3kVSsbz4
+```
 
 ```{example, label="extval6", echo=TRUE}
 
 (Finding extreme values). Find the extrema of $f(x) = \cos (x^2)$ on
-$[-2,2]$, graphed in Figure \@ref(table:ext6)(a).
+$[-2,2]$, graphed in Figure \@ref(fig:ext6).
 
 ------------------------------------------------------------------------
 
-We again use Key Idea \@ref(def:extrema). Evaluating $f$ at the
+We again use Theorem \@ref(thm:extrema). Evaluating $f$ at the
 endpoints of the interval gives:
 $f(-2) = f(2) = \cos (4) \approx -0.6536.$ We now find the critical
 values of $f$.
@@ -357,26 +390,31 @@ the given interval of $[-2,2]$ are $0$ and $\pm\sqrt{\pi}$, where
 $\sqrt{\pi} \approx 1.77$.
 
 We again construct a table of important values in Figure
-\@ref(table:ext6)(b). In this example we have 5 values to consider:
+\@ref(fig:ext6). In this example we have 5 values to consider:
 $x= 0, \pm 2, \pm\sqrt{\pi}$.
 
-::: {#table:ext6 .tab}
-**Table 4**. caption: Finding the extrema of $f(x)= \cos (x^2)$ in
-Example \@ref(exm:extval6).
-:::
-
-From the table it is clear that the maximum value of $f$ on $[-2,2]$ is
+From the figure it is clear that the maximum value of $f$ on $[-2,2]$ is
 1; the minimum value is $-1$. The graph of $f$ confirms our results.
 
 ```
 
-\
-We consider one more example.\
+```{geogebra ext6}
+material_id: wgupbtn5
+caption: >
+    Finding the extrema of $f(x)= \cos (x^2)$ in
+    Example \@ref(exm:extval6).
+```
 
-```{example, label="extval7", echo=TRUE}
+We consider one more example.
+
+```{youtube}
+id: sT_3kVSsbz4
+```
+
+```{example, label="extval7ex", echo=TRUE}
 
 (Finding extreme values). Find the extreme values of
-$f(x) = \sqrt{1-x^2}$, graphed in Figure \@ref(table:ext7)(a).
+$f(x) = \sqrt{1-x^2}$, graphed in Figure \@ref(fig:ext7).
 
 ------------------------------------------------------------------------
 
@@ -384,27 +422,27 @@ A closed interval is not given, so we find the extreme values of $f$ on
 its domain. $f$ is defined whenever $1-x^2\geq 0$; thus the domain of
 $f$ is $[-1,1]$. Evaluating $f$ at either endpoint returns 0.
 
-::: {#table:ext7 .tab}
-**Table 5**. caption: Finding the extrema of the half--circle in Example
-\@ref(exm:extval7).
-:::
-
 Using the Chain Rule, we find
 $\displaystyle f^{\prime}(x) = \frac{-x}{\sqrt{1-x^2}}$. The critical
 points of $f$ are found when $f^{\prime}(x) = 0$ or when $f^{\prime}$ is
 undefined. It is straightforward to find that $f^{\prime}(x) = 0$ when
 $x=0$, and $f^{\prime}$ is undefined when $x=\pm 1$, the endpoints of
 the interval. The table of important values is given in Figure
-\@ref(table:ext7)(b). The maximum value is 1, and the minimum value is
+\@ref(fig:ext7). The maximum value is 1, and the minimum value is
 0. (See also the marginal note.)
 
 ```
 
-\
+```{geogebra ext7}
+material_id: bwphczkk
+caption: >
+    Finding the extrema of the half-circle in Example
+    \@ref(exm:extval7ex).
+```
 
 > **Note:** We implicitly found the derivative of $x^2+y^2=1$, the unit
-> circle, in Example \@ref(exm:implicit7) as $\frac{dy}{dx} = -x/y$. In
-> Example \@ref(exm:extval7), half of the unit circle is given as
+> circle, in Example \@ref(exm:implicit7ex) as $\frac{dy}{dx} = -x/y$. In
+> Example \@ref(exm:extval7ex), half of the unit circle is given as
 > $y=f(x) = \sqrt{1-x^2}$. We found
 > $f^{\prime}(x) = \frac{-x}{\sqrt{1-x^2}}$. Recognize that the
 > denominator of this fraction is $y$; that is, we again found

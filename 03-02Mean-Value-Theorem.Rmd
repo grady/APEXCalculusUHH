@@ -35,32 +35,35 @@ $a < c < b$?
 
 Let's look at two functions in an example.\
 
-```{example, echo=TRUE}
+```{example mvt1ex, echo=TRUE}
 
-(ex). Comparing average and instantaneous rates of change
+__(Comparing average and instantaneous rates of change)__
 
-------------------------------------------------------------------------
-
-Consider functions
-$$f_1(x)=\frac{1}{x^2}\quad \text{and} \quad f_2(x) = |x|$$ with $a=-1$
-and $b=1$ as shown in Figure \@ref(fig:mvt1)(a) and (b), respectively.
-Both functions have a value of 1 at $a$ and $b$. Therefore the slope of
+Consider functions $f_1(x)=\frac{1}{x^2}$ with $a=-1$ and $b=1$ as shown in Figure \@ref(fig:mvt1) 
+and $f_2(x) = |x|$ with $a=-2$ and $b=2$ in Figure \@ref(fig:mvt1a).
+The function $f_1$ has  a value of 1 at $a$ and $b$, and the function $f_2$ has 
+the value 2 at $a$ and $b. Therefore the slope of
 the secant line connecting the end points is $0$ in each case. But if
 you look at the plots of each, you can see that there are no points on
 either graph where the tangent lines have slope zero. Therefore we have
 found that there is no $c$ in $[-1,1]$ such that
 $$f^{\prime}(c) = \frac{f(1)-f(-1)}{1-(-1)} = 0.$$
 
-::: {#fig:mvt1 .tab}
-**Table 1**. caption: A graph of $f_1(x) = 1/x^2$ and $f_2(x) = |x|$ in
-Example \@ref(exm:mvt1).
-:::
-
-\-
-
 ```
 
-\
+```{geogebra mvt1}
+material_id: kn43shsr
+caption: >
+    A graph of $f_1(x) = 1/x^2$ and its derivative in Example \@ref(exm:mvt1ex).
+```
+
+```{geogebra mvt1a}
+material_id: pppwfnv3
+caption: >
+    A graph of $f_2(x) = |x|$ and its derivative in Example \@ref(exm:mvt1ex).
+```
+
+
 So what went "wrong "? It may not be surprising to find that the
 discontinuity of $f_1$ and the corner of $f_2$ play a role. If our
 functions had been continuous and differentiable, would we have been
@@ -78,7 +81,7 @@ $c$ is equal to the average rate of change of $f$ on $[a,b]$.
 
 ```
 
-Note that the reasons that the functions in Example \@ref(exm:mvt1) fail
+Note that the reasons that the functions in Example \@ref(exm:mvt1ex) fail
 are indeed that $f_1$ has a discontinuity on the interval $[-1,1]$ and
 $f_2$ is not differentiable at the origin.\
 We will give a proof of the Mean Value Theorem below. To do so, we use a
@@ -100,7 +103,7 @@ relative maximum or minimum of $f$ in $(a,b)$. Rolle's Theorem
 guarantees at least one; there may be more.
 
 ```{geogebra, label="mvt3"}
-
+material_id: dcgkqzem
 caption: >
         A graph of $f(x) = x^3-5x^2+3x+5$, where $f(a) = f(b)$. Note 
         the existence of $c$, where $a<c<b$, where $f^{\prime}(c)=0$.
@@ -110,7 +113,11 @@ caption: >
 Rolle's Theorem is really just a special case of the Mean Value Theorem.
 If $f(a) = f(b)$, then the *average* rate of change on $(a,b)$ is $0$,
 and the theorem guarantees some $c$ where $f^{\prime}(c)=0$. We will
-prove Rolle's Theorem, then use it to prove the Mean Value Theorem.\
+prove Rolle's Theorem, then use it to prove the Mean Value Theorem.
+
+------
+
+
 **Proof of Rolle's Theorem**
 
 Let $f$ be differentiable on $(a,b)$ where $f(a)=f(b)$. We consider two
@@ -131,7 +138,9 @@ endpoints. Therefore there is a $c$ in $(a,b)$ such that $f(c)$ is the
 maximum value of $f$. By Theorem \@ref(thm:criticalpts), $c$ must be a
 critical number of $f$; since $f$ is differentiable, we have that
 $f^{\prime}(c) = 0$, completing the proof of the theorem. $\square$\
-We can now prove the Mean Value Theorem.\
+
+We can now prove the Mean Value Theorem.
+
 **Proof of the Mean Value Theorem**
 
 Define the function $$g(x) = f(x) - \frac{f(b)-f(a)}{b-a}x.$$ We know
@@ -142,6 +151,9 @@ existence of $c$ in $(a,b)$ such that $g\,'(c) = 0$. But note that
 $$0= g\,'(c) = f^{\prime}(c) - \frac{f(b)-f(a)}{b-a} \ ;$$ hence
 $$f^{\prime}(c) = \frac{f(b)-f(a)}{b-a},$$ which is what we sought to
 prove.$\square$\
+
+-------
+
 Going back to the very beginning of the section, we see that the only
 assumption we would need about our distance function $f(t)$ is that it
 be continuous and differentiable for $t$ from 0 to 2 hours (both
@@ -188,7 +200,7 @@ parallel (i.e., have the same slope) with the dashed line.
 ```
 
 ```{geogebra, label="mvt4"}
-
+material_id: vgxhdw6e
 caption: >
     Demonstrating the Mean Value Theorem in Example \@ref(exm:mvt2).
 
@@ -199,4 +211,4 @@ caption: >
 While the Mean Value Theorem has practical use (for instance, the speed
 monitoring application mentioned before), it is mostly used to advance
 other theory. We will use it in the next section to relate the shape of
-a graph to its derivative.\
+a graph to its derivative.

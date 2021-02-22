@@ -1,19 +1,20 @@
 ## Concavity and the Second Derivative {#sec:concavity}
 
 Our study of "nice" functions continues. The previous section showed how
-the first derivative of a function, f\^, can relay important information
-about $f$. We now apply the same technique to f\^ itself, and learn what
+the first derivative of a function, $f'$, can relay important information
+about $f$. We now apply the same technique to $f'$ itself, and learn what
 this tells us about $f$.
 
 The key to studying $f^{\prime}$ is to consider its derivative, namely
-$f^{\prime}'$, which is the second derivative of $f$. When
-$f^{\prime}'>0$, $f^{\prime}$ is increasing. When $f^{\prime}'<0$,
-f\^ is decreasing. $f^{\prime}$ has relative maxima and minima where
-$f^{\prime}'=0$ or is undefined.
+$f^{\prime\prime}$, which is the second derivative of $f$. When
+$f^{\prime\prime}>0$, $f^{\prime}$ is increasing. When $f^{\prime\prime}<0$,
+then $f'$ is decreasing. $f^{\prime}$ has relative maxima and minima where
+$f^{\prime\prime}=0$ or is undefined.
 
-This section explores how knowing information about f\^ gives
-information about $f$.\
-**Concavity**
+This section explores how knowing information about $f''$ gives
+information about $f$.
+
+### Concavity
 
 We begin with a definition, then explore its meaning.
 

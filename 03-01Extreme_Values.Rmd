@@ -11,7 +11,7 @@ information that continuous and differentiable functions provide.
 id: srE7xUmQtCQ
 ```
 
-## Extreme Values {#sec:extreme_values}
+## Extreme Values {#sec:extreme-values}
 
 Given any quantity described by a function, we are often interested in
 the largest and/or smallest values that quantity attains. For instance,

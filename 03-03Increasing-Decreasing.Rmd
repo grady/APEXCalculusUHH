@@ -55,7 +55,7 @@ increasing, differentiable function on an open interval $I$, such as the
 one shown in Figure \@ref(fig:incr00), and let $a<b$ be given in $I$.
 The secant line on the graph of $f$ from $x=a$ to $x=b$ is drawn; it has
 a slope of $(f(b)-f(a))/(b-a)$. But note:
-$$\frac{f(b)-f(a)}{b-a} \Rightarrow \frac{\text{numerator }>0}{\text{denominator } >0} \Rightarrow \text{slope of the secant line $>0$} \Rightarrow \text{Average rate of change of $f$ on $[a,b]$ is $>0$.}$$
+$$\frac{f(b)-f(a)}{b-a} \Rightarrow \frac{\text{numerator }>0}{\text{denominator } >0} \Rightarrow \text{slope of the secant line $>0$}.$$ But this means that the average rate of change of $f$ on $[a,b]$ is $>0$.
 
 ```{geogebra, label="incr00"}
 material_id: nemxkxy2
@@ -74,6 +74,8 @@ decreasing functions.
 ```{youtube}
 id: SjF3vslBqOA
 ```
+
+### Increasing and Decreasing Intervals
 
 Our above logic can be summarized as "If $f$ is increasing, then
 $f^{\prime}$ is probably positive.\" Theorem \@ref(thm:first-deriv-test) below
@@ -125,7 +127,7 @@ intervals on which $f$ is increasing and decreasing:
 
 ```
 
-We demonstrate using this process in the following example.\
+We demonstrate using this process in the following example.
 
 
 ```{youtube}
@@ -148,9 +150,8 @@ Since an interval was not specified for us to consider, we consider the
 entire domain of $f$ which is $(-\infty,\infty)$. We thus break the
 whole real line into three subintervals based on the two critical values
 we just found: $(-\infty,-1)$, $(-1,1/3)$ and $(1/3,\infty)$. This is
-shown in Figure \@ref(fig:incrline1).\
+shown in Figure \@ref(fig:incrline1).
 
-\
 We now pick a value $p$ in each subinterval and find the sign of
 $f^{\prime}(p)$. All we care about is the sign, so we do not actually
 have to fully compute $f^{\prime}(p)$; pick "nice" values that make this
@@ -165,10 +166,12 @@ Note we can arrive at the same conclusion without computation. For
 instance, we could choose $p=-100$. The first term in
 $f^{\prime}(-100)$, i.e., $3(-100)^2$ is clearly positive and very
 large. The other terms are small in comparison, so we know
-$f^{\prime}(-100)>0$. All we need is the sign.\
+$f^{\prime}(-100)>0$. All we need is the sign.
+
 **Subinterval 2**, $(-1,1/3)$:We pick $p=0$ since that value seems easy
 to deal with. $f^{\prime}(0) = -1<0$. We conclude $f$ is decreasing on
-$(-1,1/3)$.\
+$(-1,1/3)$.
+
 **Subinterval 3**, $(1/3,\infty)$:Pick an arbitrarily large value for
 $p>1/3$ and note that $f^{\prime}(p) =3p^2+2p-1 >0$. We conclude that
 $f$ is increasing on $(1/3,\infty)$.
@@ -177,6 +180,22 @@ We can verify our calculations by considering Figure \@ref(fig:incr1),
 where $f$ is graphed. The graph also presents $f^{\prime}$; note how
 $f^{\prime}>0$ when $f$ is increasing and $f^{\prime}<0$ when $f$ is
 decreasing.
+```
+
+```{tikz incrline1, fig.width=NULL, fig.cap="Number line for $f$ in Example \\@ref(exm:incr1ex).", cache=TRUE}
+\begin{tikzpicture}
+ \begin{axis}[numberline,
+  xmin=-2, xmax=1,
+  extra x ticks={-1, 0.3333},
+  extra x tick labels={$-1$,$1/3$},
+]
+\addplot[guideline] coordinates {(-1,0) (-1,2)};
+\addplot[guideline] coordinates {(0.3333,0) (0.3333,2)};
+\addplot[mark=none] coordinates {(-1.6666,1)} node {\parbox{3em}{\centering \small $f'>0$ incr }};
+\addplot[mark=none] coordinates {(-0.3333,1)} node {\parbox{3em}{\centering \small $f'<0$ decr }};
+\addplot[mark=none] coordinates {(0.75,1)} node {\parbox{3em}{\centering \small $f'>0$ incr }};
+\end{axis}
+\end{tikzpicture}
 ```
 
 ```{geogebra, label="incr1"}
@@ -223,6 +242,8 @@ programmable. It is hard to teach a computer to "look at the graph and
 see if it is going up or down." It is easy to teach a computer to
 "determine if a number is greater than or less than 0."
 
+### The First Derivative Test for Extreme Values
+
 In Section \@ref(sec:extreme-values) we learned the definition of
 relative maxima and minima and found that they occur at critical points.
 We are now learning that functions can switch from increasing to
@@ -243,13 +264,11 @@ id: _HjE4urOM4Y
 (First Derivative Test). Let $f$ be differentiable on an interval $I$
 and let $c$ be a critical number in $I$.
 
-1.  If the sign of f\^ switches from positive to negative at $c$, then
+1.  If the sign of $f'$ switches from positive to negative at $c$, then
     $f(c)$ is a relative maximum of $f$.
-
-2.  If the sign of f\^ switches from negative to positive at $c$, then
+2.  If the sign of $f'$ switches from negative to positive at $c$, then
     $f(c)$ is a relative minimum of $f$.
-
-3.  If f\^ is positive (or, negative) before and after $c$, then $f(c)$
+3.  If $f'$ does not change sign as it crosses $c$, then $f(c)$
     is not a relative extrema of $f$.
 
 ```
@@ -294,7 +313,7 @@ We have found that $f$ has two critical numbers, $x=-1,3$, and at $x=1$
 something important might also happen. These three numbers divide the
 real number line into 4 subintervals:
 $$(-\infty,-1), \quad (-1, 1), \quad (1,3) \quad \text{and} \quad (3,\infty).$$
-Pick a number $p$ from each subinterval and test the sign of f\^ at $p$
+Pick a number $p$ from each subinterval and test the sign of $f^\prime$ at $p$
 to determine whether $f$ is increasing or decreasing on that interval.
 Again, we do well to avoid complicated computations; notice that the
 denominator of $f^{\prime}$ is *always* positive so we can ignore it
@@ -318,9 +337,9 @@ denominator. So $f$ is increasing on $(3,\infty)$.
 
 In summary, $f$ is increasing on the intervals $(-\infty,-1)$ and
 $(3,\infty)$ and is decreasing on the intervals $(-1,1)$ and $(1,3)$.
-Since at $x=-1$, the sign of f\^ switched from positive to negative,
+Since at $x=-1$, the sign of $f^\prime$ switched from positive to negative,
 Theorem \@ref(thm:first-der) states that $f(-1)$ is a relative maximum
-of $f$. At $x=3$, the sign of f\^ switched from negative to positive,
+of $f$. At $x=3$, the sign of $f^\prime$ switched from negative to positive,
 meaning $f(3)$ is a relative minimum. At $x=1$, $f$ is not defined, so
 there is no relative extrema at $x=1$.
 
@@ -332,6 +351,28 @@ decreasing when $f^{\prime}<0$.
 
 ```
 
+```{tikz incrline2, fig.width=NULL, fig.cap="Number line for $f$ in Example \\@ref(exm:incr2ex).", cache=TRUE}
+\begin{tikzpicture}
+  \begin{axis}[
+      numberline,
+      xmin=-3,
+      xmax=5,
+      extra x ticks={-1, 1, 3},
+      extra x tick labels={$-1$,$1$, $3$},
+    ]
+    \addplot[guideline] coordinates {(-1,0) (-1,2)};
+    \addplot[guideline] coordinates {(1,0) (1,2)};
+    \addplot[guideline] coordinates {(3,0) (3,2)};
+    \addplot[mark=none] coordinates {(-2,1)} node {\parbox{3em}{\centering \small $f'>0$\\$f$ incr }};
+    \addplot[mark=none] coordinates {(0,1)} node {\parbox{3em}{\centering \small $f'<0$\\$f$ decr }};
+    \addplot[mark=none] coordinates {(2,1)} node {\parbox{3em}{\centering \small $f'<0$\\$f$ decr }};
+    \addplot[mark=none] coordinates {(4,1)} node {\parbox{3em}{\centering \small $f'>0$\\$f$ incr }};
+    \addplot[mark=none] coordinates {(-1,2)} node[above] {\parbox{3em}{\centering \small  rel\\max}};
+    \addplot[mark=none] coordinates {(1,2)} node[above] {\parbox{3em}{\centering \small  VA}};
+    \addplot[mark=none] coordinates {(3,2)} node[above] {\parbox{3em}{\centering \small  rel\\min}};
+  \end{axis}
+\end{tikzpicture}
+```
 
 ```{geogebra, label="incr2"}
 material_id: wtagdqzb
@@ -376,9 +417,10 @@ $$\begin{aligned}
     &=\frac 83x^{-\frac 13}(x-1)(x+1).\end{aligned}$$
 
 This derivation of $f^{\prime}$ shows that $f^{\prime}(x) = 0$ when
-$x=\pm 1$ and f\^ is not defined when $x=0$. Thus we have 3 critical
+$x=\pm 1$ and $f^\prime$ is not defined when $x=0$. Thus we have 3 critical
 values, breaking the number line into 4 subintervals as shown in Figure
-\@ref(fig:incrline3).\
+\@ref(fig:incrline3).
+
 **Interval 1**, $(\infty,-1)$: We choose $p=-2$; we can easily verify
 that $f^{\prime}(-2)<0$. So $f$ is decreasing on $(-\infty,-1)$.
 
@@ -398,21 +440,41 @@ and so $f$ is decreasing on $(0,1)$.
 
 **Interval 4**, $(1,\infty)$: Similar work to that done for the other
 three intervals shows that $f^{\prime}(x)>0$ on $(1,\infty)$, so $f$ is
-increasing on this interval.\
+increasing on this interval.
 
-\
 We conclude by stating that $f$ is increasing on the intervals $(-1,0)$
 and $(1,\infty)$ and decreasing on the intervals $(-\infty,-1)$ and
-$(0,1)$. The sign of f\^ changes from negative to positive around $x=-1$
+$(0,1)$. The sign of $f^\prime$ changes from negative to positive around $x=-1$
 and $x=1$, meaning by Theorem \@ref(thm:first-der) that $f(-1)$ and
-$f(1)$ are relative minima of $f$. As the sign of f\^ changes from
+$f(1)$ are relative minima of $f$. As the sign of $f^\prime$ changes from
 positive to negative at $x=0$, we have a relative maximum at $f(0)$.
 Figure \@ref(fig:incr3) shows a graph of $f$, confirming our result. We
 also graph $f^{\prime}$, highlighting once more that $f$ is increasing
 when $f^{\prime}>0$ and is decreasing when $f^{\prime}<0$.
 ```
 
-
+```{tikz incrline3, fig.width=NULL, fig.cap="Number line for $f$ in Example \\@ref(exm:incr3ex).", cache=TRUE}
+\begin{tikzpicture}
+ \begin{axis}[
+      numberline,
+      xmin=-2,
+      xmax=2,
+      extra x ticks={-1, 0, 1},
+      extra x tick labels={$-1$,$0$, $1$},
+    ]
+    \addplot[guideline] coordinates {(-1,0) (-1,2)};
+    \addplot[guideline] coordinates {(0,0) (0,2)};
+    \addplot[guideline] coordinates {(1,0) (1,2)};
+    \addplot[mark=none] coordinates {(-1.5,1)} node {\parbox{3em}{\centering \small $f'<0$\\$f$ decr }};
+    \addplot[mark=none] coordinates {(-0.5,1)} node {\parbox{3em}{\centering \small $f'>0$\\$f$ incr }};
+    \addplot[mark=none] coordinates {(0.5,1)}  node {\parbox{3em}{\centering \small $f'<0$\\$f$ decr }};
+    \addplot[mark=none] coordinates {(1.5,1)}  node {\parbox{3em}{\centering \small $f'>0$\\$f$ incr }};
+    \addplot[mark=none] coordinates {(-1,2)} node[above] {\parbox{3em}{\centering \small rel\\min}};
+    \addplot[mark=none] coordinates {(0,2)} node[above] {\parbox{3em}{\centering \small rel\\max}};
+    \addplot[mark=none] coordinates {(1,2)} node[above] {\parbox{3em}{\centering \small rel\\min}};
+  \end{axis}
+\end{tikzpicture}
+```
 ```{geogebra, label="incr3"}
 material_id: kmc6vpdy
 caption: >
@@ -421,7 +483,7 @@ caption: >
 
 ```
 
-\
+
 We have seen how the first derivative of a function helps determine when
 the function is going "up" or "down." In the next section, we will see
 how the second derivative helps determine how the graph of a function

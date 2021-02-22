@@ -11,6 +11,10 @@ whether or not your *instantaneous* speed is ever exactly 50 mph. More
 simply, does your speedometer ever read exactly 50 mph?. The answer,
 under some very reasonable assumptions, is "yes."
 
+```{youtube}
+id: GvdxKh6RpT0
+```
+
 Let's now see why this situation is in a calculus text by translating it
 into mathematical symbols.\
 First assume that the function $y = f(t)$ gives the distance (in miles)
@@ -87,6 +91,10 @@ $f_2$ is not differentiable at the origin.\
 We will give a proof of the Mean Value Theorem below. To do so, we use a
 fact, called Rolle's Theorem, stated here.
 
+```{youtube}
+id: E05H1f8TByI
+```
+
 ```{theorem, label="rolles", echo=TRUE}
 
 (Rolle's Theorem). Let $f$ be continuous on $[a,b]$ and differentiable
@@ -115,8 +123,9 @@ If $f(a) = f(b)$, then the *average* rate of change on $(a,b)$ is $0$,
 and the theorem guarantees some $c$ where $f^{\prime}(c)=0$. We will
 prove Rolle's Theorem, then use it to prove the Mean Value Theorem.
 
-------
-
+```{youtube}
+id: le-5zsb6O7o
+```
 
 **Proof of Rolle's Theorem**
 
@@ -140,6 +149,10 @@ critical number of $f$; since $f$ is differentiable, we have that
 $f^{\prime}(c) = 0$, completing the proof of the theorem. $\square$\
 
 We can now prove the Mean Value Theorem.
+
+```{youtube}
+id: 1b9af8q5JMg
+```
 
 **Proof of the Mean Value Theorem**
 
@@ -171,6 +184,10 @@ Note that the Mean Value Theorem is an *existence* theorem. It states
 that a special value $c$ *exists*, but it does not give any indication
 about how to find it. It turns out that when we need the Mean Value
 Theorem, existence is all we need.\
+
+```{youtube}
+id: ON7WYLJY2tE
+```
 
 ```{example, label="mvt2", echo=TRUE}
 
@@ -211,4 +228,44 @@ caption: >
 While the Mean Value Theorem has practical use (for instance, the speed
 monitoring application mentioned before), it is mostly used to advance
 other theory. We will use it in the next section to relate the shape of
-a graph to its derivative.
+a graph to its derivative. 
+
+Before moving on to the general connection between the shape of a graph and 
+the derivative, we look at two simpler results. 
+
+```{theorem, echo=TRUE}
+__(If $f'(x)=0$, then $f(x)$ is constant.)__
+
+If $f(x)$ is differentiable on some interval $I$ and $f'(x)=0$ on the interval,
+then $f(x)$ is constant on $I$.
+```
+
+```{youtube}
+id: PVMLAKYehgs
+```
+
+This theorem is the reverse of our previous result that told us how to compute 
+the derivative of a constant function: If $f(x)=c$, then $f'(x)=0$. This theorem 
+does the reverse, it tells us that the _only_ functions which have zero for their 
+derivative are the constant functions. In other words, there are no _other_ 
+functions out there which also have this property.
+
+This result can be generalized into the following theorem, which tells us that 
+if two functions have the same derivative, they must be very closely related. 
+The two functions do not need to be exactly the same, but they do need to be 
+vertically shifted versions of one another.
+
+```{theorem, echo=TRUE}
+__(Functions with the same derivative differ by a constant.)__
+If $f$ and $g$ are differentiable functions on some interval $I$, and $f'(x)=g'(x)$ 
+everywhere on $I$, then $g(x)=f(x)+c$ for all $x$ in the interval $I$.
+```
+
+```{youtube}
+id: BzvxKeZMNtE
+```
+
+
+```{youtube}
+id: CGBTZtM9mFY
+```

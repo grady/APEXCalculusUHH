@@ -1,5 +1,9 @@
 ## The Fundamental Theorem of Calculus {#sec:FTC}
 
+```{youtube ernst-planimeter}
+id: _W35iDhRfZg
+```
+
 Let $f(t)$ be a continuous function defined on $[a,b]$. The definite
 integral $\int_a^b f(x)\ dx$ is the "area under $f\ $" on $[a,b]$. We
 can turn this concept into a function by letting the upper (or lower)

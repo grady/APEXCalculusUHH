@@ -1,5 +1,9 @@
 ## Riemann Sums {#sec:riemann}
 
+```{youtube zobel-planimeter}
+id: RI9aq30OdU0
+```
+
 In the previous section we defined the definite integral of a function
 on $[a,b]$ to be the signed area between the curve and the $x$--axis.
 Some areas were simple to compute; we ended the section with a region

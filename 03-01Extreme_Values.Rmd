@@ -7,11 +7,16 @@ even nicer class of functions, functions that are differentiable.
 This chapter explores many of the ways we can take advantage of the
 information that continuous and differentiable functions provide.
 
+## Extreme Values {#sec:extreme-values}
+
 ```{youtube}
 id: srE7xUmQtCQ
 ```
 
-## Extreme Values {#sec:extreme-values}
+```{youtube}
+id: e3e6nvn0vBw
+```
+
 
 Given any quantity described by a function, we are often interested in
 the largest and/or smallest values that quantity attains. For instance,
@@ -52,7 +57,7 @@ it is defined is closed.
 knitr::include_url("https://www.desmos.com/calculator/qbcyuxgndp")
 ```
 
-
+### The Extreme Value Theorem
 
 It is possible for discontinuous functions defined on an open interval
 to have both a maximum and minimum value, but we have just seen examples
@@ -62,6 +67,7 @@ interval *always* have a maximum and minimum value.
 ```{youtube}
 id: GIcjxu8dTnY
 ```
+ 
 
 
 ```{theorem, label="extreme-val", echo=TRUE}
@@ -70,6 +76,10 @@ id: GIcjxu8dTnY
 a closed interval $I$. Then $f$ has both a maximum and minimum value on
 $I$.
 
+```
+
+```{youtube}
+id: gn3K3lgqqdo
 ```
 
 This theorem states that $f$ has extreme values, but it does not offer
@@ -119,6 +129,8 @@ $y$-value "nearby."
 > relative maximum, Definition \@ref(def:rel-ext) allows a relative
 > maximum to occur at an interval's endpoint.
 
+### Relative Extrema
+
 ```{youtube}
 id: nBZTnxn0vqQ
 ```
@@ -139,6 +151,10 @@ interval $I$ containing $c$.
 The relative maximum and minimum values comprise the **relative
 extrema** of $f$.
 
+```
+
+```{youtube}
+id: pR6OwoKiH-Y
 ```
 
 We briefly practice using these definitions.\
@@ -203,6 +219,12 @@ caption: >
 
 ```
 
+```{youtube}
+id: y4zLqHHFa00
+```
+
+### Critical Points
+
 What can we learn from the previous two examples? We were able to
 visually approximate relative extrema, and at each such point, the
 derivative was either 0 or it was not defined. This observation holds
@@ -231,6 +253,10 @@ extremum at the point $(c,f(c))$. Then $c$ is a critical number of $f$.
 
 ```
 
+```{youtube}
+id: ut3P4SgSaYs
+```
+
 Be careful to understand that this theorem states "Relative extrema on
 open intervals occur at critical points." It does not say "All critical
 numbers produce relative extrema." For instance, consider $f(x) = x^3$.
@@ -244,6 +270,12 @@ caption: >
     A graph of $f(x)=x^3$ which has a critical value of $x=0$, but
     no relative extrema.
 
+```
+
+### Finding Extreme Values
+
+```{youtube}
+id: 6D1-02DsyEw
 ```
 
 Theorem \@ref(thm:extreme-val) states that a continuous function on a
@@ -457,3 +489,15 @@ of a function (as we did at the beginning of Chapter 2). We will see
 that differentiable functions always have a point at which their
 *instantaneous* rate of change is same as the *average* rate of change.
 This is surprisingly useful, as we'll see.
+
+```{youtube}
+id: FHtYZhXRHHQ
+```
+
+```{youtube}
+id: bIvSUmGX04g
+```
+
+```{youtube}
+id: IapOUhs7dVE
+```

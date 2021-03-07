@@ -1,6 +1,6 @@
-# Applications of Differentiation
+# Applications of Differentiation {#chap:applications-differentation}
 
-In Chapter \@ref(chapter:graphbehavior), we learned how the first and
+In Chapter \@ref(sec:graphbehavior), we learned how the first and
 second derivatives of a function influence its graph. In this chapter we
 explore other applications of the derivative.
 
@@ -64,6 +64,7 @@ follows: $$x_{n+1} = x_{n} - \frac{f(x_{n})}{f^{\prime}(x_{n})}.$$
 
 We summarize this process as follows.
 
+```{theorem Newton, echo=TRUE}
 Let $f$ be a differentiable function on an interval $I$ with a root in
 $I$. To approximate the value of the root, accurate to $d$ decimal
 places:
@@ -77,6 +78,8 @@ places:
 
 3.  Stop the iterations when successive approximations do not differ in
     the first $d$ places after the decimal point.
+
+```
 
 > **Note:** Newton's Method is not infallible. The sequence of
 > approximate values may not converge, or it may converge so slowly that
@@ -200,19 +203,18 @@ caption: >
 
 ```
 
-\
-If you know how to program, you can translate the following pseudocode
+If you know how to program, you can translate the following code
 into your favorite language to perform the computation in this problem.
 
-::: {.center}
-    x = .75
-    while true
-        oldx = x
-        x = x - (cos(x)-x)/(-sin(x)-1)
-        print x
-        if abs(x-oldx) < .0000000001
-            break
-:::
+```{r, echo=TRUE}
+x = 0.75
+oldx = 0
+while(abs(x - oldx) > 10e-7){
+    oldx = x
+    x = x - (cos(x)-x)/(-sin(x)-1)
+}
+print(x)
+```
 
 This code calculates $x_1$, $x_2$, etc., storing each result in the
 variable `x`. The previous approximation is stored in the variable

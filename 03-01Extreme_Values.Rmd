@@ -1,4 +1,4 @@
-# Graphical Behavior of Functions
+# Graphical Behavior of Functions {#chap:graphbehavior}
 
 Our study of limits led to continuous functions, a certain class of
 functions that behave in a particularly nice way. Limits then gave us an

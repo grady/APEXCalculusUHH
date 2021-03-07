@@ -1,4 +1,4 @@
-## Increasing and Decreasing Functions {#sec:incr_decr}
+## Increasing and Decreasing Functions {#sec:incr-decr}
 
 Our study of "nice" functions $f$ in this chapter has so far focused on
 individual points: points where $f$ is maximal/minimal, points where
@@ -7,6 +7,10 @@ $f^{\prime}(c)$ is the average rate of change of $f$ on some interval.
 
 In this section we begin to study how functions behave *between* special
 points; we begin studying in more detail the shape of their graphs.
+
+```{youtube}
+id: PXRDsySmDO0
+```
 
 We start with an intuitive concept. Given the graph in Figure
 \@ref(fig:incr0), where would you say the function is *increasing*?
@@ -41,6 +45,10 @@ an interval $I$.
 
 Informally, a function is increasing if as $x$ gets larger (i.e.,
 looking left to right) $f(x)$ gets larger.
+
+```{youtube}
+id: obEyA2kZb4k
+```
 
 Our interest lies in finding intervals in the domain of $f$ on which $f$
 is either increasing or decreasing. Such information should seem useful.
@@ -82,6 +90,10 @@ $f^{\prime}$ is probably positive.\" Theorem \@ref(thm:first-deriv-test) below
 turns this around by stating "If $f^{\prime}$ is positive, then $f$ is
 increasing." This leads us to a method for finding when functions are
 increasing and decreasing.
+
+```{youtube}
+id: QGNvMQQZqBs
+```
 
 ```{theorem, label="first-deriv-test", echo=TRUE}
 
@@ -243,6 +255,10 @@ see if it is going up or down." It is easy to teach a computer to
 "determine if a number is greater than or less than 0."
 
 ### The First Derivative Test for Extreme Values
+
+```{youtube}
+id: Vu2LW7u7Fi8
+```
 
 In Section \@ref(sec:extreme-values) we learned the definition of
 relative maxima and minima and found that they occur at critical points.
@@ -488,3 +504,7 @@ We have seen how the first derivative of a function helps determine when
 the function is going "up" or "down." In the next section, we will see
 how the second derivative helps determine how the graph of a function
 curves.
+
+```{youtube}
+id: 9hcSiJyRKdg
+```

@@ -1,5 +1,13 @@
 ## Concavity and the Second Derivative {#sec:concavity}
 
+> **For some reason a few of the graphs on this page don't fully load correctly. If you open the 
+  Geogebra graphs in their own tab using the link in the caption they should display correctly.**
+
+
+```{youtube}
+id: BLkz5LGWihw
+```
+
 Our study of "nice" functions continues. The previous section showed how
 the first derivative of a function, $f'$, can relay important information
 about $f$. We now apply the same technique to $f'$ itself, and learn what
@@ -14,6 +22,10 @@ $f^{\prime\prime}=0$ or is undefined.
 This section explores how knowing information about $f''$ gives
 information about $f$.
 
+```{youtube}
+id: 0uCjI5J4ew4
+```
+
 ### Concavity
 
 We begin with a definition, then explore its meaning.
@@ -21,8 +33,8 @@ We begin with a definition, then explore its meaning.
 ```{definition, label="concavity", echo=TRUE}
 
 (Concave Up and Concave Down). Let $f$ be differentiable on an interval
-$I$. The graph of $f$ is **concave up** on $I$ if $f^{\prime}$ is
-increasing. The graph of $f$ is **concave down** on $I$ if $f^{\prime}$
+$I$. The graph of $f$ is **concave up** (also called **convex**) on $I$ if $f^{\prime}$ is
+increasing. The graph of $f$ is **concave down** (or simply **concave**) on $I$ if $f^{\prime}$
 is decreasing. If $f^{\prime}$ is constant then the graph of $f$ is said
 to have **no concavity**.
 
@@ -31,16 +43,20 @@ to have **no concavity**.
 > **Note:** We often state that "$f$ is concave up" instead of "the
 > graph of $f$ is concave up" for simplicity.
 
-The graph of a function $f$ is *concave up* when f\^ is *increasing.*
+```{youtube}
+id: VHqbLx29Ibk
+```
+
+The graph of a function $f$ is *concave up* when $f^\prime$is *increasing.*
 That means as one looks at a concave up graph from left to right, the
 slopes of the tangent lines will be increasing. Consider Figure
 \@ref(fig:concavity1), where a concave up graph is shown along with some
 tangent lines. Notice how the tangent line on the left is steep,
-downward, corresponding to a small value of f\^. On the right, the
-tangent line is steep, upward, corresponding to a large value of f\^.
+downward, corresponding to a small value of $f^\prime$ . On the right, the
+tangent line is steep, upward, corresponding to a large value of $f^\prime$ .
 
 ```{geogebra, label="concavity1"}
-
+material_id: nytndpwr
 caption: >
   A function $f$ with a concave up graph. Notice how the slopes
   of the tangent lines, when looking from left to right, are increasing.
@@ -55,19 +71,20 @@ increasing at a faster and faster rate.
 Now consider a function which is concave down. We essentially repeat the
 above paragraphs with slight variation.
 
-The graph of a function $f$ is *concave down* when f\^ is *decreasing.*
+The graph of a function $f$ is *concave down* when $f^\prime$is *decreasing.*
 That means as one looks at a concave down graph from left to right, the
 slopes of the tangent lines will be decreasing. Consider Figure
 \@ref(fig:concavity2), where a concave down graph is shown along with
 some tangent lines. Notice how the tangent line on the left is steep,
-upward, corresponding to a large value of f\^. On the right, the tangent
-line is steep, downward, corresponding to a small value of f\^.
+upward, corresponding to a large value of $f^\prime$ . On the right, the tangent
+line is steep, downward, corresponding to a small value of $f^\prime$ .
 
 ```{geogebra, label="concavity2"}
-
+material_id: m88xvrpt
 caption: >
   A function $f$ with a concave down graph. Notice how the slopes
   of the tangent lines, when looking from left to right, are decreasing.
+  Press the play button to animate the graph.
 
 ```
 
@@ -86,6 +103,11 @@ results of the previous section and to find intervals on which a graph
 is concave up or down. That is, we recognize that $f^{\prime}$ is
 increasing when $f^{\prime\prime}>0$, etc.
 
+```{youtube}
+id: OiJl5s_2N_g
+```
+
+
 ```{theorem, label="concavity-deriv", echo=TRUE}
 
 (Test for Concavity). Let $f$ be twice differentiable on an interval
@@ -93,6 +115,7 @@ $I$. The graph of $f$ is concave up if $f^{\prime\prime}>0$ on $I$, and
 is concave down if $f^{\prime\prime}<0$ on $I$.
 
 ```
+
 ```{geogebra, label="concavity3"}
 
 caption: >
@@ -106,9 +129,20 @@ caption: >
 > graph lies above its tangent lines. A function is concave down if its
 > graph lies below its tangent lines.
 
+```{definition alt-convex, echo=TRUE}
+(Alternative definition for concavity.) A function $f$ is concave up (convex) on an interval $I$ if for every choice of $a$ and $b$ in the interval, a striaght line segment between $(a,f(a))$ and $(b, f(b))$ lies _above_ the graph of $f(x)$. The function is concave down if every such line segment lies _below_ the graph of $f(x)$.
+```
+
+### Inflection Points
+
 If knowing where a graph is concave up/down is important, it makes sense
 that the places where the graph changes from one to the other is also
 important. This leads us to a definition.
+
+```{youtube}
+id: WOxoF4vH-mg
+```
+
 
 ```{definition, label="infl", echo=TRUE}
 
@@ -121,16 +155,20 @@ Figure \@ref(fig:concavity4) shows a graph of a function with inflection
 points labeled.
 
 ```{geogebra, label="concavity4"}
-
+material_id: nkpdbdaq
 caption: >
-  A graph of a function with its inflection points marked. The
-  intervals where concave up/down are also indicated.
+  A graph of a function with its inflection points marked. The second derivative is shown as the dotted line and its   zeros are marked. In the region to the left of the first zero of $f''$, the function $f$ is concave up. In the
+  region in the middle, the function $f$ is concave down. In the region to the right of the second zero of $f''$,
+  the function $f$ is again concave up.
 
 ```
 
-If the concavity of $f$ changes at a point $(c,f(c))$, then f\^ is
+
+
+
+If the concavity of $f$ changes at a point $(c,f(c))$, then $f^\prime$ is
 changing from increasing to decreasing (or, decreasing to increasing) at
-$x=c$. That means that the sign of f\^ is changing from positive to
+$x=c$. That means that the sign of $f^\prime$ is changing from positive to
 negative (or, negative to positive) at $x=c$. This leads to the
 following theorem.
 
@@ -145,7 +183,12 @@ is not defined at $c$.
 We have identified the concepts of concavity and points of inflection.
 It is now time to practice using these concepts; given a function, we
 should be able to find its points of inflection and identify intervals
-on which it is concave up or down. We do so in the following examples.\
+on which it is concave up or down. We do so in the following examples.
+
+```{youtube}
+id: n8TRVD_8sY0
+```
+
 
 ```{example, label="conc1ex", echo=TRUE}
 
@@ -157,8 +200,8 @@ which it is concave up/down.
 
 We start by finding $f^{\prime}(x)=3x^2-3$ and $f^{\prime\prime}(x)=6x$.
 To find the inflection points, we use Theorem \@ref(thm:inflection) and
-find where $f^{\prime\prime}(x)=0$ or where f\^ is undefined. We find
-f\^ is always defined, and is 0 only when $x=0$. So the point $(0,1)$ is
+find where $f^{\prime\prime}(x)=0$ or where $f^\prime$ is undefined. We find
+$f^\prime$ is always defined, and is 0 only when $x=0$. So the point $(0,1)$ is
 the only possible point of inflection.
 
 This possible inflection point divides the real line into two intervals,
@@ -171,26 +214,38 @@ an inflection point.
 
 The number line in Figure \@ref(fig:concline1) illustrates the process
 of determining concavity; Figure \@ref(fig:conc1) shows a graph of $f$
-and f\^, confirming our results. Notice how $f$ is concave down
+and $f^\prime$ , confirming our results. Notice how $f$ is concave down
 precisely when $f^{\prime\prime}(x)<0$ and concave up when
 $f^{\prime\prime}(x)>0$.
 ```
 
-```{geogebra, label="concline1"}
-
-caption: >
-  A number line determining the concavity of $f$ in Example
-  \@ref(exm:conc1ex).
-
+```{tikz concline1, fig.width=NULL, fig.cap="A number line determining the concavity of $f$ in Example   \\@ref(exm:conc1ex).", cache=TRUE}
+              \begin{tikzpicture}
+                \begin{axis}[
+                    numberline,
+                    xmin=-0.9,
+                    xmax=0.9,
+                    after end axis/.code={
+                      \path (axis cs:0,0)
+                      node [anchor=north,yshift=-0.075cm] {\footnotesize 0};
+                    },
+                  ]
+                  \addplot[guideline] coordinates {(0,0) (0,2)};
+                  \addplot[mark=none] coordinates {(-0.5,1)} node {\parbox{8em}{\centering \small $f^{\prime\prime} <0$\\$f$ is concave down}};
+                  \addplot[mark=none] coordinates {(0.5,1)} node {\parbox{8em}{\centering \small $f^{\prime\prime} >0$\\$f$ is concave up}};
+                \end{axis}
+              \end{tikzpicture}
 ```
-```{geogebra, label="conc1"}
 
+```{geogebra, label="conc1"}
+material_id: zz7wgmr6
 caption: A graph of $f(x)$ used in Example \@ref(exm:conc1ex).
 
 ```
 
-
-\
+```{youtube}
+id: eC6QLbsuRVs
+```
 
 ```{example, label="conc2ex", echo=TRUE}
 
@@ -200,15 +255,15 @@ which it is concave up/down.
 
 ------------------------------------------------------------------------
 
-We need to find f\^ and f\^. Using the Quotient Rule and simplifying, we
+We need to find $f^\prime$ and $f^\prime$ . Using the Quotient Rule and simplifying, we
 find
 $$f^{\prime}(x)=\frac{-(1+x^2)}{(x^2-1)^2} \quad \text{and}\quad f^{\prime\prime}(x) = \frac{2x(x^2+3)}{(x^2-1)^3}.$$
 
 To find the possible points of inflection, we seek to find where
 $f^{\prime\prime}(x)=0$ and where $f^{\prime\prime}$ is not defined.
 Solving $f^{\prime\prime}(x)=0$ reduces to solving $2x(x^2+3)=0$; we
-find $x=0$. We find that f\^ is not defined when $x=\pm 1$, for then the
-denominator of f\^ is 0. We also note that $f$ itself is not defined at
+find $x=0$. We find that $f^\prime$ is not defined when $x=\pm 1$, for then the
+denominator of $f^\prime$ is 0. We also note that $f$ itself is not defined at
 $x=\pm 1$, having a domain of $(-\infty,-1)\cup(-1,1)\cup(1,\infty)$.
 Since the domain of $f$ is the union of three intervals, it makes sense
 that the concavity of $f$ could switch across intervals. We technically
@@ -220,10 +275,10 @@ The important $x$-values at which concavity might switch are $x=-1$,
 $x=0$ and $x=1$, which split the number line into four intervals as
 shown in Figure \@ref(fig:concline2). We determine the concavity on
 each. Keep in mind that all we are concerned with is the *sign* of
-f\^ on the interval.\
+$f^\prime$ on the interval.\
 **Interval 1,** $(-\infty,-1)$: Select a number $c$ in this interval
 with a large magnitude (for instance, $c=-100$). The denominator of
-$f^{\prime}'(x)$ will be positive. In the numerator, the $(c^2+3)$ will
+$f^{\prime\prime}(x)$ will be positive. In the numerator, the $(c^2+3)$ will
 be positive and the $2c$ term will be negative. Thus the numerator is
 negative and $f^{\prime\prime}(c)$ is negative. We conclude $f$ is
 concave down on $(-\infty,-1)$.
@@ -248,13 +303,33 @@ We conclude that $f$ is concave up on $(-1,0)$ and $(1,\infty)$ and
 concave down on $(-\infty,-1)$ and $(0,1)$. There is only one point of
 inflection, $(0,0)$, as $f$ is not defined at $x=\pm 1$. Our work is
 confirmed by the graph of $f$ in Figure \@ref(fig:conc2). Notice how $f$
-is concave up whenever f\^ is positive, and concave down when f\^ is
+is concave up whenever $f^\prime$ is positive, and concave down when $f^\prime$ is
 negative.
 
 ```
 
-```{geogebra, label="conc2"}
+```{tikz concline2, fig.width=NULL, fig.cap="A number line determining the concavity of $f$ in Example   \\@ref(exm:conc2ex).", cache=TRUE}
+              \begin{tikzpicture}
+                \begin{axis}[
+                    numberline,
+                    xmin=-2,
+                    xmax=2,
+                    extra x ticks={-1, 1, 0},
+                    extra x tick labels={$-1$,$1$, $0$},
+                  ]
+                  \addplot[guideline] coordinates {(-1,0) (-1,2)};
+                  \addplot[guideline] coordinates {(0,0) (0,2)};
+                  \addplot[guideline] coordinates {(1,0) (1,2)};
+                  \addplot[mark=none] coordinates {(-1.5,1.5)} node {\parbox{3em}{\centering \small  $f^{\prime\prime}<0$\\$f$ conc down}};
+                  \addplot[mark=none] coordinates {(-0.5,1.5)} node {\parbox{3em}{\centering \small  $f^{\prime\prime}>0$\\$f$ conc up}};
+                  \addplot[mark=none] coordinates {(0.5,1.5)} node {\parbox{3em}{\centering \small  $f^{\prime\prime}<0$\\$f$ conc down}};
+                  \addplot[mark=none] coordinates {(1.5,1.5)} node {\parbox{3em}{\centering \small  $f^{\prime\prime}>0$\\$f$ conc up}};
+                \end{axis}
+              \end{tikzpicture}
+```
 
+```{geogebra, label="conc2"}
+material_id: qcuspc7d
 caption: > 
   A graph of $f(x)$ and $f^{\prime\prime}(x)$ in Example
   \@ref(exm:conc2ex).
@@ -265,16 +340,20 @@ caption: >
 Recall that relative maxima and minima of $f$ are found at critical
 points of $f$; that is, they are found when $f^{\prime}(x)=0$ or when
 $f^{\prime}$ is undefined. Likewise, the relative maxima and minima of
-f\^ are found when $f^{\prime\prime}(x)=0$ or when f\^ is undefined;
+$f^\prime$ are found when $f^{\prime\prime}(x)=0$ or when $f^\prime$ is undefined;
 note that these are the inflection points of $f$.
 
-What does a "relative maximum of f\^ " *mean*? The derivative measures
-the rate of change of $f$; maximizing f\^ means finding where $f$ is
+What does a "relative maximum of $f^\prime$ " *mean*? The derivative measures
+the rate of change of $f$; maximizing $f^\prime$ means finding where $f$ is
 increasing the most -- where $f$ has the steepest tangent line. A
-similar statement can be made for minimizing f\^; it corresponds to
+similar statement can be made for minimizing $f^\prime$; it corresponds to
 where $f$ has the steepest negatively--sloped tangent line.
 
-We utilize this concept in the next example.\
+We utilize this concept in the next example.
+
+```{youtube}
+id: yjcSXaGkL5Y
+```
 
 ```{example, label="conc3ex", echo=TRUE}
 
@@ -288,8 +367,8 @@ decreasing at their greatest rate.
 ------------------------------------------------------------------------
 
 We want to maximize the rate of decrease, which is to say, we want to
-find where $S\,'$ has a minimum. To do this, we find where $S\,''$ is 0.
-We find $S\,'(t)=4t^3-16t$ and $S\,''(t)=12t^2-16$. Setting $S\,''(t)=0$
+find where $S^\prime$ has a minimum. To do this, we find where $S^\prime\prime$ is 0.
+We find $S^\prime(t)=4t^3-16t$ and $S^\prime\prime(t)=12t^2-16$. Setting $S^\prime\prime(t)=0$
 and solving, we get $t=\sqrt{4/3}\approx 1.16$ (we ignore the negative
 value of $t$ since it does not lie in the domain of our function $S$).
 
@@ -299,9 +378,9 @@ company. After the inflection point, it will still take some time before
 sales start to increase, but at least sales are not decreasing quite as
 quickly as they had been.
 
-A graph of $S(t)$ and $S\,'(t)$ is given in Figure \@ref(fig:conc3b).
-When $S\,'(t)<0$, sales are decreasing; note how at $t\approx 1.16$,
-$S\,'(t)$ is minimized. That is, sales are decreasing at the fastest
+A graph of $S(t)$ and $S^\prime(t)$ is given in Figure \@ref(fig:conc3).
+When $S^\prime(t)<0$, sales are decreasing; note how at $t\approx 1.16$,
+$S^\prime(t)$ is minimized. That is, sales are decreasing at the fastest
 rate at $t\approx 1.16$. On the interval of $(1.16,2)$, $S$ is
 decreasing but concave up, so the decline in sales is "leveling off."
 
@@ -309,10 +388,11 @@ decreasing but concave up, so the decline in sales is "leveling off."
 
 
 ```{geogebra, label="conc3"}
-
+material_id: qbneafdu
 caption: > 
   A graph of $S(t)$ in Example \@ref(exm:conc3ex), modeling the
-  sale of a product over time.
+  sale of a product over time along with its derivative
+  $S^\prime(t)$.
 
 ```
 
@@ -326,16 +406,9 @@ $f^{\prime\prime}(x)=0$ *without* concavity changing is $f(x)=x^4$. At
 $x=0$, $f^{\prime\prime}(x)=0$ but $f$ is always concave up, as shown in
 Figure \@ref(fig:concavity5).\
 
-```{geogebra, label="conc3b"}
-
-caption: > 
-  A graph of $S(t)$ in Example \@ref(exm:conc3) along with
-  $S\,'(t)$.
-
-```
 
 ```{geogebra, label="concavity5"}
-
+material_id: rxpannne
 caption: >
   A graph of $f(x) = x^4$. Clearly $f$ is always concave up,
   despite the fact that $f^{\prime\prime}(x) = 0$ when $x=0$. It this
@@ -346,6 +419,10 @@ caption: >
 
 ### The Second Derivative Test
 
+```{youtube}
+id: hOq8MYFf8fk
+```
+
 The first derivative of a function gave us a test to find if a critical
 value corresponded to a relative maximum, minimum, or neither. The
 second derivative gives us another way to test if a critical point is a
@@ -355,8 +432,12 @@ where a function $f$ is concave up, then that critical value must
 correspond to a relative minimum of $f$, etc. See Figure
 \@ref(fig:concavity6) for a visualization of this.
 
-```{geogebra, label="concavity6"}
+```{youtube}
+id: 4hWldEUoG2U
+```
 
+```{geogebra, label="concavity6"}
+material_id: ed5vnkpy
 caption: >
   Demonstrating the fact that relative maxima occur when the
   graph is concave down and relative minima occur when the graph is
@@ -381,7 +462,12 @@ following way. If $f^{\prime\prime}(c)>0$, then the graph is concave up
 at a critical point $c$ and $f^{\prime}$ itself is growing. Since
 $f^{\prime}(c)=0$ and $f^{\prime}$ is growing at $c$, then it must go
 from negative to positive at $c$. This means the function goes from
-decreasing to increasing, indicating a local minimum at $c$.\
+decreasing to increasing, indicating a local minimum at $c$.
+
+
+```{youtube}
+id: _DhmPXRZfi8
+```
 
 ```{example, label="conc4ex", echo=TRUE}
 
@@ -393,19 +479,18 @@ as relative maxima or minima.
 
 We find $f^{\prime}(x)=-100/x^2+1$ and $f^{\prime\prime}(x) = 200/x^3.$
 We set $f^{\prime}(x)=0$ and solve for $x$ to find the critical values
-(note that f\^ is not defined at $x=0$, but neither is $f$ so this is
+(note that $f^\prime$ is not defined at $x=0$, but neither is $f$ so this is
 not a critical value.) We find the critical values are $x=\pm 10$.
-Evaluating f\^ at $x=10$ gives $0.1>0$, so there is a local minimum at
+Evaluating $f^\prime$ at $x=10$ gives $0.1>0$, so there is a local minimum at
 $x=10$. Evaluating $f^{\prime\prime}(-10)=-0.1<0$, determining a
 relative maximum at $x=-10$. These results are confirmed in Figure
 \@ref(fig:conc4).
 
 ```
 
-\
 
 ```{geogebra, label="conc4"}
-
+material_id: mddgsdqn
 caption: >
   A graph of $f(x)$ in Example \@ref(exm:conc4ex). The second
   derivative is evaluated at each critical point. When the graph is
@@ -418,6 +503,10 @@ We have been learning how the first and second derivatives of a function
 relate information about the graph of that function. We have found
 intervals of increasing and decreasing, intervals where the graph is
 concave up and down, along with the locations of relative extrema and
-inflection points. In Chapter \@ref(chapter:limits) we saw how limits
+inflection points. In Chapter \@ref(sec:limits) we saw how limits
 explained asymptotic behavior. In the next section we combine all of
 this information to produce accurate sketches of functions.
+
+```{youtube}
+id: 8n1GPmCZC58
+```

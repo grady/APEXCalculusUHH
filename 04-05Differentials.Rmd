@@ -3,6 +3,10 @@
 In Section \@ref(sec:interp-deriv) we explored the meaning and use of
 the derivative. This section starts by revisiting some of those ideas.
 
+```{youtube}
+id: YmODT2PolKY
+```
+
 Recall that the derivative of a function $f$ can be used to find the
 slopes of lines tangent to the graph of $f$. At $x=c$, the tangent line
 to the graph of $f$ has equation $$y = f^{\prime}(c)(x-c)+f(c).$$ The
@@ -15,18 +19,14 @@ $\sin (\pi/3) = \sqrt{3}/2 \approx 0.866$, and $\cos (\pi/3) = 1/2$.
 Thus the tangent line to $f(x) = \sin x$ at $x=\pi/3$ is:
 $$\ell(x) = \frac12(x-\pi/3)+0.866.$$
 
-\
-(a)
-
-.05
-
-\
-(b)
-
 ::: {#fig:diffal1 .tab}
 **Table 1**. caption: Graphing $f(x) = \sin x$ and its tangent line at
 $x=\pi/3$ in order to estimate $\sin 1.1$.
 :::
+
+```{youtube}
+id: mQRelmurD
+```
 
 In Figure \@ref(fig:diffal1)(a), we see a graph of $f(x) = \sin x$
 graphed along with its tangent line at $x=\pi/3$. The small rectangle
@@ -59,6 +59,10 @@ Definition and Key Idea. In short, it says that when the $x$-value
 changes from $c$ to $c+\Delta x$, the $y$ value of a function $f$
 changes by about $f^{\prime}(c)\Delta x$.
 
+```{youtube}
+id: y9lTgdHD8wI
+```
+
 We introduce two new variables, $dx$ and $dy$ in the context of a formal
 definition.
 
@@ -79,9 +83,14 @@ $\frac{dy}{dx}$. This latter notation was chosen because of the
 fraction--like qualities of the derivative, but again, it is one symbol
 and not a fraction.
 
+```{youtube}
+id: XxpcZw702nA
+```
+
 It is helpful to organize our new concepts and notations in one place.
 
-Let $y = f(x)$ be a differentiable function.
+```{definition, echo=TRUE}
+**(Differential Notation)** Let $y = f(x)$ be a differentiable function.
 
 1.  Let $\Delta x$ represent a small, nonzero change in $x$ value.
 
@@ -95,9 +104,15 @@ Let $y = f(x)$ be a differentiable function.
     (\@ref(eq:differential)), is an *approximation* of the change in $y$
     value as $x$ changes by $\Delta x$; $dy \approx \Delta y$.
 
+```
+
 What is the value of differentials? Like many mathematical concepts,
 differentials provide both practical and theoretical benefits. We
-explore both here.\
+explore both here.
+
+```{youtube}
+id: KCDezzvfDKA
+```
 
 ```{example, label="diffal1", echo=TRUE}
 
@@ -124,10 +139,12 @@ verify that the tangent line, evaluated at $x=3.1$, also gives $y=9.6$.
 
 ```
 
-\
+
 Of course, it is easy to compute the actual answer (by hand or with a
 calculator): $3.1^2 = 9.61.$ (Before we get too cynical and say "Then
 why bother?", note our approximation is *really* good!)
+
+
 
 So why bother?
 
@@ -149,7 +166,12 @@ Differential Equations courses.
 We use differentials once more to approximate the value of a function.
 Even though calculators are very accessible, it is neat to see how these
 techniques can sometimes be used to easily compute something that looks
-rather hard.\
+rather hard.
+
+
+```{youtube}
+id: nFaq1O_wWso
+```
 
 ```{example, label="diffal2", echo=TRUE}
 
@@ -170,14 +192,17 @@ approximate $\sqrt{4.5} \approx 2.125.$
 
 ```
 
-\
+
 Differentials are important when we discuss *integration*. When we study
 that topic, we will use notation such as $$\int f(x)\ dx$$ quite often.
 While we don't discuss here what all of that notation means, note the
 existence of the differential $dx$. Proper handling of *integrals* comes
 with proper handling of differentials.
 
-In light of that, we practice finding differentials in general.\
+
+
+In light of that, we practice finding differentials in general.
+
 
 ```{example, label="diffal3", echo=TRUE}
 
@@ -206,15 +231,14 @@ $dy$.
     $\displaystyle f^{\prime}(x) = \frac{1}{2}(x^2+3x-1)^{-\frac 12}(2x+3) = \frac{2x+3}{2\sqrt{x^2+3x-1}}.$
     Thus $$dy = \frac{(2x+3)dx}{2\sqrt{x^2+3x-1}}.$$
 
-\-
-
 ```
 
-\
+
 Finding the differential $dy$ of $y=f(x)$ is really no harder than
 finding the derivative of $f$; we just *multiply* $f^{\prime}(x)$ by
 $dx$. It is important to remember that we are not simply adding the
-symbol "$dx$" at the end.\
+symbol "$dx$" at the end.
+
 We have seen a practical use of differentials as they offer a good
 method of making certain approximations. Another use is *error
 propagation.* Suppose a length is measured to be $x$, although the
@@ -227,7 +251,13 @@ the propagated error.
 
 How close are $f(x)$ and $f(x+\Delta x)$? This is a difference in "y"
 values: $$f(x+\Delta x)-f(x) = \Delta y\approx dy.$$ We can approximate
-the propagated error using differentials.\
+the propagated error using differentials.
+
+
+```{youtube}
+id: 0_tSaBZZR1s
+```
+
 
 ```{example, label="diffal4", echo=TRUE}
 
@@ -259,11 +289,11 @@ We leave it to the reader to confirm this, but if the diameter of the
 ball was supposed to be 10cm, the same manufacturing tolerance would
 give a propagated error in mass of $\pm 12.33$g, which corresponds to a
 *percent error* of $\pm 0.188$%. While the amount of error is much
-greater ($12.33 > 0.493$), the percent error is much lower.
+greater $(12.33 > 0.493)$, the percent error is much lower.
 
 ```
 
-\
+
 We first learned of the derivative in the context of instantaneous rates
 of change and slopes of tangent lines. We furthered our understanding of
 the power of the derivative by studying how it relates to the graph of a

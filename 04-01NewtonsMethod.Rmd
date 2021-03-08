@@ -1,6 +1,6 @@
 # Applications of Differentiation {#chap:applications-differentation}
 
-In Chapter \@ref(sec:graphbehavior), we learned how the first and
+In Chapter \@ref(chap:graphbehavior), we learned how the first and
 second derivatives of a function influence its graph. In this chapter we
 explore other applications of the derivative.
 
@@ -93,7 +93,7 @@ and an initial approximation of $x_0=1$.
 ------------------------------------------------------------------------
 
 To begin, we compute $f^{\prime}(x)=3x^2-2x$. Then we apply the Newton's
-Method algorithm, outlined in Key Idea \@ref(idea:Newton).
+Method algorithm, outlined in Theorem \@ref(thm:Newton).
 $$\begin{aligned}
 x_1&=1-\frac{f(1)}{f^{\prime}(1)}=1-\frac{1^3-1^2-1}{3\cdot 1^2-2\cdot 1}=2,\\
 x_2&=2-\frac{f(2)}{f^{\prime}(2)}=2-\frac{2^3-2^2-1}{3\cdot 2^2-2\cdot 2}=1.625,\\
@@ -249,14 +249,14 @@ What should one use for the initial guess, $x_0$? Generally, the closer
 to the actual root the initial guess is, the better. However, some
 initial guesses should be avoided. For instance, consider Example
 \@ref(exm:newt2ex) where we sought the root to $f(x) = x^3-x^2-1$.
-Choosing $x-0=0$ would have been a particularly poor choice. Consider
+Choosing $x_0=0$ would have been a particularly poor choice. Consider
 Figure \@ref(fig:newt2a), where $f(x)$ is graphed along with its tangent
 line at $x=0$. Since $f^{\prime}(0)=0$, the tangent line is horizontal
 and does not intersect the $x$--axis. Graphically, we see that Newton's
 Method fails.
 
 ```{geogebra, label="newt2a"}
-
+material_id: gps8wqrf
 caption: >
     A graph of $f(x) = x^3-x^2-1$, showing why an initial approximation of $x_0=0$ with Newton's Method fails.
 

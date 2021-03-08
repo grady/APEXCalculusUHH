@@ -1,4 +1,4 @@
-## Implicit Differentiation {#sec:imp_deriv}
+## Implicit Differentiation {#sec:imp-deriv}
 
 ```{youtube}
 id: qb40J4N1fa4
@@ -130,7 +130,6 @@ and $y$ terms. How is it to be used? We'll address that next.
 
 ```
 
-\
 Implicit functions are generally harder to deal with than explicit
 functions. With an explicit function, given an $x$ value, we have an
 explicit formula for computing the corresponding $y$ value. With an

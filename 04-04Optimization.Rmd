@@ -10,7 +10,12 @@ stated in terms of situations that require us to create the appropriate
 mathematical framework in which to solve the problem.
 
 We start with a classic example which is followed by a discussion of the
-topic of optimization.\
+topic of optimization.
+
+```{youtube}
+id: nlLf3CcgblI
+```
+
 
 ```{example, label="opt1ex", echo=TRUE}
 
@@ -69,11 +74,47 @@ perimeter of 100 ft. with maximum area is a square, with sides of length
 
 ```
 
-```{geogebra, label="opt1"}
+```{tikz, include=FALSE, eval=FALSE}
+            \begin{tikzpicture}[>=latex]
 
-caption: >
-    A sketch of the enclosure in Example \@ref(exm:opt1).
+            \shadedraw [top color = treetop,bottom color = treetop!50!black] (0,0) -- (33.6pt,35.28pt) -- (95.2pt,35.28pt) -- (61.6pt,0) -- cycle;
 
+            \begin{scope}[cm={1,1.05,0,1,(0,0)}]
+            \foreach \x in {0,...,7}
+            {
+            \shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=treestump!40!white,right color = treestump!99!white] (0,0) -- ++ (0,20pt) -- ++ (4pt,4pt) -- ++ (6pt,0pt) -- ++ (4pt,-4pt) -- ++ (0pt,-20pt) -- cycle;
+            }
+            \end{scope}
+
+            \begin{scope}[shift={(33.6pt,35.28pt)}]
+            \foreach \x in {0,...,10}
+            {
+            \shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=treestump!40!white,right color = treestump!99!white] (0,0) -- ++ (0,20pt) -- ++ (4pt,4pt) -- ++ (6pt,0pt) -- ++ (4pt,-4pt) -- ++ (0pt,-20pt) -- cycle;
+            }
+            \end{scope}
+
+            \foreach \x in {0,...,10}
+            {
+            \shadedraw [xscale=.4,shift={(\x*14 pt,0)},left color=treestump!40!white,right color = treestump!99!white] (0,0) -- ++ (0,20pt) -- ++ (4pt,4pt) -- ++ (6pt,0pt) -- ++ (4pt,-4pt) -- ++ (0pt,-20pt) -- cycle;
+            }
+
+            \begin{scope}[cm={1,1.05,0,1,(61.6pt,0)}]
+            \foreach \x in {0,...,7}
+            {
+            \shadedraw [xscale=.3,shift={(\x*14 pt,0)},left color=treestump!40!white,right color = treestump!99!white] (0,0) -- ++ (0,20pt) -- ++ (4pt,4pt) -- ++ (6pt,0pt) -- ++ (4pt,-4pt) -- ++ (0pt,-20pt) -- cycle;
+            }
+            \end{scope}
+
+            \draw [<->] (0,-5pt) -- (61.6pt,-5pt) node [below,pos=.5] {$x$};
+            \draw [<->] (100.2pt,35.28pt) -- (66.6pt,0pt) node [right,pos=.5] {$y$};
+
+            \end{tikzpicture}
+```
+
+```{tikz opt1, cache=TRUE, dev="svg", fig.width=NULL, fig.cap="A sketch of the enclosure in Example \\@ref(exm:opt1ex)."}
+\begin{tikzpicture}
+\draw [shift = {(150pt,0)}] (0,0) -- (160pt,0) node [pos=.5,below] {$x$} -- (160pt,100pt) node [pos=.5,right] {$y$} -- (0,100pt) -- cycle;
+\end{tikzpicture}
 ```
 
 
@@ -91,6 +132,9 @@ mathematics you will likely encounter later.
 
 We outline here the basic process of solving these optimization
 problems.
+
+```{definition optimization, echo=TRUE}
+**(Process of solving optimization problems)**
 
 1.  Understand the problem. Clearly identify what quantity is to be
     maximized or minimized. Make a sketch if helpful.
@@ -110,7 +154,13 @@ problems.
 
 3.  Identify the values of all relevant quantities of the problem.
 
-We will use Key Idea \@ref(idea:optimization) in a variety of examples.\
+```
+
+We will use Definition \@ref(def:optimization) in a variety of examples.\
+
+```{youtube}
+id: wIs5N5HOCrc
+```
 
 ```{example, label="opt2ex", echo=TRUE}
 
@@ -123,7 +173,7 @@ the maximal area?
 
 ------------------------------------------------------------------------
 
-We will follow the steps outlined by Key Idea \@ref(idea:optimization).
+We will follow the steps outlined by Definition \@ref(def:optimization).
 
 1.  We are maximizing *area*. A sketch of the region will help; Figure
     \@ref(fig:opt2) gives two sketches of the proposed enclosed area. A
@@ -161,17 +211,25 @@ We will follow the steps outlined by Key Idea \@ref(idea:optimization).
     area of 1250 ft$^2$.
 
 ```
-```{geogebra, label="opt2"}
 
-caption: >
-    A sketch of the enclosure in Example \@ref(exm:opt2ex).
+```{tikz, label="opt2", fig.width=NULL, dev="svg", fig.cap="A sketch of the enclosure in Example \\@ref(exm:opt2ex).", cache=TRUE}
+\begin{tikzpicture}
 
+  \draw [shift = {(0,-160pt)}] (0,0) -- (0,100pt) -- (160pt,100pt) node [pos=.5,below] {$x$} -- (160pt,0) node [pos=.5,right] {$y$};
+  \draw [blue,very thick,shift = {(0,-160pt)}] (0,0) sin (80pt,4pt) cos (160pt,0);
+
+\end{tikzpicture}
 ```
 
 Keep in mind as we do these problems that we are practicing a *process*;
 that is, we are learning to turn a situation into a system of equations.
 These equations allow us to write a certain quantity as a function of
 one variable, which we then optimize.\
+
+```{youtube}
+id: qDK9rqloKRs
+```
+
 
 ```{example, label="opt3", echo=TRUE}
 
@@ -184,16 +242,9 @@ It costs \$50/ft. to run a power line along the land, and \$130/ft. to
 run a power line under water. How much of the power line should be run
 along the land to minimize the overall cost? What is the minimal cost?
 
-```{geogebra, label="opt3b"}
-
-caption: >
-    Running a power line from the power station to an offshore facility with minimal cost in Example \@ref(exm:opt3).
-
-```
-
 ------------------------------------------------------------------------
 
-We will follow the strategy of Key Idea \@ref(idea:optimization)
+We will follow the strategy of Definition \@ref(def:optimization)
 implicitly, without specifically numbering steps.
 
 There are two immediate solutions that we could consider, each of which
@@ -212,12 +263,7 @@ run underwater. Recognizing that the underwater distance can be measured
 as the hypotenuse of a right triangle, we choose to label the distances
 as shown in Figure \@ref(fig:opt3c).
 
-```{geogebra, label="opt3c"}
 
-caption: >
-    Labeling unknown distances in Example \@ref(exm:opt3).
-
-```
 
 By choosing $x$ as we did, we make the expression under the square root
 simple. We now create the cost function.
@@ -255,7 +301,48 @@ $\sqrt{416.67^2+1000^2} \approx 1083$ ft.
 
 ```
 
-\
+```{tikz opt3b, cache=TRUE, dev="png", fig.width=NULL, fig.cap="Running a power line from the power station to an offshore facility with minimal cost in Example \\@ref(exm:opt3)."}
+\begin{tikzpicture}[>=latex]
+  \begin{scope}
+    \clip (0,0) rectangle (140pt,50pt);
+    \draw [inner color=blue,draw = white] (-10,-25pt) rectangle (180pt,70pt);
+  \end{scope}
+  \draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (140pt,-15pt);
+  \draw (0,0) -- (150pt,0);
+  \filldraw [fill=white] (10pt,-5pt) rectangle (20pt,5pt);
+  \draw [<->] (15pt,-10pt) -- (130pt,-10pt) node [below,pos=.5] { 5000 ft};
+  \draw [<->] (140pt,0pt) -- (140pt,35pt) node [right, pos=.5] { 1000 ft};
+  \draw [ultra thick] (20pt,0) -- (70pt,0);
+  \filldraw (70pt,0) circle (2pt);
+  \draw [dashed,thick] (70pt,0) -- (130pt,35pt);
+  \filldraw [fill=white] (130pt,35pt) circle (7pt);
+\end{tikzpicture}
+```
+
+```{tikz opt3c, cache=TRUE, dev="png", fig.width=NULL, fig.cap="Labeling unknown distances in Example \\@ref(exm:opt3)."}
+\begin{tikzpicture}[>=latex]
+  \begin{scope}
+    \clip (0,0) rectangle (140pt,50pt);
+    \draw [inner color=blue,draw = white] (-10,-25pt) rectangle (180pt,70pt);
+  \end{scope}
+  \draw [top color=brown, bottom color=white,draw=white] (0,0) rectangle (140pt,-15pt);
+  \draw (0,0) -- (150pt,0);
+  \filldraw [fill=white] (10pt,-5pt) rectangle (20pt,5pt);
+  \draw [<->] (15pt,-10pt) -- (70pt,-10pt) node [below,pos=.5] { $5000 -x$};
+  \draw [<->] (70pt,-10pt) -- (130pt,-10pt) node [below,pos=.5] { $x$};
+  \draw [<->] (140pt,0pt) -- (140pt,35pt) node [right, pos=.5] { 1000 ft};
+  \draw [ultra thick] (20pt,0) -- (70pt,0);
+  \filldraw (70pt,0) circle (2pt);
+  \draw [dashed,thick] (70pt,0) -- (130pt,35pt);
+  \draw (100pt,23pt) node [rotate=30] { $\sqrt{x^2+1000^2}$};
+  \filldraw [fill=white] (130pt,35pt) circle (7pt);
+\end{tikzpicture}
+```
+
+```{youtube}
+id: XJYDMZe8JUk
+```
+
 In the exercises you will see a variety of situations that require you
 to combine problem--solving skills with calculus. Focus on the
 *process*; learn how to form equations from situations that can be

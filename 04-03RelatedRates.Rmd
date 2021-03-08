@@ -1,5 +1,9 @@
 ## Related Rates {#sec:related-rates}
 
+```{youtube}
+id: TKqYEDaAidQ
+```
+
 When two quantities are related by an equation, knowing the value of one
 quantity can determine the value of the other. For instance, the
 circumference and radius of a circle are related by $C=2\pi r$; knowing
@@ -12,7 +16,11 @@ which another changes.\
 > **Note:** This section relies heavily on implicit differentiation, so
 > referring back to Section \@ref(sec:imp-deriv) may help.
 
-We demonstrate the concepts of related rates through examples.\
+We demonstrate the concepts of related rates through examples.
+
+```{youtube}
+id: Qg3GStrQ8pY
+```
 
 ```{example, label="rr1", echo=TRUE}
 
@@ -33,12 +41,19 @@ C   &= 2\pi r\\
 \frac{d}{dt}\big(C\big) &= \frac{d}{dt}\big(2\pi r\big) \\
 \frac{dC}{dt}   &=  2\pi \frac{dr}{dt}.\end{aligned}$$ As we know
 $\frac{dr}{dt} = 5$in/hr, we know
-$$\frac{dC}{dt} = 2\pi 5 = 10\pi \approx 31.4\text{in/hr.}$$ -
+$$\frac{dC}{dt} = 2\pi 5 = 10\pi \approx 31.4\text{in/hr.}$$
 
 ```
 
-\
-Consider another, similar example.\
+Consider another, similar example.
+
+```{youtube}
+id: RDPxSmxqUBs
+```
+
+```{youtube}
+id: 8ctKxMoFWkU
+```
 
 ```{example, label="rr2", echo=TRUE}
 
@@ -103,7 +118,11 @@ puddle that is $1/8$in deep.
 
 ```
 
-\
+
+```{youtube}
+id: 8fFao8XCQC0
+```
+
 
 ```{example, label="rr3ex", echo=TRUE}
 
@@ -159,6 +178,7 @@ $$\frac{dB}{dt} = \frac{C\frac{dC}{dt}- A\frac{dA}{dt}}{B} \approx 58.28\text{mp
 The other driver appears to be speeding slightly.
 
 ```
+
 ```{geogebra, label="rr3"}
 
 caption: >
@@ -168,7 +188,7 @@ caption: >
 
 
 
-> **Note:** Example \@ref(exm:rr3) is both interesting and impractical.
+> **Note:** Example \@ref(exm:rr3ex) is both interesting and impractical.
 > It highlights the difficulty in using radar in a non--linear fashion,
 > and explains why "in real life" the police officer would follow the
 > other driver to determine their speed, and not pull out pencil and
@@ -178,8 +198,11 @@ caption: >
 > make judgments about other moving objects based on perceived
 > distances, radar--like measurements and the concepts of related rates.
 
-```{example, label="rr4ex", echo=TRUE}
+```{youtube}
+id: B85LlGHgVQo
+```
 
+```{example, label="rr4ex", echo=TRUE}
 (Studying related rates). A camera is placed on a tripod 10ft from the
 side of a road. The camera is to turn to track a car that is to drive by
 at 100mph for a promotional video. The video's planners want to know
@@ -199,18 +222,25 @@ of the camera and the speed and position of the car.
 Figure \@ref(fig:rr4) suggests we use a trigonometric equation. Letting
 $x$ represent the distance the car is from the point on the road
 directly in front of the camera, we have
-$$\tan \theta = \frac{x}{10}.\label{eq:rr4}$$ As the car is moving at
+\begin{equation}
+    \tan \theta = \frac{x}{10}. 
+    (\#eq:rr4)
+\end{equation}
+As the car is moving at
 100mph, we have $\frac{dx}{dt} = -100$mph (as in the last example, since
 $x$ is getting smaller as the car travels, $\frac{dx}{dt}$ is negative).
 We need to convert the measurements so they use the same units; rewrite
 $-100$mph in terms of ft/s:
 $$\frac{dx}{dt} = -100\frac{\text{m}}{\text{hr}} = -100\frac{\text{m}}{\text{hr}}\cdot 5280\frac{\text{ft}}{\text{m}}\cdot\frac{1}{3600}\frac{\text{hr}}{\text{s}} =-146.\overline{6}\text{ft/s}.$$
 Now take the derivative of both sides of Equation \@ref(eq:rr4) using
-implicit differentiation: $$\begin{aligned}
-        \tan \theta &= \frac{x}{10} \notag \\
-        \frac{d}{dt}\big(\tan \theta\big) &= \frac{d}{dt}\left(\frac{x}{10}\right)\notag \\
-        \sec^2\theta\,\frac{d\theta}{dt} &= \frac{1}{10}\frac{dx}{dt}\notag\\
-        \frac{d\theta}{dt} &= \frac{\cos^2\theta}{10}\frac{dx}{dt}\label{eq:rr4b}\end{aligned}$$
+implicit differentiation: 
+\begin{align}
+    \tan \theta &= \frac{x}{10} \\
+    \frac{d}{dt}\big(\tan \theta\big) &= \frac{d}{dt}\left(\frac{x}{10}\right) \\
+    \sec^2\theta\,\frac{d\theta}{dt} &= \frac{1}{10}\frac{dx}{dt}\\
+    \frac{d\theta}{dt} &= \frac{\cos^2\theta}{10}\frac{dx}{dt} 
+    (\#eq:rr4b)
+\end{align}
 We want to know the fastest the camera has to turn. Common sense tells
 us this is when the car is directly in front of the camera (i.e., when
 $\theta = 0$). Our mathematics bears this out. In Equation
@@ -218,7 +248,7 @@ $\theta = 0$). Our mathematics bears this out. In Equation
 when $\cos \theta = 1$, or when $\theta = 0$.
 
 With $\frac{dx}{dt} \approx -146.67$ft/s, we have
-$$\frac{d\theta}{dt} = -\frac{1\text{rad}}{10\text{ft}}146.67\text{ft/s} = -14.667\text{radians/s}.$$
+$$\frac{d\theta}{dt} = -\frac{1\text{rad}}{10\text{ft}}146.67\text{ft/s} = -14.667\text{ radians/s}.$$
 We find that $\frac{d\theta}{dt}$ is negative; this matches our diagram
 in Figure \@ref(fig:rr4) for $\theta$ is getting smaller as the car
 approaches the camera.
@@ -231,9 +261,10 @@ sign indicates the camera is rotating in a clockwise fashion.
 ```
 
 ```{geogebra, label="rr4"}
-
+material_id: kqte5yz3
 caption: >
-    Tracking a speeding car (at left) with a rotating camera.
+    Tracking a speeding car with a rotating camera. Press the play button 
+    to start the animation.
 
 ```
 

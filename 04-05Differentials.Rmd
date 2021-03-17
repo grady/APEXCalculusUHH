@@ -19,10 +19,10 @@ $\sin (\pi/3) = \sqrt{3}/2 \approx 0.866$, and $\cos (\pi/3) = 1/2$.
 Thus the tangent line to $f(x) = \sin x$ at $x=\pi/3$ is:
 $$\ell(x) = \frac12(x-\pi/3)+0.866.$$
 
-::: {#fig:diffal1 .tab}
-**Table 1**. caption: Graphing $f(x) = \sin x$ and its tangent line at
-$x=\pi/3$ in order to estimate $\sin 1.1$.
-:::
+```{geogebra diffal1}
+material_id: wdte7btp
+caption: Graphing $f(x) = \sin x$ and its tangent line at $x=\pi/3$ in order to estimate $\sin 1.1$.
+```
 
 ```{youtube}
 id: mQRelmurD
@@ -114,7 +114,7 @@ explore both here.
 id: KCDezzvfDKA
 ```
 
-```{example, label="diffal1", echo=TRUE}
+```{example, label="diffal1ex", echo=TRUE}
 
 (Finding and using differentials). Consider $f(x) = x^2$. Knowing
 $f(3) = 9$, approximate $f(3.1)$.

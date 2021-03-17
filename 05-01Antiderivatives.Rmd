@@ -64,23 +64,52 @@ the form $F(x) + C$ for some constant $C$. Using Definition
 
 Let's analyze this indefinite integral notation.
 
-::: {.center}
-:::
+```{tikz anti1, echo=FALSE, dev='png', cache=TRUE, fig.cap="The parts of the indefinite integral notation."}
+\begin{tikzpicture}[>=latex]
+\node[] (integral) {$\displaystyle\int$};
+\node[above left of=integral, anchor=south east] (l1) {Integral symbol};
+\draw[->] (l1) edge [out=-90, in=180] (integral);
+\node[right of=integral] (integrand) {$\displaystyle f(x)$};
+\node[below of=integrand, anchor=north east] (l2) {Integrand function};
+\draw[->] (l2) edge [out=0, in=-90] (integrand);
+\node[right of=integrand] (differential) {$\displaystyle dx$};
+\node[above of=differential, anchor=south west] (l3) {Differential of $x$};
+\draw[->] (l3) edge [out=-90, in=90] (differential);
+\node[right of=differential] (equals) {$\displaystyle =$};
+\node[right of=equals] (antiderivative) {$\displaystyle F(x)$};
+\node[below of=antiderivative, anchor=north west] (l4) {Any antiderivative of $f$};
+\draw[->] (l4) edge [out=180, in=-90] (antiderivative);
+\node[right of=antiderivative] (plus) {$\displaystyle {+}$};
+\node[right of=plus] (constant) {$\displaystyle C$};
+\node[above right of=constant, anchor=south west] (l5) {Constant of integration};
+\draw[->] (l5) edge [out=-90, in=0] (constant);
+\end{tikzpicture}
+```
 
 Figure \@ref(fig:anti1) shows the typical notation of the indefinite
-integral. The integration symbol, $\int$, is in reality an "elongated
-S," representing "take the sum." We will later see how *sums* and
-*antiderivatives* are related.
+integral. The notation consists of three parts: The integral symbol,
+the integrand function, and a differential of the integrand's variable.
 
-The function we want to find an antiderivative of is called the
-*integrand*. It contains the differential of the variable we are
-integrating with respect to. The $\int$ symbol and the differential $dx$
-are not "bookends" with a function sandwiched in between; rather, the
-symbol $\int$ means "find all antiderivatives of what follows," and the
-function $f(x)$ and $dx$ are multiplied together; the $dx$ does not
-"just sit there."
+The integration symbol, $\int$, is in reality an "[elongated
+S,](https://en.wikipedia.org/wiki/Long_s)" representing "take the sum." We will later see how *sums* and
+*antiderivatives* are related. The function we want to find an antiderivative of is called the
+*integrand*. The differential specifies which letter is to be treated as the variable. 
 
-Let's practice using this notation.\
+For example, $\int s^n ds$ indicates that the variable of integration is $s$, and thus 
+the integrand function is $f(s)=s^n$, a _polynomial_, with $n$ regarded as fixed. 
+On the other hand, $\int s^n dn$ indicates that the variable of integration is $n$, 
+thus the integrand function is $f(n)=s^n$, an _exponential_ function with $s$ regarded
+as fixed.
+
+The $\int$ symbol and the differential $dx$ are not simply "bookends" with a 
+function sandwiched in between; rather, the symbol $\int$ means "find all 
+antiderivatives of what follows," and the function $f(x)$ and $dx$ are multiplied
+together; the $dx$ does not "just sit there." Nonetheless, in practice it is 
+convenient to treat these symbols simply as bookends.
+
+
+
+Let's practice using this notation.
 
 ```{example, label="anti2", echo=TRUE}
 
@@ -94,11 +123,11 @@ $F^{\prime}(x) = \sin x$. Some thought will lead us to one solution:
 $F(x) = -\cos x$, because $\frac{d}{dx}(-\cos x) = \sin x$.
 
 The indefinite integral of $\sin x$ is thus $-\cos x$, plus a constant
-of integration. So: $$\int \sin x \ dx = -\cos x + C.$$ -
+of integration. So: $$\int \sin x \ dx = -\cos x + C.$$
 
 ```
 
-\
+
 A commonly asked question is "What happened to the $dx$?" The
 unenlightened response is "Don't worry about it. It just goes away." A
 full understanding includes the following.
@@ -120,7 +149,7 @@ antiderivatives of more complicated functions. In this section, we will
 simply explore the rules of indefinite integration, and one can succeed
 for now with answering "What happened to the $dx$?" with "It went away."
 
-Let's practice once more before stating integration rules.\
+Let's practice once more before stating integration rules.
 
 ```{example, label="anti3", echo=TRUE}
 
@@ -153,7 +182,7 @@ and see we indeed get $3x^2+4x+5$.
 
 ```
 
-\
+
 This final step of "verifying our answer" is important both practically
 and theoretically. In general, taking derivatives is easier than finding
 antiderivatives so checking our work is easy and vital as we learn.
@@ -162,6 +191,27 @@ We also see that taking the derivative of our answer returns the
 function in the integrand. Thus we can say that:
 $$\frac{d}{dx}\left(\int f(x)\ dx\right) = f(x).$$ Differentiation
 "undoes" the work done by antidifferentiation.
+
+
+```{example, label="anti6", echo=TRUE}
+(Evaluating indefinite integrals). Evaluate $\int s^n ds$ and $\int s^n dn$.
+
+-------
+
+Although these two integral problems look very similiar, their answers are quite different.
+In the first integral the variable of integration is $s$ as indicated by the differential $ds$.
+The function to be integrated is therefore $f(s)=s^n$, which is a power of $s$. 
+We are asked to find all functions $F(s)$ such that $F'(s)=s^n$. You should verify that
+$F(x)=\frac{1}{n+1} s^{n+1}$ is one such function, provided that $n\neq -1$. Therefore, the 
+indefinte integral is $$\int s^n ds = \frac{s^{n+1}}{n+1} + C$$
+
+Turning to the second problem, we find that the differential is $dn$ indicating that the
+integrand function is $f(n)=s^n$, an exponential function with base $s$. We are asked to 
+find all functions $F(n)$ such that $F'(n)=s^n.$ You should verify that one such 
+antiderivative function is $\displaystyle F(n) = \frac{s^n}{\ln s}$. Therefore, 
+$$\int s^n dn = \frac{s^n}{\ln s} + C.$$
+```
+
 
 Theorem \@ref(thm:deriv-glossary) gave a list of the derivatives of
 common functions we had learned at that point. We restate part of that
@@ -173,9 +223,11 @@ antiderivatives as we learn.
 
 (Derivatives and Antiderivatives). Common Differentiation Rules
 
+:::{style="columns: 2 340px;"}
+
 1.  $\frac{d}{dx}\big(cf(x) \big) = c\cdot f^{\prime}(x)$
 
-2.  $\frac{d}{dx}\big(f(x)\pm g(x) \big) =$ .05 $f^{\prime}(x)\pm g'(x)$
+2.  $\frac{d}{dx}\big(f(x)\pm g(x) \big) = f^{\prime}(x)\pm g^\prime(x)$
 
 3.  $\frac{d}{dx}\big(C \big) = 0$
 
@@ -201,12 +253,15 @@ antiderivatives as we learn.
 
 14. $\frac{d}{dx}\big(\ln x \big) = \frac 1 x$
 
+:::
+
 Common Indefinite Integral Rules
+    
+:::{style="columns: 2 340px;"}
 
 1.  $\int c\cdot f(x)\ dx = c\cdot \int f(x)\ dx$
 
-2.  $\int \big(f(x)\pm g(x)\big)\ dx =$ .05
-    $\int f(x)\ dx\pm \int g(x)\ dx$
+2.  $\int \big(f(x)\pm g(x)\big)\ dx = \int f(x)\ dx\pm \int g(x)\ dx$
 
 3.  $\int 0\ dx = C$
 
@@ -232,6 +287,8 @@ Common Indefinite Integral Rules
 
 14. $\int \frac{1}x\ dx = \ln |x|+C$
 
+:::
+
 ```
 
 We highlight a few important points from Theorem \@ref(thm:indef-alg):
@@ -250,9 +307,9 @@ We highlight a few important points from Theorem \@ref(thm:indef-alg):
     when the integrand contains terms that are added/subtracted, as we
     did in Example \@ref(exm:anti3). So: $$\begin{aligned}
         \int(3x^2+4x+5)\ dx &= \int 3x^2\ dx + \int 4x\ dx + \int 5\ dx \\
-                                                &= 3\int x^2\ dx + 4\int x\ dx + \int 5 \ dx\\
-                                                &= 3\cdot \frac13x^3 + 4\cdot \frac12x^2+5x+C\\
-                                                &= x^3+2x^2+5x+C
+                         &= 3\int x^2\ dx + 4\int x\ dx + \int 5 \ dx\\
+                         &= 3\cdot \frac13x^3 + 4\cdot \frac12x^2+5x+C\\
+                         &= x^3+2x^2+5x+C
         \end{aligned}$$ In practice we generally do not write out all
     these steps, but we demonstrate them here for completeness.
 

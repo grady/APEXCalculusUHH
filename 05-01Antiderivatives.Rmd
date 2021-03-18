@@ -194,22 +194,22 @@ $$\frac{d}{dx}\left(\int f(x)\ dx\right) = f(x).$$ Differentiation
 
 
 ```{example, label="anti6", echo=TRUE}
-(Evaluating indefinite integrals). Evaluate $\int s^n ds$ and $\int s^n dn$.
+(Evaluating indefinite integrals). Evaluate $\int s^n\, ds$ and $\int s^n\, dn$.
 
 -------
 
-Although these two integral problems look very similiar, their answers are quite different.
-In the first integral the variable of integration is $s$ as indicated by the differential $ds$.
+Although these two integral problems look very similiar at first, their answers are different.
+In the first problem the variable of integration is $s$, as indicated by the differential $ds$.
 The function to be integrated is therefore $f(s)=s^n$, which is a power of $s$. 
 We are asked to find all functions $F(s)$ such that $F'(s)=s^n$. You should verify that
-$F(x)=\frac{1}{n+1} s^{n+1}$ is one such function, provided that $n\neq -1$. Therefore, the 
-indefinte integral is $$\int s^n ds = \frac{s^{n+1}}{n+1} + C$$
+$F(s)=\frac{1}{n+1} s^{n+1}$ is one such function, provided that $n\neq -1$. Therefore, the 
+indefinte integral is $$\int s^n\, ds = \frac{s^{n+1}}{n+1} + C.$$
 
 Turning to the second problem, we find that the differential is $dn$ indicating that the
 integrand function is $f(n)=s^n$, an exponential function with base $s$. We are asked to 
 find all functions $F(n)$ such that $F'(n)=s^n.$ You should verify that one such 
 antiderivative function is $\displaystyle F(n) = \frac{s^n}{\ln s}$. Therefore, 
-$$\int s^n dn = \frac{s^n}{\ln s} + C.$$
+$$\int s^n\, dn = \frac{s^n}{\ln s} + C.$$
 ```
 
 
@@ -336,7 +336,7 @@ We highlight a few important points from Theorem \@ref(thm:indef-alg):
     exercises will work the reader through why this is the case; for
     now, know the absolute value is important and cannot be ignored.
 
-**Initial Value Problems**
+### Initial Value Problems {-}
 
 In Section \@ref(sec:basic-diff-rules) we saw that the derivative of a
 position function gave a velocity function, and the derivative of a
@@ -350,7 +350,7 @@ since there is more than one answer.
 We can find *the* answer if we provide more information with the
 question, as done in the following example. Often the additional
 information comes in the form of an *initial value*, a value of the
-function that one knows beforehand.\
+function that one knows beforehand.
 
 ```{example, label="anti4", echo=TRUE}
 
@@ -387,7 +387,7 @@ point in time.
 
 ```
 
-\
+
 
 ```{example, label="anti5", echo=TRUE}
 
@@ -415,7 +415,7 @@ C &= 6\end{aligned}$$ Thus $f(t) = -\cos t + 3t + 6$.
 
 ```
 
-\
+
 This section introduced antiderivatives and the indefinite integral. We
 found they are needed when finding a function given information about
 its derivative(s). For instance, we found a velocity function given an

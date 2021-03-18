@@ -15,7 +15,7 @@ square units; when one considers the units of the axes, we can say this
 area represents 50 ft.
 
 ```{geogebra, label="defint1"}
-
+material_id: dntgcxms
 caption: >
     The area under a constant velocity function corresponds to distance traveled.
 
@@ -45,7 +45,7 @@ $[0,10]$ and $[10,14]$, respectively. The displacement of the object is
 which is easy to calculate as $50-8=42$ feet.
 
 ```{geogebra, label="defint2"}
-
+material_id: pqtppgdd
 caption: >
     The total displacement is the area above the $t$--axis minus the area below the $t$--axis.
 
@@ -130,7 +130,7 @@ regions of this graph.
 
 ```
 ```{geogebra, label="defint3"}
-
+material_id: nxjumdqu
 caption: >
     A graph of $v(t)=-32t+48$; the shaded areas help determine displacement.
 
@@ -189,8 +189,6 @@ Find:
 2.  $\displaystyle\int_3^5 f(x)\ dx$
 
 3.  $\displaystyle\int_0^5 f(x)\ dx$
-
-.05
 
 1.  $\displaystyle\int_0^3 5f(x)\ dx$
 

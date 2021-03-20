@@ -299,6 +299,26 @@ We give a brief justification of Theorem \@ref(thm:defintprop) here.
     can be proved using geometry. The details are not complicated but
     are not discussed here.
 
+:::{style="float:right;max-width:30%"}
+```{tikz defint5, dev="svg", fig.width=NULL, cache=TRUE, echo=FALSE, fig.cap="A graph of a function in Example \\@ref(exm:defint5ex)."}
+\begin{tikzpicture}
+  \begin{axis}[
+        axis x line = middle,
+        axis y line = middle,      
+        axis on top,
+        xtick=\empty,
+        extra x ticks={.5,1.5,3},
+        extra x tick labels={$a$,$b$,$\ c$},
+        ytick=\empty,
+        ymin=-1.1,ymax=1.1,
+        xmin=-.2,xmax=3.5
+  ]
+  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=0.5:3] {(x-.5)*(x-1.5)*(x-3)} \closedcycle;
+  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=0.5:3,samples=40] {(x-.5)*(x-1.5)*(x-3)};
+  \end{axis}
+\end{tikzpicture}
+```
+:::
 ```{example, label="defint5ex", echo=TRUE}
 
 (Evaluating definite integrals using Theorem ). Consider the graph of a
@@ -333,18 +353,49 @@ Answer the following:
 
 ```
 
-
-```{geogebra, label="defint5"}
-
-caption: >
-    A graph of a function in Example \@ref(exm:defint5ex).
-
-```
-
 The area definition of the definite integral allows us to use geometry
 to compute the definite integral of some simple functions.\
 
-```{example, label="defint8", echo=TRUE}
+:::{style="float:right;max-width:30%"}
+```{tikz defint8a, dev="svg", fig.width=NULL, cache=TRUE, echo=FALSE, fig.cap="A graph of function 1 in Example \\@ref(exm:defint8ex)."}
+ \begin{tikzpicture}
+  \begin{axis}[
+         axis x line = middle,
+         axis y line = middle,
+        axis on top,
+        ymin=-11,ymax=11,
+        xmin=-3.5,xmax=5.5
+    ]
+  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=-2:5] {2*x-4} \closedcycle;
+  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=-2:5] {2*x-4};
+  \addplot [color=blue,fill=blue,only marks,mark=*] coordinates {(-2,-8)} node[right] {\small $(-2,-8)$};
+  \addplot [color=blue,fill=blue,only marks,mark=*] coordinates {(5,6)} node[left] {\small $(5,6)$};
+  \draw (axis cs:-1,-2) node { $R_1$};
+  \draw (axis cs:4.2,2) node { $R_2$};
+  \end{axis}
+
+\end{tikzpicture}
+```
+```{tikz defint8b, dev="svg", fig.width=NULL, cache=TRUE, echo=FALSE, fig.cap="A graph of function 2 in Example \\@ref(exm:defint8ex)."}
+ \begin{tikzpicture}
+
+                  \begin{axis}[
+         axis x line = middle,
+         axis y line = middle,                      
+                  axis on top,
+                  xtick={-3,3},
+                  extra y ticks={1,2,3,4},
+                  extra y tick labels=\empty,
+                  ytick={5},
+                  ymin=-.5,ymax=5.5,
+                  xmin=-3.5,xmax=3.5]
+                  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=0:180] ({3*cos (x)},{3*sin(x)}) \closedcycle;
+                  \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=0:180,samples=40] ({3*cos (x)},{3*sin(x)});
+                  \end{axis}
+\end{tikzpicture}
+```
+:::
+```{example, label="defint8ex", echo=TRUE}
 
 (Evaluating definite integrals using geometry). Evaluate the following
 definite integrals:
@@ -353,7 +404,7 @@ $$1. \ \int_{-2}^5 (2x-4)\ dx \qquad 2.\ \int_{-3}^3 \sqrt{9-x^2}\ dx.$$
 ------------------------------------------------------------------------
 
 1.  It is useful to sketch the function in the integrand, as shown in
-    Figure \@ref(fig:defint8)(a). We see we need to compute the areas of
+    Figure \@ref(fig:defint8a). We see we need to compute the areas of
     two regions, which we have labeled $R_1$ and $R_2$. Both are
     triangles, so the area computation is straightforward:
     $$R_1: \frac 12(4)(8) = 16 \qquad R_2: \frac 12(3)6 = 9.$$ Region
@@ -362,17 +413,39 @@ $$1. \ \int_{-2}^5 (2x-4)\ dx \qquad 2.\ \int_{-3}^3 \sqrt{9-x^2}\ dx.$$
     $$\int_{-2}^5(2x-4)\ dx = -16+9 = -7.$$
 
 2.  Recognize that the integrand of this definite integral describes a
-    half circle, as sketched in Figure \@ref(fig:defint8)(b), with
+    half circle, as sketched in Figure \@ref(fig:defint8b), with
     radius 3. Thus the area is:
     $$\int_{-3}^3 \sqrt{9-x^2}\ dx = \frac 12\pi r^2 = \frac 92\pi.$$
 
-    ::: {#fig:defint8 .tab}
-    **Table 1**. caption: A graph of $f(x) = 2x-4$ in (a) and
-    $f(x) = \sqrt{9-x^2}$ in (b), from Example \@ref(exm:defint8).
-    :::
-
 ```
 
+:::{style="float:right;max-width:30%"}
+```{tikz defint6, dev="svg", fig.width=NULL, cache=TRUE, echo=FALSE, fig.cap=" A graph of a velocity in Example \\@ref(exm:defint6ex)."}
+          \begin{tikzpicture}
+          \begin{axis}[
+         axis x line = middle,
+         axis y line = middle,   
+          axis on top,
+          x label style={at={(axis description cs:0.85,0.35)},anchor=south},
+          y label style={at={(axis description cs:-.05,.85)},rotate=90,anchor=south},
+          xlabel={$t$ (s)},
+          ylabel={$v$ (ft/s)},
+          xtick=\empty,
+          extra x ticks={2,6,8},
+          extra x tick labels={$\ a$,$b\ $,$\ c$},
+          ytick={-5,5,10,15},
+          ymin=-9,ymax=17,
+          xmin=-.5,xmax=8.5
+          ]
+          \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=0:8,samples=40] {15/64*x*(x-2)*(x-6)*(x-8)} \closedcycle;
+          \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=0:8,samples=70] {15/64*x*(x-2)*(x-6)*(x-8)};
+          \draw (axis cs:.9,-4) node { $11$};
+          \draw (axis cs:7.1,-4) node { $11$};
+          \draw (axis cs:4,8) node { $38$};
+          \end{axis}
+          \end{tikzpicture}
+```
+:::
 ```{example, label="defint6ex", echo=TRUE}
 
 (Understanding motion given velocity). Consider the graph of a velocity
@@ -396,22 +469,16 @@ displacement is 27 feet from its starting position.
 
 ```
 
-```{geogebra, label="defint6"}
 
-caption: A graph of a velocity in Example \@ref(exm:defint6ex).
-
-```
-
-\
 In our examples, we have either found the areas of regions that have
 nice geometric shapes (such as rectangles, triangles and circles) or the
 areas were given to us. Consider Figure \@ref(fig:defint7), where a
 region below $y=x^2$ is shaded. What is its area? The function $y=x^2$
 is relatively simple, yet the shape it defines has an area that is not
-simple to find geometrically.\
+simple to find geometrically.
 
 ```{geogebra, label="defint7"}
-
+material_id: tktmabyc
 caption: >
     What is the area below $y=x^2$ on $[0,3]$? The region is not a usual geometric shape.
 

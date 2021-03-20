@@ -222,14 +222,14 @@ Find:
 
 ```
 ```{geogebra, label="defint4"}
-
+material_id: ukees5ru
 caption: >
     A graph of $f(x)$ in Example \@ref(exm:defint4ex).
 
 ```
 
 ```{geogebra, label="defint4a"}
-
+material_id: arwf4vcf
 caption: >
     A graph of $5f$ in Example \@ref(exm:defint4). (Yes, it looks just like the graph of $f$ in Figure \@ref(fig:defint4), just with a different $y$-scale.)
 

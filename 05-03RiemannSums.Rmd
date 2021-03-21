@@ -43,12 +43,11 @@ There are three common ways to determine the height of these rectangles:
 the **Left Hand Rule**, the **Right Hand Rule**, and the **Midpoint
 Rule**. The **Left Hand Rule** says to evaluate the function at the
 left--hand endpoint of the subinterval and make the rectangle that
-height. In Figure \@ref(fig:rie1b), the rectangle drawn on the interval
-$[2,3]$ has height determined by the Left Hand Rule; it has a height of
-$f(2)$. (The rectangle is labeled "LHR.")
+height. In Figure \@ref(fig:rie1b), moving the rectangle rule slider to 
+the left end ($k=0$) shows the Left Hand Rule.
 
 ```{geogebra, label="rie1b"}
-
+material_id: pf8g3huf
 caption: >
     Approximating $\int_0^4(4x-x^2)\ dx$ using rectangles. The heights of the rectangles are determined using different rules.
 
@@ -56,25 +55,24 @@ caption: >
 
 The **Right Hand Rule** says the opposite: on each subinterval, evaluate
 the function at the right endpoint and make the rectangle that height.
-In the figure, the rectangle drawn on $[0,1]$ is drawn using $f(1)$ as
-its height; this rectangle is labeled "RHR.".
+In the figure, moving the rectangle rule slider to the right end ($k=1$)
+shows the result of using the Right Hand Rule.
 
 The **Midpoint Rule** says that on each subinterval, evaluate the
-function at the midpoint and make the rectangle that height. The
-rectangle drawn on $[1,2]$ was made using the Midpoint Rule, with a
-height of $f(1.5)$. That rectangle is labeled "MPR."
+function at the midpoint and make the rectangle that height. Setting the 
+rectangle rule slider at the middle ($k=0.5$) shows the result of using
+the Midpoint Rule.
 
 These are the three most common rules for determining the heights of
-approximating rectangles, but one is not forced to use one of these
-three methods. The rectangle on $[3,4]$ has a height of approximately
-$f(3.53)$, very close to the Midpoint Rule. It was chosen so that the
-area of the rectangle is *exactly* the area of the region under $f$ on
-$[3,4]$. (Later you'll be able to figure how to do this, too.)
+approximating rectangles, but as the animation shows, one is not forced 
+to use one of these three methods, one could choose any location within 
+the subintervals to determine the height of the rectangle. One could even 
+choose a different position for each subinterval if one desired.
 
 The following example will approximate the value of
 $\int_0^4 (4x-x^2)\ dx$ using these rules.\
 
-```{example, label="rie2", echo=TRUE}
+```{example, label="rie2ex", echo=TRUE}
 
 (Using the Left Hand, Right Hand and Midpoint Rules). Approximate the
 value of $\int_0^4 (4x-x^2)\ dx$ using the Left Hand Rule, the Right
@@ -87,11 +85,6 @@ Figure \@ref(fig:rie2)(a) we see 4 rectangles drawn on $f(x) = 4x-x^2$
 using the Left Hand Rule. (The areas of the rectangles are given in each
 figure.)
 
-::: {#fig:rie2 .tab}
-**Table 1**. caption: Approximating $\int_0^4(4x-x^2)\ dx$ in Example
-\@ref(exm:rie2). In (a), the Left Hand Rule is used; in (b), the Right
-Hand Rule is used; in (c), the Midpoint Rule is used.
-:::
 
 Note how in the first subinterval, $[0,1]$, the rectangle has height
 $f(0)=0$. We add up the areas of each rectangle (height$\times$ width)
@@ -100,9 +93,9 @@ for our Left Hand Rule approximation: $$\begin{aligned}
     0+3+4+3&= 10.
     \end{aligned}$$
 
-Figure \@ref(fig:rie2)(b) shows 4 rectangles drawn under $f$ using the
-Right Hand Rule; note how the $[3,4]$ subinterval has a rectangle of
-height 0.
+Setting Figure \@ref(fig:rie2) so that it shows 4 rectangles drawn 
+under $f$ using the Right Hand Rule, note how the $[3,4]$ subinterval 
+has a rectangle of height 0.
 
 In this example, these rectangle seem to be the mirror image of those
 found in part (a) of the Figure. This is because of the symmetry of our
@@ -112,10 +105,9 @@ calculated a different way: $$\begin{aligned}
     3+4+3+0&= 10.
     \end{aligned}$$
 
-Figure \@ref(fig:rie2)(c) shows 4 rectangles drawn under $f$ using the
-Midpoint Rule.
-
-This gives an approximation of $\int_0^4(4x-x^2)\ dx$ as:
+When Figure \@ref(fig:rie2) is set to show 4 rectangles drawn under 
+$f$ using the Midpoint Rule, we see that we get an approximation 
+for $\int_0^4(4x-x^2)\ dx$ of:
 $$\begin{aligned}
  f(0.5)\cdot 1 + f(1.5)\cdot 1+ f(2.5)\cdot 1+f(3.5)\cdot 1 &=\\
     1.75+3.75+3.75+1.75&= 11.
@@ -124,8 +116,18 @@ $\int_0^4(4x-x^2)\ dx$: 10 and 11.
 
 ```
 
-\
-**Summation Notation** It is hard to tell at this moment which is a
+```{geogebra rie2}
+material_id: k6qyd9aj
+caption: >
+    Approximating $\int_0^4(4x-x^2)\ dx$ in Example
+    \@ref(exm:rie2ex). Moving the rectangle rule slider to the
+    three different positions shows the areas of the rectangles for
+    the Left, Right, and Midpoint rules.
+```
+
+### Summation Notation {-}
+
+It is hard to tell at this moment which is a
 better approximation: 10 or 11? We can continue to refine our
 approximation by using more rectangles. The notation can become
 unwieldy, though, as we add up longer and longer lists of numbers. We
@@ -136,14 +138,33 @@ $a_9$. Instead of writing $$a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9,$$ we
 use summation notation and write
 
 ::: {.center}
+```{tikz rie_notation,echo=FALSE, dev="png", dpi=72, cache=TRUE}
+\begin{tikzpicture}[>=latex]
+    \node[] (sum) {$\displaystyle \sum$};
+    \node at (sum.north) (ub) {$\scriptstyle 9$};
+    \node at (sum.south) (lb) {$\scriptstyle i=1$};
+    \node at (sum.east) (summand) {$\, a_i$};
+    \node[above left of=ub, anchor=east, color=blue] (top) {Upper bound};
+    \node[left of=sum, anchor=east,color=blue] (front) {Summation symbol};
+    \node[below left of=lb, anchor=north,color=blue] (bottom) {Summation index $i$ and lower bound};
+    \node[right of=summand, anchor=west, color=blue] (behind) {Summand};
+    \draw[->,color=blue] (top) edge [out=0, in=90] (ub);
+    \draw[->,color=blue] (front) edge (sum);
+    \draw[->,color=blue] (bottom) edge [out=90, in=-90] (lb);
+    \draw[->,color=blue] (behind) edge (summand);
+\end{tikzpicture}
+```
 :::
 
-The upper case sigma represents the term "sum." The index of summation
-in this example is $i$; any symbol can be used. By convention, the index
-takes on only the integer values between (and including) the lower and
-upper bounds.
+The upper case sigma ($\Sigma$) represents the verb "sum." The _index_ 
+(or counter) of summation in this example is $i$; any symbol can be 
+used. By convention, the index takes on every integer value
+between (and including) the lower and upper bounds. The expression to the 
+right of $\Sigma$ is called the _summand_. The summand tells us what terms
+we are summing, in this case the values $a_i$, for every integer $i$ between
+1 and 9.
 
-Let's practice using this notation.\
+Let's practice using this notation.
 
 ```{example, label="rie3", echo=TRUE}
 
@@ -151,36 +172,37 @@ Let's practice using this notation.\
 $a_i = 2i-1$ for integers $i$, where $i\geq 1$. So $a_1 = 1$, $a_2 = 3$,
 $a_3 = 5$, etc. (The output is the positive odd integers). Evaluate the
 following summations:
-$$1.\ \sum_{i=1}^6 a_i \qquad\qquad\qquad 2.\ \sum_{i=3}^7 (3a_i-4)\qquad\qquad \qquad 3.\ \sum_{i=1}^4 (a_i)^2$$
+$$1. \sum_{i=1}^6 a_i \qquad\qquad\qquad 2. \sum_{i=3}^7 (3a_i-4)\qquad\qquad \qquad 3. \sum_{i=1}^4 (a_i)^2$$
 
 ------------------------------------------------------------------------
 
 1.  $$\begin{aligned}
-                            \sum_{i=1}^6 a_i &= a_1+a_2+a_3+a_4+a_5+a_6\\
-                                                            &=  1+3+5+7+9+11 \\
-                                                            &=  36.
-                        \end{aligned}$$
+        \sum_{i=1}^6 a_i &= a_1+a_2+a_3+a_4+a_5+a_6\\
+                &=  1+3+5+7+9+11 \\
+                &=  36.
+    \end{aligned}$$
 
 2.  Note the starting value is different than 1: $$\begin{aligned}
-                        \sum_{i=3}^7 (3a_i-4) &= (3a_3-4)+(3a_4-4)+(3a_5-4)+(3a_6-4)+(3a_7-4) \\
-                                                            &= 11+17+23+29+35 \\
-                                                            &= 115.
-                        \end{aligned}$$
+        \sum_{i=3}^7 (3a_i-4) 
+            &= (3a_3-4)+(3a_4-4)+(3a_5-4)+(3a_6-4)+(3a_7-4) \\
+            &= 11+17+23+29+35 \\
+            &= 115.
+        \end{aligned}$$
 
 3.  $$\begin{aligned}
-                            \sum_{i=1}^4 (a_i)^2 &= (a_1)^2+(a_2)^2+(a_3)^2+(a_4)^2\\
-                                                                    &=  1^2+3^2+5^2+7^2 \\
-                                                                    &=  84.
-                            \end{aligned}$$
+            \sum_{i=1}^4 (a_i)^2 &= (a_1)^2+(a_2)^2+(a_3)^2+(a_4)^2\\
+                                &=  1^2+3^2+5^2+7^2 \\
+                                &=  84.
+    \end{aligned}$$
 
 ```
 
-\
+
 It might seem odd to stress a new, concise way of writing summations
 only to write each term out as we add them up. It is. The following
 theorem gives some of the properties of summations that allow us to work
 with them without writing individual terms. Examples will follow.
-
+:::{style="columns: 2 330px;"}
 ```{theorem, label="summation", echo=TRUE}
 
 (Properties of Summations).
@@ -200,6 +222,7 @@ with them without writing individual terms. Examples will follow.
 3.  $\displaystyle\sum_{i=1}^n i^3 = \left(\frac{n(n+1)}2\right)^2$
 
 ```
+:::
 ```{example, label="rie4", echo=TRUE}
 
 (Evaluating summations using Theorem ). Revisit Example \@ref(exm:rie3)
@@ -220,20 +243,38 @@ incredibly important when dealing with large sums as we'll soon see.
 
 ```
 
-\
-**Riemann Sums**
+
+### Riemann Sums{-}
 
 Consider again $\int_0^4(4x-x^2)\ dx$. We will approximate this definite
 integral using 16 equally spaced subintervals and the Right Hand Rule in
 Example \@ref(exm:rie7ex). Before doing so, it will pay to do some careful
 preparation.
 
-```{geogebra, label="rie5"}
+::: {.center}
+```{tikz rie5, echo=FALSE, cache=TRUE, dpi=72, fig.cap="Dividing $[0,4]$ into 16 equally spaced subintervals."}
+        \begin{tikzpicture}
 
-caption: >
-    Dividing $[0,4]$ into 16 equally spaced subintervals.
+        \draw [<->] (-.5,0) -- (4.5,0);
 
+        \foreach \x in {0,.25,...,4} {
+            \draw (\x,-.1) -- (\x,.1);
+          }
+        \draw (0,-.25) node { $0$};
+        \draw (1,-.25) node { $1$};
+        \draw (2,-.25) node { $2$};
+        \draw (3,-.25) node { $3$};
+        \draw (4,-.25) node { $4$};
+
+        \draw (0,-.55) node { $x_1$};
+        \draw (1,-.55) node { $x_5$};
+        \draw (2,-.55) node { $x_9$};
+        \draw (3,-.55) node { $x_{13}$};
+        \draw (4,-.55) node { $x_{17}$};
+
+        \end{tikzpicture}
 ```
+:::
 
 Figure \@ref(fig:rie5) shows a number line of $[0,4]$ divided, or
 *partitioned*, into 16 equally spaced subintervals. We denote $0$ as
@@ -243,6 +284,21 @@ easy to figure that $x-{10} = 2.25$, in general, we want a method of
 determining the value of $x_i$ without consulting the figure. Consider:
 
 ::: {.center}
+```{tikz rie5a, echo=FALSE, cache=TRUE, dpi=72}
+      \begin{tikzpicture}
+      \draw (1.5,1) node {$\displaystyle x_i = x_1 + (i-1)\Delta x$};
+
+      \draw [blue] (1,0) node [text width=32pt,align=center] (a) { \centering starting\\[-5pt] value};
+      \draw [blue,->] (a) -- (.95,.75);
+
+      \draw [blue] (2,2.5) node [text width=60pt,align=center] (b) { \centering number of subintervals\\[-5pt] between $x_1$ and $x_i$};
+      \draw [blue,->] (b) -- (1.95,1.25);
+
+      \draw [blue] (3,0) node [text width=60pt,align=center] (c) { \centering subinterval\\[-5pt] size};
+      \draw [blue,->] (c) -- (2.75,.75);
+
+      \end{tikzpicture}
+```
 :::
 
 So $x_{10} = x_1 + 9(4/16) = 2.25.$
@@ -256,24 +312,23 @@ Given any subdivision of $[0,4]$, the first subinterval is $[x_1,x_2]$;
 the second is $[x_2,x_3]$; the $i^\text{ th}$ subinterval is
 $[x_i,x_{i+1}]$.
 
-When using the Left Hand Rule, the height of the $i^\text{ th}$
+- When using the Left Hand Rule, the height of the $i^\text{ th}$
 rectangle will be $f(x_i)$.
 
-When using the Right Hand Rule, the height of the $i^\text{ th}$
+- When using the Right Hand Rule, the height of the $i^\text{ th}$
 rectangle will be $f(x_{i+1})$.
 
-When using the Midpoint Rule, the height of the $i^\text{ th}$ rectangle
+- When using the Midpoint Rule, the height of the $i^\text{ th}$ rectangle
 will be $\displaystyle f\left(\frac{x_i+x_{i+1}}2\right)$.
 
 Thus approximating $\int_0^4(4x-x^2)\ dx$ with 16 equally spaced
 subintervals can be expressed as follows, where $\Delta x = 4/16 = 1/4$:
 
-**Left Hand Rule:** $\displaystyle\sum_{i=1}^{16} f(x_i)\Delta x$
+- **Left Hand Rule:** $\displaystyle\sum_{i=1}^{16} f(x_i)\Delta x$
 
-**Right Hand Rule:** $\displaystyle\sum_{i=1}^{16} f(x_{i+1})\Delta x$
+- **Right Hand Rule:** $\displaystyle\sum_{i=1}^{16} f(x_{i+1})\Delta x$
 
-**Midpoint Rule:**
-$\displaystyle\sum_{i=1}^{16} f\left(\frac{x_i+x_{i+1}}2\right)\Delta x$
+- **Midpoint Rule:** $\displaystyle\sum_{i=1}^{16} f\left(\frac{x_i+x_{i+1}}2\right)\Delta x$
 
 We use these formulas in the next two examples.
 
@@ -301,8 +356,8 @@ Using the summation formulas, consider: $$\begin{aligned}
                                     &= \sum_{i=1}^{16} \big(4i\Delta x - (i\Delta x)^2\big)\Delta x\notag\\
                                     &= \sum_{i=1}^{16} (4i\Delta x^2 - i^2\Delta x^3)\notag\\       
                                     &= (4\Delta x^2)\sum_{i=1}^{16} i - \Delta x^3 \sum_{i=1}^{16} i^2 \label{eq:rie7}\\
-                                    &= (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6 \quad \text{\footnotesize $(\Delta x = 0.25)$}\notag\\
-                                    
+                                    &= (4\Delta x^2)\frac{16\cdot 17}{2} - \Delta x^3 \frac{16(17)(33)}6 \\
+\text{(use $\Delta x = 0.25$)}
                                     &=10.625\notag\end{aligned}$$ We
 were able to sum up the areas of 16 rectangles with very little
 computation. In Figure \@ref(fig:rie7) the function and the 16
@@ -310,17 +365,15 @@ rectangles are graphed. While some rectangles over--approximate the
 area, other under--approximate the area (by about the same amount). Thus
 our approximate area of 10.625 is likely a fairly good approximation.
 
-Notice Equation \@ref(eq:rie7); by changing the 16's to 1,000's (and
-appropriately changing the value of $\Delta x$), we can use that
-equation to sum up 1000 rectangles!
+Notice that in the preceeding calculations, by changing the 16's to 1,000's (and
+appropriately changing the value of $\Delta x$), we can use the same sequence of 
+steps to sum up 1000 (or more) rectangles!
 
-We do so here, skipping from the original summand to the equivalent of
-Equation \@ref(eq:rie7) to save space. Note that
+We do so here, starting from the third line from the bottom to save space. Note that
 $\Delta x = 4/1000 = 0.004$. $$\begin{aligned}
 \int_0^4 (4x-x^2)\ dx &\approx \sum_{i=1}^{1000} f(x_{i+1})\Delta x \notag\\
                                     &= (4\Delta x^2)\sum_{i=1}^{1000} i - \Delta x^3 \sum_{i=1}^{1000} i^2 \notag\\
                                     &= (4\Delta x^2)\frac{1000\cdot 1001}{2} - \Delta x^3 \frac{1000(1001)(2001)}6 \notag\\
-                                    
                                     &=10.666656\notag\end{aligned}$$
 
 Using many, many rectangles, we have a likely good approximation of
@@ -331,14 +384,16 @@ $$\int_0^4(4x-x^2)\ dx \approx 10.666656.$$
 ```
 
 ```{geogebra, label="rie7"}
-
+material_id: bew8nr8q
 caption: >
     Approximating $\int_0^4(4x-x^2)\ dx$ with the Right Hand Rule
-    and 16 evenly spaced subintervals.
+    and 16 evenly spaced subintervals. Press the play button to 
+    see an animation of the calculation as the number of rectangles
+    increases from 1 to 20.
 
 ```
 
-\
+
 Before the above example, we stated what the summations for the Left
 Hand, Right Hand and Midpoint Rules looked like. Each had the same basic
 structure, which was:
@@ -396,10 +451,32 @@ not approximate well the shaded area, they demonstrate that the
 subinterval widths may vary and the heights of the rectangles can be
 determined without following a particular rule.
 
-```{geogebra, label="riedef"}
+```{tikz, label="riedef", cache=TRUE, echo=FALSE,fig.cap="An example of a general Riemann sum to approximate $\\int_0^4(4x-x^2)dx$."}
+        \begin{tikzpicture}
 
-caption: >
-    An example of a general Riemann sum to approximate $\int_0^4(4x-x^2)\ dx$.
+        \begin{axis}[
+        axis x line = middle,
+        axis y line = middle,              
+        axis on top,
+        xtick={1,2,3,4},
+        ytick={1,2,3,4},
+        ymin=-1,ymax=5,
+        xmin=-.5,xmax=4.5
+        ]
+
+        \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=0:4] {4*x-x^2};
+        \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=0:4,samples=40] {4*x-x^2};
+
+        \draw [thick,red] (axis cs:0,0) rectangle (axis cs:2,.9375);
+        \draw [thick,red] (axis cs:2,0) rectangle (axis cs:3.5,2.79);
+        \draw [thick,red] (axis cs:3.5,0) rectangle (axis cs:4,.76);
+        \draw [fill=black] (axis cs:.25,.9375) circle (1pt);
+        \draw [fill=black] (axis cs:3.1,2.79) circle (1pt);
+        \draw [fill=black] (axis cs:3.8,.76) circle (1pt);
+
+        \end{axis}
+
+        \end{tikzpicture}
 
 ```
 
@@ -408,8 +485,8 @@ have introduced. The uniformity of construction makes computations
 easier. Before working another example, let's summarize some of what we
 have learned in a convenient way.
 
-Consider
-$\displaystyle\int_a^b f(x) \ dx \approx \sum_{i=1}^n f(c_i)\Delta x_i.$
+```{definition riemann, echo=TRUE}
+(**Riemann Sum Concepts**). Consider $\displaystyle\int_a^b f(x) \ dx \approx \sum_{i=1}^n f(c_i)\Delta x_i.$
 
 1.  When the $n$ subintervals have equal length,
     $\displaystyle\Delta x_i = \Delta x = \frac{b-a}n.$
@@ -426,7 +503,9 @@ $\displaystyle\int_a^b f(x) \ dx \approx \sum_{i=1}^n f(c_i)\Delta x_i.$
 5.  The Midpoint Rule summation is:
     $\displaystyle\sum_{i=1}^n f\left(\frac{x_i+x_{i+1}}{2}\right)\Delta x$.
 
-Let's do another example.\
+```
+
+Let's do another example.
 
 ```{example, label="rie8ex", echo=TRUE}
 
@@ -436,7 +515,7 @@ intervals.
 
 ------------------------------------------------------------------------
 
-Following Key Idea \@ref(idea:riemann), we have
+Following Key Idea \@ref(def:riemann), we have
 $$\Delta x = \frac{3 - (-2)}{10} = 1/2 \quad \text{and} \quad x_i = (-2) + (1/2)(i-1) = i/2-5/2.$$
 As we are using the Midpoint Rule, we will also need $x_{i+1}$ and
 $\displaystyle\frac{x_i+x_{i+1}}2$. Since
@@ -471,7 +550,7 @@ $f(c_i)\Delta x$; when $f$ is negative, the area is counted as negative.
 ```
 
 ```{geogebra, label="rie8"}
-
+material_id: xftwenqf
 caption: >
     Approximating $\int_{-2}^3 (5x+2)\ dx$ using the Midpoint Rule and 10 evenly spaced subintervals in Example \@ref(exm:rie8ex).
 
@@ -491,7 +570,7 @@ using the Right Hand Rule with $n$ equally spaced subintervals.
 
 ------------------------------------------------------------------------
 
-Using Key Idea \@ref(idea:riemann), we know
+Using Key Idea \@ref(def:riemann), we know
 $\Delta x = \frac{4-0}{n} = 4/n$. We also find
 $x_i = 0 + \Delta x(i-1) = 4(i-1)/n$. The Right Hand Rule uses
 $x_{i+1}$, which is $x_{i+1} = 4i/n$.
@@ -501,14 +580,16 @@ follow each step carefully. If you get stuck, and do not understand how
 one line proceeds to the next, you may skip to the result and consider
 how this result is used. You should come back, though, and work through
 each step for full understanding. $$\begin{aligned}
-        \int_0^4(4x-x^2)\ dx &\approx \sum_{i=1}^n f(x_{i+1})\Delta x \\
-                                            &= \sum_{i=1}^n f\left(\frac{4i}{n}\right) \Delta x \\
-                                            &=  \sum_{i=1}^n \left[4\frac{4i}n-\left(\frac{4i}n\right)^2\right]\Delta x\\
-                                            &=  \sum_{i=1}^n \left(\frac{16\Delta x}{n}\right)i - \sum_{i=1}^n \left(\frac{16\Delta x}{n^2}\right)i^2 \\
-                                            &=  \left(\frac{16\Delta x}{n}\right)\sum_{i=1}^n i - \left(\frac{16\Delta x}{n^2}\right)\sum_{i=1}^n i^2  \\
-                                            &= \left(\frac{16\Delta x}{n}\right)\cdot \frac{n(n+1)}{2} - \left(\frac{16\Delta x}{n^2}\right)\frac{n(n+1)(2n+1)}{6} \quad \left(\scriptsize \centering recall $\Delta x = 4/n$\right)\\
-                                            &=\frac{32(n+1)}{n} - \frac{32(n+1)(2n+1)}{3n^2} \quad \text{\scriptsize (now simplify)} \\
-                                            &= \frac{32}{3}\left(1-\frac{1}{n^2}\right)\end{aligned}$$
+\int_0^4(4x-x^2)\ dx &\approx \sum_{i=1}^n f(x_{i+1})\Delta x \\
+        &= \sum_{i=1}^n f\left(\frac{4i}{n}\right) \Delta x \\
+        &=  \sum_{i=1}^n \left[4\frac{4i}n-\left(\frac{4i}n\right)^2\right]\Delta x\\
+        &=  \sum_{i=1}^n \left(\frac{16\Delta x}{n}\right)i - \sum_{i=1}^n \left(\frac{16\Delta x}{n^2}\right)i^2 \\
+        &=  \left(\frac{16\Delta x}{n}\right)\sum_{i=1}^n i - \left(\frac{16\Delta x}{n^2}\right)\sum_{i=1}^n i^2  \\
+        &= \left(\frac{16\Delta x}{n}\right)\cdot \frac{n(n+1)}{2} - \left(\frac{16\Delta x}{n^2}\right)\frac{n(n+1)(2n+1)}{6} \\
+\text{(substitute $\Delta x = 4/n$)}
+        &=\frac{32(n+1)}{n} - \frac{32(n+1)(2n+1)}{3n^2} \\
+\text{(now simplify)}
+        &= \frac{32}{3}\left(1-\frac{1}{n^2}\right)\end{aligned}$$
 
 The result is an amazing, easy to use formula. To approximate the
 definite integral with 10 equally spaced subintervals and the Right Hand
@@ -540,13 +621,13 @@ bound -- the error shrinks to zero and we obtain the exact area.
 
 ```
 
-\
+
 This section started with a fundamental calculus technique: make an
 approximation, refine the approximation to make it better, then use
 limits in the refining process to get an exact answer. That is precisely
 what we just did.
 
-Let's practice this again.\
+Let's practice this again.
 
 ```{example, label="rie10ex", echo=TRUE}
 
@@ -557,7 +638,7 @@ $n\to\infty$ to find the exact area.
 
 ------------------------------------------------------------------------
 
-Following Key Idea \@ref(idea:riemann), we have
+Following Key Idea \@ref(def:riemann), we have
 $\Delta x = \frac{5-(-1)}{n} = 6/n$. We have
 $x_i = (-1) + (i-1)\Delta x$; as the Right Hand Rule uses $x_{i+1}$, we
 have $x_{i+1} = (-1) + i\Delta x$.
@@ -567,36 +648,35 @@ simplifications): $$\begin{aligned}
 \int_{-1}^5 x^3\ dx     &\approx \sum_{i=1}^n f(x_{i+1})\Delta x \\
                                             &= \sum_{i=1}^n f(-1+i\Delta x)\Delta x \\
                                             &= \sum_{i=1}^n (-1+i\Delta x)^3\Delta x \\
-                                            &= \sum_{i=1}^n \big((i\Delta x)^3 -3(i\Delta x)^2 + 3i\Delta x -1\big)\Delta x \quad \text{\scriptsize (now distribute $\Delta x$)} \\
-                                            &= \sum_{i=1}^n \big(i^3\Delta x^4 - 3i^2\Delta x^3 + 3i\Delta x^2 -\Delta x\big) \quad \text{\scriptsize (now split up summation)}\\
-
-
+                                            &= \sum_{i=1}^n \big((i\Delta x)^3 -3(i\Delta x)^2 + 3i\Delta x -1\big)\Delta x \\ 
+\text{(now distribute $\Delta x$)}
+                                            &= \sum_{i=1}^n \big(i^3\Delta x^4 - 3i^2\Delta x^3 + 3i\Delta x^2 -\Delta x\big) \\ \text{(now split up summation)}
                                             &= \Delta x^4 \sum_{i=1}^ni^3 -3\Delta x^3 \sum_{i=1}^n i^2+ 3\Delta x^2 \sum_{i=1}^n i - \sum_{i=1}^n \Delta x \\
                                             &= \Delta x^4 \left(\frac{n(n+1)}{2}\right)^2 -3\Delta x^3 \frac{n(n+1)(2n+1)}{6}+ 3\Delta x^2 \frac{n(n+1)}{2} - n\Delta x \\
-                                            \intertext{\scriptsize (use $\Delta x = 6/n$)}
-                                            &= \frac{1296}{n^4}\cdot\frac{n^2(n+1)^2}{4} - 3\frac{216}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} + 3\frac{36}{n^2}\frac{n(n+1)}2 -6
-                                            \intertext{\scriptsize (now do a sizable amount of algebra to simplify)}
+                                            \text{(use $\Delta x = 6/n$)}
+                                            &= \frac{1296}{n^4}\cdot\frac{n^2(n+1)^2}{4} - 3\frac{216}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} + 3\frac{36}{n^2}\frac{n(n+1)}2 -6 \\
+                                            \text{(algebraic simplification)}
                                             &=156 + \frac{378}n + \frac{216}{n^2}\end{aligned}$$
+    
 Once again, we have found a compact formula for approximating the
 definite integral with $n$ equally spaced subintervals and the Right
 Hand Rule. Using 10 subintervals, we have an approximation of $195.96$
-(these rectangles are shown in Figure \@ref(fig:rie9)). Using $n=100$
+(these rectangles are shown in Figure \@ref(fig:rie10)). Using $n=100$
 gives an approximation of $159.802$.
 
 Now find the exact answer using a limit:
 $$\int_{-1}^5 x^3\ dx = \lim_{n\to\infty} \left(156 + \frac{378}n + \frac{216}{n^2}\right) = 156.$$
--
 
 ```
 
 ```{geogebra, label="rie10"}
-
+material_id: ce44gumn
 caption: >
     Approximating $\int_{-1}^5 x^3\ dx$ using the Right Hand Rule and 10 evenly spaced subintervals.
 
 ```
-\
-**Limits of Riemann Sums**
+
+### Limits of Riemann Sums {-}
 
 We have used limits to evaluate given definite integrals. Will this
 always work? We will show, given not--very--restrictive conditions, that

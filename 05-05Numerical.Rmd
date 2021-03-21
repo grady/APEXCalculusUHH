@@ -328,7 +328,7 @@ using the Trapezoidal Rule and 10 equally spaced subintervals.
 
 ------------------------------------------------------------------------
 
-We refer back to Figure \@ref(tab:num2a) for the table of values of
+We refer back to Table \@ref(tab:num2tab) for the table of values of
 $\sin(x^3)$. Recall that $\Delta x= 3\pi/40 \approx 0.236$. Thus we
 have:$$\begin{aligned}
 \int_{-\frac{\pi}4}^{\frac{\pi}2} \sin (x^3)\ dx &\approx \frac{0.236}{2}\Big[-0.466 + 2\Big(-0.165+(-0.031)+\ldots+

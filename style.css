@@ -29,6 +29,10 @@ table.centered {
   margin-right: auto;
   text-align: center;
 }
+.floatright{
+  float: right;
+  margin-left: 10px;
+}
 blockquote {
   opacity: unset !important;
 }

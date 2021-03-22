@@ -22,7 +22,7 @@ description: "This text is Part I  of a three-text series on Calculus. This part
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE)
+knitr::opts_chunk$set(echo=FALSE, cache=TRUE)
 library(tidyverse)
 
 eng_ggb <- function(options){
@@ -70,7 +70,10 @@ eng_youtube <- function(options){
   code$height <- code$height %n% options$height %n% 385
   code$allow <- code$allow %n% "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   
-  template <- '<iframe width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}?modestbranding=1&rel=0" frameborder="0" allow="${allow}" allowfullscreen></iframe>'
+  if(!is.null(code$start)) code$start <- paste0("start=",code$start,"&")
+  code$start <- code$start %n% ""
+  
+  template <- '<iframe width="${width}" height="${height}" src="https://www.youtube.com/embed/${id}?${start}modestbranding=1&rel=0" frameborder="0" allow="${allow}" allowfullscreen></iframe>'
   
   out <- if(options$eval && knitr:::is_html_output(excludes = 'markdown')) {stringr::str_interp(template, code)}
   knitr::engine_output(options, options$code, out)

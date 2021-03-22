@@ -1,11 +1,24 @@
 ## Taylor Polynomials {#sec:taylor-poly}
 
+```{youtube}
+id: SYJ2uGJCQdY
+```
+
 Consider a function $y=f(x)$ and a point $\big(c,f(c)\big)$. The
 derivative, $f^{\prime}(c)$, gives the instantaneous rate of change of
 $f$ at $x=c$. Of all lines that pass through the point
 $\big(c,f(c)\big)$, the line that best approximates $f$ at this point is
 the tangent line; that is, the line whose slope (rate of change) is
 $f^{\prime}(c)$.
+
+```{geogebra taypolyintroa}
+material_id: rwgq7vkm
+caption: Plotting $y=f(x)$ and its tangent line at 0.
+```
+
+```{youtube}
+id: Eko7c9FNUKY
+```
 
 In Figure \@ref(fig:taypolyintroa), we see a function $y=f(x)$ graphed.
 The table below the graph shows that $f(0)=2$ and $f^{\prime}(0) = 1$;
@@ -14,63 +27,104 @@ $p_1(x) = 1(x-0)+2 = x+2$. The tangent line is also given in the figure.
 Note that "near" $x=0$, $p_1(x) \approx f(x)$; that is, the tangent line
 approximates $f$ well.
 
-::: {#fig:taypolyintroa .tab}
-**Table 1**. caption: Plotting $y=f(x)$ and a table of derivatives of
-$f$ evaluated at 0.
+
+
+:::{.floatright}
+
+\begin{aligned}
+f(0)&= 2\\
+f'(0) &= 1\\
+f''(0)&=2\\
+f'''(0)&=-1\\
+f^{(4)}(0)&=-12\\
+f^{(5)}(0)&=-19
+\end{aligned}
+
 :::
 
-One shortcoming of this approximation is that the tangent line only
+
+One shortcoming of this linear approximation is that the tangent line only
 matches the slope of $f$; it does not, for instance, match the concavity
 of $f$. We can find a polynomial, $p_2(x)$, that does match the
-concavity without much difficulty, though. The table in Figure
-\@ref(fig:taypolyintroa) gives the following information:
-$$f(0) = 2 \qquad f^{\prime}(0) = 1\qquad f^{\prime}'(0) = 2.$$
+concavity without much difficulty, though. The table of values of the function and its derivatives to the right gives the following information about the function at $x=0$:
+$$f(0) = 2 \qquad f^{\prime}(0) = 1 \qquad f^{\prime\prime}(0) = 2.$$
 Therefore, we want our polynomial $p_2(x)$ to have these same
 properties. That is, we need
 $$p_2(0) = 2 \qquad p_2'(0) = 1 \qquad p_2''(0) = 2.$$
+```{youtube}
+id: v8mPY7fu1e0
+```
 
-This is simply an initial--value problem. We can solve this using the
-techniques first described in Section \@ref(sec:antider). To keep
-$p_2(x)$ as simple as possible, we'll assume that not only $p_2''(0)=2$,
-but that $p_2''(x)=2$. That is, the second derivative of $p_2$ is
-constant.
+Let's start with a general quadratic function $p(x)=a_0+a_1 x + a_2 x^2$.
 
-If $p_2''(x) = 2$, then $p_2'(x) = 2x+C$ for some constant $C$. Since we
-have determined that $p_2'(0) = 1$, we find that $C=1$ and so
-$p_2'(x) = 2x+1$. Finally, we can compute $p_2(x) = x^2+x+C$. Using our
-initial values, we know $p_2(0) = 2$ so $C=2.$ We conclude that
-$p_2(x) = x^2+x+2.$ This function is plotted with $f$ in Figure
-\@ref(fig:taypolyintrob).
+We find the following:
+\begin{align}
+p_2(x) & = a_0+a_1x+a_2x^2 & p_2(0)&=a_0\\
+p_2''(x) & = a_1+2a_2x & p_2''(0) & = a_1\\
+p_2'''(x) & = 2a_2 & p_2'''(0) & = 2a_2.
+\end{align}
+
+To get the desired properties above, we must have
+
+$$a_0 = f(0) = 2,\qquad a_1 = f'(0) = 1,\qquad 2a_2 = f''(0) = 2,$$
+so $a_0=2$, $a_1 = 1$, and $a_2 = 2/2 = 1$, giving us the polynomial
+$$p_2(x)=2+x+x^2.$$
+
+We can repeat this approximation process by creating polynomials of higher degree that match more of the derivatives of 
+$f$ at $x=0.$ In general, a polynomial of degree $n$ can be created to match the first $n$ derivatives of $f$. Figure \@ref(fig:taypolyintrob) cycles through the first five polynomials created in this way. Setting $n=$ in the controls, for example, shows $p_4(x)=−x^4/2−x^3/6+x^2+x+2,$ whose first four derivatives at 0 match those of $f$.
 
 ```{geogebra, label="taypolyintrob"}
-
-caption: Plotting $f$, $p_2$ and $p_4$.
+material_id: baxv7pvr
+caption: Plotting $f$, along with the $n$-th order polynomial approximation near $x=0$. The animation cycles through the first five polynomials.
 
 ```
-```{geogebra, label="taypolyintroc"}
 
+How do we ensure that the derivatives of our polynomial match those of 
+$f$? We simply begin with a polynomial of the desired degree, compute its derivatives, and compare them to those of 
+$f$! Recall that each term in a polynomial consists of a power of $x$ and a coefficient, like so: 
+$a_nx^n.$ Our goal is to determine the value for each coefficient $a_n$ so that the derivatives of our polynomial match those of our function $f.$ If we take $k$ derivatives of the term $a_nx^n$, with $k\leq n,$ we obtain
+$$\frac{d^k}{dx^k}(a_nx^n)= n(n-1)\cdots (n-k+1)a_nx^{n-k}\text{.}$$
+For $k<n,$ the expression above vanishes when we set $x=0.$ However, for $n=k,$ we obtain the constant value
+\begin{equation}
+\frac{d^k}{dx^k}(a_kx^k) = k\cdot (k-1)\cdots 2\cdot 1 a_k\text{.} (\#eq:taycoef)
+\end{equation}
+Consider a polynomial
+$$p_n(x) = a_0+a_1x+\cdots +a_kx^k+\cdots +a_nx^n$$
+of degree $n.$ If we take $k$ derivatives, all of the terms involving powers of $x$ less than $k$ disappear, and when we set 
+$x=0$, all of the terms involving powers of $x$ larger than $k$ disappear, leaving us with the single constant given in Equation \@ref(eq:taycoef).
+
+Recalling the factorial notation $k!=1\cdot 2\cdot 3\cdots k$ for the product of the first $k$ integers, we have shown that
+$$p_n^{(k)}(0) = k!a_k\text{.}$$
+If we want the derivatives of $p_n$ to agree with some unknown function $f$ when $x=0$, then we must have 
+$$a_k = \frac{f^{(k)}(0)}{k!}\text{.}$$
+
+```{geogebra, label="taypolyintroc"}
+material_id: xzrhtznu
 caption: Plotting $f$ and $p_{13}$.
 
 ```
 
-We can repeat this approximation process by creating polynomials of
-higher degree that match more of the derivatives of $f$ at $x=0$. In
-general, a polynomial of degree $n$ can be created to match the first
-$n$ derivatives of $f$. Figure \@ref(fig:taypolyintrob) also shows
-$p-4(x)= -x^4/2-x^3/6+x^2+x+2$, whose first four derivatives at 0 match
-those of $f$. (Using the table in Figure \@ref(fig:taypolyintroa), start
-with $p-4^{(4)}(x)=-12$ and solve the related initial--value problem.)
+
 
 As we use more and more derivatives, our polynomial approximation to $f$
 gets better and better. In this example, the interval on which the
 approximation is "good" gets bigger and bigger. Figure
-\@ref(fig:taypolyintroc) shows $p-{13}(x)$; we can visually affirm that
+\@ref(fig:taypolyintroc) shows $p_{13}(x)$; we can visually affirm that
 this polynomial approximates $f$ very well on $[-2,3]$. (The polynomial
-$p-{13}(x)$ is not particularly "nice". It is
-$$\frac{16901x^{13}}{6227020800}+\frac{13x^{12}}{1209600}-\frac{1321x^{11}}{39916800}-\frac{779x^{10}}{1814400}-\frac{359x^9}{362880}+\frac{x^8}{240}+\frac{139x^7}{5040}+\frac{11 x^6}{360}-\frac{19x^5}{120}-\frac{x^4}{2}-\frac{x^3}{6}+x^2+x+2.)$$
+$p_{13}(x)$ is not particularly "nice". It is
+\begin{gathered}
+\frac{16901x^{13}}{6227020800}+\frac{13x^{12}}{1209600}-\frac{1321x^{11}}{39916800}-\frac{779x^{10}}{1814400}-\frac{359x^9}{362880}+\\
+\frac{x^8}{240}+\frac{139x^7}{5040}+\frac{11 x^6}{360}-\frac{19x^5}{120}-\frac{x^4}{2}-\frac{x^3}{6}+x^2+x+2.)
+\end{gathered}
+
+```{youtube}
+id: J-5vVJIGQp4
+```
+
+### Taylor Polynomials {-}
 
 The polynomials we have created are examples of *Taylor polynomials*,
-named after the British mathematician Brook Taylor who made important
+named after the British mathematician [Brook Taylor](https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/){:target="_blank"} who made important
 discoveries about such functions. While we created the above Taylor
 polynomials by solving initial--value problems, it can be shown that
 Taylor polynomials follow a general pattern that make their formation
@@ -81,18 +135,22 @@ much more direct. This is described in the following definition.
 (Taylor Polynomial, Maclaurin Polynomial). Let $f$ be a function whose
 first $n$ derivatives exist at $x=c$.
 
-1.  The **Taylor polynomial of degree $n$ of $f$ at $x=c$** is
-    $$p_n(x) = f(c) + f^{\prime}(c)(x-c) + \frac{f^{\prime\prime}(c)}{2!}(x-c)^2+\frac{f^{\prime}''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^{(n)}(c)}{n!}(x-c)^n.$$
+1.  The **Taylor polynomial of degree $n$ of $f$ at $x=c$** is $$p_n(x) = f(c) + f^{\prime}(c)(x-c) + \frac{f^{\prime\prime}(c)}{2!}(x-c)^2+\frac{f^{\prime\prime\prime}(c)}{3!}(x-c)^3+\cdots+\frac{f^{(n)}(c)}{n!}(x-c)^n.$$
 
-2.  A special case of the Taylor polynomial is the Maclaurin polynomial,
+2.  A special case of the Taylor polynomial is the Maclaurin polynomial ([Colin Maclaurin](https://mathshistory.st-andrews.ac.uk/Biographies/Maclaurin/){:target="_blank"}),
     where $c=0$. That is, the **Maclaurin polynomial of degree $n$ of
-    $f$** is
-    $$p_n(x) = f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2+\frac{f^{\prime}''(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n.$$
+    $f$** is $$p_n(x) = f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2+\frac{f^{\prime\prime\prime}(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n.$$
 
 ```
 
+
+
 We will practice creating Taylor and Maclaurin polynomials in the
-following examples.\
+following examples.
+
+```{youtube}
+id: ENf-Z2pLrJg
+```
 
 ```{example, label="taypoly1", echo=TRUE}
 
@@ -106,17 +164,19 @@ following examples.\
 
 1.  We start with creating a table of the derivatives of $e^x$ evaluated
     at $x=0$. In this particular case, this is relatively simple, as
-    shown in Figure \@ref(fig:taypoly1a).
-
-    ::: {#fig:taypoly1a .tab}
-    **Table 2**. caption: The derivatives of $f(x)=e^x$ evaluated at
-    $x=0$.
-    :::
+    shown below.
+    \begin{aligned}
+    f(x)&=e^x & f(0) &= 1\\
+    f'(x)&=e^x & f'(0) &= 1\\
+    f''(x)&=e^x & f''(0) &= 1\\
+    &\vdots & &\vdots \\
+    f^{(n)}(x)&=e^x & f^{(n)}(0) &= 1\\
+    \end{aligned}
 
     By the definition of the Maclaurin series, we have
 
     $$\begin{aligned}
-    p_n(x) &= f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2+\frac{f^{\prime}''(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n\\
+    p_n(x) &= f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2+\frac{f^{\prime\prime\prime}(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n\\
                 &= 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3 + \frac{1}{24}x^4 + \cdots + \frac{1}{n!}x^n.\end{aligned}$$
 
 2.  Using our answer from part 1, we have
@@ -129,16 +189,20 @@ following examples.\
     A plot of $f(x)=e^x$ and $p_5(x)$ is given in Figure
     \@ref(fig:taypoly1b).
 
-    ```{geogebra, label="taypoly1b"}
 
-    caption: A plot of $f(x)=e^x$ and its 5$^\text{th}$ degree Maclaurin
-    polynomial $p_5(x)$.
-
-    ```
 
 ```
 
-\
+```{geogebra, label="taypoly1b"}
+material_id: anqhv34y
+caption: A plot of $f(x)=e^x$ and its first 5 Maclaurin polynomials $p_1(x)$ through $p_5(x)$.
+
+```
+
+
+```{youtube}
+id: 6BeNQe0hl3k
+```
 
 ```{example, label="taypoly2", echo=TRUE}
 
@@ -154,15 +218,21 @@ following examples.\
 
 1.  We begin by creating a table of derivatives of $\ln x$ evaluated at
     $x=1$. While this is not as straightforward as it was in the
-    previous example, a pattern does emerge, as shown in Figure
-    \@ref(fig:taypoly2a).
-
-    ::: {#fig:taypoly2a .tab}
-    **Table 3**. caption: Derivatives of $\ln x$ evaluated at $x=1$.
-    :::
-
+    previous example, a pattern does emerge, as shown below.
+    \begin{aligned}
+        f(x) &= \ln x  & f(1) &= 0 \\
+        f'(x) &= 1/x & f'(1) &= 1 \\
+        f''(x) &= -1/x^2 & f''(1) &= -1\\
+        f'''(x) &= 2/x^3 & f'''(1) &= 2\\
+        f^{(4)}(x) &= -6/x^4 & f^{(4)}(1) &= -6\\
+        & \vdots & & \vdots \\
+        f^{(n)}(x) &= \frac{(-1)^{n+1}(n-1)!}{x^n} & f^{(n)}(1) &= (-1)^{n+1}(n-1)! 
+    \end{aligned}
+        Note that starting at $n=1$ the coefficients alternate sign, and ignoring the sign they follow
+        a factorial sequence.
+        
     Using Definition \@ref(def:taypoly), we have $$\begin{aligned}
-        p_n(x) &=   f(c) + f^{\prime}(c)(x-c) + \frac{f^{\prime\prime}(c)}{2!}(x-c)^2+\frac{f^{\prime}''(c)}{3!}(x-c)^3+\cdots+\frac{f\,^{(n)}(c)}{n!}(x-c)^n\\
+        p_n(x) &=   f(c) + f^{\prime}(c)(x-c) + \frac{f^{\prime\prime}(c)}{2!}(x-c)^2+\frac{f^{\prime\prime\prime}(c)}{3!}(x-c)^3+\cdots+\frac{f\,^{(n)}(c)}{n!}(x-c)^n\\
                         &= 0+(x-1)-\frac 12(x-1)^2+\frac 13(x-1)^3-\frac 14(x-1)^4+\cdots+\frac{(-1)^{n+1}}{n}(x-1)^n.\end{aligned}$$
     Note how the coefficients of the $(x-1)$ terms turn out to be
     "nice."
@@ -181,12 +251,7 @@ following examples.\
     \@ref(fig:taypoly2b) plots $y=\ln x$ with $y=p_6(x)$. We can see
     that $\ln 1.5\approx p_6(1.5)$.
 
-    ```{geogebra, label="taypoly2b"}
 
-    caption: A plot of $y=\ln x$ and its 6$^\text{th}$ degree Taylor
-    polynomial at $x=1$.
-
-    ```
 
 3.  We approximate $\ln 2$ with $p_6(2)$: $$\begin{aligned}
     p_6(2) &= (2-1)-\frac 12(2-1)^2+\frac 13(2-1)^3-\frac 14(2-1)^4+\cdots \\
@@ -203,16 +268,16 @@ following examples.\
     polynomial fails to approximate $\ln x$ for $x>2$, as shown in
     Figure \@ref(fig:taypoly2c). We'll soon discuss why this is.
 
-    ```{geogebra, label="taypoly2c"}
 
-    caption: A plot of $y=\ln x$ and its 20$^\text{th}$ degree Taylor
-    polynomial at $x=1$.
-
-    ```
 
 ```
 
-\
+```{geogebra, label="taypoly2b"}
+material_id: vqfjhnxs
+caption: A plot of $y=\ln x$ and its Taylor polynomials of order 1 through 20 at $x=1$.
+
+```
+
 Taylor polynomials are used to approximate functions $f(x)$ in mainly
 two situations:
 
@@ -236,14 +301,15 @@ two situations:
 
 In both situations, a critical piece of information to have is "How good
 is my approximation?" If we use a Taylor polynomial to compute $\cos 2$,
-how do we know how accurate the approximation is?
+how do we know how accurate the approximation is? 
 
-We had the same problem when studying Numerical Integration. Theorem
-\@ref(thm:numerical-error) provided bounds on the error when using, say,
-Simpson's Rule to approximate a definite integral. These bounds allowed
-us to determine that, for instance, using $10$ subintervals provided an
-approximation within $\pm .01$ of the exact value. The following theorem
-gives similar bounds for Taylor (and hence Maclaurin) polynomials.
+### Approximation Error of Taylor Polynomials {-}
+
+Although much of the content presented in Calculus concerns the search for exact answers to problems such as integration and differentiation, many practical applications of calculus involve attempts to find approximations; for example, using Newton's Method to approximate the zeros of a function, or numerical integration to approximate the value of an integral that cannot be solved exactly. Whenever an approximation is used, one naturally wishes to know how good the approximation is. In other words, we look for a bound on the error introduced by working with an approximation. The following theorem gives bounds on the error introduced in using a Taylor (and hence Maclaurin) polynomial to approximate a function.
+
+```{youtube}
+id: 2IHECY8dFN0
+```
 
 ```{theorem, label="taylorthm", echo=TRUE}
 
@@ -272,6 +338,10 @@ increases.
 
 The following example computes error estimates for the approximations of
 $\ln 1.5$ and $\ln 2$ made in Example \@ref(exm:taypoly2).\
+
+```{youtube}
+id: TBV4-X7HoHk
+```
 
 ```{example, label="taypoly3", echo=TRUE}
 
@@ -324,7 +394,11 @@ $f(x)=\ln x$ at $x=1$, as calculated in Example \@ref(exm:taypoly2).
 ```
 
 We practice again. This time, we use Taylor's theorem to find $n$ that
-guarantees our approximation is within a certain amount.\
+guarantees our approximation is within a certain amount.
+
+```{youtube}
+id: zg1W9miUCB4
+```
 
 ```{example, label="taypoly4", echo=TRUE}
 
@@ -350,13 +424,18 @@ $\displaystyle\frac{2^{9+1}}{(9+1)!} \approx 0.000282 <0.001$. Thus we
 want to approximate $\cos 2$ with $p_9(2)$.\
 We now set out to compute $p_9(x)$. We again need a table of the
 derivatives of $f(x)=\cos x$ evaluated at $x=0$. A table of these values
-is given in Figure \@ref(fig:taypoly4a).
+is given below.
+$$\begin{aligned}
+f(x)&=\cos x & f(0)&=1 \\
+f'(x)&=\sin x & f'(0)&=0 \\
+f''(x)&=-\cos x & f''(0)&=-1 \\
+f'''(x)&=-\sin x & f'''(0)&=0 \\
+f^{(4)}(x)&=\cos x & f^{(4)}(0)&=1 \\
+&\vdots &&\vdots
+\end{aligned}$$
 
-::: {#fig:taypoly4a .tab}
-**Table 4**. caption: A table of the derivatives of $f(x)=\cos x$
-evaluated at $x=0$.
-:::
-
+Since the higher order derivatives of $\cos x$ loop through $\sin x$, $-\cos x$, and $-\sin x$ 
+forever, so do the values of the functions at zero loop through the values $1, 0 , -1 ,0$ forever.
 Notice how the derivatives, evaluated at $x=0$, follow a certain
 pattern. All the odd powers of $x$ in the Taylor polynomial will
 disappear as their coefficient is 0. While our error bounds state that
@@ -364,7 +443,7 @@ we need $p_9(x)$, our work shows that this will be the same as $p_8(x)$.
 
 Since we are forming our polynomial at $x=0$, we are creating a
 Maclaurin polynomial, and: $$\begin{aligned}
-p_8(x) &= f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2 + \frac{f^{\prime}''(0)}{3!}x^3 + \cdots +\frac{f\,^{(8)}(0)}{8!}x^8\\
+p_8(x) &= f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2 + \frac{f^{\prime\prime\prime}(0)}{3!}x^3 + \cdots +\frac{f\,^{(8)}(0)}{8!}x^8\\
         &=  1-\frac{1}{2!}x^2+\frac{1}{4!}x^4-\frac{1}{6!}x^6+\frac{1}{8!}x^8\end{aligned}$$
 
 We finally approximate $\cos 2$:
@@ -373,16 +452,18 @@ bound guarantee that this approximation is within $0.001$ of the correct
 answer. Technology shows us that our approximation is actually within
 about $0.0003$ of the correct answer.
 
-Figure \@ref(fig:taypoly4b) shows a graph of $y=p_8(x)$ and $y=\cos x$.
+Set $n=8$ in Figure \@ref(fig:taypoly4b) to see a graph of $y=p_8(x)$ and $y=\cos x$.
 Note how well the two functions agree on about $(-\pi,\pi)$.
+```
+
+
 
 ```{geogebra, label="taypoly4b"}
-
-caption: A graph of $f(x)= \cos x$ and its degree 8 Maclaurin
-polynomial.
+material_id: vq2kxrkf
+caption: A graph of $f(x)= \cos x$ and its Maclaurin polynomials of order 2 through 20.
 
 ```
-```
+
 ```{example, label="taypoly5", echo=TRUE}
 
 (Finding and using Taylor polynomials).
@@ -398,12 +479,14 @@ polynomial.
 ------------------------------------------------------------------------
 
 1.  We begin by evaluating the derivatives of $f$ at $x=4$. This is done
-    in Figure \@ref(fig:taypoly5a).
-
-    ::: {#fig:taypoly5a .tab}
-    **Table 5**. caption: A table of the derivatives of $f(x)=\sqrt{x}$
-    evaluated at $x=4$.
-    :::
+    below.
+    $$\begin{aligned}
+    f(x)&=\sqrt x & f(4)&=2\\
+    f'(x)&=1/(2\sqrt x) & f'(4)&=1/4\\
+    f''(x)&=-1/(4x^{3/2}) & f''(4)&=-1/32\\
+    f'''(x)&=3/(8x^{5/2}) & f'''(4)&=3/256\\
+    f^{(4)}(x)&=-15/(16x^{7/2}) & f^{(4)}(4)&=-15/2048
+    \end{aligned}$$
 
     These values allow us to form the Taylor polynomial $p_4(x)$:
     $$p_4(x) = 2 + \frac 14(x-4) +\frac{-1/32}{2!}(x-4)^2+\frac{3/256}{3!}(x-4)^3+\frac{-15/2048}{4!}(x-4)^4.$$
@@ -416,91 +499,43 @@ polynomial.
     derivative of $f(x)=\sqrt{x}$ takes on this interval is near
     $x=2.9$, at about $0.0273$. Thus
     $$\big|R_4(3)\big| \leq \frac{0.0273}{5!}\big|(3-4)^5\big| \approx 0.00023.$$
-    This shows our approximation is accurate to at least the first 2
+    This shows our approximation is accurate to at least the first 3
     places after the decimal. (It turns out that our approximation is
     actually accurate to 4 places after the decimal.) A graph of
     $f(x)=\sqrt x$ and $p_4(x)$ is given in Figure \@ref(fig:taypoly5b).
     Note how the two functions are nearly indistinguishable on $(2,7)$.
 
-    ```{geogebra, label="taypoly5b"}
 
-    caption: A graph of $f(x)=\sqrt{x}$ and its degree 4 Taylor
-    polynomial at $x=4$.
-
-    ```
 
 ```
 
-\
-Our final example gives a brief introduction to using Taylor polynomials
-to solve differential equations.\
+```{tikz, label="taypoly5b", fig.cap="A plot of $f(x)=\\sqrt{x}$ and its degree 4 Taylor polynomial at $x=4$."}
+                \begin{tikzpicture}
 
-```{example, label="taypoly6", echo=TRUE}
+                \begin{axis}[
+                 axis x line = middle,
+                axis y line = middle,                      
+                axis on top,
+                ymin=-.1,ymax=3.5,
+                xmin=-1,xmax=11
+                ]
 
-(Approximating an unknown function). A function $y=f(x)$ is unknown save
-for the following two facts.
+                \addplot+ [-,domain=0:3.16,samples=40, no markers] ({x^2},{x}) node [pos=1,above left] { $y=\sqrt x$};
+                \addplot+ [-, no markers] coordinates {(0,0.5469)(0.2,0.6536)(0.4,0.7551)(0.6,0.8518)(0.8,0.944)(1.,1.032)(1.
+                2,1.116)(1.4,1.196)(1.6,1.273)(1.8,1.346)(2.,1.417)(2.2,1.485)(2.4,1.
+                55)(2.6,1.613)(2.8,1.673)(3.,1.732)(3.2,1.789)(3.4,1.844)(3.6,1.897)(
+                3.8,1.949)(4.,2.)(4.2,2.049)(4.4,2.098)(4.6,2.145)(4.8,2.191)(5.,2.
+                236)(5.2,2.28)(5.4,2.324)(5.6,2.366)(5.8,2.408)(6.,2.448)(6.2,2.488)(
+                6.4,2.527)(6.6,2.565)(6.8,2.602)(7.,2.637)(7.2,2.672)(7.4,2.705)(7.6,
+                2.737)(7.8,2.768)(8.,2.797)(8.2,2.824)(8.4,2.849)(8.6,2.873)(8.8,2.
+                894)(9.,2.913)(9.2,2.929)(9.4,2.942)(9.6,2.953)(9.8,2.96)(10.,2.964)} node [pos=0.8,below right] { $y=p_{4}(x)$};
 
-1.  $y(0) = f(0) = 1$, and
+                \end{axis}
 
-2.  $y\,'= y^2$
+                \end{tikzpicture}
 
-(This second fact says that amazingly, the derivative of the function is
-actually the function squared!)
-
-Find the degree 3 Maclaurin polynomial $p_3(x)$ of $y=f(x)$.
-
-------------------------------------------------------------------------
-
-One might initially think that not enough information is given to find
-$p_3(x)$. However, note how the second fact above actually lets us know
-what $y\,'(0)$ is: $$y\,' = y^2 \Rightarrow y\,'(0) = y^2(0).$$ Since
-$y(0) = 1$, we conclude that $y\,'(0) = 1$.
-
-Now we find information about $y\,''$. Starting with $y\,'=y^2$, take
-derivatives of both sides, *with respect to $x$*. That means we must use
-implicit differentiation. $$\begin{aligned}
-y\,' &= y^2\\
-\frac{d}{dx}\big(y\,'\big) &= \frac{d}{dx}\big(y^2\big)\\
-y\,'' &= 2y\cdot y\,'.
-\intertext{Now evaluate both sides at $x=0$:}
-y\,''(0) &= 2y(0)\cdot y\,'(0)\\
-y\,''(0) &= 2\end{aligned}$$ We repeat this once more to find
-$y\,'''(0)$. We again use implicit differentiation; this time the
-Product Rule is also required. $$\begin{aligned}
-\frac{d}{dx}\big(y\,''\big) &= \frac{d}{dx} \big(2yy\,'\big)\\
-y\,''' &= 2y\,'\cdot y\,' + 2y\cdot y\,''.
-\intertext{Now evaluate both sides at $x=0$:}
-y\,'''(0) &= 2y\,'(0)^2 + 2y(0)y\,''(0)\\
-y\,'''(0) &=    2+4=6\end{aligned}$$ In summary, we have:
-$$y(0) = 1 \qquad y\,'(0) = 1  \qquad y\,''(0) = 2 \qquad y\,'''(0) = 6.$$
-We can now form $p_3(x)$: $$\begin{aligned}
-p_3(x) &= 1 + x + \frac{2}{2!}x^2 + \frac{6}{3!}x^3\\
-                &= 1+x+x^2+x^3.\end{aligned}$$
-
-```{geogebra, label="taypoly6"}
-
-caption: A graph of $y=-1/(x-1)$ and $y=p_3(x)$ from Example
-\@ref(exm:taypoly6).
 
 ```
 
-It turns out that the differential equation we started with, $y\,'=y^2$,
-where $y(0)=1$, can be solved without too much difficulty:
-$\displaystyle y = \frac{1}{1-x}$. Figure \@ref(fig:taypoly6) shows this
-function plotted with $p_3(x)$. Note how similar they are near $x=0$.
 
-```
 
-\
-
-It is beyond the scope of this text to pursue error analysis when using
-Taylor polynomials to approximate solutions to differential equations.
-This topic is often broached in introductory Differential Equations
-courses and usually covered in depth in Numerical Analysis courses. Such
-an analysis is very important; one needs to know how good their
-approximation is. We explored this example simply to demonstrate the
-usefulness of Taylor polynomials.\
-Most of this chapter has been devoted to the study of infinite series.
-This section has taken a step back from this study, focusing instead on
-finite summation of terms. In the next section, we explore **Taylor
-Series**, where we represent a function with an infinite series.

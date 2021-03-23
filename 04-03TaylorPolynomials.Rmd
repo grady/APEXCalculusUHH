@@ -124,7 +124,7 @@ id: J-5vVJIGQp4
 ### Taylor Polynomials {-}
 
 The polynomials we have created are examples of *Taylor polynomials*,
-named after the British mathematician [Brook Taylor](https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/){:target="_blank"} who made important
+named after the British mathematician [Brook Taylor](https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/){target="_blank"} who made important
 discoveries about such functions. While we created the above Taylor
 polynomials by solving initial--value problems, it can be shown that
 Taylor polynomials follow a general pattern that make their formation
@@ -137,7 +137,7 @@ first $n$ derivatives exist at $x=c$.
 
 1.  The **Taylor polynomial of degree $n$ of $f$ at $x=c$** is $$p_n(x) = f(c) + f^{\prime}(c)(x-c) + \frac{f^{\prime\prime}(c)}{2!}(x-c)^2+\frac{f^{\prime\prime\prime}(c)}{3!}(x-c)^3+\cdots+\frac{f^{(n)}(c)}{n!}(x-c)^n.$$
 
-2.  A special case of the Taylor polynomial is the Maclaurin polynomial ([Colin Maclaurin](https://mathshistory.st-andrews.ac.uk/Biographies/Maclaurin/){:target="_blank"}),
+2.  A special case of the Taylor polynomial is the Maclaurin polynomial ([Colin Maclaurin](https://mathshistory.st-andrews.ac.uk/Biographies/Maclaurin/){target="_blank"}),
     where $c=0$. That is, the **Maclaurin polynomial of degree $n$ of
     $f$** is $$p_n(x) = f(0) + f^{\prime}(0)x + \frac{f^{\prime\prime}(0)}{2!}x^2+\frac{f^{\prime\prime\prime}(0)}{3!}x^3+\cdots+\frac{f\,^{(n)}(0)}{n!}x^n.$$
 

@@ -38,7 +38,8 @@ means "one quantity is shrinking to zero, and is being multiplied by a
 quantity that is growing without bound." We cannot determine from such a
 description what the result of such a limit will be.
 
-This section introduces l'Hôpital's Rule, a method of resolving limits
+This section introduces l'Hôpital's Rule ((Guillaume de l'Hôpital)[https://mathshistory.st-andrews.ac.uk/Biographies/De_LHopital/]{target="_blank"}),
+a method of resolving limits
 that produce the indeterminate forms 0/0 and $\infty/\infty$. We'll also
 show how algebraic manipulation can be used to convert other
 indeterminate expressions into one of these two forms so that our new

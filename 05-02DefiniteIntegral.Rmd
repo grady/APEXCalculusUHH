@@ -1,5 +1,14 @@
 ## The Definite Integral {#sec:def-int}
 
+```{youtube}
+id: rfG8ce4nNh0
+```
+
+
+```{youtube}
+id: __Xh37Qw4UE
+```
+
 We start with an easy problem. An object travels in a straight line at a
 constant velocity of 5ft/s for 10 seconds. How far away from its
 starting point is the object?
@@ -51,7 +60,12 @@ caption: >
 
 ```
 
-Now consider a more difficult problem.\
+Now consider a more difficult problem.
+
+```{youtube}
+id: MUx3n9511e8
+```
+
 
 ```{example, label="defint3ex", echo=TRUE}
 
@@ -146,6 +160,11 @@ Given a graph of a function $y=f(x)$, we will find that there is great
 use in computing the area between the curve $y=f(x)$ and the $x$-axis.
 Because of this, we need to define some terms.
 
+```{youtube}
+id: 1kJUMKdjumQ
+```
+
+
 ```{definition, label="def-int", echo=TRUE}
 
 (The Definite Integral, Total Signed Area). Let $y=f(x)$ be defined on a
@@ -174,7 +193,12 @@ an "elongated S" that represented finding a "sum." In the context of the
 definite integral, this notation makes a bit more sense, as we are
 adding up areas under the function $f$.
 
-We practice using this notation.\
+We practice using this notation.
+
+```{youtube}
+id: jrjjVT1j9uw
+```
+
 
 ```{example, label="defint4ex", echo=TRUE}
 
@@ -237,6 +261,10 @@ caption: >
 
 This example illustrates some of the properties of the definite
 integral, given here.
+
+```{youtube}
+id: sK5vZ_QrkNk
+```
 
 ```{theorem, label="defintprop", echo=TRUE}
 
@@ -354,7 +382,12 @@ Answer the following:
 ```
 
 The area definition of the definite integral allows us to use geometry
-to compute the definite integral of some simple functions.\
+to compute the definite integral of some simple functions.
+
+```{youtube}
+id: AuGASVXd3qA
+```
+
 
 :::{style="float:right;max-width:30%"}
 ```{tikz defint8a, dev="svg", fig.width=NULL, cache=TRUE, echo=FALSE, fig.cap="A graph of function 1 in Example \\@ref(exm:defint8ex)."}
@@ -417,6 +450,10 @@ $$1. \ \int_{-2}^5 (2x-4)\ dx \qquad 2.\ \int_{-3}^3 \sqrt{9-x^2}\ dx.$$
     radius 3. Thus the area is:
     $$\int_{-3}^3 \sqrt{9-x^2}\ dx = \frac 12\pi r^2 = \frac 92\pi.$$
 
+```
+
+```{youtube}
+id: 2zJzbg0hNXE
 ```
 
 :::{style="float:right;max-width:30%"}

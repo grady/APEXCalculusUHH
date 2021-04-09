@@ -15,6 +15,10 @@ an approximation, then refine that approximation to make it better, then
 use limits in the refining process to find the exact answer. That is
 what we will do here.
 
+```{youtube}
+id: q1gWwN_CUUo
+```
+
 Consider the region given in Figure \@ref(fig:rie1a), which is the area
 under $y=4x-x^2$ on $[0,4]$. What is the signed area of this region --
 i.e., what is $\int_0^4(4x-x^2)\ dx$?
@@ -70,7 +74,11 @@ the subintervals to determine the height of the rectangle. One could even
 choose a different position for each subinterval if one desired.
 
 The following example will approximate the value of
-$\int_0^4 (4x-x^2)\ dx$ using these rules.\
+$\int_0^4 (4x-x^2)\ dx$ using these rules.
+
+```{youtube}
+id: dLoMEUa0fAs
+```
 
 ```{example, label="rie2ex", echo=TRUE}
 
@@ -133,6 +141,10 @@ approximation by using more rectangles. The notation can become
 unwieldy, though, as we add up longer and longer lists of numbers. We
 introduce **summation notation** to ameliorate this problem.
 
+```{youtube}
+id: d0gSFClfRdY
+```
+
 Suppose we wish to add up a list of numbers $a_1$, $a_2$, $a_3$, ...,
 $a_9$. Instead of writing $$a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9,$$ we
 use summation notation and write
@@ -165,6 +177,10 @@ we are summing, in this case the values $a_i$, for every integer $i$ between
 1 and 9.
 
 Let's practice using this notation.
+
+```{youtube}
+id: GKaRI_a96
+```
 
 ```{example, label="rie3", echo=TRUE}
 
@@ -202,6 +218,11 @@ It might seem odd to stress a new, concise way of writing summations
 only to write each term out as we add them up. It is. The following
 theorem gives some of the properties of summations that allow us to work
 with them without writing individual terms. Examples will follow.
+
+```{youtube}
+id: w8jWl2KjOvQ
+```
+
 :::{style="columns: 2 330px;"}
 ```{theorem, label="summation", echo=TRUE}
 
@@ -245,6 +266,10 @@ incredibly important when dealing with large sums as we'll soon see.
 
 
 ### Riemann Sums{-}
+
+```{youtube}
+id: Cc-uX0OtBY0
+```
 
 Consider again $\int_0^4(4x-x^2)\ dx$. We will approximate this definite
 integral using 16 equally spaced subintervals and the Right Hand Rule in
@@ -332,8 +357,12 @@ subintervals can be expressed as follows, where $\Delta x = 4/16 = 1/4$:
 
 We use these formulas in the next two examples.
 
+```{youtube}
+id: GhrAFhzpWto
+```
+
 The following example lets us practice using the Right Hand Rule and the
-summation formulas introduced in Theorem \@ref(thm:summation).\
+summation formulas introduced in Theorem \@ref(thm:summation).
 
 ```{example, label="rie7ex", echo=TRUE}
 
@@ -406,6 +435,11 @@ structure, which was:
     Rule states that each rectangle's height is determined by evaluating
     $f$ at the left hand endpoint of the subinterval the rectangle lives
     on.
+    
+    
+```{youtube}
+id: 1ZxKyf4JSS4
+```    
 
 One could partition an interval $[a,b]$ with subintervals that do not
 have the same size. We refer to the length of the $i^\text{ th}$
@@ -505,6 +539,11 @@ have learned in a convenient way.
 
 ```
 
+
+```{youtube}
+id: O6S1f6-D8Ls
+```
+
 Let's do another example.
 
 ```{example, label="rie8ex", echo=TRUE}
@@ -555,12 +594,17 @@ caption: >
     Approximating $\int_{-2}^3 (5x+2)\ dx$ using the Midpoint Rule and 10 evenly spaced subintervals in Example \@ref(exm:rie8ex).
 
 ```
-\
+
 Notice in the previous example that while we used 10 equally spaced
 intervals, the number "10" didn't play a big role in the calculations
 until the very end. Mathematicians love to abstract ideas; let's
 approximate the area of another region using $n$ subintervals, where we
-do not specify a value of $n$ until the very end.\
+do not specify a value of $n$ until the very end.
+
+```{youtube}
+id: lHODMcd4Grw
+```
+
 
 ```{example, label="rie9ex", echo=TRUE}
 
@@ -628,6 +672,10 @@ limits in the refining process to get an exact answer. That is precisely
 what we just did.
 
 Let's practice this again.
+
+```{youtube}
+id: yvWSszI0Xvc
+```
 
 ```{example, label="rie10ex", echo=TRUE}
 
@@ -732,6 +780,11 @@ can be different but getting small, and the height of each rectangle is
 not necessarily determined by a particular rule." The theorem states
 that this Riemann Sum also gives the value of the definite integral of
 $f$ over $[a,b]$.
+
+```{youtube}
+id: A-WLvclVMC0
+```
+
 
 ```{theorem, label="riemann-sum", echo=TRUE}
 

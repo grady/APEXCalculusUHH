@@ -1,7 +1,27 @@
 ## The Fundamental Theorem of Calculus {#sec:FTC}
 
+The planimeter shown below was patented in 1834. As you watch the video,
+you will notice that its principle of operation is quite different than
+the planimeter from the last section. Rather than covering the shape in
+many rectangles, the user traces only the outline of the shape. A cleverly 
+designed continuously variable gear system moves the needle at a rate
+which depends on the distance of the shape's boundary from the $x$-axis.
+
 ```{youtube ernst-planimeter}
 id: _W35iDhRfZg
+```
+
+```{youtube}
+id: FnJqaIESC2s
+```
+
+
+```{youtube}
+id: 8d3R9MSwKuk
+```
+
+```{youtube}
+id: zVyMghQRLcI
 ```
 
 Let $f(t)$ be a continuous function defined on $[a,b]$. The definite
@@ -13,6 +33,11 @@ Let $F(x) = \int_a^x f(t)\ dt$. It computes the area under $f$ on
 $[a,x]$ as illustrated in Figure \@ref(fig:ftc1). We can study this
 function using our knowledge of the definite integral. For instance,
 $F(a)=0$ since $\int_a^af(t)\ dt=0$.
+
+```{youtube}
+id: TE3kZRIso-Q
+```
+
 
 ```{geogebra, label="ftc1"}
 
@@ -34,7 +59,11 @@ function on $(a,b)$, and $$F^{\prime}(x)=f(x).$$
 
 ```
 
-Initially this seems simple, as demonstrated in the following example.\
+Initially this seems simple, as demonstrated in the following example.
+
+```{youtube}
+id: 7tHmgPcUZG4
+```
 
 ```{example, label="ftc2", echo=TRUE}
 
@@ -69,6 +98,11 @@ integrals and definite integrals are related: we can evaluate a definite
 integral using antiderivatives! This is the second part of the
 Fundamental Theorem of Calculus.
 
+```{youtube}
+id: jU_WUPjamFQ
+```
+
+
 ```{theorem, label="FTC2", echo=TRUE}
 
 (The Fundamental Theorem of Calculus, Part 2). Let $f$ be continuous on
@@ -76,6 +110,12 @@ $[a,b]$ and let $F$ be *any* antiderivative of $f$. Then
 $$\int_a^b f(x)\ dx = F(b) - F(a).$$
 
 ```
+
+
+```{youtube}
+id: 8doi_Al_lmg
+```
+
 ```{example, label="ftc3", echo=TRUE}
 
 (Using the Fundamental Theorem of Calculus, Part 2). We spent a great
@@ -107,7 +147,16 @@ using the Fundamental Theorem of Calculus to evaluate a definite
 integral, meaning any value of $C$ can be picked. The constant *always*
 cancels out of the expression when evaluating $F(b)-F(a)$, so it does
 not matter what value is picked. This being the case, we might as well
-let $C=0$.\
+let $C=0$.
+
+```{youtube}
+id: FbansQszRDI
+```
+
+
+```{youtube}
+id: LeYpAXQS5cI
+```
 
 ```{example, label="ftc4", echo=TRUE}
 
@@ -139,9 +188,9 @@ $$1.\ \int_{-2}^2 x^3\ dx \quad 2.\ \int_0^\pi \sin x\ dx \qquad 3.\ \int_0^5 e^
 
 ```
 
-\
-**Understanding Motion with the Fundamental Theorem of\
-Calculus**\
+
+### Understanding Motion with the Fundamental Theorem of Calculus {-}
+
 We established, starting with Key Idea \@ref(idea:motion), that the
 derivative of a position function is a velocity function, and the
 derivative of a velocity function is an acceleration function. Now
@@ -192,7 +241,10 @@ simple term for this analogous to displacement. If $a(t) = 5$miles/h$^2$
 and $t$ is measured in hours, then $$\int_0^3 a(t)\ dt = 15$$ means the
 velocity has increased by 15m/h from $t=0$ to $t=3$.
 
-**The Fundamental Theorem of Calculus and the Chain Rule**
+### The Fundamental Theorem of Calculus and the Chain Rule {-}
+
+
+
 
 Part 1 of the Fundamental Theorem of Calculus (FTC) states that given
 $\displaystyle F(x) = \int_a^x f(t)\ dt$, $F^{\prime}(x) = f(x)$. Using
@@ -207,7 +259,11 @@ example, we may compose $F(x)$ with $g(x)$ to get
 $$F\big(g(x)\big) = \int_a^{g(x)} f(t)\ dt.$$ What is the derivative of
 such a function? The Chain Rule can be employed to state
 $$\frac{d}{dx}\Big(F\big(g(x)\big)\Big) = F^{\prime}\big(g(x)\big)g\,'(x) = f\big(g(x)\big)g\,'(x).$$
-An example will help us understand this.\
+An example will help us understand this.
+
+```{youtube}
+id: fywjn8-evpE
+```
 
 ```{example, label="ftc11", echo=TRUE}
 
@@ -230,6 +286,10 @@ $G(x)$ and $g(x)$ are skipped.
 
 Practice this once more.
 
+```{youtube}
+id: nGS4ENM8arI
+```
+
 ```{example, label="ftc12", echo=TRUE}
 
 (The FTC, Part 1, and the Chain Rule). Find the derivative of
@@ -243,7 +303,7 @@ $$F\,'(x) = \sin x \cos^3 x.$$
 
 ```
 
-**Area Between Curves**
+### Area Between Curves {-}
 
 Consider continuous functions $f(x)$ and $g(x)$ defined on $[a,b]$,
 where $f(x) \geq g(x)$ for all $x$ in $[a,b]$, as demonstrated in Figure
@@ -262,6 +322,11 @@ $$\int_a^b f(x)\ dx - \int_a^b g(x)\ dx.$$ Properties of the definite
 integral allow us to simplify this expression to
 $$\int_a^b\big(f(x) - g(x)\big)\ dx.$$
 
+```{youtube}
+id: UufnFHBnv88
+```
+
+
 ```{theorem, label="areabtwncurves", echo=TRUE}
 
 (Area Between Curves). Let $f(x)$ and $g(x)$ be continuous functions
@@ -270,6 +335,11 @@ area of the region bounded by the curves $y=f(x)$, $y=g(x)$ and the
 lines $x=a$ and $x=b$ is $$\int_a^b \big(f(x)-g(x)\big)\ dx.$$
 
 ```
+
+```{youtube}
+id: su2CXdpYPdo
+```
+
 ```{example, label="ftc6ex", echo=TRUE}
 
 (Finding area between curves). Find the area of the region enclosed by
@@ -303,7 +373,21 @@ caption: >
 
 ```
 
-**The Mean Value Theorem and Average Value**
+It is natural to wonder what applications could give rise to such an integral problem? One example is to consider a storage tank with two pipes attached through which liquid may be added or removed.  If the first pipe is adding liquid to the tank at a rate described by $f(t)$, and the second pipe is removing liquid from the tank at a rate described by $g(t)$, then the quantity $f(x) - g(x)$ describes the net rate at which liquid is entering or leaving the tank. The integral $\int_a^b f(x)-g(x) dx$ then represents the total change in the volume of liquid stored in the tank over the time interval $[a,b]$. 
+
+For another application, if the function $f(t)$ representes a birth rate and $g(t)$ represents a death rate over time, then the integral above will measure the total change in population over the time period.
+
+```{youtube}
+id: Bgji1b7Wdr4
+```
+
+
+### The Mean Value Theorem and Average Value {-}
+
+
+```{youtube}
+id: Gz9r9zF5asU
+```
 
 ```{geogebra, label="ftc7a"}
 

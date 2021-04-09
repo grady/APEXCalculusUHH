@@ -339,6 +339,19 @@ $\sqrt{416.67^2+1000^2} \approx 1083$ ft.
 \end{tikzpicture}
 ```
 
+There are ususally several ways that one can solve a word problem. 
+The next video has solves the cable problem by setting up the cost
+function in a more trigonometric way.
+
+```{youtube}
+id: 36F5GhJhfA0
+```
+
+
+```{example, echo=TRUE}
+A rectangular box with no top must be made such that the length is twice the width and its volume is 10 cubic meters. Material for the sides costs \$6 per square meter and material for the bottom costs \$10 per square meter. Find the dimensions for the box that minimize the material cost.
+```
+
 ```{youtube}
 id: XJYDMZe8JUk
 ```

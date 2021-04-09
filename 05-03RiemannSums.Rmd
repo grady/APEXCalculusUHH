@@ -1,5 +1,17 @@
 ## Riemann Sums {#sec:riemann}
 
+A planimeter is a mechanical device for measuring the area of an arbitrary
+shape drawn on a piece of paper. Before the invention of computers and
+software programs for engineering, planimeters were used to measure areas
+on hand-drawn engineering plans to be used in making calculations related to area
+or volume: for example, the number of bricks required to pave an oddly-shaped
+plaza within in a park.
+
+The short video below demonstrates the principle of operation of an early planimeter, 
+patented in 1815. It approximates the area by covering the region to be measured 
+with several rectangles, whose areas is easy to compute simply by measuring the length
+of the rectangle.
+
 ```{youtube zobel-planimeter}
 id: RI9aq30OdU0
 ```

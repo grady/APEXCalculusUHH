@@ -1,6 +1,10 @@
 ## Taylor Polynomials {#sec:taylor-poly}
 
 ```{youtube}
+id: 3d6DsjIBzJ4
+```
+
+```{youtube}
 id: SYJ2uGJCQdY
 ```
 

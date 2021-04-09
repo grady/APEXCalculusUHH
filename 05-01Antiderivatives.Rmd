@@ -8,6 +8,11 @@ $F\,'(x) = f(x)$. There are numerous reasons this will prove to be
 useful: these functions will help us compute area, volume, mass, force,
 pressure, work, and much more.
 
+```{youtube}
+id: z1XH1JTUKTU
+```
+
+
 ## Antiderivatives and Indefinite Integration {#sec:antider}
 
 Given a function $y=f(x)$, a *differential equation* is one that
@@ -29,6 +34,10 @@ discovery is made, finding "yet another" is not difficult; the function
 $y = x^2 + 123,456,789$ also has a derivative of $2x$. The differential
 equation $y\,' = 2x$ has many solutions. This leads us to some
 definitions.
+
+```{youtube}
+id: BRAjDVVn4H4
+```
 
 ```{definition, label="antider", echo=TRUE}
 
@@ -107,7 +116,9 @@ antiderivatives of what follows," and the function $f(x)$ and $dx$ are multiplie
 together; the $dx$ does not "just sit there." Nonetheless, in practice it is 
 convenient to treat these symbols simply as bookends.
 
-
+```{youtube}
+id: W-FUL0ApGL8
+```
 
 Let's practice using this notation.
 
@@ -148,6 +159,10 @@ Understanding all of this is more important later as we try to find
 antiderivatives of more complicated functions. In this section, we will
 simply explore the rules of indefinite integration, and one can succeed
 for now with answering "What happened to the $dx$?" with "It went away."
+
+```{youtube}
+id: 3DFPqGHX7Yw
+```
 
 Let's practice once more before stating integration rules.
 
@@ -338,6 +353,11 @@ We highlight a few important points from Theorem \@ref(thm:indef-alg):
 
 ### Initial Value Problems {-}
 
+```{youtube}
+id: Oo6OHiiGbOc
+```
+
+
 In Section \@ref(sec:basic-diff-rules) we saw that the derivative of a
 position function gave a velocity function, and the derivative of a
 velocity function describes acceleration. We can now go "the other way:"
@@ -351,6 +371,10 @@ We can find *the* answer if we provide more information with the
 question, as done in the following example. Often the additional
 information comes in the form of an *initial value*, a value of the
 function that one knows beforehand.
+
+```{youtube}
+id: 3K_gWY4lmOs
+```
 
 ```{example, label="anti4", echo=TRUE}
 
@@ -387,7 +411,9 @@ point in time.
 
 ```
 
-
+```{youtube}
+id: MB1dLY4lOew
+```
 
 ```{example, label="anti5", echo=TRUE}
 

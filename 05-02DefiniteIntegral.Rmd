@@ -255,12 +255,14 @@ caption: >
 ```{geogebra, label="defint4a"}
 material_id: arwf4vcf
 caption: >
-    A graph of $5f$ in Example \@ref(exm:defint4). (Yes, it looks just like the graph of $f$ in Figure \@ref(fig:defint4), just with a different $y$-scale.)
+    A graph of $5f$ in Example \@ref(exm:defint4ex). (Yes, it looks just like the graph of $f$ in Figure \@ref(fig:defint4), just with a different $y$-scale.)
 
 ```
 
 This example illustrates some of the properties of the definite
 integral, given here.
+
+### Algebraic Properties of the Definite Integral {-}
 
 ```{youtube}
 id: sK5vZ_QrkNk
@@ -286,7 +288,7 @@ $k$ be a constant. The following hold:
 
 We give a brief justification of Theorem \@ref(thm:defintprop) here.
 
-1.  As demonstrated in Example \@ref(exm:defint4), there is no "area
+1.  As demonstrated in Example \@ref(exm:defint4ex), there is no "area
     under the curve" when the region has no width; hence this definite
     integral is 0.
 
@@ -304,17 +306,23 @@ We give a brief justification of Theorem \@ref(thm:defintprop) here.
     justification all its own, not necessarily in support of other
     properties.) Suppose $b<a<c$. The discussion from the previous point
     clearly justifies
-    $$\int_b^a f(x)\ dx + \int_a^c f(x)\ dx = \int_b^c f(x)\ dx.\label{eq:defint1}$$
+    \begin{equation}
+      \int_b^a f(x)\ dx + \int_a^c f(x)\ dx = \int_b^c f(x)\ dx.
+      (\#eq:defint1)
+    \end{equation}
     However, we still claim that, as originally stated,
-    $$\int_a^b f(x)\ dx + \int_b^c f(x)\ dx = \int_a^c f(x)\ dx.\label{eq:defint2}$$
-    How do Equations (\@ref(eq:defint1)) and (\@ref(eq:defint2)) relate?
-    Start with Equation (\@ref(eq:defint1)): $$\begin{aligned}
+    \begin{equation}
+      \int_a^b f(x)\ dx + \int_b^c f(x)\ dx = \int_a^c f(x)\ dx.
+      (\#eq:defint2)
+    \end{equation}
+    How do Equations \@ref(eq:defint1) and \@ref(eq:defint2) relate?
+    Start with Equation \@ref(eq:defint1): $$\begin{aligned}
             \int_b^a f(x)\ dx + \int_a^c f(x)\ dx &= \int_b^c f(x)\ dx\\
             \int_a^c f(x)\ dx &= -\int_b^a f(x)\ dx + \int_b^c f(x)\ dx\\
             \end{aligned}$$ Property $(3)$ justifies changing the sign
     and switching the bounds of integration on the
     $\displaystyle-\int_b^a f(x)\ dx$ term; when this is done, Equations
-    (\@ref(eq:defint1)) and (\@ref(eq:defint2)) are equivalent.
+    \@ref(eq:defint1) and \@ref(eq:defint2) are equivalent.
 
     The conclusion is this: by adopting the convention of Property (3),
     Property (2) holds no matter the order of $a$, $b$ and $c$. Again,

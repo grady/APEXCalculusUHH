@@ -1,5 +1,10 @@
 ## The Fundamental Theorem of Calculus {#sec:FTC}
 
+```{youtube}
+id: FnJqaIESC2s
+```
+
+
 The planimeter shown below was patented in 1834. As you watch the video,
 you will notice that its principle of operation is quite different than
 the planimeter from the last section. Rather than covering the shape in
@@ -11,9 +16,6 @@ which depends on the distance of the shape's boundary from the $x$-axis.
 id: _W35iDhRfZg
 ```
 
-```{youtube}
-id: FnJqaIESC2s
-```
 
 
 ```{youtube}

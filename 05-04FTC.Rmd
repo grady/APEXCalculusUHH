@@ -26,6 +26,32 @@ id: 8d3R9MSwKuk
 id: zVyMghQRLcI
 ```
 
+
+
+:::{.floatright}
+```{tikz, label="ftc1", fig.cap="The area of the shaded region is $F(x) = \\int_a^x f(t) dt$.",echo=FALSE, cache=TRUE, fig.width=3}
+        \begin{tikzpicture}
+
+        \begin{axis}[
+        axis x line = middle,
+        axis y line = middle,
+        axis on top,
+        xtick=\empty,
+        extra x ticks={1,2.5,3},
+        extra x tick labels={$a$,$x$,$b$},
+        ytick=\empty,
+        xlabel=$t$,
+        ymin=-.5,ymax=2,
+        xmin=-.5,xmax=3.5
+        ]
+
+        \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,fill,opacity=0.5,draw=none,domain=1:2.5] {.5*sin(deg(x))+1} \closedcycle;
+        \addplot [color=blue,mark=none,thick,{Kite}-{Kite},solid,fill=blue!50,fill=none,-,domain=0:3.25,samples=30] {.5*sin(deg(x))+1};
+
+        \end{axis}
+        \end{tikzpicture}
+```
+:::
 Let $f(t)$ be a continuous function defined on $[a,b]$. The definite
 integral $\int_a^b f(x)\ dx$ is the "area under $f\ $" on $[a,b]$. We
 can turn this concept into a function by letting the upper (or lower)
@@ -38,14 +64,6 @@ $F(a)=0$ since $\int_a^af(t)\ dt=0$.
 
 ```{youtube}
 id: TE3kZRIso-Q
-```
-
-
-```{geogebra, label="ftc1"}
-
-caption: >
-  The area of the shaded region is $F(x) = \int_a^x f(t)\ dt$.
-
 ```
 
 We can also apply calculus ideas to $F(x)$; in particular, we can
@@ -193,7 +211,7 @@ $$1.\ \int_{-2}^2 x^3\ dx \quad 2.\ \int_0^\pi \sin x\ dx \qquad 3.\ \int_0^5 e^
 
 ### Understanding Motion with the Fundamental Theorem of Calculus {-}
 
-We established, starting with Key Idea \@ref(idea:motion), that the
+We established, starting in Chapter 2 with Definition \@ref(def:idea-motion), that the
 derivative of a position function is a velocity function, and the
 derivative of a velocity function is an acceleration function. Now
 consider definite integrals of velocity and acceleration functions.
@@ -312,11 +330,11 @@ where $f(x) \geq g(x)$ for all $x$ in $[a,b]$, as demonstrated in Figure
 \@ref(fig:ftc5). What is the area of the shaded region bounded by the
 two curves over $[a,b]$?
 
-::: {#fig:ftc5 .tab}
-**Table 1**. caption: Finding the area bounded by two functions on an
-interval; it is found by subtracting the area under $g$ from the area
-under $f$.
-:::
+```{geogebra ftc5}
+material_id: cu4vu3ja
+caption: >
+  Finding the area bounded by two functions on an interval; it is found by subtracting the area under $g$ from the area under $f$.
+```
 
 The area can be found by recognizing that this area is "the area under
 $f$ $-$ the area under $g$." Using mathematical notation, the area is
@@ -369,7 +387,7 @@ the area is $$\begin{aligned}
 ```
 
 ```{geogebra, label="ftc6"}
-
+material_id: wuehwqks
 caption: >
   Sketching the region enclosed by $y=x^2+x-5$ and $y=3x-2$ in Example \@ref(exm:ftc6ex).
 
@@ -392,33 +410,21 @@ id: Gz9r9zF5asU
 ```
 
 ```{geogebra, label="ftc7a"}
-
+material_id: rq9ahfu4
 caption: >
-  A graph of a function $f$ to introduce the Mean Value Theorem.
-
+  A graph of a function $f$ to introduce the Mean Value Theorem. The MVT for 
+  integrals states that the shaded area under a curve may be rearranged into
+  a rectangle. We may consider the height of the rectangle to be the "average"
+  height of the function over the region of integration. Furthermore, the 
+  integrand function $f(x)$ must attain this average height at some $x$-value
+  on the region of integration.
+  
 ```
 
 Consider the graph of a function $f$ in Figure \@ref(fig:ftc7a) and the
-area defined by $\int_1^4 f(x)\ dx$. Three rectangles are drawn in
-Figure \@ref(fig:ftc7b); in (a), the height of the rectangle is greater
-than $f$ on $[1,4]$, hence the area of this rectangle is is greater than
-$\int_0^4 f(x)\ dx$.
-
-In (b), the height of the rectangle is smaller than $f$ on $[1,4]$,
-hence the area of this rectangle is less than $\int_1^4 f(x)\ dx$.
-
-::: {#fig:ftc7b .tab}
-**Table 2**. caption: Differently sized rectangles give upper and lower
-bounds on $\int_1^4 f(x)\ dx$; the last rectangle matches the area
-exactly.
-:::
-
-Finally, in (c) the height of the rectangle is such that the area of the
-rectangle is *exactly* that of $\int_0^4 f(x)\ dx$. Since rectangles
-that are "too big ", as in (a), and rectangles that are "too little," as
-in (b), give areas greater/lesser than $\int_1^4 f(x)\ dx$, it makes
-sense that there is a rectangle, whose top intersects $f(x)$ somewhere
-on $[1,4]$, whose area is *exactly* that of the definite integral.
+area defined by $\int_1^4 f(x)\ dx$. The height of the rectangle formed by
+the dotted line is such that the area of the rectangle is *exactly* 
+that of $\int_0^4 f(x)\ dx$.
 
 We state this idea formally in a theorem.
 
@@ -458,7 +464,7 @@ area under $\sin x$ on $[0,\pi]$.
 
 ```
 ```{geogebra, label="ftc8"}
-
+material_id: msc8jugf
 caption: >
   A graph of $y=\sin x$ on $[0,\pi]$ and the rectangle guaranteed by the Mean Value Theorem.
 
@@ -475,11 +481,11 @@ $[a,b]$ is the same as the amount of area below the $x$--axis above $f$;
 see Figure \@ref(fig:ftc9) for an illustration of this. In this sense,
 we can say that $f(c)$ is the *average value* of $f$ on $[a,b]$.
 
-::: {#fig:ftc9 .tab}
-**Table 3**. caption: In (a), a graph of $y=f(x)$ and the rectangle
-guaranteed by the Mean Value Theorem. In (b), $y=f(x)$ is shifted down
-by $f(c)$; the resulting "area under the curve" is 0.
-:::
+```{geogebra ftc9}
+material_id: bq84gsgv
+caption: >
+  In (a), a graph of $y=f(x)$ and the rectangle guaranteed by the Mean Value Theorem. In (b), $y=f(x)$ is shifted down by $f(c)$; the resulting area under the curve is 0.
+```
 
 The value $f(c)$ is the average value in another sense. First, recognize
 that the Mean Value Theorem can be rewritten as

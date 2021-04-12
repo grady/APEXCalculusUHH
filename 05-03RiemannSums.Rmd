@@ -36,7 +36,7 @@ under $y=4x-x^2$ on $[0,4]$. What is the signed area of this region --
 i.e., what is $\int_0^4(4x-x^2)\ dx$?
 
 ```{geogebra, label="rie1a"}
-
+material_id: zyjatq53
 caption: >
     A graph of $f(x) = 4x-x^2$. What is the area of the shaded region?
 
@@ -235,10 +235,11 @@ with them without writing individual terms. Examples will follow.
 id: w8jWl2KjOvQ
 ```
 
-:::{style="columns: 2 330px;"}
-```{theorem, label="summation", echo=TRUE}
 
+```{theorem, label="summation", echo=TRUE}
 (Properties of Summations).
+
+:::{style="columns: 2 330px;"}
 
 1.  $\displaystyle\sum_{i=1}^n c = c\cdot n$, where $c$ is a constant.
 
@@ -253,9 +254,11 @@ id: w8jWl2KjOvQ
 2.  $\displaystyle\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}6$
 
 3.  $\displaystyle\sum_{i=1}^n i^3 = \left(\frac{n(n+1)}2\right)^2$
+  
+:::
 
 ```
-:::
+
 ```{example, label="rie4", echo=TRUE}
 
 (Evaluating summations using Theorem ). Revisit Example \@ref(exm:rie3)
@@ -487,16 +490,11 @@ $\Delta x$ be a partition of $[a,b]$
 and let $c_i$ denote any value in the $i^\text{ th}$ subinterval.
 
 The sum $$\sum_{i=1}^n f(c_i)\Delta x_i$$ is a **Riemann sum** of $f$ on
-$[a,b]$.
+$[a,b]$. ([Georg Friedrich Bernhard Riemann](https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/){target="_blank"})
 
 ```
 
-Figure \@ref(fig:riedef) shows the approximating rectangles of a Riemann
-sum of $\int_0^4(4x-x^2)\ dx$. While the rectangles in this example do
-not approximate well the shaded area, they demonstrate that the
-subinterval widths may vary and the heights of the rectangles can be
-determined without following a particular rule.
-
+:::{.floatright}
 ```{tikz, label="riedef", cache=TRUE, echo=FALSE,fig.cap="An example of a general Riemann sum to approximate $\\int_0^4(4x-x^2)dx$."}
         \begin{tikzpicture}
 
@@ -525,6 +523,13 @@ determined without following a particular rule.
         \end{tikzpicture}
 
 ```
+:::
+Figure \@ref(fig:riedef) shows the approximating rectangles of a Riemann
+sum of $\int_0^4(4x-x^2)\ dx$. While the rectangles in this example do
+not approximate well the shaded area, they demonstrate that the
+subinterval widths may vary and the heights of the rectangles can be
+determined without following a particular rule.
+
 
 "Usually" Riemann sums are calculated using one of the three methods we
 have introduced. The uniformity of construction makes computations

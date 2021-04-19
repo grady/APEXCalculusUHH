@@ -191,7 +191,7 @@ we are summing, in this case the values $a_i$, for every integer $i$ between
 Let's practice using this notation.
 
 ```{youtube}
-id: GKaRI_a96
+id: GKaRI_a96-Q
 ```
 
 ```{example, label="rie3", echo=TRUE}
